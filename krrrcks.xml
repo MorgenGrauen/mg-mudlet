@@ -1,0 +1,841 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE MudletPackage>
+<MudletPackage version="1.0">
+    <TriggerPackage>
+        <TriggerGroup isActive="yes" isFolder="yes" isTempTrigger="no" isMultiline="no" isPerlSlashGOption="no" isColorizerTrigger="no" isFilterTrigger="no" isSoundTrigger="no" isColorTrigger="no" isColorTriggerFg="no" isColorTriggerBg="no">
+            <name>Farb-Trigger</name>
+            <script></script>
+            <triggerType>0</triggerType>
+            <conditonLineDelta>0</conditonLineDelta>
+            <mStayOpen>0</mStayOpen>
+            <mCommand></mCommand>
+            <packageName></packageName>
+            <mFgColor>#ff0000</mFgColor>
+            <mBgColor>#ffff00</mBgColor>
+            <mSoundFile></mSoundFile>
+            <colorTriggerFgColor>#000000</colorTriggerFgColor>
+            <colorTriggerBgColor>#000000</colorTriggerBgColor>
+            <regexCodeList/>
+            <regexCodePropertyList/>
+            <Trigger isActive="yes" isFolder="no" isTempTrigger="no" isMultiline="no" isPerlSlashGOption="no" isColorizerTrigger="yes" isFilterTrigger="no" isSoundTrigger="no" isColorTrigger="no" isColorTriggerFg="no" isColorTriggerBg="no">
+                <name>Kommunikation</name>
+                <script>-- Keine Ahnung, ob das besser geht, aber ich will die ganze Zeile einfärben und nicht nur
+-- den &quot;Match&quot;.
+
+selectCurrentLine()
+fg(farben.vg.komm)
+bg(farben.hg.komm)
+resetFormat()</script>
+                <triggerType>0</triggerType>
+                <conditonLineDelta>0</conditonLineDelta>
+                <mStayOpen>0</mStayOpen>
+                <mCommand></mCommand>
+                <packageName></packageName>
+                <mFgColor>#00aaff</mFgColor>
+                <mBgColor>#000000</mBgColor>
+                <mSoundFile></mSoundFile>
+                <colorTriggerFgColor>#000000</colorTriggerFgColor>
+                <colorTriggerBgColor>#000000</colorTriggerBgColor>
+                <regexCodeList>
+                    <string>^(.*) teilt Dir mit: (.*)$</string>
+                    <string>^Du teilst (.*) mit: (.*)$</string>
+                    <string>Du sagst:</string>
+                    <string>sagt:</string>
+                    <string>Du fragst:</string>
+                    <string>fragt:</string>
+                    <string>Wecker klingelt bei Dir.</string>
+                    <string>denkt:</string>
+                    <string>Matrix:</string>
+                    <string>[Team </string>
+                </regexCodeList>
+                <regexCodePropertyList>
+                    <integer>1</integer>
+                    <integer>1</integer>
+                    <integer>0</integer>
+                    <integer>0</integer>
+                    <integer>0</integer>
+                    <integer>0</integer>
+                    <integer>0</integer>
+                    <integer>0</integer>
+                    <integer>0</integer>
+                    <integer>0</integer>
+                </regexCodePropertyList>
+            </Trigger>
+            <Trigger isActive="yes" isFolder="no" isTempTrigger="no" isMultiline="no" isPerlSlashGOption="no" isColorizerTrigger="no" isFilterTrigger="no" isSoundTrigger="no" isColorTrigger="no" isColorTriggerFg="no" isColorTriggerBg="no">
+                <name>Ebenen</name>
+                <script>selectCurrentLine()
+fg(farben.vg.ebenen)
+bg(farben.hg.ebenen)
+resetFormat()</script>
+                <triggerType>0</triggerType>
+                <conditonLineDelta>0</conditonLineDelta>
+                <mStayOpen>0</mStayOpen>
+                <mCommand></mCommand>
+                <packageName></packageName>
+                <mFgColor>#ff0000</mFgColor>
+                <mBgColor>#ffff00</mBgColor>
+                <mSoundFile></mSoundFile>
+                <colorTriggerFgColor>#000000</colorTriggerFgColor>
+                <colorTriggerBgColor>#000000</colorTriggerBgColor>
+                <regexCodeList>
+                    <string>[Trves:</string>
+                    <string>[Abenteuer:</string>
+                    <string>[Allgemein:</string>
+                    <string>[Seher:</string>
+                    <string>[Tod:</string>
+                </regexCodeList>
+                <regexCodePropertyList>
+                    <integer>0</integer>
+                    <integer>0</integer>
+                    <integer>0</integer>
+                    <integer>0</integer>
+                    <integer>0</integer>
+                </regexCodePropertyList>
+            </Trigger>
+            <Trigger isActive="yes" isFolder="no" isTempTrigger="no" isMultiline="no" isPerlSlashGOption="no" isColorizerTrigger="no" isFilterTrigger="no" isSoundTrigger="no" isColorTrigger="no" isColorTriggerFg="no" isColorTriggerBg="no">
+                <name>Kampf: Zustand</name>
+                <script>local zustand = {}
+ 
+zustand[&quot;ist absolut fit.&quot;] = 1
+zustand[&quot;ist leicht geschwaecht.&quot;] = 0.9
+zustand[&quot;fuehlte sich auch schon besser.&quot;] = 0.8
+zustand[&quot;ist leicht angekratzt.&quot;] =0.7 
+zustand[&quot;ist nicht mehr taufrisch.&quot;] = 0.6
+zustand[&quot;sieht recht mitgenommen aus.&quot;] = 0.5
+zustand[&quot;wankt bereits bedenklich.&quot;] = 0.4
+zustand[&quot;ist in keiner guten Verfassung.&quot;] = 0.3
+zustand[&quot;braucht dringend einen Arzt.&quot;]  = 0.2
+zustand[&quot;steht auf der Schwelle des Todes.&quot;]= 0.1
+
+selectCurrentLine()
+fg(farben.vg.info)
+bg(farben.hg.info)
+
+local ausgabe = zustand[matches[1]]
+
+if ausgabe then 
+  ausgabe = &quot; (&quot; .. ausgabe*100 .. &quot;%)&quot; 
+else
+  ausgabe = &quot; (???%)&quot;
+end
+
+echo(ausgabe)</script>
+                <triggerType>0</triggerType>
+                <conditonLineDelta>0</conditonLineDelta>
+                <mStayOpen>0</mStayOpen>
+                <mCommand></mCommand>
+                <packageName></packageName>
+                <mFgColor>#ff0000</mFgColor>
+                <mBgColor>#ffff00</mBgColor>
+                <mSoundFile></mSoundFile>
+                <colorTriggerFgColor>#000000</colorTriggerFgColor>
+                <colorTriggerBgColor>#000000</colorTriggerBgColor>
+                <regexCodeList>
+                    <string>ist absolut fit.</string>
+                    <string>ist leicht geschwaecht.</string>
+                    <string>fuehlte sich auch schon besser.</string>
+                    <string>ist leicht angekratzt.</string>
+                    <string>ist nicht mehr taufrisch.</string>
+                    <string>sieht recht mitgekommen aus.</string>
+                    <string>wankt bereits bedenklich.</string>
+                    <string>ist in keiner guten Verfassung.</string>
+                    <string>braucht dringend einen Arzt.</string>
+                    <string>steht auf der Schwelle des Todes.</string>
+                </regexCodeList>
+                <regexCodePropertyList>
+                    <integer>0</integer>
+                    <integer>0</integer>
+                    <integer>0</integer>
+                    <integer>0</integer>
+                    <integer>0</integer>
+                    <integer>0</integer>
+                    <integer>0</integer>
+                    <integer>0</integer>
+                    <integer>0</integer>
+                    <integer>0</integer>
+                </regexCodePropertyList>
+            </Trigger>
+            <Trigger isActive="yes" isFolder="no" isTempTrigger="no" isMultiline="no" isPerlSlashGOption="no" isColorizerTrigger="no" isFilterTrigger="no" isSoundTrigger="no" isColorTrigger="no" isColorTriggerFg="no" isColorTriggerBg="no">
+                <name>Kampf: Infos</name>
+                <script>selectCurrentLine()
+fg(farben.vg.info)
+bg(farben.hg.info)
+resetFormat()
+</script>
+                <triggerType>0</triggerType>
+                <conditonLineDelta>0</conditonLineDelta>
+                <mStayOpen>0</mStayOpen>
+                <mCommand></mCommand>
+                <packageName></packageName>
+                <mFgColor>#ff0000</mFgColor>
+                <mBgColor>#ffff00</mBgColor>
+                <mSoundFile></mSoundFile>
+                <colorTriggerFgColor>#000000</colorTriggerFgColor>
+                <colorTriggerBgColor>#000000</colorTriggerBgColor>
+                <regexCodeList>
+                    <string>faellt tot zu Boden.</string>
+                </regexCodeList>
+                <regexCodePropertyList>
+                    <integer>0</integer>
+                </regexCodePropertyList>
+            </Trigger>
+            <Trigger isActive="yes" isFolder="no" isTempTrigger="no" isMultiline="no" isPerlSlashGOption="no" isColorizerTrigger="no" isFilterTrigger="no" isSoundTrigger="no" isColorTrigger="no" isColorTriggerFg="no" isColorTriggerBg="no">
+                <name>Alarme</name>
+                <script>selectCurrentLine()
+fg(farben.vg.alarm)
+bg(farben.hg.alarm)
+resetFormat()</script>
+                <triggerType>0</triggerType>
+                <conditonLineDelta>0</conditonLineDelta>
+                <mStayOpen>0</mStayOpen>
+                <mCommand></mCommand>
+                <packageName></packageName>
+                <mFgColor>#ff0000</mFgColor>
+                <mBgColor>#ffff00</mBgColor>
+                <mSoundFile></mSoundFile>
+                <colorTriggerFgColor>#000000</colorTriggerFgColor>
+                <colorTriggerBgColor>#000000</colorTriggerBgColor>
+                <regexCodeList>
+                    <string>^Du hast (.*) neue Brief(.*) im Postamt liegen.$</string>
+                    <string>Ein Postreiter ruft Dir aus einiger Entfernung zu, dass Du neue Post hast!</string>
+                </regexCodeList>
+                <regexCodePropertyList>
+                    <integer>1</integer>
+                    <integer>0</integer>
+                </regexCodePropertyList>
+            </Trigger>
+            <Trigger isActive="yes" isFolder="no" isTempTrigger="no" isMultiline="no" isPerlSlashGOption="no" isColorizerTrigger="no" isFilterTrigger="no" isSoundTrigger="no" isColorTrigger="no" isColorTriggerFg="no" isColorTriggerBg="no">
+                <name>Para-/Normalwelt</name>
+                <script>-- Prüfung über Portal 23
+
+selectCurrentLine()
+
+if (matches[3] == &quot;gruenlich&quot;) then
+	fg(farben.vg.info)
+	bg(farben.hg.info)
+
+  	ME.para = 0
+end
+
+if (matches[3] == &quot;roetlich&quot;) then
+	fg(farben.vg.alarm)
+	bg(farben.hg.alarm)
+	ME.para = 1
+end
+
+zeigeParawelten()
+resetFormat()</script>
+                <triggerType>0</triggerType>
+                <conditonLineDelta>0</conditonLineDelta>
+                <mStayOpen>0</mStayOpen>
+                <mCommand></mCommand>
+                <packageName></packageName>
+                <mFgColor>#ff0000</mFgColor>
+                <mBgColor>#ffff00</mBgColor>
+                <mSoundFile></mSoundFile>
+                <colorTriggerFgColor>#000000</colorTriggerFgColor>
+                <colorTriggerBgColor>#000000</colorTriggerBgColor>
+                <regexCodeList>
+                    <string>^(.*)Du bist hier im Innern einer (.*) schimmernden Kugel,$</string>
+                </regexCodeList>
+                <regexCodePropertyList>
+                    <integer>1</integer>
+                </regexCodePropertyList>
+            </Trigger>
+        </TriggerGroup>
+    </TriggerPackage>
+    <TimerPackage/>
+    <AliasPackage>
+        <AliasGroup isActive="yes" isFolder="yes">
+            <name>deleteOldProfiles</name>
+            <script></script>
+            <command></command>
+            <packageName>deleteOldProfiles</packageName>
+            <regex></regex>
+            <Alias isActive="yes" isFolder="no">
+                <name>delete old profiles</name>
+                <script>deleteOldProfiles(matches[3], matches[2]==&quot;maps&quot;)
+
+--Syntax examples: &quot;delete old profiles&quot;  -&gt; deletes profiles older than 31 days
+--					&quot;delete old maps 10&quot;	-&gt; deletes maps older than 10 days</script>
+                <command></command>
+                <packageName></packageName>
+                <regex>^delete old (profiles|maps)(?: (\d+))?$</regex>
+            </Alias>
+        </AliasGroup>
+        <AliasGroup isActive="yes" isFolder="yes">
+            <name>echo</name>
+            <script></script>
+            <command></command>
+            <packageName>echo</packageName>
+            <regex></regex>
+            <Alias isActive="yes" isFolder="no">
+                <name>`echo</name>
+                <script>local s = matches[2]
+
+s = string.gsub(s, &quot;%$&quot;, &quot;\n&quot;)
+feedTriggers(&quot;\n&quot; .. s .. &quot;\n&quot;)
+echo(&quot;\n&quot;)</script>
+                <command></command>
+                <packageName></packageName>
+                <regex>`echo (.+)</regex>
+            </Alias>
+        </AliasGroup>
+        <AliasGroup isActive="yes" isFolder="yes">
+            <name>run-lua-code-v4</name>
+            <script></script>
+            <command></command>
+            <packageName>run-lua-code-v4</packageName>
+            <regex></regex>
+            <Alias isActive="yes" isFolder="no">
+                <name>run lua code</name>
+                <script>local f,e = loadstring(&quot;return &quot;..matches[2])
+if not f then
+	f,e = assert(loadstring(matches[2]))
+end
+
+local r = f()
+if r ~= nil then display(r) end</script>
+                <command></command>
+                <packageName></packageName>
+                <regex>^lua (.*)$</regex>
+            </Alias>
+        </AliasGroup>
+        <AliasGroup isActive="yes" isFolder="yes">
+            <name>Kleinkram</name>
+            <script>--[[ Hier sammel ich Kleinkram, der nirgendwo anders gut hinpasst. Kleinere Skripte
+	und Aliase ]]--</script>
+            <command></command>
+            <packageName></packageName>
+            <regex></regex>
+            <Alias isActive="yes" isFolder="no">
+                <name>Umlaute</name>
+                <script>-- echo(&quot;&lt;UMLAUTE herausgenommen&gt; &lt;&quot;..command..&quot;&gt;\n&quot;);
+command = string.gsub(command, 'ü', 'ue' );
+command = string.gsub(command, 'ö', 'oe' );
+command = string.gsub(command, 'ä', 'ae' );
+command = string.gsub(command, 'Ä', 'Ae' );
+command = string.gsub(command, 'Ö', 'Oe' );
+command = string.gsub(command, 'Ü', 'Ue' );
+command = string.gsub(command, 'ß', 'ss' );
+
+send(command);</script>
+                <command></command>
+                <packageName></packageName>
+                <regex>ü|ö|ä|Ü|Ö|Ä|ß</regex>
+            </Alias>
+            <Alias isActive="yes" isFolder="no">
+                <name>Haus betreten</name>
+                <script>-- Mit &quot;#haus&lt;name&gt;&quot; ein Seherhaus aufschliessen und betreten; 
+-- wird der Name weggelassen, wird automatisch ME.name angehaengt.
+
+wessen = matches[2] 
+
+if wessen == &quot;&quot; then wessen = ME.name end
+
+if wessen then
+	send(&quot;schliesse haus von &quot; .. wessen .. &quot; auf&quot;)
+	send(&quot;oeffne haus von &quot; .. wessen)
+	send(&quot;betrete haus von &quot; .. wessen)
+	send(&quot;schliesse haus&quot;)
+	send(&quot;schliesse haus ab&quot;)
+end</script>
+                <command></command>
+                <packageName></packageName>
+                <regex>^#haus(.*)$</regex>
+            </Alias>
+            <Alias isActive="yes" isFolder="no">
+                <name>Hilfe</name>
+                <script>fg(&quot;yellow&quot;)
+
+echo([[
+Dies sind ein paar Mudlet-Skripte, die sich Lev@MorgenGrauen gebastelt hat. 
+Folgende Sachen gibt es und funktionieren:
+
+* Aus dem Netz gesaugte Zusätze:
+- Ich habe das &quot;run-lua-code-v4&quot; hinzugenommen, damit kann man auf der Kommando-
+zeile mit &quot;lua &lt;blubb&gt;&quot; direkt Lua-Code ausführen.
+- Von Zesstra habe ich Ihre (https://github.com/zesstra) MGM-Scripts hinzu
+genommen. Die bedürfen aber noch einige Überarbeitung und fliegen anschließend
+denke ich auch wieder heraus.
+- Auch uebernommen habe ich aus dem Forum einige Einstellungen für Umlaute.
+
+* Einstellungen und auch Globale Variablen
+In &quot;Scripts-&gt;Einstellugnen&quot; habe ich einige globale Variablen und 
+einstellbare Sachen hinterlegt:
+
+ME: ME ist ein Table, in dem ich alle möglichen Informationen zum User speichere; 
+  hier landen bspw. der Name, aber auch in welcher Para-Welt man sich befindet etc. 
+  Soweit möglich werden die entsprechenden Werte bspw. aus GMCP-Nachrichten 
+  gezogen.
+farben: In diesem Table verwalte ich die für die Trigger und Skripte zu verwendenden
+  Farben.
+
+* Farbtrigger
+In Trigger befinden sich Farbtrigger, welche die Ebenen einfärben.
+
+* Wegeskripte von tf
+Ich hatte einige Wegeskripte bei tf, die insbesondere mit einem &quot;/dopath&quot; 
+zusammenarbeiteten. Ich habe diese nahezu 1:1 rekonstruiert, sie sind in den Skripten
+und den Aliasen zu finden.
+
+* Kleinkram
+#haus&lt;name&gt; : Wenn man vor einem Seherhaus steht, kann man es damit  
+  aufschließen, betreten und wieder verschließen. Achtung: Kein Leerzeichen
+  zwischen &quot;#haus&quot; und dem Namen!
+#pfirsich: Steht man im Lupinental im richtigen Raum (wird via GMCP abgefragt),
+  dann bastelt man sich einen leuchtenden Pfirsich; geht aber nur, wenn man
+  ein Stück Kreide dabei hat.
+]])</script>
+                <command></command>
+                <packageName></packageName>
+                <regex>#help</regex>
+            </Alias>
+            <Alias isActive="yes" isFolder="no">
+                <name>Home</name>
+                <script>-- funzt nur, wenn man den Kommandoseparator auf | gesetzt hat; ist
+-- im Standard auf ; </script>
+                <command>#go haus|#haus</command>
+                <packageName></packageName>
+                <regex>#home</regex>
+            </Alias>
+            <Alias isActive="yes" isFolder="no">
+                <name>Kämpfer: Grüße</name>
+                <script>send(&quot;stehe still&quot;)
+send(&quot;gruesse &quot;  .. matches[2])
+</script>
+                <command></command>
+                <packageName></packageName>
+                <regex>^#gruesse (.*)$</regex>
+            </Alias>
+        </AliasGroup>
+        <AliasGroup isActive="yes" isFolder="yes">
+            <name>Alte Wege</name>
+            <script>-- Die alten tf-Wegeskripte. 
+</script>
+            <command></command>
+            <packageName></packageName>
+            <regex></regex>
+            <Alias isActive="yes" isFolder="no">
+                <name>Weg ablaufen</name>
+                <script>-- Die alten tf-Wegeskripte. 
+
+--[[ Gestartet werden diese mit &quot;#go &lt;ziel&gt;&quot;, dann wird 
+	Ziel ausgewählt und die Sachen zum Mud geschossen. Dabei
+	ist zu beachten, dass die meisten Skripte bei einem Portal
+	bzw. beim Sandtiger starten. ]]--
+
+-- Als Beispiel zwei Wege: Sandtiger-Hochebene und zurueck.
+
+wege.he = { &quot;#dopath w n n w w w n nw nw nw w nw nw nw w w no no o no o o&quot;, &quot;folge hund&quot; }
+wege.he_st = { &quot;folge hund&quot;, &quot;#dopath w w sw w sw sw o o so so so o so so so s o o o s s o&quot; }
+
+local kommandos = wege[matches[2]]
+
+if type(kommandos) == &quot;table&quot; then
+  alt_ws(kommandos)
+end
+
+</script>
+                <command></command>
+                <packageName></packageName>
+                <regex>^#go (.*)$</regex>
+            </Alias>
+            <Alias isActive="yes" isFolder="no">
+                <name>Altes dopath</name>
+                <script>-- Ersetzt das alte tf-dopath; übergeben wird ein String mit 
+-- Ausgängen.
+
+-- Bspw: &quot;#dopath o o w n&quot; macht dann jeweils send(&quot;o&quot;), 
+-- send(&quot;o&quot;), send(&quot;w&quot;), send(&quot;n&quot;)
+
+alt_dopath(matches[2])</script>
+                <command></command>
+                <packageName></packageName>
+                <regex>^#dopath (.*)$</regex>
+            </Alias>
+        </AliasGroup>
+    </AliasPackage>
+    <ActionPackage/>
+    <ScriptPackage>
+        <ScriptGroup isActive="yes" isFolder="yes">
+            <name>deleteOldProfiles</name>
+            <packageName>deleteOldProfiles</packageName>
+            <script></script>
+            <eventHandlerList/>
+            <Script isActive="yes" isFolder="no">
+                <name>deleteOldProfiles</name>
+                <packageName></packageName>
+                <script>function deleteOldProfiles(keepdays_arg, delete_maps)
+
+--[[
+	Deletes old profiles/maps in the &quot;current&quot;/&quot;map&quot; folders of the Mudlet home directory.
+	The following files are NOT deleted:
+	- Files newer than the amount of days specified as an argument to deleteOldProfiles(), or 31 days if not specified.	
+	- One file for every month before that. Specifically: The first available file of every month prior to this.
+	Setting the second argument to true will delete maps instead of profiles. (e.g. deleteOldProfiles(10, true))
+--]]
+
+	local keepdays = tonumber(keepdays_arg) or 31
+	local profile_table = {}
+	local used_last_mod_months = {}
+	local slash = (string.char(getMudletHomeDir():byte()) == &quot;/&quot;) and &quot;/&quot; or &quot;\\&quot;
+	local dirpath = getMudletHomeDir()..slash..(delete_maps and &quot;map&quot; or &quot;current&quot;)
+	local delnum = 0
+
+	-- Traverse the profiles folder and create a table of files:
+	for filename in lfs.dir(dirpath) do
+		if filename~=&quot;.&quot; and filename~=&quot;..&quot; then
+			profile_table[#profile_table+1] = {name = filename, last_mod = lfs.attributes(dirpath..slash..filename, &quot;modification&quot;)}
+		end
+	end
+
+	-- Sort the table according to last modification date from old to new:
+	table.sort(profile_table, function (a,b) return a.last_mod &lt; b.last_mod end)
+
+	echo(string.format(&quot;\nDeleting old %s. Files newer than %d days and one profile for every month before that will be kept.&quot;, delete_maps and &quot;maps&quot; or &quot;profiles&quot;, keepdays))
+	for i,v in ipairs(profile_table) do
+		local days = math.floor(os.difftime(os.time(), v.last_mod)/86400)
+		local last_mod_month = os.date(&quot;%Y/%m&quot;, v.last_mod)
+		if days &gt; keepdays then
+			-- For profiles older than X days, check if we already kept a table for this month:
+			if not table.contains(used_last_mod_months, last_mod_month) then
+				-- If not, do nothing and mark this month as &quot;kept&quot;.
+				used_last_mod_months[#used_last_mod_months+1] = last_mod_month
+			else
+				-- Otherwise remove the file:
+				local success, errorstring = os.remove(dirpath..slash..v.name)
+				if success then
+					delnum = delnum + 1
+				else
+					cecho(&quot;\n&lt;red&gt;ERROR: &quot;..errorstring)
+				end
+			end
+		end
+	end
+	echo(string.format(&quot;\nDeletion complete. %d/%d files were removed successfully.&quot;, delnum, #profile_table))
+end
+</script>
+                <eventHandlerList/>
+            </Script>
+        </ScriptGroup>
+        <ScriptGroup isActive="yes" isFolder="yes">
+            <name>Einstellungen</name>
+            <packageName></packageName>
+            <script>-- Einstellungen (Farben etc.)</script>
+            <eventHandlerList/>
+            <Script isActive="yes" isFolder="no">
+                <name>Farben</name>
+                <packageName></packageName>
+                <script>-- Einstellungen fuer Farben Allgemein
+farben = {}
+farben.vg = 
+  { komm = &quot;cyan&quot;,
+    ebenen = &quot;magenta&quot;,
+    info = &quot;green&quot;,
+    alarm = &quot;white&quot; }
+farben.hg = 
+  { komm = &quot;black&quot;,
+    ebenen = &quot;black&quot;,
+    info = &quot;black&quot;, 
+    alarm = &quot;red&quot; }
+
+-- Einstellungen fuer Farben Kampfscroll
+</script>
+                <eventHandlerList/>
+            </Script>
+            <Script isActive="yes" isFolder="no">
+                <name>Spieler</name>
+                <packageName></packageName>
+                <script>-- Variablen zum Spieler
+
+ME = {}
+ME.name = &quot;Lev&quot;
+ME.para = 0
+ME.vorsicht = 0
+ME.fluchtrichtung = &quot;&quot;
+
+-- In die Statuszeile noch aufnehmen:
+-- Vorsicht
+-- Fluchtrichtung
+-- Para
+
+
+wege = {}
+</script>
+                <eventHandlerList/>
+            </Script>
+            <Script isActive="yes" isFolder="no">
+                <name>Statuszeile</name>
+                <packageName></packageName>
+                <script>-- Einstellungen fuer die Statuszeile 
+
+--[[ Hier werden die einzelnen Elemente der Statuszeile beschrieben und in 
+	der globalen Variable &quot;statuszeile&quot; zusammengefasst. Somit kann man dort 
+	dann die Reihenfolge und welche Teile angezeigt werden, anpassen. Ob das
+	so für alle Anzeigen funktionieren kann, muss ich noch sehen. ]]-- 
+
+local lpbalken = {
+	name = &quot;lpbalken&quot;,
+	width = 150,
+	text = &quot;/&quot;,
+	r = 0,
+	g = 255,
+	b = 50 }
+
+local kpbalken = {
+	name = &quot;kpbalken&quot;,
+	width = 150,
+	text = &quot;/&quot;,
+	r = 0,
+	g = 50,
+	b = 200 }
+	
+local parabalken = {
+	name = &quot;parabalken&quot;,
+	width = 20,
+	text = &quot;X&quot;,
+	r = 0,
+	g = 255,
+	b = 0 }
+
+
+statuszeile = { lpbalken, kpbalken, parabalken }
+statuszeile_sep = 5
+</script>
+                <eventHandlerList/>
+            </Script>
+        </ScriptGroup>
+        <ScriptGroup isActive="yes" isFolder="yes">
+            <name>Alte Wege</name>
+            <packageName></packageName>
+            <script>-- Damit ich vor Einsatz des Mappers schon mal herumirren kann,
+-- hier ein paar Funktionen, um die bisherigen Wege nutzen zu können.
+
+</script>
+            <eventHandlerList/>
+            <Script isActive="yes" isFolder="no">
+                <name>Wegeskripte fuer tf</name>
+                <packageName></packageName>
+                <script>function alt_dopath(wegestring)
+  if not type(wegestring) == &quot;string&quot; then
+		wegestring = &quot;&quot;
+	end
+	for w in string.gmatch(wegestring, &quot;%a+&quot;) do
+	  send(w)
+	end
+end
+
+function alt_ws(kommandos, lang)
+	if not type(kommandos) == &quot;table&quot; then
+		kommandos = {}
+	end
+	if not lang then
+		send(&quot;ultrakurz&quot;)
+	end
+	for k,v in ipairs(kommandos) do
+		-- Wenn &quot;#dopath&quot;, dann das Ali ausführen
+		if type(v) == &quot;string&quot; and string.sub(v,1,7) == &quot;#dopath&quot; then	
+			expandAlias(v)
+		else	
+		-- sonst ohne Ali Ersetzung senden (erst mal keine weiteren Ersetzungen
+		-- vorgesehen.
+			send(v)
+		end
+	end
+	if not lang then
+		send(&quot;lang&quot;)
+		send(&quot;schau&quot;)
+	end
+end</script>
+                <eventHandlerList/>
+            </Script>
+        </ScriptGroup>
+        <ScriptGroup isActive="yes" isFolder="yes">
+            <name>Debug</name>
+            <packageName></packageName>
+            <script>-- Ein paar Debugging-Funktionen</script>
+            <eventHandlerList/>
+            <Script isActive="yes" isFolder="no">
+                <name>Debug Ausgabe</name>
+                <packageName></packageName>
+                <script>function debugText(text)
+	echo(&quot;DEBUG: &quot; .. text)
+end
+
+function debugDisplay(obj)
+	echo(&quot;DEBUG: &quot;)
+	display(obj)
+end</script>
+                <eventHandlerList/>
+            </Script>
+        </ScriptGroup>
+        <ScriptGroup isActive="yes" isFolder="yes">
+            <name>GUI</name>
+            <packageName></packageName>
+            <script>-- Hierin sammel ich alles, was für die GUI von Wichtigkeit sein könnte
+-- Ich orientiere mich an godwar2.org (Port 3000)
+
+--[[
+Ich habe die FUnktionen mal von Zesstra übernommen, allerdings die 
+Balken an eine andere Stelle gepackt. Außerdem von Godwars2.org (port 3000) deren
+Funktionen übernommen, um mein Resize der Fenster die Sachen wieder anzeigen zu lassen.
+
+Etwas trickreich ist folgendes:
+Der &quot;Script name&quot; (bspw. &quot;zeigeVitaldaten&quot; muss genau dem Funktionsnamen für 
+diese Funktion entsprechen, sonst tut das nicht).
+]]--</script>
+            <eventHandlerList/>
+            <Script isActive="yes" isFolder="no">
+                <name>initGMCP</name>
+                <packageName></packageName>
+                <script>function initGMCP()	
+	sendGMCP( [[Core.Supports.Debug 20 ]])
+   sendGMCP( [[Core.Supports.Set [ &quot;MG.char 1&quot;, &quot;MG.room 1&quot; ] ]])
+-- sendGMCP( [[Core.Supports.Remove [ &quot;Char 1&quot; ] ]])		
+-- Wie kriegt man gmod dazu, wenn man nicht weiss, auf welchen User der Char registriert hat?
+   gmod.registerUser(&quot;MG-Package&quot;)
+   gmod.enableModule(&quot;MG-Package&quot;, &quot;MG.char&quot;)
+   gmod.enableModule(&quot;MG-Package&quot;, &quot;MG.room&quot;)
+end</script>
+                <eventHandlerList>
+                    <string>gmcp.Char</string>
+                </eventHandlerList>
+            </Script>
+            <Script isActive="yes" isFolder="no">
+                <name>initBase</name>
+                <packageName></packageName>
+                <script>function initBase() 
+	ME.name = gmcp.MG.char.base.name 
+end</script>
+                <eventHandlerList>
+                    <string>gmcp.MG.char.base</string>
+                </eventHandlerList>
+            </Script>
+            <Script isActive="yes" isFolder="no">
+                <name>zeigeVitaldaten</name>
+                <packageName></packageName>
+                <script>function zeigeVitaldaten()
+  setGauge(&quot;lpbalken&quot;,gmcp.MG.char.vitals.hp,gmcp.MG.char.maxvitals.max_hp, &quot;&quot;..gmcp.MG.char.vitals.hp .. &quot;/&quot; ..gmcp.MG.char.maxvitals.max_hp..&quot;&quot;)
+  setGauge(&quot;kpbalken&quot;,gmcp.MG.char.vitals.sp,gmcp.MG.char.maxvitals.max_sp, &quot;&quot;..gmcp.MG.char.vitals.sp .. &quot;/&quot; ..gmcp.MG.char.maxvitals.max_sp..&quot;&quot;)
+end
+</script>
+                <eventHandlerList>
+                    <string>gmcp.MG.char.vitals</string>
+                    <string>gmcp.MG.char.maxvitals</string>
+                </eventHandlerList>
+            </Script>
+            <Script isActive="yes" isFolder="no">
+                <name>zeigeGift</name>
+                <packageName></packageName>
+                <script>function zeigeGift()
+  val = gmcp.MG.char.vitals.poison
+  if val == 0 then
+    r = 0
+    g = 255
+    b = 50
+  else  -- Farbuebergang gelb-&gt;orange-&gt;rot 
+    r = 255
+    g = 255-val*25
+    b = 0
+  end
+  setBackgroundColor(&quot;healthbar&quot;, r, g, b, 255)
+end</script>
+                <eventHandlerList>
+                    <string>gmcp.MG.char.vitals</string>
+                </eventHandlerList>
+            </Script>
+            <Script isActive="yes" isFolder="no">
+                <name>zeigeVorsicht</name>
+                <packageName></packageName>
+                <script>function zeigeVorsicht()
+end
+</script>
+                <eventHandlerList/>
+            </Script>
+            <Script isActive="yes" isFolder="no">
+                <name>zeigeFluchtrichtung</name>
+                <packageName></packageName>
+                <script>function zeigeFluchtrichtung()
+end</script>
+                <eventHandlerList/>
+            </Script>
+            <Script isActive="yes" isFolder="no">
+                <name>zeigeParawelten</name>
+                <packageName></packageName>
+                <script>function zeigeParawelten()
+	if ME.para == 0 then
+		setBackgroundColor(&quot;parabalken&quot;, 0, 255, 0, 255)
+	end
+	if ME.para &gt; 0 then
+		setBackgroundColor(&quot;parabalken&quot;, 255,0,0,255)
+	end
+end</script>
+                <eventHandlerList/>
+            </Script>
+            <Script isActive="yes" isFolder="no">
+                <name>GUI aufbauen</name>
+                <packageName></packageName>
+                <script>-- taken from godwars2.org; zumindest der Idee nach
+
+-- die Statuszeilen müssen noch weitere dynamisiert werden, ich gehe
+-- momentan davon aus, dass das alles &quot;Gauge&quot;-Elemente sind. 
+
+textwindow_x = 0
+textwindow_y = 0
+
+function zeichneGUI(event, x, y)
+	if x ~= textwindow_x or y ~= textwindow_y then
+		textwindow_x = x
+		textwindow_y = y
+		local xpos = 0
+		for _,v in pairs(statuszeile) do
+			moveGauge(v.name, xpos, y)
+			xpos = xpos + v.width + statuszeile_sep	 
+		end
+	end 
+	zeigeVitaldaten()
+	zeigeGift()
+   zeigeParawelten()	
+   zeigeVorsicht()
+	zeigeFluchtrichtung()
+end
+
+-- dynamisches Anpassen der GUI:
+registerAnonymousEventHandler(&quot;sysWindowResizeEvent&quot;, &quot;zeichneGUI&quot;)
+
+function init()
+	initGMCP()
+	mainWidth, mainHeight = getMainWindowSize()
+
+	-- textFenster
+	setBorderTop(0)
+	setBorderBottom(25) -- bisschen Platz fuer Statuszeile
+	setBorderLeft(0)
+	setBorderRight(0)
+
+  	-- Bars aufbauen
+	local xpos = 0
+	for _,v in pairs(statuszeile) do
+		createGauge(v.name, v.width, 20, 
+			xpos, mainHeight-25,v.text,v.r,v.g,v.b)
+		xpos = xpos + v.width + statuszeile_sep
+	end 
+
+	zeigeVitaldaten()
+	zeigeGift()
+   zeigeParawelten()
+   zeigeVorsicht()
+	zeigeFluchtrichtung()
+end
+
+
+-- Initialisieren; sollte der letzte Aufruf im letzen Skript sein:
+init()
+</script>
+                <eventHandlerList/>
+            </Script>
+        </ScriptGroup>
+    </ScriptPackage>
+    <KeyPackage/>
+</MudletPackage>
