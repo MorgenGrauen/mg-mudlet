@@ -247,6 +247,26 @@ resetFormat()</script>
     <TimerPackage/>
     <AliasPackage>
         <AliasGroup isActive="yes" isFolder="yes">
+            <name>run-lua-code-v4</name>
+            <script></script>
+            <command></command>
+            <packageName>run-lua-code-v4</packageName>
+            <regex></regex>
+            <Alias isActive="yes" isFolder="no">
+                <name>run lua code</name>
+                <script>local f,e = loadstring(&quot;return &quot;..matches[2])
+if not f then
+	f,e = assert(loadstring(matches[2]))
+end
+
+local r = f()
+if r ~= nil then display(r) end</script>
+                <command></command>
+                <packageName></packageName>
+                <regex>^lua (.*)$</regex>
+            </Alias>
+        </AliasGroup>
+        <AliasGroup isActive="yes" isFolder="yes">
             <name>Krrrcks: Kleinkram</name>
             <script>--[[ Hier sammel ich Kleinkram, der nirgendwo anders gut hinpasst. Kleinere Skripte
 	und Aliase ]]--</script>
@@ -328,9 +348,6 @@ und den Aliasen zu finden.
 #haus&lt;name&gt; : Wenn man vor einem Seherhaus steht, kann man es damit  
   aufschließen, betreten und wieder verschließen. Achtung: Kein Leerzeichen
   zwischen &quot;#haus&quot; und dem Namen!
-#pfirsich: Steht man im Lupinental im richtigen Raum (wird via GMCP abgefragt),
-  dann bastelt man sich einen leuchtenden Pfirsich; geht aber nur, wenn man
-  ein Stück Kreide dabei hat.
 ]])</script>
                 <command></command>
                 <packageName></packageName>
