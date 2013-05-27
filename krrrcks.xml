@@ -3,7 +3,7 @@
 <MudletPackage version="1.0">
     <TriggerPackage>
         <TriggerGroup isActive="yes" isFolder="yes" isTempTrigger="no" isMultiline="no" isPerlSlashGOption="no" isColorizerTrigger="no" isFilterTrigger="no" isSoundTrigger="no" isColorTrigger="no" isColorTriggerFg="no" isColorTriggerBg="no">
-            <name>Farb-Trigger</name>
+            <name>Krrrcks: Farb-Trigger</name>
             <script></script>
             <triggerType>0</triggerType>
             <conditonLineDelta>0</conditonLineDelta>
@@ -247,62 +247,7 @@ resetFormat()</script>
     <TimerPackage/>
     <AliasPackage>
         <AliasGroup isActive="yes" isFolder="yes">
-            <name>deleteOldProfiles</name>
-            <script></script>
-            <command></command>
-            <packageName>deleteOldProfiles</packageName>
-            <regex></regex>
-            <Alias isActive="yes" isFolder="no">
-                <name>delete old profiles</name>
-                <script>deleteOldProfiles(matches[3], matches[2]==&quot;maps&quot;)
-
---Syntax examples: &quot;delete old profiles&quot;  -&gt; deletes profiles older than 31 days
---					&quot;delete old maps 10&quot;	-&gt; deletes maps older than 10 days</script>
-                <command></command>
-                <packageName></packageName>
-                <regex>^delete old (profiles|maps)(?: (\d+))?$</regex>
-            </Alias>
-        </AliasGroup>
-        <AliasGroup isActive="yes" isFolder="yes">
-            <name>echo</name>
-            <script></script>
-            <command></command>
-            <packageName>echo</packageName>
-            <regex></regex>
-            <Alias isActive="yes" isFolder="no">
-                <name>`echo</name>
-                <script>local s = matches[2]
-
-s = string.gsub(s, &quot;%$&quot;, &quot;\n&quot;)
-feedTriggers(&quot;\n&quot; .. s .. &quot;\n&quot;)
-echo(&quot;\n&quot;)</script>
-                <command></command>
-                <packageName></packageName>
-                <regex>`echo (.+)</regex>
-            </Alias>
-        </AliasGroup>
-        <AliasGroup isActive="yes" isFolder="yes">
-            <name>run-lua-code-v4</name>
-            <script></script>
-            <command></command>
-            <packageName>run-lua-code-v4</packageName>
-            <regex></regex>
-            <Alias isActive="yes" isFolder="no">
-                <name>run lua code</name>
-                <script>local f,e = loadstring(&quot;return &quot;..matches[2])
-if not f then
-	f,e = assert(loadstring(matches[2]))
-end
-
-local r = f()
-if r ~= nil then display(r) end</script>
-                <command></command>
-                <packageName></packageName>
-                <regex>^lua (.*)$</regex>
-            </Alias>
-        </AliasGroup>
-        <AliasGroup isActive="yes" isFolder="yes">
-            <name>Kleinkram</name>
+            <name>Krrrcks: Kleinkram</name>
             <script>--[[ Hier sammel ich Kleinkram, der nirgendwo anders gut hinpasst. Kleinere Skripte
 	und Aliase ]]--</script>
             <command></command>
@@ -389,7 +334,7 @@ und den Aliasen zu finden.
 ]])</script>
                 <command></command>
                 <packageName></packageName>
-                <regex>#help</regex>
+                <regex>^#help$</regex>
             </Alias>
             <Alias isActive="yes" isFolder="no">
                 <name>Home</name>
@@ -397,7 +342,7 @@ und den Aliasen zu finden.
 -- im Standard auf ; </script>
                 <command>#go haus|#haus</command>
                 <packageName></packageName>
-                <regex>#home</regex>
+                <regex>^#home$</regex>
             </Alias>
             <Alias isActive="yes" isFolder="no">
                 <name>Kämpfer: Grüße</name>
@@ -406,11 +351,11 @@ send(&quot;gruesse &quot;  .. matches[2])
 </script>
                 <command></command>
                 <packageName></packageName>
-                <regex>^#gruesse (.*)$</regex>
+                <regex>^#gruesse (.+)$</regex>
             </Alias>
         </AliasGroup>
         <AliasGroup isActive="yes" isFolder="yes">
-            <name>Alte Wege</name>
+            <name>Krrrcks: Alte Wege</name>
             <script>-- Die alten tf-Wegeskripte. 
 </script>
             <command></command>
@@ -459,68 +404,7 @@ alt_dopath(matches[2])</script>
     <ActionPackage/>
     <ScriptPackage>
         <ScriptGroup isActive="yes" isFolder="yes">
-            <name>deleteOldProfiles</name>
-            <packageName>deleteOldProfiles</packageName>
-            <script></script>
-            <eventHandlerList/>
-            <Script isActive="yes" isFolder="no">
-                <name>deleteOldProfiles</name>
-                <packageName></packageName>
-                <script>function deleteOldProfiles(keepdays_arg, delete_maps)
-
---[[
-	Deletes old profiles/maps in the &quot;current&quot;/&quot;map&quot; folders of the Mudlet home directory.
-	The following files are NOT deleted:
-	- Files newer than the amount of days specified as an argument to deleteOldProfiles(), or 31 days if not specified.	
-	- One file for every month before that. Specifically: The first available file of every month prior to this.
-	Setting the second argument to true will delete maps instead of profiles. (e.g. deleteOldProfiles(10, true))
---]]
-
-	local keepdays = tonumber(keepdays_arg) or 31
-	local profile_table = {}
-	local used_last_mod_months = {}
-	local slash = (string.char(getMudletHomeDir():byte()) == &quot;/&quot;) and &quot;/&quot; or &quot;\\&quot;
-	local dirpath = getMudletHomeDir()..slash..(delete_maps and &quot;map&quot; or &quot;current&quot;)
-	local delnum = 0
-
-	-- Traverse the profiles folder and create a table of files:
-	for filename in lfs.dir(dirpath) do
-		if filename~=&quot;.&quot; and filename~=&quot;..&quot; then
-			profile_table[#profile_table+1] = {name = filename, last_mod = lfs.attributes(dirpath..slash..filename, &quot;modification&quot;)}
-		end
-	end
-
-	-- Sort the table according to last modification date from old to new:
-	table.sort(profile_table, function (a,b) return a.last_mod &lt; b.last_mod end)
-
-	echo(string.format(&quot;\nDeleting old %s. Files newer than %d days and one profile for every month before that will be kept.&quot;, delete_maps and &quot;maps&quot; or &quot;profiles&quot;, keepdays))
-	for i,v in ipairs(profile_table) do
-		local days = math.floor(os.difftime(os.time(), v.last_mod)/86400)
-		local last_mod_month = os.date(&quot;%Y/%m&quot;, v.last_mod)
-		if days &gt; keepdays then
-			-- For profiles older than X days, check if we already kept a table for this month:
-			if not table.contains(used_last_mod_months, last_mod_month) then
-				-- If not, do nothing and mark this month as &quot;kept&quot;.
-				used_last_mod_months[#used_last_mod_months+1] = last_mod_month
-			else
-				-- Otherwise remove the file:
-				local success, errorstring = os.remove(dirpath..slash..v.name)
-				if success then
-					delnum = delnum + 1
-				else
-					cecho(&quot;\n&lt;red&gt;ERROR: &quot;..errorstring)
-				end
-			end
-		end
-	end
-	echo(string.format(&quot;\nDeletion complete. %d/%d files were removed successfully.&quot;, delnum, #profile_table))
-end
-</script>
-                <eventHandlerList/>
-            </Script>
-        </ScriptGroup>
-        <ScriptGroup isActive="yes" isFolder="yes">
-            <name>Einstellungen</name>
+            <name>Krrrcks: Einstellungen</name>
             <packageName></packageName>
             <script>-- Einstellungen (Farben etc.)</script>
             <eventHandlerList/>
@@ -533,14 +417,34 @@ farben.vg =
   { komm = &quot;cyan&quot;,
     ebenen = &quot;magenta&quot;,
     info = &quot;green&quot;,
-    alarm = &quot;white&quot; }
+    alarm = &quot;white&quot;,
+    script = &quot;dark_green&quot; }
 farben.hg = 
   { komm = &quot;black&quot;,
     ebenen = &quot;black&quot;,
     info = &quot;black&quot;, 
-    alarm = &quot;red&quot; }
+    alarm = &quot;red&quot;,
+    script = &quot;black&quot; }
+
+-- komm: Kommunikation wie teile-mit
+-- ebenen: Einfaerben der &quot;normalen&quot; Ebenen
+-- info: Einfaerben von Informationen des Muds (Status Gegner)
+-- alarm: Alarm-Nachrichten
+-- script: Nachrichten, die nicht vom Mud, sondern von einem Script stammen.
 
 -- Einstellungen fuer Farben Kampfscroll
+
+function msg (type, what)
+  -- setzt VG und HG je nach Typ der Kommunikation
+  local vg = farben.vg[type]
+  local hg = farben.hg[type]
+
+  if vg and hg then
+    cecho(&quot;&lt;&quot;..vg..&quot;:&quot;..hg..&quot;&gt;&quot;..what)
+  else
+    echo(what)
+  end
+end
 </script>
                 <eventHandlerList/>
             </Script>
@@ -560,7 +464,6 @@ ME.fluchtrichtung = &quot;&quot;
 -- Fluchtrichtung
 -- Para
 
-
 wege = {}
 </script>
                 <eventHandlerList/>
@@ -575,39 +478,52 @@ wege = {}
 	dann die Reihenfolge und welche Teile angezeigt werden, anpassen. Ob das
 	so für alle Anzeigen funktionieren kann, muss ich noch sehen. ]]-- 
 
-local lpbalken = {
+statuszeile = {}
+statuszeile.elemente = {
+ lpbalken = {
 	name = &quot;lpbalken&quot;,
 	width = 150,
 	text = &quot;/&quot;,
 	r = 0,
 	g = 255,
-	b = 50 }
-
-local kpbalken = {
+	b = 50 },
+ kpbalken = {
 	name = &quot;kpbalken&quot;,
 	width = 150,
 	text = &quot;/&quot;,
 	r = 0,
 	g = 50,
-	b = 200 }
-	
-local parabalken = {
+	b = 200 },
+ parabalken = {
 	name = &quot;parabalken&quot;,
 	width = 20,
 	text = &quot;X&quot;,
 	r = 0,
 	g = 255,
-	b = 0 }
+	b = 0 },
+ vorsicht = {
+   name =&quot;vorsicht&quot;,
+   width = 150,
+   text = &quot;V: - | FR: -&quot;,
+   wimpy = 0, -- Wert mal mit abspeichern, um Aenderungen zu bemerken
+   dir = 0,   -- Wert mal mit abspeichern, um Aenderungen zu bemerken
+   r = 50,
+   g = 50,
+   b = 50}}
 
-
-statuszeile = { lpbalken, kpbalken, parabalken }
-statuszeile_sep = 5
+statuszeile.anordnung = { &quot;lpbalken&quot;, &quot;kpbalken&quot;, &quot;parabalken&quot;, &quot;vorsicht&quot; }
+-- ^^ Hier werden die jeweiligen Untertables benannt, das ist dann der
+-- Name des gesamten Tables und nicht nur der .name davon; hier ist
+-- Zufall, dass das die gleiche Bezeichnung ist.
+-- Spaeter werden die Daten dann immer aus statuszeile.elemente[&quot;lpbalken&quot;]...
+-- genommen. 
+statuszeile.sep_px = 5
 </script>
                 <eventHandlerList/>
             </Script>
         </ScriptGroup>
         <ScriptGroup isActive="yes" isFolder="yes">
-            <name>Alte Wege</name>
+            <name>Krrrcks: Alte Wege</name>
             <packageName></packageName>
             <script>-- Damit ich vor Einsatz des Mappers schon mal herumirren kann,
 -- hier ein paar Funktionen, um die bisherigen Wege nutzen zu können.
@@ -634,8 +550,10 @@ function alt_ws(kommandos, lang)
 		send(&quot;ultrakurz&quot;)
 	end
 	for k,v in ipairs(kommandos) do
-		-- Wenn &quot;#dopath&quot;, dann das Ali ausführen
-		if type(v) == &quot;string&quot; and string.sub(v,1,7) == &quot;#dopath&quot; then	
+		-- Wenn &quot;#dopath&quot; oder &quot;#go&quot;, dann das Ali ausführen
+		if (type(v) == &quot;string&quot; and string.sub(v,1,7) == &quot;#dopath&quot;)
+			or (type(v) == &quot;string&quot; and string.sub(v,1,3) == &quot;#go&quot;) 
+	   then	
 			expandAlias(v)
 		else	
 		-- sonst ohne Ali Ersetzung senden (erst mal keine weiteren Ersetzungen
@@ -652,7 +570,7 @@ end</script>
             </Script>
         </ScriptGroup>
         <ScriptGroup isActive="yes" isFolder="yes">
-            <name>Debug</name>
+            <name>Krrrcks: Debug</name>
             <packageName></packageName>
             <script>-- Ein paar Debugging-Funktionen</script>
             <eventHandlerList/>
@@ -671,7 +589,7 @@ end</script>
             </Script>
         </ScriptGroup>
         <ScriptGroup isActive="yes" isFolder="yes">
-            <name>GUI</name>
+            <name>Krrrcks: GUI</name>
             <packageName></packageName>
             <script>-- Hierin sammel ich alles, was für die GUI von Wichtigkeit sein könnte
 -- Ich orientiere mich an godwar2.org (Port 3000)
@@ -716,13 +634,22 @@ end</script>
                 <name>zeigeVitaldaten</name>
                 <packageName></packageName>
                 <script>function zeigeVitaldaten()
-  setGauge(&quot;lpbalken&quot;,gmcp.MG.char.vitals.hp,gmcp.MG.char.maxvitals.max_hp, &quot;&quot;..gmcp.MG.char.vitals.hp .. &quot;/&quot; ..gmcp.MG.char.maxvitals.max_hp..&quot;&quot;)
-  setGauge(&quot;kpbalken&quot;,gmcp.MG.char.vitals.sp,gmcp.MG.char.maxvitals.max_sp, &quot;&quot;..gmcp.MG.char.vitals.sp .. &quot;/&quot; ..gmcp.MG.char.maxvitals.max_sp..&quot;&quot;)
+  setGauge(statuszeile.elemente.lpbalken.name,
+           gmcp.MG.char.vitals.hp,
+           gmcp.MG.char.maxvitals.max_hp, 
+           &quot;&quot;..gmcp.MG.char.base.name..&quot; [&quot;..gmcp.MG.char.info.level..&quot;] &quot;..
+           &quot;&quot;..gmcp.MG.char.vitals.hp .. &quot;/&quot; ..gmcp.MG.char.maxvitals.max_hp..&quot;&quot;)
+  setGauge(statuszeile.elemente.kpbalken.name,
+           gmcp.MG.char.vitals.sp,
+           gmcp.MG.char.maxvitals.max_sp, 
+           &quot;&quot;..gmcp.MG.char.vitals.sp .. &quot;/&quot; ..gmcp.MG.char.maxvitals.max_sp..&quot;&quot;)
 end
 </script>
                 <eventHandlerList>
                     <string>gmcp.MG.char.vitals</string>
                     <string>gmcp.MG.char.maxvitals</string>
+                    <string>gmcp.MG.char.base</string>
+                    <string>gmcp.MG.char.info</string>
                 </eventHandlerList>
             </Script>
             <Script isActive="yes" isFolder="no">
@@ -739,36 +666,43 @@ end
     g = 255-val*25
     b = 0
   end
-  setBackgroundColor(&quot;healthbar&quot;, r, g, b, 255)
+  setBackgroundColor(statuszeile.elemente.lpbalken.name, r, g, b, 255)
 end</script>
                 <eventHandlerList>
                     <string>gmcp.MG.char.vitals</string>
                 </eventHandlerList>
             </Script>
             <Script isActive="yes" isFolder="no">
-                <name>zeigeVorsicht</name>
+                <name>zeigeVorsichtFluchtrichtung</name>
                 <packageName></packageName>
-                <script>function zeigeVorsicht()
+                <script>function zeigeVorsichtFluchtrichtung()
+
+  local fr = gmcp.MG.char.wimpy.wimpy_dir
+
+  if fr == 0 then
+    fr = &quot;(keine)&quot;
+  end
+
+  setGauge(statuszeile.elemente.vorsicht.name,
+           gmcp.MG.char.wimpy.wimpy,
+           gmcp.MG.char.wimpy.wimpy, 
+           &quot;V: &quot;..gmcp.MG.char.wimpy.wimpy..&quot; | FR: &quot;..
+            fr..&quot;&quot;)
 end
 </script>
-                <eventHandlerList/>
-            </Script>
-            <Script isActive="yes" isFolder="no">
-                <name>zeigeFluchtrichtung</name>
-                <packageName></packageName>
-                <script>function zeigeFluchtrichtung()
-end</script>
-                <eventHandlerList/>
+                <eventHandlerList>
+                    <string>gmcp.MG.char.wimpy</string>
+                </eventHandlerList>
             </Script>
             <Script isActive="yes" isFolder="no">
                 <name>zeigeParawelten</name>
                 <packageName></packageName>
                 <script>function zeigeParawelten()
 	if ME.para == 0 then
-		setBackgroundColor(&quot;parabalken&quot;, 0, 255, 0, 255)
+		setBackgroundColor(statuszeile.elemente.parabalken.name, 0, 255, 0, 255)
 	end
 	if ME.para &gt; 0 then
-		setBackgroundColor(&quot;parabalken&quot;, 255,0,0,255)
+		setBackgroundColor(statuszeile.elemente.parabalken.name, 255,0,0,255)
 	end
 end</script>
                 <eventHandlerList/>
@@ -785,20 +719,22 @@ textwindow_x = 0
 textwindow_y = 0
 
 function zeichneGUI(event, x, y)
+-- dass die Element bisher alle &quot;Gauge&quot;-Elemente sind ist eher
+-- daemlich, dass weiss ich auch; aber das wird zukuenftig noch
+-- ueberarbeitet.
 	if x ~= textwindow_x or y ~= textwindow_y then
 		textwindow_x = x
 		textwindow_y = y
 		local xpos = 0
-		for _,v in pairs(statuszeile) do
-			moveGauge(v.name, xpos, y)
-			xpos = xpos + v.width + statuszeile_sep	 
+		for _,v in pairs(statuszeile.anordnung) do
+			moveGauge(statuszeile.elemente[v].name, xpos, y)
+			xpos = xpos + statuszeile.elemente[v].width + statuszeile.sep_px	 
 		end
 	end 
 	zeigeVitaldaten()
 	zeigeGift()
    zeigeParawelten()	
-   zeigeVorsicht()
-	zeigeFluchtrichtung()
+   zeigeVorsichtFluchtrichtung()
 end
 
 -- dynamisches Anpassen der GUI:
@@ -816,17 +752,21 @@ function init()
 
   	-- Bars aufbauen
 	local xpos = 0
-	for _,v in pairs(statuszeile) do
-		createGauge(v.name, v.width, 20, 
-			xpos, mainHeight-25,v.text,v.r,v.g,v.b)
-		xpos = xpos + v.width + statuszeile_sep
+	for _,v in pairs(statuszeile.anordnung) do
+		createGauge(statuszeile.elemente[v].name, 
+                  statuszeile.elemente[v].width, 20, 
+			xpos, mainHeight-25,
+         statuszeile.elemente[v].text,
+         statuszeile.elemente[v].r,
+         statuszeile.elemente[v].g,
+         statuszeile.elemente[v].b)
+		xpos = xpos + statuszeile.elemente[v].width + statuszeile.sep_px
 	end 
 
 	zeigeVitaldaten()
 	zeigeGift()
    zeigeParawelten()
-   zeigeVorsicht()
-	zeigeFluchtrichtung()
+   zeigeVorsichtFluchtrichtung()
 end
 
 
