@@ -1,4 +1,4 @@
-<?xml version="1.0" encoding="UTF-8"?>
+﻿<?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE MudletPackage>
 <MudletPackage version="1.0">
     <TriggerPackage>
@@ -97,14 +97,19 @@ resetFormat()</script>
                 <script>local zustand = {}
  
 zustand[&quot;ist absolut fit.&quot;] = 1
-zustand[&quot;ist leicht geschwaecht.&quot;] = 0.9
-zustand[&quot;fuehlte sich auch schon besser.&quot;] = 0.8
-zustand[&quot;ist leicht angekratzt.&quot;] =0.7 
-zustand[&quot;ist nicht mehr taufrisch.&quot;] = 0.6
-zustand[&quot;sieht recht mitgenommen aus.&quot;] = 0.5
+zustand[&quot;ist leicht geschwaecht.&quot;] = 0.9 -- Kaempfer Fokus
+zustand[&quot;ist schon etwas geschwaecht.&quot;] = 0.9 -- untersuche
+zustand[&quot;fuehlte sich auch schon besser.&quot;] = 0.8 -- Kaempfer Fokus
+zustand[&quot;fuehlte sich heute schon besser.&quot;] = 0.8 -- untersuche
+zustand[&quot;ist leicht angekratzt.&quot;] = 0.7 -- Kaempfer Fokus
+zustand[&quot;ist leicht angeschlagen.&quot;] = 0.7 -- untersuche
+zustand[&quot;ist nicht mehr taufrisch.&quot;] = 0.6 -- Kaempfer Fokus
+zustand[&quot;sieht nicht mehr taufrisch aus.&quot;] = 0.6 -- untersuche
+zustand[&quot;sieht recht mitgenommen aus.&quot;] = 0.5 -- Kaempfer Fokus
+zustand[&quot;macht einen mitgenommenen Eindruck.&quot;] = 0.5 -- untersuche
 zustand[&quot;wankt bereits bedenklich.&quot;] = 0.4
 zustand[&quot;ist in keiner guten Verfassung.&quot;] = 0.3
-zustand[&quot;braucht dringend einen Arzt.&quot;]  = 0.2
+zustand[&quot;braucht dringend einen Arzt.&quot;] = 0.2
 zustand[&quot;steht auf der Schwelle des Todes.&quot;]= 0.1
 
 selectCurrentLine()
@@ -133,16 +138,26 @@ echo(ausgabe)</script>
                 <regexCodeList>
                     <string>ist absolut fit.</string>
                     <string>ist leicht geschwaecht.</string>
+                    <string>ist schon etwas geschwaecht.</string>
                     <string>fuehlte sich auch schon besser.</string>
+                    <string>fuehlte sich heute schon besser.</string>
                     <string>ist leicht angekratzt.</string>
+                    <string>ist leicht angeschlagen.</string>
                     <string>ist nicht mehr taufrisch.</string>
+                    <string>sieht nicht mehr taufrisch aus.</string>
                     <string>sieht recht mitgekommen aus.</string>
+                    <string>macht einen mitgenommenen Eindruck.</string>
                     <string>wankt bereits bedenklich.</string>
                     <string>ist in keiner guten Verfassung.</string>
                     <string>braucht dringend einen Arzt.</string>
                     <string>steht auf der Schwelle des Todes.</string>
                 </regexCodeList>
                 <regexCodePropertyList>
+                    <integer>0</integer>
+                    <integer>0</integer>
+                    <integer>0</integer>
+                    <integer>0</integer>
+                    <integer>0</integer>
                     <integer>0</integer>
                     <integer>0</integer>
                     <integer>0</integer>
