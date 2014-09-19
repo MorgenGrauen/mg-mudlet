@@ -256,6 +256,7 @@ resetFormat()</script>
                 </regexCodeList>
                 <regexCodePropertyList>
                     <integer>1</integer>
+                    <integer>1</integer>
                 </regexCodePropertyList>
             </Trigger>
         </TriggerGroup>
