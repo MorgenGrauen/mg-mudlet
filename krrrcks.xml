@@ -490,6 +490,8 @@ ME.name = &quot;Lev&quot;
 ME.para = 0
 ME.vorsicht = 0
 ME.fluchtrichtung = &quot;&quot;
+ME.hp_old = 0
+ME.mp_old = 0
 
 -- In die Statuszeile noch aufnehmen:
 -- Vorsicht
@@ -657,6 +659,7 @@ end</script>
                 <packageName></packageName>
                 <script>function initBase() 
 	ME.name = gmcp.MG.char.base.name 
+        ME.level = gmcp.MG.char.info.level
 end</script>
                 <eventHandlerList>
                     <string>gmcp.MG.char.base</string>
@@ -666,15 +669,38 @@ end</script>
                 <name>zeigeVitaldaten</name>
                 <packageName></packageName>
                 <script>function zeigeVitaldaten()
+
+  ME.hp_now = gmcp.MG.char.vitals.hp
+  ME.hp_max = gmcp.MG.char.maxvitals.max_hp
+  ME.mp_now = gmcp.MG.char.vitals.sp
+  ME.mp_max = gmcp.MG.char.maxvitals.max_sp
+
+  
+  if ME.hp_now &lt; ME.hp_old then
+    -- echo(&quot;Au!&quot;)
+    lpbalkenBlinken(0.2)
+  end
+
+  ME.hp_old = ME.hp_now
+
   setGauge(statuszeile.elemente.lpbalken.name,
-           gmcp.MG.char.vitals.hp,
-           gmcp.MG.char.maxvitals.max_hp, 
-           &quot;&quot;..gmcp.MG.char.base.name..&quot; [&quot;..gmcp.MG.char.info.level..&quot;] &quot;..
-           &quot;&quot;..gmcp.MG.char.vitals.hp .. &quot;/&quot; ..gmcp.MG.char.maxvitals.max_hp..&quot;&quot;)
+           ME.hp_now,
+           ME.hp_max, 
+           &quot;&quot;.. ME.name ..&quot; [&quot;.. ME.level ..&quot;] &quot;..
+           &quot;&quot;.. ME.hp_now .. &quot;/&quot; ..ME.hp_max..&quot;&quot;)
+
   setGauge(statuszeile.elemente.kpbalken.name,
-           gmcp.MG.char.vitals.sp,
-           gmcp.MG.char.maxvitals.max_sp, 
-           &quot;&quot;..gmcp.MG.char.vitals.sp .. &quot;/&quot; ..gmcp.MG.char.maxvitals.max_sp..&quot;&quot;)
+           ME.mp_now,
+           ME.mp_max, 
+           &quot;&quot;.. ME.mp_now .. &quot;/&quot; ..ME.mp_max..&quot;&quot;)
+
+end
+
+function lpbalkenBlinken(dauer)
+
+  setGaugeStyleSheet(&quot;lpbalken&quot;, [[background-color: red]])
+  tempTimer(dauer, [[ zeigeGift() ]])
+
 end
 </script>
                 <eventHandlerList>
@@ -688,17 +714,18 @@ end
                 <name>zeigeGift</name>
                 <packageName></packageName>
                 <script>function zeigeGift()
-  val = gmcp.MG.char.vitals.poison
-  if val == 0 then
+  ME.poison = gmcp.MG.char.vitals.poison
+  if ME.poison == 0 then
     r = 0
     g = 255
     b = 50
   else  -- Farbuebergang gelb-&gt;orange-&gt;rot 
     r = 255
-    g = 255-val*25
+    g = 255 - ME.poison * 25
     b = 0
   end
   setBackgroundColor(statuszeile.elemente.lpbalken.name, r, g, b, 255)
+  setGaugeStyleSheet(statuszeile.elemente.lpbalken.name, [[]])
 end</script>
                 <eventHandlerList>
                     <string>gmcp.MG.char.vitals</string>
