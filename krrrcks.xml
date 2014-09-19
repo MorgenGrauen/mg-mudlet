@@ -252,6 +252,7 @@ resetFormat()</script>
                 <colorTriggerBgColor>#000000</colorTriggerBgColor>
                 <regexCodeList>
                     <string>^(.*)Du bist hier im Innern einer (.*) schimmernden Kugel,$</string>
+                    <string>^(.*)Im Innern einer (.*) schimmernden Kugel.$</string>
                 </regexCodeList>
                 <regexCodePropertyList>
                     <integer>1</integer>
