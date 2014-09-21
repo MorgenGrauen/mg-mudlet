@@ -112,9 +112,6 @@ zustand[&quot;ist in keiner guten Verfassung.&quot;] = 0.3
 zustand[&quot;braucht dringend einen Arzt.&quot;] = 0.2
 zustand[&quot;steht auf der Schwelle des Todes.&quot;]= 0.1
 
-selectCurrentLine()
-fg(farben.vg.info)
-bg(farben.hg.info)
 
 local ausgabe = zustand[matches[1]]
 
@@ -124,7 +121,11 @@ else
   ausgabe = &quot; (???%)&quot;
 end
 
-echo(ausgabe)</script>
+selectCurrentLine()
+fg(farben.vg.info)
+bg(farben.hg.info)
+echo(ausgabe)
+resetFormat()</script>
                 <triggerType>0</triggerType>
                 <conditonLineDelta>0</conditonLineDelta>
                 <mStayOpen>0</mStayOpen>
