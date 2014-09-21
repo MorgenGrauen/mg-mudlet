@@ -79,12 +79,16 @@ resetFormat()</script>
                 <colorTriggerBgColor>#000000</colorTriggerBgColor>
                 <regexCodeList>
                     <string>[Trves:</string>
+                    <string>[Anfaenger:</string>
+                    <string>[Grats:</string>
                     <string>[Abenteuer:</string>
                     <string>[Allgemein:</string>
                     <string>[Seher:</string>
                     <string>[Tod:</string>
                 </regexCodeList>
                 <regexCodePropertyList>
+                    <integer>0</integer>
+                    <integer>0</integer>
                     <integer>0</integer>
                     <integer>0</integer>
                     <integer>0</integer>
