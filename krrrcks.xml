@@ -1,4 +1,4 @@
-﻿<?xml version="1.0" encoding="UTF-8"?>
+<?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE MudletPackage>
 <MudletPackage version="1.0">
     <TriggerPackage>
@@ -255,16 +255,16 @@ resetFormat()</script>
 selectCurrentLine()
 
 if (matches[3] == &quot;gruenlich&quot;) then
-	fg(farben.vg.info)
-	bg(farben.hg.info)
+    fg(farben.vg.info)
+    bg(farben.hg.info)
 
-  	ME.para = 0
+    ME.para = 0
 end
 
 if (matches[3] == &quot;roetlich&quot;) then
-	fg(farben.vg.alarm)
-	bg(farben.hg.alarm)
-	ME.para = 1
+    fg(farben.vg.alarm)
+    bg(farben.hg.alarm)
+    ME.para = 1
 end
 
 zeigeParawelten()
@@ -322,29 +322,9 @@ resetFormat()</script>
     <TimerPackage/>
     <AliasPackage>
         <AliasGroup isActive="yes" isFolder="yes">
-            <name>run-lua-code-v4</name>
-            <script></script>
-            <command></command>
-            <packageName>run-lua-code-v4</packageName>
-            <regex></regex>
-            <Alias isActive="yes" isFolder="no">
-                <name>run lua code</name>
-                <script>local f,e = loadstring(&quot;return &quot;..matches[2])
-if not f then
-	f,e = assert(loadstring(matches[2]))
-end
-
-local r = f()
-if r ~= nil then display(r) end</script>
-                <command></command>
-                <packageName></packageName>
-                <regex>^lua (.*)$</regex>
-            </Alias>
-        </AliasGroup>
-        <AliasGroup isActive="yes" isFolder="yes">
             <name>Krrrcks: Kleinkram</name>
             <script>--[[ Hier sammel ich Kleinkram, der nirgendwo anders gut hinpasst. Kleinere Skripte
-	und Aliase ]]--</script>
+    und Aliase ]]--</script>
             <command></command>
             <packageName></packageName>
             <regex></regex>
@@ -369,16 +349,16 @@ send(command);</script>
                 <script>-- Mit &quot;#haus&lt;name&gt;&quot; ein Seherhaus aufschliessen und betreten; 
 -- wird der Name weggelassen, wird automatisch ME.name angehaengt.
 
-wessen = matches[2] 
+local wessen = matches[2] 
 
 if wessen == &quot;&quot; then wessen = ME.name end
 
 if wessen then
-	send(&quot;schliesse haus von &quot; .. wessen .. &quot; auf&quot;)
-	send(&quot;oeffne haus von &quot; .. wessen)
-	send(&quot;betrete haus von &quot; .. wessen)
-	send(&quot;schliesse haus&quot;)
-	send(&quot;schliesse haus ab&quot;)
+    send(&quot;schliesse haus von &quot; .. wessen .. &quot; auf&quot;)
+    send(&quot;oeffne haus von &quot; .. wessen)
+    send(&quot;betrete haus von &quot; .. wessen)
+    send(&quot;schliesse haus&quot;)
+    send(&quot;schliesse haus ab&quot;)
 end</script>
                 <command></command>
                 <packageName></packageName>
@@ -389,16 +369,9 @@ end</script>
                 <script>fg(&quot;yellow&quot;)
 
 echo([[
-Dies sind ein paar Mudlet-Skripte, die sich Lev@MorgenGrauen gebastelt hat. 
 Folgende Sachen gibt es und funktionieren:
 
-* Aus dem Netz gesaugte Zusätze:
-- Ich habe das &quot;run-lua-code-v4&quot; hinzugenommen, damit kann man auf der Kommando-
-zeile mit &quot;lua &lt;blubb&gt;&quot; direkt Lua-Code ausführen.
-- Von Zesstra habe ich Ihre (https://github.com/zesstra) MGM-Scripts hinzu
-genommen. Die bedürfen aber noch einige Überarbeitung und fliegen anschließend
-denke ich auch wieder heraus.
-- Auch uebernommen habe ich aus dem Forum einige Einstellungen für Umlaute.
+* Umlaute werden erkannt und durch passende Umschreibungen ersetzt.
 
 * Einstellungen und auch Globale Variablen
 In &quot;Scripts-&gt;Einstellugnen&quot; habe ich einige globale Variablen und 
@@ -458,9 +431,9 @@ send(&quot;gruesse &quot;  .. matches[2])
                 <script>-- Die alten tf-Wegeskripte. 
 
 --[[ Gestartet werden diese mit &quot;#go &lt;ziel&gt;&quot;, dann wird 
-	Ziel ausgewählt und die Sachen zum Mud geschossen. Dabei
-	ist zu beachten, dass die meisten Skripte bei einem Portal
-	bzw. beim Sandtiger starten. ]]--
+    Ziel ausgewählt und die Sachen zum Mud geschossen. Dabei
+    ist zu beachten, dass die meisten Skripte bei einem Portal
+    bzw. beim Sandtiger starten. ]]--
 
 -- Als Beispiel zwei Wege: Sandtiger-Hochebene und zurueck.
 
@@ -546,72 +519,19 @@ end
                 <script>-- Variablen zum Spieler
 
 ME = {}
-ME.name = &quot;Lev&quot;
+ME.name = &quot;Jemand&quot;
+ME.stufe = 0
+
 ME.para = 0
 ME.vorsicht = 0
 ME.fluchtrichtung = &quot;&quot;
-ME.hp_old = 0
-ME.mp_old = 0
+ME.lp_alt = 0
 
--- In die Statuszeile noch aufnehmen:
--- Vorsicht
--- Fluchtrichtung
--- Para
+GUI = {}
+GUI.angezeigt = false
+GUI.lp_anzeige_blinkt = false
 
 wege = {}
-</script>
-                <eventHandlerList/>
-            </Script>
-            <Script isActive="yes" isFolder="no">
-                <name>Statuszeile</name>
-                <packageName></packageName>
-                <script>-- Einstellungen fuer die Statuszeile 
-
---[[ Hier werden die einzelnen Elemente der Statuszeile beschrieben und in 
-	der globalen Variable &quot;statuszeile&quot; zusammengefasst. Somit kann man dort 
-	dann die Reihenfolge und welche Teile angezeigt werden, anpassen. Ob das
-	so für alle Anzeigen funktionieren kann, muss ich noch sehen. ]]-- 
-
-statuszeile = {}
-statuszeile.elemente = {
- lpbalken = {
-	name = &quot;lpbalken&quot;,
-	width = 150,
-	text = &quot;/&quot;,
-	r = 0,
-	g = 255,
-	b = 50 },
- kpbalken = {
-	name = &quot;kpbalken&quot;,
-	width = 150,
-	text = &quot;/&quot;,
-	r = 0,
-	g = 200,
-	b = 200 },
- parabalken = {
-	name = &quot;parabalken&quot;,
-	width = 20,
-	text = &quot;X&quot;,
-	r = 0,
-	g = 255,
-	b = 0 },
- vorsicht = {
-   name =&quot;vorsicht&quot;,
-   width = 150,
-   text = &quot;V: - | FR: -&quot;,
-   wimpy = 0, -- Wert mal mit abspeichern, um Aenderungen zu bemerken
-   dir = 0,   -- Wert mal mit abspeichern, um Aenderungen zu bemerken
-   r = 200,
-   g = 200,
-   b = 200}}
-
-statuszeile.anordnung = { &quot;lpbalken&quot;, &quot;kpbalken&quot;, &quot;parabalken&quot;, &quot;vorsicht&quot; }
--- ^^ Hier werden die jeweiligen Untertables benannt, das ist dann der
--- Name des gesamten Tables und nicht nur der .name davon; hier ist
--- Zufall, dass das die gleiche Bezeichnung ist.
--- Spaeter werden die Daten dann immer aus statuszeile.elemente[&quot;lpbalken&quot;]...
--- genommen. 
-statuszeile.sep_px = 5
 </script>
                 <eventHandlerList/>
             </Script>
@@ -629,36 +549,36 @@ statuszeile.sep_px = 5
                 <packageName></packageName>
                 <script>function alt_dopath(wegestring)
   if not type(wegestring) == &quot;string&quot; then
-		wegestring = &quot;&quot;
-	end
-	for w in string.gmatch(wegestring, &quot;%a+&quot;) do
-	  send(w)
-	end
+        wegestring = &quot;&quot;
+    end
+    for w in string.gmatch(wegestring, &quot;%a+&quot;) do
+      send(w)
+    end
 end
 
 function alt_ws(kommandos, lang)
-	if not type(kommandos) == &quot;table&quot; then
-		kommandos = {}
-	end
-	if not lang then
-		send(&quot;ultrakurz&quot;)
-	end
-	for k,v in ipairs(kommandos) do
-		-- Wenn &quot;#dopath&quot; oder &quot;#go&quot;, dann das Ali ausführen
-		if (type(v) == &quot;string&quot; and string.sub(v,1,7) == &quot;#dopath&quot;)
-			or (type(v) == &quot;string&quot; and string.sub(v,1,3) == &quot;#go&quot;) 
-	   then	
-			expandAlias(v)
-		else	
-		-- sonst ohne Ali Ersetzung senden (erst mal keine weiteren Ersetzungen
-		-- vorgesehen.
-			send(v)
-		end
-	end
-	if not lang then
-		send(&quot;lang&quot;)
-		send(&quot;schau&quot;)
-	end
+    if not type(kommandos) == &quot;table&quot; then
+        kommandos = {}
+    end
+    if not lang then
+        send(&quot;ultrakurz&quot;)
+    end
+    for k,v in ipairs(kommandos) do
+        -- Wenn &quot;#dopath&quot; oder &quot;#go&quot;, dann das Ali ausführen
+        if (type(v) == &quot;string&quot; and string.sub(v,1,7) == &quot;#dopath&quot;)
+            or (type(v) == &quot;string&quot; and string.sub(v,1,3) == &quot;#go&quot;) 
+       then 
+            expandAlias(v)
+        else    
+        -- sonst ohne Ali Ersetzung senden (erst mal keine weiteren Ersetzungen
+        -- vorgesehen.
+            send(v)
+        end
+    end
+    if not lang then
+        send(&quot;lang&quot;)
+        send(&quot;schau&quot;)
+    end
 end</script>
                 <eventHandlerList/>
             </Script>
@@ -672,12 +592,12 @@ end</script>
                 <name>Debug Ausgabe</name>
                 <packageName></packageName>
                 <script>function debugText(text)
-	echo(&quot;DEBUG: &quot; .. text)
+    echo(&quot;DEBUG: &quot; .. text)
 end
 
 function debugDisplay(obj)
-	echo(&quot;DEBUG: &quot;)
-	display(obj)
+    echo(&quot;DEBUG: &quot;)
+    display(obj)
 end</script>
                 <eventHandlerList/>
             </Script>
@@ -686,13 +606,8 @@ end</script>
             <name>Krrrcks: GUI</name>
             <packageName></packageName>
             <script>-- Hierin sammel ich alles, was für die GUI von Wichtigkeit sein könnte
--- Ich orientiere mich an godwar2.org (Port 3000)
 
 --[[
-Ich habe die FUnktionen mal von Zesstra übernommen, allerdings die 
-Balken an eine andere Stelle gepackt. Außerdem von Godwars2.org (port 3000) deren
-Funktionen übernommen, um mein Resize der Fenster die Sachen wieder anzeigen zu lassen.
-
 Etwas trickreich ist folgendes:
 Der &quot;Script name&quot; (bspw. &quot;zeigeVitaldaten&quot; muss genau dem Funktionsnamen für 
 diese Funktion entsprechen, sonst tut das nicht).
@@ -701,14 +616,9 @@ diese Funktion entsprechen, sonst tut das nicht).
             <Script isActive="yes" isFolder="no">
                 <name>initGMCP</name>
                 <packageName></packageName>
-                <script>function initGMCP()	
-	sendGMCP( [[Core.Supports.Debug 20 ]])
-   sendGMCP( [[Core.Supports.Set [ &quot;MG.char 1&quot;, &quot;MG.room 1&quot; ] ]])
--- sendGMCP( [[Core.Supports.Remove [ &quot;Char 1&quot; ] ]])		
--- Wie kriegt man gmod dazu, wenn man nicht weiss, auf welchen User der Char registriert hat?
-   gmod.registerUser(&quot;MG-Package&quot;)
-   gmod.enableModule(&quot;MG-Package&quot;, &quot;MG.char&quot;)
-   gmod.enableModule(&quot;MG-Package&quot;, &quot;MG.room&quot;)
+                <script>function initGMCP() 
+    sendGMCP( [[Core.Supports.Debug 20 ]])
+    sendGMCP( [[Core.Supports.Set [ &quot;MG.char 1&quot;, &quot;MG.room 1&quot; ] ]])
 end</script>
                 <eventHandlerList>
                     <string>gmcp.Char</string>
@@ -718,11 +628,18 @@ end</script>
                 <name>initBase</name>
                 <packageName></packageName>
                 <script>function initBase() 
-	ME.name = gmcp.MG.char.base.name 
-        ME.level = gmcp.MG.char.info.level
+    ME.name = gmcp.MG.char.base.name 
+    ME.stufe = gmcp.MG.char.info.level
+
+    if not GUI.angezeigt then
+        initGUI()
+        GUI.angezeigt = true
+    end
+
 end</script>
                 <eventHandlerList>
                     <string>gmcp.MG.char.base</string>
+                    <string>gmcp.MG.char.info</string>
                 </eventHandlerList>
             </Script>
             <Script isActive="yes" isFolder="no">
@@ -730,167 +647,244 @@ end</script>
                 <packageName></packageName>
                 <script>function zeigeVitaldaten()
 
-  ME.hp_now = gmcp.MG.char.vitals.hp
-  ME.hp_max = gmcp.MG.char.maxvitals.max_hp
-  ME.mp_now = gmcp.MG.char.vitals.sp
-  ME.mp_max = gmcp.MG.char.maxvitals.max_sp
+  -- GMCP Vitaldaten merken
 
+  ME.lp = gmcp.MG.char.vitals.hp
+  ME.lp_max = gmcp.MG.char.maxvitals.max_hp
+  ME.kp = gmcp.MG.char.vitals.sp
+  ME.kp_max = gmcp.MG.char.maxvitals.max_sp
+
+  -- Werte der Balken aktualisieren
   
-  if ME.hp_now &lt; ME.hp_old then
+  GUI.lp_anzeige:setValue(ME.lp, ME.lp_max, 
+      &quot;&lt;b&gt; &quot; .. ME.lp .. &quot;/&quot; .. ME.lp_max .. &quot;&lt;/b&gt; &quot;)
+
+  GUI.kp_anzeige:setValue(ME.kp, ME.kp_max, 
+      &quot;&lt;b&gt; &quot; .. ME.kp .. &quot;/&quot; .. ME.kp_max .. &quot;&lt;/b&gt; &quot;)
+
+  -- Treffer? Dann LP Balken blinken lassen
+
+  if ME.lp &lt; ME.lp_alt then
     -- echo(&quot;Au!&quot;)
-    lpbalkenBlinken(0.2)
+    lp_anzeige_blinken(0.2)
+  else
+    if not GUI.lp_anzeige_blinkt then
+      lp_anzeige_faerben()
+    end
   end
-
-  ME.hp_old = ME.hp_now
-
-  setGauge(statuszeile.elemente.lpbalken.name,
-           ME.hp_now,
-           ME.hp_max, 
-           &quot;&quot;.. ME.name ..&quot; [&quot;.. ME.level ..&quot;] &quot;..
-           &quot;&quot;.. ME.hp_now .. &quot;/&quot; ..ME.hp_max..&quot;&quot;)
-
-  setGauge(statuszeile.elemente.kpbalken.name,
-           ME.mp_now,
-           ME.mp_max, 
-           &quot;&quot;.. ME.mp_now .. &quot;/&quot; ..ME.mp_max..&quot;&quot;)
+  ME.lp_alt = ME.lp
 
 end
 
-function lpbalkenBlinken(dauer)
+function lp_anzeige_faerben()
 
-  setGaugeStyleSheet(&quot;lpbalken&quot;, [[background-color: red]])
-  tempTimer(dauer, [[ zeigeGift() ]])
+  -- Je nach LP Verlust wird Farbe gruen/gelb/rot
+
+  local lp_quote = ME.lp / ME.lp_max
+  GUI.lp_anzeige:setColor(255 * (1 - lp_quote), 
+                          255 * lp_quote, 
+                          50)
+end
+
+function lp_anzeige_blinken(dauer)
+
+  GUI.lp_anzeige_blinkt = true
+  GUI.lp_anzeige:setColor(255, 0, 50) -- rot
+  tempTimer(dauer, [[ lp_anzeige_entblinken() ]])
 
 end
-</script>
+
+function lp_anzeige_entblinken()
+
+  GUI.lp_anzeige_blinkt = false
+  lp_anzeige_faerben()
+
+end</script>
                 <eventHandlerList>
                     <string>gmcp.MG.char.vitals</string>
                     <string>gmcp.MG.char.maxvitals</string>
-                    <string>gmcp.MG.char.base</string>
-                    <string>gmcp.MG.char.info</string>
                 </eventHandlerList>
             </Script>
             <Script isActive="yes" isFolder="no">
                 <name>zeigeGift</name>
                 <packageName></packageName>
                 <script>function zeigeGift()
-  ME.poison = gmcp.MG.char.vitals.poison
-  if ME.poison == 0 then
-    r = 0
-    g = 255
-    b = 50
+
+  ME.gift = gmcp.MG.char.vitals.poison
+  local zeile = &quot;&quot;
+
+  -- vergiftet?
+
+  if ME.gift == 0 then
+    r = 30
+    g = 30
+    b = 30
   else  -- Farbuebergang gelb-&gt;orange-&gt;rot 
     r = 255
-    g = 255 - ME.poison * 25
+    g = 255 - ME.gift * 25
     b = 0
+    zeile = &quot;&lt;black&gt;G I F T&quot;
   end
-  setBackgroundColor(statuszeile.elemente.lpbalken.name, r, g, b, 255)
-  setGaugeStyleSheet(statuszeile.elemente.lpbalken.name, [[]])
+
+  -- Statuszeile aktualisieren
+
+  GUI.gift:echo(zeile)
+  GUI.gift:setColor(r, g, b)
+
 end</script>
                 <eventHandlerList>
                     <string>gmcp.MG.char.vitals</string>
                 </eventHandlerList>
             </Script>
             <Script isActive="yes" isFolder="no">
-                <name>zeigeVorsichtFluchtrichtung</name>
+                <name>zeigeVorsicht</name>
                 <packageName></packageName>
-                <script>function zeigeVorsichtFluchtrichtung()
+                <script>function zeigeVorsicht()
 
-  local fr = gmcp.MG.char.wimpy.wimpy_dir
+  ME.vorsicht = gmcp.MG.char.wimpy.wimpy
+  ME.fluchtrichtung = gmcp.MG.char.wimpy.wimpy_dir
 
-  if fr == 0 then
-    fr = &quot;(keine)&quot;
+  -- Prinz Eisenherz?
+
+  if ME.vorsicht == 0 then
+    ME.vorsicht = &quot;NIX&quot;
   end
 
-  setGauge(statuszeile.elemente.vorsicht.name,
-           gmcp.MG.char.wimpy.wimpy,
-           gmcp.MG.char.wimpy.wimpy, 
-           &quot;V: &quot;..gmcp.MG.char.wimpy.wimpy..&quot; | FR: &quot;..
-            fr..&quot;&quot;)
-end
-</script>
+  local zeile = &quot;Vorsicht: &quot; .. ME.vorsicht
+
+  -- Fluchtrichtung anzeigen, nur wenn gesetzt
+
+  if ME.fluchtrichtung ~= 0 then
+    zeile = zeile .. &quot;, FR: &quot; .. ME.fluchtrichtung
+  end
+
+  -- Statuszeile aktualisieren
+
+  GUI.vorsicht:echo(zeile)
+
+end</script>
                 <eventHandlerList>
                     <string>gmcp.MG.char.wimpy</string>
                 </eventHandlerList>
-            </Script>
-            <Script isActive="yes" isFolder="no">
-                <name>zeigeParawelten</name>
+                </Script>
+                <Script isActive="yes" isFolder="no">
+                <name>zeigeRaum</name>
                 <packageName></packageName>
-                <script>function zeigeParawelten()
-	if ME.para == 0 then
-		setBackgroundColor(statuszeile.elemente.parabalken.name, 0, 255, 0, 255)
-	end
-	if ME.para &gt; 0 then
-		setBackgroundColor(statuszeile.elemente.parabalken.name, 255,0,0,255)
-	end
+                <script>function zeigeRaum()
+
+  ME.raum_kurz = gmcp.MG.room.info.short
+  ME.raum_region = gmcp.MG.room.info.domain
+  ME.raum_id = string.sub(gmcp.MG.room.info.id, 1, 5) 
+
+  -- Para?
+
+  if ME.para &gt; 0 then
+    ME.raum_region = &quot;Para-&quot; .. ME.raum_region
+    r = 255
+    g = 0
+    b = 0
+  else
+    r = 30
+    g = 30
+    b = 30
+  end
+
+  -- Statuszeile aktualisieren
+
+  GUI.spieler:echo(ME.name .. &quot; [&quot; .. ME.stufe .. &quot;]&quot;)
+
+  GUI.ort_raum:echo(ME.raum_kurz)
+  GUI.ort_region:echo(ME.raum_region .. &quot; [&quot; .. ME.raum_id .. &quot;]&quot;)
+
+  GUI.ort_raum:setColor(r, g, b)
+  GUI.ort_region:setColor(r, g, b)
+
 end</script>
-                <eventHandlerList/>
+                <eventHandlerList>
+                    <string>gmcp.MG.room</string>
+                </eventHandlerList>
             </Script>
             <Script isActive="yes" isFolder="no">
-                <name>GUI aufbauen</name>
-                <packageName></packageName>
-                <script>-- taken from godwars2.org; zumindest der Idee nach
+                <name>initGUI</name>
+                    <packageName></packageName>
+                    <script>function initGUI()
 
--- die Statuszeilen müssen noch weitere dynamisiert werden, ich gehe
--- momentan davon aus, dass das alles &quot;Gauge&quot;-Elemente sind. 
+  -- Textfenster begrenzen
+  setBorderTop(0)
+  setBorderBottom(65) -- bisschen Platz fuer Statuszeile
+  setBorderLeft(0)
+  setBorderRight(0)
 
-textwindow_x = 0
-textwindow_y = 0
+  -- Statuszeile malen. Layout wie folgt:
+  -- Zeile 1: charbar_1 (Name, Stufe), gift_balken, spacer, charbar_2 (Vorsicht, Fluchtrichtung)
+  -- Zeile 2: ortbar_2 (Region, Raumnummer, Para), ortbar_1 (Ort kurz)
+  -- Zeile 3: hpbar_name, hpbar (Lebenspunkte-Anzeige), mpbar_name, mpbar (KP-Anzeige), spacer2
 
-function zeichneGUI(event, x, y)
--- dass die Element bisher alle &quot;Gauge&quot;-Elemente sind ist eher
--- daemlich, dass weiss ich auch; aber das wird zukuenftig noch
--- ueberarbeitet.
-	if x ~= textwindow_x or y ~= textwindow_y then
-		textwindow_x = x
-		textwindow_y = y
-		local xpos = 0
-		for _,v in pairs(statuszeile.anordnung) do
-			moveGauge(statuszeile.elemente[v].name, xpos, y)
-			xpos = xpos + statuszeile.elemente[v].width + statuszeile.sep_px	 
-		end
-	end 
-	zeigeVitaldaten()
-	zeigeGift()
-   zeigeParawelten()	
-   zeigeVorsichtFluchtrichtung()
+  GUI.statuszeile = Geyser.Container:new({name = &quot;statuszeile&quot;, x=0, y=-70, width = 600, height=70})
+
+  -- Zeile 1
+  GUI.spieler = Geyser.Label:new({
+    name = &quot;spieler&quot;,
+    x = 0, y = -65,
+    width = 150, height = 20}, GUI.statuszeile)
+
+  GUI.gift = Geyser.Label:new({
+    name = &quot;gift&quot;,
+    x = 150, y = -65,
+    width = 50, height = 20}, GUI.statuszeile)
+
+  GUI.trenner_1 = Geyser.Label:new({
+    name = &quot;trenner_1&quot;,
+    x = 200, y = -65,
+    width = 50, height = 20}, GUI.statuszeile)
+
+  GUI.vorsicht = Geyser.Label:new({
+    name = &quot;vorsicht&quot;,
+    x = 250, y = -65,
+    width = 350, height = 20}, GUI.statuszeile)
+
+  -- Zeile 2  
+  GUI.ort_raum = Geyser.Label:new({
+    name = &quot;ort_raum&quot;,
+    x = 250, y = -45,
+    width = 350, height = 20}, GUI.statuszeile)
+
+  GUI.ort_region = Geyser.Label:new({
+    name = &quot;ort_region&quot;,
+    x = 0, y = -45,
+    width = 250, height = 20}, GUI.statuszeile)
+
+  -- Zeile 3
+  GUI.lp_titel = Geyser.Label:new({
+    name = &quot;lp_titel&quot;,
+    x = 0, y = -25,
+    width = 100, height = 20}, GUI.statuszeile)
+  GUI.lp_titel:echo(&quot;Lebenspunkte:&quot;)
+
+  GUI.lp_anzeige = Geyser.Gauge:new({
+    name = &quot;lp_anzeige&quot;,
+    x = 100, y = -25, 
+    width = 140, height = 20}, GUI.statuszeile)
+  GUI.lp_anzeige:setColor(0, 255, 50) 
+
+  GUI.kp_titel = Geyser.Label:new({
+    name = &quot;kp_titel&quot;,
+    x = 240, y = -25,
+    width = 110, height = 20}, GUI.statuszeile)
+  GUI.kp_titel:echo(&quot;&amp;nbsp;Konzentration:&quot;)
+
+  GUI.kp_anzeige = Geyser.Gauge:new({
+    name = &quot;kp_anzeige&quot;,
+    x = 350, y = -25,
+    width = 150, height = 20}, GUI.statuszeile)
+  GUI.kp_anzeige:setColor(0, 50, 250)
+
+  GUI.trenner_2 = Geyser.Label:new({
+    name = &quot;trenner_2&quot;,
+    x = 500, y = -25,
+    width = 100, height = 20}, GUI.statuszeile)
+
 end
-
--- dynamisches Anpassen der GUI:
-registerAnonymousEventHandler(&quot;sysWindowResizeEvent&quot;, &quot;zeichneGUI&quot;)
-
-function init()
-	initGMCP()
-	mainWidth, mainHeight = getMainWindowSize()
-
-	-- textFenster
-	setBorderTop(0)
-	setBorderBottom(25) -- bisschen Platz fuer Statuszeile
-	setBorderLeft(0)
-	setBorderRight(0)
-
-  	-- Bars aufbauen
-	local xpos = 0
-	for _,v in pairs(statuszeile.anordnung) do
-		createGauge(statuszeile.elemente[v].name, 
-                  statuszeile.elemente[v].width, 20, 
-			xpos, mainHeight-25,
-         statuszeile.elemente[v].text,
-         statuszeile.elemente[v].r,
-         statuszeile.elemente[v].g,
-         statuszeile.elemente[v].b)
-		xpos = xpos + statuszeile.elemente[v].width + statuszeile.sep_px
-	end 
-
-	zeigeVitaldaten()
-	zeigeGift()
-   zeigeParawelten()
-   zeigeVorsichtFluchtrichtung()
-end
-
-
--- Initialisieren; sollte der letzte Aufruf im letzen Skript sein:
-init()
 </script>
                 <eventHandlerList/>
             </Script>
