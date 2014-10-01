@@ -1,4 +1,4 @@
-﻿<?xml version="1.0" encoding="UTF-8"?>
+<?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE MudletPackage>
 <MudletPackage version="1.0">
     <TriggerPackage>
@@ -200,6 +200,30 @@ resetFormat()
                 </regexCodePropertyList>
             </Trigger>
             <Trigger isActive="yes" isFolder="no" isTempTrigger="no" isMultiline="no" isPerlSlashGOption="no" isColorizerTrigger="no" isFilterTrigger="no" isSoundTrigger="no" isColorTrigger="no" isColorTriggerFg="no" isColorTriggerBg="no">
+                <name>Kampf: Flucht</name>
+                <script>selectCurrentLine()
+fg(farben.vg.info)
+bg(farben.hg.info)
+resetFormat()
+</script>
+                <triggerType>0</triggerType>
+                <conditonLineDelta>0</conditonLineDelta>
+                <mStayOpen>0</mStayOpen>
+                <mCommand></mCommand>
+                <packageName></packageName>
+                <mFgColor>#ff0000</mFgColor>
+                <mBgColor>#ffff00</mBgColor>
+                <mSoundFile></mSoundFile>
+                <colorTriggerFgColor>#000000</colorTriggerFgColor>
+                <colorTriggerBgColor>#000000</colorTriggerBgColor>
+                <regexCodeList>
+                    <string>^Die Angst ist staerker als Du ... Du willst nur noch weg hier.$</string>
+                </regexCodeList>
+                <regexCodePropertyList>
+                    <integer>1</integer>
+                </regexCodePropertyList>
+            </Trigger>
+            <Trigger isActive="yes" isFolder="no" isTempTrigger="no" isMultiline="no" isPerlSlashGOption="no" isColorizerTrigger="no" isFilterTrigger="no" isSoundTrigger="no" isColorTrigger="no" isColorTriggerFg="no" isColorTriggerBg="no">
                 <name>Alarm: Post</name>
                 <script>selectCurrentLine()
 fg(farben.vg.alarm)
@@ -231,16 +255,16 @@ resetFormat()</script>
 selectCurrentLine()
 
 if (matches[3] == &quot;gruenlich&quot;) then
-	fg(farben.vg.info)
-	bg(farben.hg.info)
+    fg(farben.vg.info)
+    bg(farben.hg.info)
 
-  	ME.para = 0
+    ME.para = 0
 end
 
 if (matches[3] == &quot;roetlich&quot;) then
-	fg(farben.vg.alarm)
-	bg(farben.hg.alarm)
-	ME.para = 1
+    fg(farben.vg.alarm)
+    bg(farben.hg.alarm)
+    ME.para = 1
 end
 
 zeigeParawelten()
@@ -307,7 +331,7 @@ resetFormat()</script>
                 <name>run lua code</name>
                 <script>local f,e = loadstring(&quot;return &quot;..matches[2])
 if not f then
-	f,e = assert(loadstring(matches[2]))
+    f,e = assert(loadstring(matches[2]))
 end
 
 local r = f()
@@ -320,7 +344,7 @@ if r ~= nil then display(r) end</script>
         <AliasGroup isActive="yes" isFolder="yes">
             <name>Krrrcks: Kleinkram</name>
             <script>--[[ Hier sammel ich Kleinkram, der nirgendwo anders gut hinpasst. Kleinere Skripte
-	und Aliase ]]--</script>
+    und Aliase ]]--</script>
             <command></command>
             <packageName></packageName>
             <regex></regex>
@@ -350,11 +374,11 @@ wessen = matches[2]
 if wessen == &quot;&quot; then wessen = ME.name end
 
 if wessen then
-	send(&quot;schliesse haus von &quot; .. wessen .. &quot; auf&quot;)
-	send(&quot;oeffne haus von &quot; .. wessen)
-	send(&quot;betrete haus von &quot; .. wessen)
-	send(&quot;schliesse haus&quot;)
-	send(&quot;schliesse haus ab&quot;)
+    send(&quot;schliesse haus von &quot; .. wessen .. &quot; auf&quot;)
+    send(&quot;oeffne haus von &quot; .. wessen)
+    send(&quot;betrete haus von &quot; .. wessen)
+    send(&quot;schliesse haus&quot;)
+    send(&quot;schliesse haus ab&quot;)
 end</script>
                 <command></command>
                 <packageName></packageName>
@@ -434,9 +458,9 @@ send(&quot;gruesse &quot;  .. matches[2])
                 <script>-- Die alten tf-Wegeskripte. 
 
 --[[ Gestartet werden diese mit &quot;#go &lt;ziel&gt;&quot;, dann wird 
-	Ziel ausgewählt und die Sachen zum Mud geschossen. Dabei
-	ist zu beachten, dass die meisten Skripte bei einem Portal
-	bzw. beim Sandtiger starten. ]]--
+    Ziel ausgewählt und die Sachen zum Mud geschossen. Dabei
+    ist zu beachten, dass die meisten Skripte bei einem Portal
+    bzw. beim Sandtiger starten. ]]--
 
 -- Als Beispiel zwei Wege: Sandtiger-Hochebene und zurueck.
 
@@ -544,33 +568,33 @@ wege = {}
                 <script>-- Einstellungen fuer die Statuszeile 
 
 --[[ Hier werden die einzelnen Elemente der Statuszeile beschrieben und in 
-	der globalen Variable &quot;statuszeile&quot; zusammengefasst. Somit kann man dort 
-	dann die Reihenfolge und welche Teile angezeigt werden, anpassen. Ob das
-	so für alle Anzeigen funktionieren kann, muss ich noch sehen. ]]-- 
+    der globalen Variable &quot;statuszeile&quot; zusammengefasst. Somit kann man dort 
+    dann die Reihenfolge und welche Teile angezeigt werden, anpassen. Ob das
+    so für alle Anzeigen funktionieren kann, muss ich noch sehen. ]]-- 
 
 statuszeile = {}
 statuszeile.elemente = {
  lpbalken = {
-	name = &quot;lpbalken&quot;,
-	width = 150,
-	text = &quot;/&quot;,
-	r = 0,
-	g = 255,
-	b = 50 },
+    name = &quot;lpbalken&quot;,
+    width = 150,
+    text = &quot;/&quot;,
+    r = 0,
+    g = 255,
+    b = 50 },
  kpbalken = {
-	name = &quot;kpbalken&quot;,
-	width = 150,
-	text = &quot;/&quot;,
-	r = 0,
-	g = 200,
-	b = 200 },
+    name = &quot;kpbalken&quot;,
+    width = 150,
+    text = &quot;/&quot;,
+    r = 0,
+    g = 200,
+    b = 200 },
  parabalken = {
-	name = &quot;parabalken&quot;,
-	width = 20,
-	text = &quot;X&quot;,
-	r = 0,
-	g = 255,
-	b = 0 },
+    name = &quot;parabalken&quot;,
+    width = 20,
+    text = &quot;X&quot;,
+    r = 0,
+    g = 255,
+    b = 0 },
  vorsicht = {
    name =&quot;vorsicht&quot;,
    width = 150,
@@ -605,36 +629,36 @@ statuszeile.sep_px = 5
                 <packageName></packageName>
                 <script>function alt_dopath(wegestring)
   if not type(wegestring) == &quot;string&quot; then
-		wegestring = &quot;&quot;
-	end
-	for w in string.gmatch(wegestring, &quot;%a+&quot;) do
-	  send(w)
-	end
+        wegestring = &quot;&quot;
+    end
+    for w in string.gmatch(wegestring, &quot;%a+&quot;) do
+      send(w)
+    end
 end
 
 function alt_ws(kommandos, lang)
-	if not type(kommandos) == &quot;table&quot; then
-		kommandos = {}
-	end
-	if not lang then
-		send(&quot;ultrakurz&quot;)
-	end
-	for k,v in ipairs(kommandos) do
-		-- Wenn &quot;#dopath&quot; oder &quot;#go&quot;, dann das Ali ausführen
-		if (type(v) == &quot;string&quot; and string.sub(v,1,7) == &quot;#dopath&quot;)
-			or (type(v) == &quot;string&quot; and string.sub(v,1,3) == &quot;#go&quot;) 
-	   then	
-			expandAlias(v)
-		else	
-		-- sonst ohne Ali Ersetzung senden (erst mal keine weiteren Ersetzungen
-		-- vorgesehen.
-			send(v)
-		end
-	end
-	if not lang then
-		send(&quot;lang&quot;)
-		send(&quot;schau&quot;)
-	end
+    if not type(kommandos) == &quot;table&quot; then
+        kommandos = {}
+    end
+    if not lang then
+        send(&quot;ultrakurz&quot;)
+    end
+    for k,v in ipairs(kommandos) do
+        -- Wenn &quot;#dopath&quot; oder &quot;#go&quot;, dann das Ali ausführen
+        if (type(v) == &quot;string&quot; and string.sub(v,1,7) == &quot;#dopath&quot;)
+            or (type(v) == &quot;string&quot; and string.sub(v,1,3) == &quot;#go&quot;) 
+       then 
+            expandAlias(v)
+        else    
+        -- sonst ohne Ali Ersetzung senden (erst mal keine weiteren Ersetzungen
+        -- vorgesehen.
+            send(v)
+        end
+    end
+    if not lang then
+        send(&quot;lang&quot;)
+        send(&quot;schau&quot;)
+    end
 end</script>
                 <eventHandlerList/>
             </Script>
@@ -648,12 +672,12 @@ end</script>
                 <name>Debug Ausgabe</name>
                 <packageName></packageName>
                 <script>function debugText(text)
-	echo(&quot;DEBUG: &quot; .. text)
+    echo(&quot;DEBUG: &quot; .. text)
 end
 
 function debugDisplay(obj)
-	echo(&quot;DEBUG: &quot;)
-	display(obj)
+    echo(&quot;DEBUG: &quot;)
+    display(obj)
 end</script>
                 <eventHandlerList/>
             </Script>
@@ -677,10 +701,10 @@ diese Funktion entsprechen, sonst tut das nicht).
             <Script isActive="yes" isFolder="no">
                 <name>initGMCP</name>
                 <packageName></packageName>
-                <script>function initGMCP()	
-	sendGMCP( [[Core.Supports.Debug 20 ]])
+                <script>function initGMCP() 
+    sendGMCP( [[Core.Supports.Debug 20 ]])
    sendGMCP( [[Core.Supports.Set [ &quot;MG.char 1&quot;, &quot;MG.room 1&quot; ] ]])
--- sendGMCP( [[Core.Supports.Remove [ &quot;Char 1&quot; ] ]])		
+-- sendGMCP( [[Core.Supports.Remove [ &quot;Char 1&quot; ] ]])      
 -- Wie kriegt man gmod dazu, wenn man nicht weiss, auf welchen User der Char registriert hat?
    gmod.registerUser(&quot;MG-Package&quot;)
    gmod.enableModule(&quot;MG-Package&quot;, &quot;MG.char&quot;)
@@ -694,7 +718,7 @@ end</script>
                 <name>initBase</name>
                 <packageName></packageName>
                 <script>function initBase() 
-	ME.name = gmcp.MG.char.base.name 
+    ME.name = gmcp.MG.char.base.name 
         ME.level = gmcp.MG.char.info.level
 end</script>
                 <eventHandlerList>
@@ -793,12 +817,12 @@ end
                 <name>zeigeParawelten</name>
                 <packageName></packageName>
                 <script>function zeigeParawelten()
-	if ME.para == 0 then
-		setBackgroundColor(statuszeile.elemente.parabalken.name, 0, 255, 0, 255)
-	end
-	if ME.para &gt; 0 then
-		setBackgroundColor(statuszeile.elemente.parabalken.name, 255,0,0,255)
-	end
+    if ME.para == 0 then
+        setBackgroundColor(statuszeile.elemente.parabalken.name, 0, 255, 0, 255)
+    end
+    if ME.para &gt; 0 then
+        setBackgroundColor(statuszeile.elemente.parabalken.name, 255,0,0,255)
+    end
 end</script>
                 <eventHandlerList/>
             </Script>
@@ -817,18 +841,18 @@ function zeichneGUI(event, x, y)
 -- dass die Element bisher alle &quot;Gauge&quot;-Elemente sind ist eher
 -- daemlich, dass weiss ich auch; aber das wird zukuenftig noch
 -- ueberarbeitet.
-	if x ~= textwindow_x or y ~= textwindow_y then
-		textwindow_x = x
-		textwindow_y = y
-		local xpos = 0
-		for _,v in pairs(statuszeile.anordnung) do
-			moveGauge(statuszeile.elemente[v].name, xpos, y)
-			xpos = xpos + statuszeile.elemente[v].width + statuszeile.sep_px	 
-		end
-	end 
-	zeigeVitaldaten()
-	zeigeGift()
-   zeigeParawelten()	
+    if x ~= textwindow_x or y ~= textwindow_y then
+        textwindow_x = x
+        textwindow_y = y
+        local xpos = 0
+        for _,v in pairs(statuszeile.anordnung) do
+            moveGauge(statuszeile.elemente[v].name, xpos, y)
+            xpos = xpos + statuszeile.elemente[v].width + statuszeile.sep_px     
+        end
+    end 
+    zeigeVitaldaten()
+    zeigeGift()
+   zeigeParawelten()    
    zeigeVorsichtFluchtrichtung()
 end
 
@@ -836,30 +860,30 @@ end
 registerAnonymousEventHandler(&quot;sysWindowResizeEvent&quot;, &quot;zeichneGUI&quot;)
 
 function init()
-	initGMCP()
-	mainWidth, mainHeight = getMainWindowSize()
+    initGMCP()
+    mainWidth, mainHeight = getMainWindowSize()
 
-	-- textFenster
-	setBorderTop(0)
-	setBorderBottom(25) -- bisschen Platz fuer Statuszeile
-	setBorderLeft(0)
-	setBorderRight(0)
+    -- textFenster
+    setBorderTop(0)
+    setBorderBottom(25) -- bisschen Platz fuer Statuszeile
+    setBorderLeft(0)
+    setBorderRight(0)
 
-  	-- Bars aufbauen
-	local xpos = 0
-	for _,v in pairs(statuszeile.anordnung) do
-		createGauge(statuszeile.elemente[v].name, 
+    -- Bars aufbauen
+    local xpos = 0
+    for _,v in pairs(statuszeile.anordnung) do
+        createGauge(statuszeile.elemente[v].name, 
                   statuszeile.elemente[v].width, 20, 
-			xpos, mainHeight-25,
+            xpos, mainHeight-25,
          statuszeile.elemente[v].text,
          statuszeile.elemente[v].r,
          statuszeile.elemente[v].g,
          statuszeile.elemente[v].b)
-		xpos = xpos + statuszeile.elemente[v].width + statuszeile.sep_px
-	end 
+        xpos = xpos + statuszeile.elemente[v].width + statuszeile.sep_px
+    end 
 
-	zeigeVitaldaten()
-	zeigeGift()
+    zeigeVitaldaten()
+    zeigeGift()
    zeigeParawelten()
    zeigeVorsichtFluchtrichtung()
 end
