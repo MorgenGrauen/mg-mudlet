@@ -10,6 +10,7 @@ Zesstra
 -------
 
 * Gesammelte Morgengrauen-Mudlet-Scripte
+* grafische Balken für aktuelle LP und KP Anzeige
 * Versuche mit gmod.registerUser und gmod.enableModule
 
 
