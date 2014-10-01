@@ -1,16 +1,20 @@
-Autoren:
+Autoren
+=======
+
 * Zesstra@MorgenGrauen - https://github.com/zesstra/mgm-scripts
 * Lev@MorgenGrauen - https://github.com/krrrcks/krrrcks-mudlet
 * Zaphob@MorgenGrauen - https://github.com/kebap/krrrcks-mudlet
 
 
-== Zesstra ==
+Zesstra
+-------
 
 * Gesammelte Morgengrauen-Mudlet-Scripte
 * Versuche mit gmod.registerUser und gmod.enableModule
 
 
-== Lev ==
+Lev
+---
 
 * Von Zesstra habe ich Ihre MGM-Scripts hinzu genommen. Die bedürfen aber noch 
   einige Überarbeitung und fliegen anschließend denke ich auch wieder heraus. 
@@ -33,9 +37,10 @@ Autoren:
 * Einige Einfärbungen für Kommunikation, Alarm/Infos, usw.
 
 
-== Zaphob ==
+Zaphob
+------
 
-* Ich habe Krrrcks Code weiter voran getrieben. Ziel: Bereitstellung an Spieler.
+* Ich habe Levs Code weiter voran getrieben. Ziel: Bereitstellung an Spieler.
 
 * LP Anzeige blinkt bei Treffer
 * Para Erkennung & Anzeige verbessert
