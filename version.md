@@ -24,7 +24,7 @@ Lev
   um mein Resize der Fenster die Sachen wieder anzeigen zu lassen.
 
 * Ich habe das "run-lua-code-v4" hinzugenommen, damit kann man auf der Kommando-
-  zeile mit "lua <blubb>" direkt Lua-Code ausführen.
+  zeile mit "lua blubb" direkt den Lua-Befehl blubb ausführen.
 
 * Die Statuszeile wird noch etwas grumpelig aufgebaut, das muss ich noch etwas
   hübscher machen. (Ich habe alle Elemente mit createGauge hinzugefügt, das ergibt
