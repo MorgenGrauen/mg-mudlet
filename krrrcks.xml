@@ -267,7 +267,7 @@ if (matches[3] == &quot;roetlich&quot;) then
     ME.para = 1
 end
 
-zeigeParawelten()
+zeigeRaum()
 resetFormat()</script>
                 <triggerType>0</triggerType>
                 <conditonLineDelta>0</conditonLineDelta>
