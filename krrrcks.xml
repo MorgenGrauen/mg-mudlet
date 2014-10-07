@@ -62,41 +62,6 @@ resetFormat()</script>
                 </regexCodePropertyList>
             </Trigger>
             <Trigger isActive="yes" isFolder="no" isTempTrigger="no" isMultiline="no" isPerlSlashGOption="no" isColorizerTrigger="no" isFilterTrigger="no" isSoundTrigger="no" isColorTrigger="no" isColorTriggerFg="no" isColorTriggerBg="no">
-                <name>Ebenen</name>
-                <script>selectCurrentLine()
-fg(farben.vg.ebenen)
-bg(farben.hg.ebenen)
-resetFormat()</script>
-                <triggerType>0</triggerType>
-                <conditonLineDelta>0</conditonLineDelta>
-                <mStayOpen>0</mStayOpen>
-                <mCommand></mCommand>
-                <packageName></packageName>
-                <mFgColor>#ff0000</mFgColor>
-                <mBgColor>#ffff00</mBgColor>
-                <mSoundFile></mSoundFile>
-                <colorTriggerFgColor>#000000</colorTriggerFgColor>
-                <colorTriggerBgColor>#000000</colorTriggerBgColor>
-                <regexCodeList>
-                    <string>[Trves:</string>
-                    <string>[Anfaenger:</string>
-                    <string>[Grats:</string>
-                    <string>[Abenteuer:</string>
-                    <string>[Allgemein:</string>
-                    <string>[Seher:</string>
-                    <string>[Tod:</string>
-                </regexCodeList>
-                <regexCodePropertyList>
-                    <integer>0</integer>
-                    <integer>0</integer>
-                    <integer>0</integer>
-                    <integer>0</integer>
-                    <integer>0</integer>
-                    <integer>0</integer>
-                    <integer>0</integer>
-                </regexCodePropertyList>
-            </Trigger>
-            <Trigger isActive="yes" isFolder="no" isTempTrigger="no" isMultiline="no" isPerlSlashGOption="no" isColorizerTrigger="no" isFilterTrigger="no" isSoundTrigger="no" isColorTrigger="no" isColorTriggerFg="no" isColorTriggerBg="no">
                 <name>Kampf: Zustand</name>
                 <script>local zustand = {}
  
@@ -618,7 +583,7 @@ diese Funktion entsprechen, sonst tut das nicht).
                 <packageName></packageName>
                 <script>function initGMCP() 
     sendGMCP( [[Core.Supports.Debug 20 ]])
-    sendGMCP( [[Core.Supports.Set [ &quot;MG.char 1&quot;, &quot;MG.room 1&quot; ] ]])
+    sendGMCP( [[Core.Supports.Set [ &quot;MG.char 1&quot;, &quot;MG.room 1&quot;, &quot;comm.channel 1&quot; ] ]])
 end</script>
                 <eventHandlerList>
                     <string>gmcp.Char</string>
@@ -805,6 +770,19 @@ end</script>
                 </eventHandlerList>
             </Script>
             <Script isActive="yes" isFolder="no">
+                <name>zeigeEbenen</name>
+                <packageName></packageName>
+                <script>function zeigeEbenen()
+  fg(farben.vg.ebenen)
+  bg(farben.hg.ebenen)
+  echo(gmcp.comm.channel.msg)
+  resetFormat()
+end</script>
+                <eventHandlerList>
+                    <string>gmcp.comm.channel</string>
+                </eventHandlerList>
+                </Script>
+                <Script isActive="yes" isFolder="no">
                 <name>initGUI</name>
                     <packageName></packageName>
                     <script>function initGUI()
