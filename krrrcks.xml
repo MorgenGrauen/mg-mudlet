@@ -897,96 +897,96 @@ end</script>
         <keyCode>-1</keyCode> 
         <keyModifier>-1</keyModifier> 
       - <Key isActive="yes" isFolder="no">
-      -   <name>norden</name> 
+      -   <name>8: norden</name> 
         - <script /> 
     -     <command>norden</command> 
       -   <keyCode>56</keyCode> 
         - <keyModifier>536870912</keyModifier> 
         </Key>
       - <Key isActive="yes" isFolder="no">
-      -   <name>schau</name> 
+      -   <name>0: schau</name> 
         - <script /> 
         - <command>schau</command> 
         - <keyCode>48</keyCode> 
         - <keyModifier>536870912</keyModifier> 
         </Key>
       - <Key isActive="yes" isFolder="no">
-      -   <name>tanz</name> 
+      -   <name>5: tanz</name> 
         - <script /> 
         - <command>tanz</command> 
         - <keyCode>53</keyCode> 
         - <keyModifier>536870912</keyModifier> 
         </Key>
       - <Key isActive="yes" isFolder="no">
-        - <name>unten</name> 
+        - <name>+: unten</name> 
         - <script /> 
         - <command>unten</command> 
         - <keyCode>43</keyCode> 
         - <keyModifier>536870912</keyModifier> 
         </Key>
       - <Key isActive="yes" isFolder="no">
-        - <name>oben</name> 
+        - <name>-: oben</name> 
         - <script /> 
         - <command>oben</command> 
         - <keyCode>45</keyCode> 
         - <keyModifier>536870912</keyModifier> 
         </Key>
       - <Key isActive="yes" isFolder="no">
-        - <name>suedwesten</name> 
+        - <name>1: suedwesten</name> 
         - <script /> 
         - <command>suedwesten</command> 
         - <keyCode>49</keyCode> 
         - <keyModifier>536870912</keyModifier> 
         </Key>
       - <Key isActive="yes" isFolder="no">
-        - <name>suedosten</name> 
+        - <name>3: suedosten</name> 
         - <script /> 
         - <command>suedosten</command> 
         - <keyCode>51</keyCode> 
         - <keyModifier>536870912</keyModifier> 
         </Key>
       - <Key isActive="yes" isFolder="no">
-      -   <name>nordwesten</name> 
+      -   <name>7: nordwesten</name> 
         - <script /> 
         - <command>nordwesten</command> 
         - <keyCode>55</keyCode> 
         - <keyModifier>536870912</keyModifier> 
         </Key>
       - <Key isActive="yes" isFolder="no">
-        - <name>nordosten</name> 
+        - <name>9: nordosten</name> 
         - <script /> 
         - <command>nordosten</command> 
         - <keyCode>57</keyCode> 
         - <keyModifier>536870912</keyModifier> 
         </Key>
       - <Key isActive="yes" isFolder="no">
-        - <name>westen</name> 
+        - <name>4: westen</name> 
         - <script /> 
         - <command>westen</command> 
         - <keyCode>52</keyCode> 
         - <keyModifier>536870912</keyModifier> 
         </Key>
       - <Key isActive="yes" isFolder="no">
-        - <name>osten</name> 
+        - <name>6: osten</name> 
         - <script /> 
         - <command>osten</command> 
         - <keyCode>54</keyCode> 
         - <keyModifier>536870912</keyModifier> 
         </Key>
       - <Key isActive="yes" isFolder="no">
-        - <name>sueden</name> 
+        - <name>2: sueden</name> 
         - <script /> 
         - <command>sueden</command> 
         - <keyCode>50</keyCode> 
         - <keyModifier>536870912</keyModifier> 
       - </Key>
       - <Key isActive="yes" isFolder="no">
-        - <name>wink</name> 
+        - <name>x: raus</name> 
         - <script /> 
-        - <command>wink</command> 
-        - <keyCode>53</keyCode> 
-        - <keyModifier>536870912</keyModifier> 
-        </Key>
+        - <command>raus</command> 
+        - <keyCode>42</keyCode>
+        - <keyModifier>536870912</keyModifier>
+      - </Key>
       </KeyGroup>
     </KeyPackage>
 </MudletPackage>
