@@ -6,6 +6,11 @@ Autoren
 * Zaphob@MorgenGrauen - https://github.com/kebap/krrrcks-mudlet
 
 
+Versionen
+=========
+
+Derzeit keine Versionsnummern, eher evolutionäre Schübe oder sowas. :)
+
 Zesstra
 -------
 
