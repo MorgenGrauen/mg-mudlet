@@ -2,7 +2,7 @@ Autoren
 =======
 
 * Zesstra@MorgenGrauen - https://github.com/zesstra/mgm-scripts
-* Lev@MorgenGrauen - https://github.com/krrrcks/krrrcks-mudlet
+* Krrrcks@MorgenGrauen - https://github.com/krrrcks/krrrcks-mudlet
 * Zaphob@MorgenGrauen - https://github.com/kebap/krrrcks-mudlet
 
 
@@ -13,8 +13,8 @@ Zesstra
 * Versuche mit gmod.registerUser und gmod.enableModule
 
 
-Lev
----
+Krrrcks 
+-------
 
 * Von Zesstra habe ich Ihre MGM-Scripts hinzu genommen. Die bedürfen aber noch 
   einige Überarbeitung und fliegen anschließend denke ich auch wieder heraus. 
@@ -40,7 +40,7 @@ Lev
 Zaphob
 ------
 
-* Ich habe Levs Code weiter voran getrieben. Ziel: Bereitstellung an Spieler.
+* Ich habe Krrrcksens Code weiter voran getrieben. Ziel: Bereitstellung an Spieler.
 
 * LP Anzeige blinkt bei Treffer
 * Para Erkennung & Anzeige verbessert
@@ -53,6 +53,7 @@ Zaphob
   Hauptfokus darauf, die Skripte aus Alpha-Status herauszuholen. Refakturierung 
   kann wieder später folgen.) 
 
-* "run-lua-code" entfernt, da es neuerdings zum Mudlet-Standard gehört.
+* "run-lua-code" entfernt, da es seit Version 3.0 zum Mudlet-Standard gehört.
 * Fenster-Resize entfernt, bringt keinen Unterschied, hab ich nicht verstanden.
 
+* Bewegung über Nummerntasten am Keypad auf besonderen Wunsch eines einzelnen Herrn.
