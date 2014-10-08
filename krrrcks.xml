@@ -816,9 +816,9 @@ end</script>
   setBorderRight(0)
 
   -- Statuszeile malen. Layout wie folgt:
-  -- Zeile 1: charbar_1 (Name, Stufe), gift_balken, spacer, charbar_2 (Vorsicht, Fluchtrichtung)
-  -- Zeile 2: ortbar_2 (Region, Raumnummer, Para), ortbar_1 (Ort kurz)
-  -- Zeile 3: hpbar_name, hpbar (Lebenspunkte-Anzeige), mpbar_name, mpbar (KP-Anzeige), spacer2
+  -- Zeile 1: spieler (Name, Stufe), gift, trenner_1, vorsicht (Vorsicht, Fluchtrichtung)
+  -- Zeile 2: ort_raum (Region, Raumnummer, Para), ort_region (Ort kurz)
+  -- Zeile 3: lp_titel, lp_anzeige (Lebenspunkte-Anzeige), kp_titel, kp_anzeige (KP-Anzeige), trenner_2
 
   GUI.statuszeile = Geyser.Container:new({name = &quot;statuszeile&quot;, x=0, y=-70, width = 600, height=70})
 
