@@ -7,7 +7,7 @@ Das hier enthaltene Bündel an Skripten ist noch in Entwicklung.
 
 Wer Fehlerberichte, Anregungen oder Hinweise für Verbesserungen hat, nur her damit.
 
-Viele Grüße [von den Autoren](version.md).
+Viele Grüße [von den Autoren](version.md). Kontakt hier bei Github: [![Gitter](https://badges.gitter.im/Join Chat.svg)](https://gitter.im/Kebap/krrrcks-mudlet?utm_source=badge&utm_medium=badge&utm_campaign=pr-badge&utm_content=badge)
 
 
 Was schon funktioniert
