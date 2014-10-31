@@ -29,6 +29,7 @@ Was schon funktioniert
 * Hilfreiche Funktionen
  * Unterstützung für Wegeskripte, wie aus TinyFugue bekannt (go & dopath)
  * Umlaute werden bei Eingabe erkannt & beim Versand durch Äquivalente ersetzt
+ * Bewegung mittels Nummerntasten am Keypad
 
 * Farbige Hervorhebungen von verschiedenen Informationen
  * Kommunikation wie Ebenen, Mitteilungen, Team, uvm.
