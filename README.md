@@ -52,7 +52,7 @@ Kurzanleitung
 -------------
 
 * [XML Datei dieser Skripte](https://raw.githubusercontent.com/Kebap/krrrcks-mudlet/master/krrrcks.xml) speichern (Rechte Maustaste, Speichern unter ...)
-* Ggf. Mudlet installieren (getestet mit 3.0 und 2.1)
+* Ggf. Mudlet [installieren](http://www.mudlet.org/download) (getestet mit 3.0 und 2.1)
 * Neues Mudlet Profil erstellen für _mg.mud.de_ Port _23_ (Weitere Charaktere benötigen eigene Profile)
 * _Menu_ - _Settings_ - _Enable GMCP_
 * _Menu_ - _Scripts_ - _Import_ - zuvor gespeicherte XML Datei angeben
