@@ -889,9 +889,9 @@ end</script>
         - <keyModifier>536870912</keyModifier> 
         </Key>
       - <Key isActive="yes" isFolder="no">
-      -   <name>5: tanz</name> 
+      -   <name>5: schau</name> 
         - <script /> 
-        - <command>tanz</command> 
+        - <command>schau</command> 
         - <keyCode>53</keyCode> 
         - <keyModifier>536870912</keyModifier> 
         </Key>
@@ -965,6 +965,35 @@ end</script>
         - <keyCode>42</keyCode>
         - <keyModifier>536870912</keyModifier>
       - </Key>
+        <Key isActive="yes" isFolder="no">
+          <name>/: kurz</name>
+          <packageName></packageName>
+          <script>local newmodus = &quot;&quot;
+
+if ME.modus == &quot;lang&quot; then
+  newmodus = &quot;kurz&quot;
+elseif ME.modus == &quot;kurz&quot; then
+  newmodus = &quot;ultrakurz&quot;
+elseif ME.modus == &quot;ultrakurz&quot; then
+  newmodus = &quot;lang&quot;
+else
+  newmodus = &quot;kurz&quot;
+end
+
+ME.modus = newmodus
+send(newmodus)</script>
+          <command></command>
+          <keyCode>47</keyCode>
+          <keyModifier>536870912</keyModifier>
+        </Key>
+        <Key isActive="yes" isFolder="no">
+          <name>,: ausruestung</name>
+          <packageName></packageName>
+          <script></script>
+          <command>ausruestung</command>
+          <keyCode>44</keyCode>
+          <keyModifier>536870912</keyModifier>
+        </Key>
       </KeyGroup>
     </KeyPackage>
 </MudletPackage>
