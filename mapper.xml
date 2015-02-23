@@ -62,6 +62,8 @@ end
             <name>Areas</name>
             <packageName></packageName>
             <script><![CDATA[
+-- Sucht die Area-ID fuer eine Area bzw. erstellt bei bedarf
+-- eine neue Area.
 function findArea(name)
     local areas = getAreaTable()
     if areas[name] == nil then
@@ -77,6 +79,7 @@ end
             <name>Modes</name>
             <packageName></packageName>
             <script><![CDATA[
+-- Aendert den Mapper Mode und gibt eine entsprechende Meldung aus.
 function setMapperMode(mode)
     if mode == "fix" or mode == "auto" then
         echoM("Aendere Mapper-Modus nach: " .. mode)
@@ -146,14 +149,27 @@ mapper.intexitmap =
     , [12] = "out"
     }
 
+-- Der ganze Kram hier ist dazu da, verschiedene Repraesentationen der
+-- Standardausgaenge ineinander zu konvertieren. Standardausgaenge
+-- koennen auf drei Arten repraesentiert sein:
+-- 
+-- * Loc(al):    Die deutschen Abkuerzungen, die auch im MUD verwendet werden.
+-- * Int(ernal): Englische Langversionen ("east", "west", etc.). Wird z.B. von
+--               getRoomExits zurueckgegeben.
+-- * Num(eric):  Numerische Repraesentationen der Standardausgaenge von 1-12
+--               (siehe mapper.exitmap und mapper.intexitmap)
+
 function exitNum2Int(n) return mapper.intexitmap[n] end
 function exitNum2Loc(n) return mapper.exitmap[n] end
 function exitInt2Loc(n) return mapper.exitmap[mapper.intexitmap[n]] end
 function exitInt2Num(n) return mapper.intexitmap[n] end
 function exitLoc2Int(n) return mapper.intexitmap[mapper.exitmap[n]] end
 function exitLoc2Num(n) return mapper.exitmap[n] end
+
 function isSpecialExit(name) return mapper.exitmap[name] == nil end
 
+-- Zur Positionierung neuer Raeume. Weist jeder Standardrichtung ein
+-- Koordinatendelta zu.
 function getExitCoordinates(name)
     if name == "n" then
         return 0,1,0
@@ -180,6 +196,7 @@ function getExitCoordinates(name)
     end
 end
 
+-- Baut (je nach Name) einen Standard- oder Spezialausgang.
 function addAnyExit(src, tgt, name)
     if isSpecialExit(name) then
         addSpecialExit(src, tgt, name)
@@ -190,6 +207,7 @@ function addAnyExit(src, tgt, name)
     end
 end
 
+-- Sucht in einem Raum nach einem Ausgang mit einem bestimmten Namen.
 function getAnyExit(room, name)
     if isSpecialExit(name) then
         return getSpecialExitsSwap(room)[name]
@@ -198,6 +216,7 @@ function getAnyExit(room, name)
     end
 end
 
+-- Erstellt einen neuen Raum mit Area und Hash und gibt eine Meldung aus.
 function createRoom(area, hash)
     local newRoom = createRoomID()
     addRoom(newRoom)
@@ -216,9 +235,13 @@ end
                 <string>gmcp.MG.room.info</string>
             </eventHandlerList>
             <script><![CDATA[
+-- Handler fuer gmcp.MG.room.info
+-- Hier werden Raeume gebaut, Ausgaenge verbunden und die aktuelle Position in der Map
+-- gesetzt.
 function handleRoomInfo()
     local hash = gmcp.MG.room.info.id
 
+    -- Manchmal kam das irgendwie doppelt. Fangen wir hier ab.
     if hash == mapper.currentHash then
         return true
     end
@@ -229,12 +252,16 @@ function handleRoomInfo()
     local knownRoom = getRoomIDbyHash(hash)
 
     if mapper.mode == "auto" then
+        -- Wenn ein neuer Befehl eingegeben wurde, bevor die GMCP-Antwort fuer den letzten kam,
+        -- stimmt die Beziehung "letzte Eingabe" -> "Richtung fuer den neuen Ausgang" nicht mehr.
+        -- Wir brechen in diesem Fall ab.
         if mapper.synchronized == false then
             echoM("Lauf nicht so schnell herum, wenn der auto-mapper an ist. Ich werde den jetzt vorsichtshalber deaktivieren.")
             setMapperMode("fix")
             return true
         end
 
+        -- Raeume ohne Raum-ID kann der Automapper nicht.
         if hash == "" or hash == nil then
             echoM("Keine Raum-ID gefunden. Deaktiviere auto-mapper.")
             setMapperMode("fix")
@@ -244,6 +271,8 @@ function handleRoomInfo()
         mapper.synchronized = false
 
         if knownRoom == -1 then
+            -- Neuer Raum ist nicht bekannt. Erstelle Raum und entsprechenden Ausgang
+
             local newRoom = createRoom(mapper.currentArea, hash)
 
             local x,y,z = getRoomCoordinates(mapper.currentRoom)
@@ -254,6 +283,8 @@ function handleRoomInfo()
             mapper.currentRoom = newRoom
             centerview(mapper.currentRoom)
         else
+            -- Neuer Raum ist bekannt. Erstelle nur einen Ausgang.
+
             if not getAnyExit(mapper.currentRoom, exitname) then
                 addAnyExit(mapper.currentRoom, knownRoom, exitname)
             end
@@ -263,6 +294,7 @@ function handleRoomInfo()
             centerview(mapper.currentRoom)
         end
     elseif mapper.mode == "fix" then
+        -- fix-Modus. Nur den aktuellen Raum setzen.
         if knownRoom > -1 then
             mapper.currentRoom = knownRoom
             mapper.currentArea = getRoomAreaName(getRoomArea(mapper.currentRoom))
@@ -322,6 +354,8 @@ echoM("Current Area: " .. mapper.currentArea)
                 <packageName></packageName>
                 <regex>^minit$</regex>
                 <script><![CDATA[
+-- Dies setzt die Karte auf Werkszustand zurueck.
+
 for i,name in pairs(getRooms()) do
     deleteRoom(i)
 end
