@@ -6,10 +6,6 @@
   von Talanis@MorgenGrauen
 
   TODO:
-  * Das Alias 'Bewegung' so umsetzen, dass nicht jeder Befehl
-    (auch gematchte Aliase) ans MUD gesendet wird. Evtl. bietet
-    Mudlet ja einen anderen Weg, den zuletzt eingegebenen Befehl
-    abzufragen?
   * Speedwalking
   * Manuelles Editieren der Map mit diversen Befehlen ermoeglichen
   * Raeume ohne Raum-ID mappen. Wie?
@@ -47,8 +43,6 @@ mapper = {}
 mapper.mode = "fix"
 mapper.currentHash = nil
 mapper.currentArea = "world"
-mapper.lastInput = nil
-mapper.synchronized = true
 
 function echoM(str)
     fg(mapperconf.color)
@@ -256,19 +250,10 @@ function handleRoomInfo()
 
     mapper.currentHash = hash
 
-    local exitname = mapper.lastInput
+    local exitname = command
     local knownRoom = getRoomIDbyHash(hash)
 
     if mapper.mode == "auto" then
-        -- Wenn ein neuer Befehl eingegeben wurde, bevor die GMCP-Antwort fuer den letzten kam,
-        -- stimmt die Beziehung "letzte Eingabe" -> "Richtung fuer den neuen Ausgang" nicht mehr.
-        -- Wir brechen in diesem Fall ab.
-        if mapper.synchronized == false then
-            echoM("Lauf nicht so schnell herum, wenn der auto-mapper an ist. Ich werde den jetzt vorsichtshalber deaktivieren.")
-            setMapperMode("fix")
-            return true
-        end
-
         -- Raeume ohne Raum-ID kann der Automapper nicht.
         if hash == "" or hash == nil then
             echoM("Keine Raum-ID gefunden. Deaktiviere auto-mapper.")
@@ -333,18 +318,6 @@ end
 
     <!-- ALIASES -->
     <AliasPackage>
-        <Alias isActive="yes" isFolder="no">
-            <name>Bewegung</name>
-            <command></command>
-            <packageName></packageName>
-            <regex>^(.+)$</regex>
-            <script><![CDATA[
-mapper.lastInput = matches[2]
-mapper.synchronized = true
-send(matches[2], false)
-                ]]>
-            </script>
-        </Alias>
         <AliasGroup isActive="yes" isFolder="yes">
             <name>Befehle</name>
             <script></script>
@@ -467,8 +440,8 @@ local helptext = [[
     *  Bei viel Lag wird man ebenfalls in Probleme beim Mappen laufen, da der
        Automapper nach jedem Schritt erst die Antwort des MUDs abwarten muss
        bevor er einen Raum / Ausgang erstellen kann. Waehrend dieser Zeit darf man
-       keine weiteren Eingaben taetigen. Auch das erkennt der Mapper und deaktiviert
-       sich dann.
+       keine weiteren Eingaben taetigen! (Also, beim Automappen einfach immer warten,
+       bis die Raumbeschreibung ankommt)
 
 4. Areas
 
