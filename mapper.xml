@@ -173,28 +173,29 @@ function isSpecialExit(name) return mapper.exitmap[name] == nil end
 -- Zur Positionierung neuer Raeume. Weist jeder Standardrichtung ein
 -- Koordinatendelta zu.
 function getExitCoordinates(name)
+    local d = 5 -- Delta fuer groessere Abstaende zwischen Raeumen.
     if name == "n" then
-        return 0,1,0
+        return 0, d, 0
     elseif name == "no" then
-        return 1,1,0
+        return d, d, 0
     elseif name == "o" then
-        return 1,0,0
+        return d, 0, 0
     elseif name == "so" then
-        return 1,-1,0
+        return d, -d, 0
     elseif name == "s" then
-        return 0,-1,0
+        return 0, -d, 0
     elseif name == "sw" then
-        return -1,-1,0
+        return -d, -d, 0
     elseif name == "w" then
-        return -1,0,0
+        return -d, 0, 0
     elseif name == "nw" then
-        return -1,1,0
+        return -d, d, 0
     elseif name == "ob" then
-        return 0,0,1
+        return 0, 0, 1
     elseif name == "u" then
-        return 0,0,-1
+        return 0, 0, -1
     else
-        return 0,0,0
+        return 0, 0, 0
     end
 end
 
