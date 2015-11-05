@@ -114,6 +114,16 @@ mapper.exitmap =
     , [10] = "u"
     , [11] = "rein"
     , [12] = "raus"
+    { norden = 1
+    , nordosten = 2
+    , nordwesten = 3
+    , osten = 4
+    , westen = 5
+    , sueden = 6
+    , suedosten = 7
+    , suedwesten = 8
+    , oben = 9
+    , unten = 10
     }
 
 mapper.intexitmap =
@@ -174,25 +184,25 @@ function isSpecialExit(name) return mapper.exitmap[name] == nil end
 -- Koordinatendelta zu.
 function getExitCoordinates(name)
     local d = 5 -- Delta fuer groessere Abstaende zwischen Raeumen.
-    if name == "n" then
+    if name == "n" or name == "norden" then
         return 0, d, 0
-    elseif name == "no" then
+    elseif name == "no" or name == "norden" then
         return d, d, 0
-    elseif name == "o" then
+    elseif name == "o" or name == "norden" then
         return d, 0, 0
-    elseif name == "so" then
+    elseif name == "so" or name == "norden" then
         return d, -d, 0
-    elseif name == "s" then
+    elseif name == "s" or name == "norden" then
         return 0, -d, 0
-    elseif name == "sw" then
+    elseif name == "sw" or name == "norden" then
         return -d, -d, 0
-    elseif name == "w" then
+    elseif name == "w" or name == "norden" then
         return -d, 0, 0
-    elseif name == "nw" then
+    elseif name == "nw" or name == "norden" then
         return -d, d, 0
-    elseif name == "ob" then
+    elseif name == "ob" or name == "norden" then
         return 0, 0, 1
-    elseif name == "u" then
+    elseif name == "u" or name == "unten" then
         return 0, 0, -1
     else
         return 0, 0, 0
