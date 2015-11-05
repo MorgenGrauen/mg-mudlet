@@ -186,21 +186,21 @@ function getExitCoordinates(name)
     local d = 5 -- Delta fuer groessere Abstaende zwischen Raeumen.
     if name == "n" or name == "norden" then
         return 0, d, 0
-    elseif name == "no" or name == "norden" then
+    elseif name == "no" or name == "nordosten" then
         return d, d, 0
-    elseif name == "o" or name == "norden" then
+    elseif name == "o" or name == "osten" then
         return d, 0, 0
-    elseif name == "so" or name == "norden" then
+    elseif name == "so" or name == "suedosten" then
         return d, -d, 0
-    elseif name == "s" or name == "norden" then
+    elseif name == "s" or name == "sueden" then
         return 0, -d, 0
-    elseif name == "sw" or name == "norden" then
+    elseif name == "sw" or name == "suedwesten" then
         return -d, -d, 0
-    elseif name == "w" or name == "norden" then
+    elseif name == "w" or name == "westen" then
         return -d, 0, 0
-    elseif name == "nw" or name == "norden" then
+    elseif name == "nw" or name == "nordwesten" then
         return -d, d, 0
-    elseif name == "ob" or name == "norden" then
+    elseif name == "ob" or name == "oben" then
         return 0, 0, 1
     elseif name == "u" or name == "unten" then
         return 0, 0, -1
