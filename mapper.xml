@@ -278,6 +278,8 @@ function handleRoomInfo()
             -- Neuer Raum ist nicht bekannt. Erstelle Raum und entsprechenden Ausgang
 
             local newRoom = createRoom(mapper.currentArea, hash)
+            local roomName = gmcp.MG.room.info.short
+            setRoomName(newRoom, roomName)
 
             local x,y,z = getRoomCoordinates(mapper.currentRoom)
             local dx,dy,dz = getExitCoordinates(exitname)
