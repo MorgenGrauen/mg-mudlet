@@ -17,21 +17,6 @@
     <!-- SCRIPTS -->
     <ScriptPackage>
         <Script isActive="yes" isFolder="no">
-            <name>Konfiguration</name>
-            <packageName></packageName>
-            <script><![CDATA[
-mapperconf = {}
-
--------------------------------------------------------
--- Benutzerdefinierte Einstellungen fuer den Mapper. --
--------------------------------------------------------
-
--- Farbe fuer Mitteilungen des Mappers
-mapperconf.color = "blue"
-                    ]]>
-            </script>
-        </Script>
-        <Script isActive="yes" isFolder="no">
             <name>Initialisierung</name>
             <packageName></packageName>
             <script><![CDATA[
