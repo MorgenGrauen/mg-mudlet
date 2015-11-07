@@ -19,7 +19,7 @@
                 <script><![CDATA[
 farben = {}
 farben.vg = 
-  { komm = "cyan"
+  { komm = "cyan",
     ebenen = "magenta",
     info = "green",
     alarm = "white",
