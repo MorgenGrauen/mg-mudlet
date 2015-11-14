@@ -50,11 +50,14 @@ Was noch offen ist
 Kurzanleitung
 -------------
 
-* XML Dateien [dieser](https://raw.githubusercontent.com/Kebap/krrrcks-mudlet/master/krrrcks.xml) [Skripte](https://raw.githubusercontent.com/Kebap/krrrcks-mudlet/master/mapper.xml) speichern (Rechte Maustaste, Speichern unter ...)
+* XML Dateien folgender Skripte speichern (Rechte Maustaste, Speichern unter ...)
+ * [Grundskript](https://raw.githubusercontent.com/Kebap/krrrcks-mudlet/master/krrrcks.xml) - ohne geht es nicht
+ * [Einstellungen](https://raw.githubusercontent.com/Kebap/krrrcks-mudlet/master/settings.xml) - benutzerdefinierte Einstellungen - ausgelagert aber benötigt
+ * [Mapper](https://raw.githubusercontent.com/Kebap/krrrcks-mudlet/master/mapper.xml) - optionale Erweiterung
 * Ggf. Mudlet [installieren](http://www.mudlet.org/download) (getestet mit 3.0 und 2.1)
 * Neues Mudlet Profil erstellen für _mg.mud.de_ Port _23_ (Weitere Charaktere benötigen eigene Profile)
 * _Menu_ - _Settings_ - _Enable GMCP_
-* _Menu_ - _Scripts_ - _Import_ - zuvor gespeicherte XML Datei angeben
+* _Menu_ - _Scripts_ - _Import_ - zuvor gespeicherte XML Dateien angeben
 * Fertig, Skripte können nun benutzt werden.
 * Auf Wunsch Skripte wieder entfernen über _Menu_ - _Package Manager_ - Name des Skriptes wählen - _Uninstall_
 * Schon kann es wieder von vorne losgehen! :)
