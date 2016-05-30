@@ -16,7 +16,7 @@ Was schon funktioniert
 * Hilfreiche Funktionen
  * Mapper malt automatisch Karten
  * Bewegung mittels Nummerntasten am Keypad
- * Unterstützung für Wegeskripte, wie aus TinyFugue bekannt (go & dopath)
+ * Unterstützung für Wegeskripte, wie aus TinyFugue bekannt ("go" & "dopath")
  * Umlaute werden bei Eingabe erkannt & beim Versand durch Äquivalente ersetzt
 
 * Farbige Hervorhebungen  
@@ -53,7 +53,7 @@ Kurzanleitung
 * XML Dateien folgender Skripte speichern (Rechte Maustaste, Speichern unter ...)
  * [Grundskript](https://raw.githubusercontent.com/Kebap/krrrcks-mudlet/master/krrrcks.xml) - ohne geht es nicht
  * [Einstellungen](https://raw.githubusercontent.com/Kebap/krrrcks-mudlet/master/settings.xml) - benutzerdefinierte Einstellungen - ausgelagert aber benötigt
- * [Mapper](https://raw.githubusercontent.com/Kebap/krrrcks-mudlet/master/mapper.xml) - optionale Erweiterung
+ * [Mapper](https://raw.githubusercontent.com/Kebap/krrrcks-mudlet/master/mapper.xml) - optionale Erweiterung, Anleitung mit "mhilfe"
 * Ggf. Mudlet [installieren](http://www.mudlet.org/download) (getestet mit 3.0 und 2.1)
 * Neues Mudlet Profil erstellen für _mg.mud.de_ Port _23_ (Weitere Charaktere benötigen eigene Profile)
 * _Menu_ - _Settings_ - _Enable GMCP_
