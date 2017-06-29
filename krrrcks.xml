@@ -368,9 +368,9 @@ und den Aliasen zu finden.
             </Alias>
             <Alias isActive="yes" isFolder="no">
                 <name>Home</name>
-                <script>-- funzt nur, wenn man den Kommandoseparator auf | gesetzt hat; ist
--- im Standard auf ; </script>
-                <command>#go haus|#haus</command>
+                <script>expandAlias("#go haus")
+expandAlias("#haus")</script>
+                <command></command>
                 <packageName></packageName>
                 <regex>^#home$</regex>
             </Alias>
