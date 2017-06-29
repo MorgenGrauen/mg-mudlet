@@ -368,8 +368,8 @@ und den Aliasen zu finden.
             </Alias>
             <Alias isActive="yes" isFolder="no">
                 <name>Home</name>
-                <script>expandAlias("#go haus")
-expandAlias("#haus")</script>
+                <script>expandAlias(&quot;#go haus&quot;)
+expandAlias(&quot;#haus&quot;)</script>
                 <command></command>
                 <packageName></packageName>
                 <regex>^#home$</regex>
