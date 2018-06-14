@@ -205,7 +205,7 @@ resetFormat()</script>
                 <colorTriggerFgColor>#000000</colorTriggerFgColor>
                 <colorTriggerBgColor>#000000</colorTriggerBgColor>
                 <regexCodeList>
-                    <string>^Du hast (.*) neue Brief(.*) im Postamt liegen.$</string>
+                    <string>^Du hast \d* neuen? Briefe? im Postamt liegen\.$</string>
                     <string>Ein Postreiter ruft Dir aus einiger Entfernung zu, dass Du neue Post hast!</string>
                 </regexCodeList>
                 <regexCodePropertyList>
