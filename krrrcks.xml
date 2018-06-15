@@ -316,6 +316,9 @@ send(command);</script>
 
 local wessen = matches[2] 
 
+-- Leerzeichen entfernen - http://lua-users.org/wiki/StringTrim
+wessen = wessen:match'^()%s*$' and '' or wessen:match'^%s*(.*%S)'
+
 if wessen == &quot;&quot; then wessen = ME.name end
 
 if wessen then
@@ -323,7 +326,7 @@ if wessen then
     send(&quot;oeffne haus von &quot; .. wessen)
     send(&quot;betrete haus von &quot; .. wessen)
     send(&quot;schliesse haus&quot;)
-    send(&quot;schliesse haus ab&quot;)
+    send(&quot;schliesse haus von &quot; .. wessen .. &quot; ab&quot;)
 end</script>
                 <command></command>
                 <packageName></packageName>
