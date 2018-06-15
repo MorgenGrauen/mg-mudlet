@@ -37,20 +37,34 @@ resetFormat()</script>
                 <colorTriggerFgColor>#000000</colorTriggerFgColor>
                 <colorTriggerBgColor>#000000</colorTriggerBgColor>
                 <regexCodeList>
-                    <string>^(.*) teilt Dir mit: (.*)$</string>
-                    <string>^Du teilst (.*) mit: (.*)$</string>
+                    <string>^.* teilt Dir mit: .*$</string>
+                    <string>^Du teilst .* mit: .*$</string>
                     <string>Du sagst:</string>
                     <string>sagt:</string>
-                    <string>Du fragst:</string>
+                    <string>Du fragst</string>
                     <string>fragt:</string>
                     <string>Wecker klingelt bei Dir.</string>
                     <string>denkt:</string>
                     <string>Matrix:</string>
                     <string>[Team </string>
+                    <string>aus der Ferne</string>
+                    <string>in der Ferne</string>
+                    <string> fluestert Dir zu: </string>
+                    <string>Du fluesterst</string>
+                    <string> fragt Dich: </string>
+                    <string> ruft:</string>
+                    <string>Du rufst:</string>
                 </regexCodeList>
                 <regexCodePropertyList>
                     <integer>1</integer>
                     <integer>1</integer>
+                    <integer>0</integer>
+                    <integer>0</integer>
+                    <integer>0</integer>
+                    <integer>0</integer>
+                    <integer>0</integer>
+                    <integer>0</integer>
+                    <integer>0</integer>
                     <integer>0</integer>
                     <integer>0</integer>
                     <integer>0</integer>
