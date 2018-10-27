@@ -7,7 +7,7 @@ Das hier enthaltene Bündel an Skripten ist noch in Entwicklung.
 
 Wer Fehlerberichte, Anregungen oder Hinweise für Verbesserungen hat, nur her damit.
 
-Viele Grüße [von den Autoren](version.md). Kontakt hier bei Github: [![Gitter](https://badges.gitter.im/Join Chat.svg)](https://gitter.im/Kebap/krrrcks-mudlet?utm_source=badge&utm_medium=badge&utm_campaign=pr-badge&utm_content=badge)
+Viele Grüße [von den Autoren](version.md).
 
 
 Was schon funktioniert
@@ -50,16 +50,16 @@ Was noch offen ist
 Kurzanleitung
 -------------
 
+https://raw.githubusercontent.com/MorgenGrauen/mg-mudlet/master/krrrcks.xml
+
 * XML Dateien folgender Skripte speichern (Rechte Maustaste, Speichern unter ...)
- * [Grundskript](https://raw.githubusercontent.com/Kebap/krrrcks-mudlet/master/krrrcks.xml) - ohne geht es nicht
- * [Einstellungen](https://raw.githubusercontent.com/Kebap/krrrcks-mudlet/master/settings.xml) - benutzerdefinierte Einstellungen - ausgelagert aber benötigt
- * [Mapper](https://raw.githubusercontent.com/Kebap/krrrcks-mudlet/master/mapper.xml) - optionale Erweiterung, Anleitung mit "mhilfe"
-* Ggf. Mudlet [installieren](http://www.mudlet.org/download) (getestet mit 3.0 und 2.1)
+ * [Grundskript](https://raw.githubusercontent.com/MorgenGrauen/mg-mudlet/master/krrrcks.xml) - ohne geht es nicht
+ * [Einstellungen](https://raw.githubusercontent.com/MorgenGrauen/mg-mudlet/master/settings.xml) - benutzerdefinierte Einstellungen - ausgelagert aber benötigt
+ * [Mapper](https://raw.githubusercontent.com/MorgenGrauen/mg-mudlet/master/mapper.xml) - optionale Erweiterung, Anleitung mit "mhilfe"
+* Ggf. Mudlet [installieren](http://www.mudlet.org/download) (getestet mit 2.1 und 3.x)
 * Neues Mudlet Profil erstellen für _mg.mud.de_ Port _23_ (Weitere Charaktere benötigen eigene Profile)
-* _Menu_ - _Settings_ - _Enable GMCP_
+* _Menu_ - _Settings_ - _Enable GMCP_ (automatisch aktiviert ab Mudlet 3.x)
 * _Menu_ - _Scripts_ - _Import_ - zuvor gespeicherte XML Dateien angeben
 * Fertig, Skripte können nun benutzt werden.
 * Auf Wunsch Skripte wieder entfernen über _Menu_ - _Package Manager_ - Name des Skriptes wählen - _Uninstall_
 * Schon kann es wieder von vorne losgehen! :)
-
-Siehe auch: [Mudlet Infos im MorgenGrauen Wiki](http://wiki.morgengrauen.info/index.php?n=MorgenGrauen.Mudlet)
