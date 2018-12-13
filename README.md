@@ -50,8 +50,6 @@ Was noch offen ist
 Kurzanleitung
 -------------
 
-https://raw.githubusercontent.com/MorgenGrauen/mg-mudlet/master/krrrcks.xml
-
 * XML Dateien folgender Skripte speichern (Rechte Maustaste, Speichern unter ...)
  * [Grundskript](https://raw.githubusercontent.com/MorgenGrauen/mg-mudlet/master/krrrcks.xml) - ohne geht es nicht
  * [Einstellungen](https://raw.githubusercontent.com/MorgenGrauen/mg-mudlet/master/settings.xml) - benutzerdefinierte Einstellungen - ausgelagert aber benötigt
