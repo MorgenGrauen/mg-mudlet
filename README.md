@@ -47,19 +47,19 @@ Was noch offen ist
 Kurzanleitung
 -------------
 
-* Ggf. natürlich erstmal [Mudlet installieren](http://www.mudlet.org/download)
+0. Ggf. natürlich erstmal [Mudlet installieren](http://www.mudlet.org/download)
    * Neues Mudlet Profil erstellen für _mg.mud.de_ Port _23_ 
    * (Weitere Charaktere benötigen eigene Profile)
-* Folgende 3 Dateien herunterladen (Rechte Maustaste, Speichern unter ...)
-  * [Grundskript](https://raw.githubusercontent.com/MorgenGrauen/mg-mudlet/master/krrrcks.xml) - ohne geht es nicht
-  * [Einstellungen](https://raw.githubusercontent.com/MorgenGrauen/mg-mudlet/master/settings.xml) - benutzerdefinierte Einstellungen - ausgelagert aber benötigt
-  * [Mapper](https://raw.githubusercontent.com/MorgenGrauen/mg-mudlet/master/mapper.xml) - optionale Erweiterung, Anleitung mit "mhilfe"
-* Skripte einfügen per Drag & Drop
-   * Die 3 o.g. Dateien nehmen und auf das Mudlet-Fenster fallen lassen.
-   * (Kontrolle möglich über _Menu_ - _Package Manager_ - hier sollten nun die 3 Namen als letztes erscheinen)
+
+1. Dieses [Skript-Paket fürs MorgenGrauen](https://github.com/MorgenGrauen/mg-mudlet/raw/master/build/MorgenGrauen.mpackage) herunterladen. (Rechte Maustaste, Speichern unter ...)
+
+2. In Mudlet einfügen per Drag & Drop.
+   * Die o.g. Datei nehmen und auf das Mudlet-Fenster fallen lassen.
+   * (Kontrolle möglich über _Menu_ - _Package Manager_ - hier sollten nun "MorgenGrauen" als letztes erscheinen)
    * (Drag & Drop funktioniert seit Mudlet 4.8 also Mitte 2020)
-   * (Alternativ im Paketmanager auf Importieren klicken und zuvor gespeicherte Dateien angeben)
-* Fertig, Skripte können nun benutzt werden.
+   * (Alternativ im Paketmanager auf Importieren klicken und dort die zuvor gespeicherte Datei angeben)
+
+3. Fertig, Skripte können nun benutzt werden.
    * Ggf. einmal neu verbinden, damit alles richtig lädt.
    * Auf Wunsch Skripte wieder entfernen:  Im Paket-Manager den Eintrag "MorgenGrauen" wählen & _Uninstall_ klicken
    * Schon kann es wieder von vorne losgehen! :)
