@@ -48,7 +48,8 @@ Kurzanleitung
 -------------
 
 0. Ggf. natürlich erstmal [Mudlet installieren](http://www.mudlet.org/download)
-   * Neues Mudlet Profil erstellen für _mg.mud.de_ Port _23_ 
+   * Neues Mudlet Profil erstellen 
+   * Verbinden zu _mg.mud.de_ Port _23_ 
    * (Weitere Charaktere benötigen eigene Profile)
 
 1. Dieses [Skript-Paket fürs MorgenGrauen](https://github.com/MorgenGrauen/mg-mudlet/raw/master/build/MorgenGrauen.mpackage) herunterladen. (Rechte Maustaste, Speichern unter ...)
