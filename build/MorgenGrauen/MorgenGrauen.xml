@@ -448,6 +448,8 @@ local kommandos = wege[matches[2]]
 
 if type(kommandos) == "table" then
   alt_ws(kommandos)
+else
+  echo (string.format("Weg %s ist nicht bekannt.", matches[2]))
 end
 
 </script>
