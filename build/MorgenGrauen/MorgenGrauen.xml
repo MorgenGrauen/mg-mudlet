@@ -1044,6 +1044,20 @@ end</script>
 				<name>Initialisierung</name>
 				<packageName></packageName>
 				<script>
+-- Deaktiviert Mudlets generic mapper package:
+if exists("generic_mapper", "trigger") then
+  disableTrigger("generic_mapper")
+end
+if exists("generic_mapper", "alias") then
+  disableAlias("generic_mapper")
+end
+if exists("generic_mapper", "script") then
+  disableScript("generic_mapper")
+  if map.update_timer then
+    disableTimer(map.update_timer)
+  end
+end
+
 mudlet = mudlet or {}
 mudlet.mapper_script = true
 
@@ -1057,9 +1071,7 @@ function echoM(str)
     fg(mapperconf.color)
     echo("[MAPPER] " .. str .. "\n")
     resetFormat()
-end
-                    
-            </script>
+end</script>
 				<eventHandlerList />
 			</Script>
 			<Script isActive="yes" isFolder="no">
