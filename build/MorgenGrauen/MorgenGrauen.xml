@@ -1091,7 +1091,7 @@ function setMapperMode(mode)
         echoM("Aendere Mapper-Modus nach: " .. mode)
         mapper.mode = mode
     else
-        echoM("Fehler: Unbekannter Modus '" .. mode "'")
+        echoM("Fehler: Unbekannter Modus: '" .. mode .. "'")
     end
 end
                     
