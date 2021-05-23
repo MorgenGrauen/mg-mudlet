@@ -1192,6 +1192,7 @@ function exitLoc2Int(n) return mapper.intexitmap[mapper.exitmap[n]] end
 function exitLoc2Num(n) return mapper.exitmap[n] end
 
 function isSpecialExit(name) return mapper.exitmap[name] == nil end
+function isSpecialIntExit(name) return mapper.intexitmap[name] == nil end
 
 -- Zur Positionierung neuer Raeume. Weist jeder Standardrichtung ein
 -- Koordinatendelta zu.
@@ -1339,7 +1340,12 @@ function doSpeedWalk()
     mapper.mode = "fix"
     send("ultrakurz", false)
     for i,d in ipairs(speedWalkDir) do
-        send(exitInt2Loc(d), false)
+        if isSpecialIntExit(d)
+        then
+          send(d, false)
+        else	
+        	send(exitInt2Loc(d), false)
+		end
     end
     command = ""
     send("lang", false)
