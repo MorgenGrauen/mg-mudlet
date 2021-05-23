@@ -1224,6 +1224,10 @@ end
 
 -- Baut (je nach Name) einen Standard- oder Spezialausgang.
 function addAnyExit(src, tgt, name)
+    if name == ""
+    then
+      return true
+    end
     if isSpecialExit(name) then
         addSpecialExit(src, tgt, name)
         echoM("Erstelle speziellen Ausgang.\n  Quelle: " .. src .. "\n  Ziel:   " .. tgt .. "\n  Befehl: " .. name)
@@ -1330,12 +1334,17 @@ end
 				<packageName></packageName>
 				<script>
 function doSpeedWalk()
+    command = ""
+    local save_mode = mapper.mode
+    mapper.mode = "fix"
     send("ultrakurz", false)
     for i,d in ipairs(speedWalkDir) do
         send(exitInt2Loc(d), false)
     end
+    command = ""
     send("lang", false)
     send("schau", false)
+    mapper.mode = save_mode
 end
                 
             </script>
