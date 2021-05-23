@@ -1242,6 +1242,12 @@ function getAnyExit(room, name)
     end
 end
 
+function addStubExit(src, name)
+    if not isSpecialExit(name) then
+      setExitStub(src, exitLoc2Num(name), true)
+    end
+end
+
 -- Erstellt einen neuen Raum mit Area und Hash und gibt eine Meldung aus.
 function createRoom(area, hash)
     local newRoom = createRoomID()
@@ -1291,6 +1297,10 @@ function handleRoomInfo()
             local newRoom = createRoom(mapper.currentArea, hash)
             local roomName = gmcp.MG.room.info.short
             setRoomName(newRoom, roomName)
+
+			for _, v in pairs(gmcp.MG.room.info.exits) do
+                addStubExit(newRoom, v)
+            end
 
             local x,y,z = getRoomCoordinates(mapper.currentRoom)
             local dx,dy,dz = getExitCoordinates(exitname)
