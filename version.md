@@ -5,7 +5,7 @@ Autoren
 * Krrrcks@MorgenGrauen - https://github.com/krrrcks/krrrcks-mudlet
 * Zaphob@MorgenGrauen - https://github.com/kebap/krrrcks-mudlet
 * Talanis@MorgenGrauen - https://github.com/talanis85/krrrcks-mudlet
-
+* Brophy@MorgenGrauen - https://github.com/FGiesemann/mg-mudlet
 
 Versionen
 =========
@@ -72,3 +72,10 @@ Talanis
 * Erste Version eines Mappers.
 
 * Einfacher Speedwalker.
+
+
+Brophy
+------
+
+* Erweiterungen des Mappers um Stub-Exits und die Verwendung von Spezialausgängen
+  im Speedwalk
