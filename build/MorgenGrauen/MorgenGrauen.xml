@@ -93,7 +93,7 @@ resetFormat()</script>
 				<Trigger isActive="yes" isFolder="no" isTempTrigger="no" isMultiline="no" isPerlSlashGOption="no" isColorizerTrigger="no" isFilterTrigger="no" isSoundTrigger="no" isColorTrigger="no" isColorTriggerFg="no" isColorTriggerBg="no">
 					<name>Kampf: Zustand</name>
 					<script>local zustand = {}
- 
+
 zustand["ist absolut fit."] = 1
 zustand["ist leicht geschwaecht."] = 0.9 -- Kaempfer Fokus
 zustand["ist schon etwas geschwaecht."] = 0.9 -- untersuche
@@ -113,8 +113,8 @@ zustand["steht auf der Schwelle des Todes."]= 0.1
 
 local ausgabe = zustand[matches[1]]
 
-if ausgabe then 
-  ausgabe = " (" .. ausgabe*100 .. "%)" 
+if ausgabe then
+  ausgabe = " (" .. ausgabe*100 .. "%)"
 else
   ausgabe = " (???%)"
 end
@@ -347,10 +347,10 @@ send(command);</script>
 				</Alias>
 				<Alias isActive="yes" isFolder="no">
 					<name>Haus betreten</name>
-					<script>-- Mit "#haus&lt;name&gt;" ein Seherhaus aufschliessen und betreten; 
+					<script>-- Mit "#haus&lt;name&gt;" ein Seherhaus aufschliessen und betreten;
 -- wird der Name weggelassen, wird automatisch ME.name angehaengt.
 
-local wessen = matches[2] 
+local wessen = matches[2]
 
 -- Leerzeichen entfernen - http://lua-users.org/wiki/StringTrim
 wessen = wessen:match'^()%s*$' and '' or wessen:match'^%s*(.*%S)'
@@ -378,12 +378,12 @@ Folgende Sachen gibt es und funktionieren:
 * Umlaute werden erkannt und durch passende Umschreibungen ersetzt.
 
 * Einstellungen und auch Globale Variablen
-In "Scripts-&gt;Einstellugnen" habe ich einige globale Variablen und 
+In "Scripts-&gt;Einstellugnen" habe ich einige globale Variablen und
 einstellbare Sachen hinterlegt:
 
-ME: ME ist ein Table, in dem ich alle möglichen Informationen zum User speichere; 
-  hier landen bspw. der Name, aber auch in welcher Para-Welt man sich befindet etc. 
-  Soweit möglich werden die entsprechenden Werte bspw. aus GMCP-Nachrichten 
+ME: ME ist ein Table, in dem ich alle möglichen Informationen zum User speichere;
+  hier landen bspw. der Name, aber auch in welcher Para-Welt man sich befindet etc.
+  Soweit möglich werden die entsprechenden Werte bspw. aus GMCP-Nachrichten
   gezogen.
 farben: In diesem Table verwalte ich die für die Trigger und Skripte zu verwendenden
   Farben.
@@ -392,12 +392,12 @@ farben: In diesem Table verwalte ich die für die Trigger und Skripte zu verwend
 In Trigger befinden sich Farbtrigger, welche die Ebenen einfärben.
 
 * Wegeskripte von tf
-Ich hatte einige Wegeskripte bei tf, die insbesondere mit einem "/dopath" 
+Ich hatte einige Wegeskripte bei tf, die insbesondere mit einem "/dopath"
 zusammenarbeiteten. Ich habe diese nahezu 1:1 rekonstruiert, sie sind in den Skripten
 und den Aliasen zu finden.
 
 * Kleinkram
-#haus&lt;name&gt; : Wenn man vor einem Seherhaus steht, kann man es damit  
+#haus&lt;name&gt; : Wenn man vor einem Seherhaus steht, kann man es damit
   aufschließen, betreten und wieder verschließen. Achtung: Kein Leerzeichen
   zwischen "#haus" und dem Namen!
 ]])</script>
@@ -425,16 +425,16 @@ send("gruesse "  .. matches[2])
 			</AliasGroup>
 			<AliasGroup isActive="yes" isFolder="yes">
 				<name>Krrrcks: Alte Wege</name>
-				<script>-- Die alten tf-Wegeskripte. 
+				<script>-- Die alten tf-Wegeskripte.
 </script>
 				<command></command>
 				<packageName></packageName>
 				<regex></regex>
 				<Alias isActive="yes" isFolder="no">
 					<name>Weg ablaufen</name>
-					<script>-- Die alten tf-Wegeskripte. 
+					<script>-- Die alten tf-Wegeskripte.
 
---[[ Gestartet werden diese mit "#go &lt;ziel&gt;", dann wird 
+--[[ Gestartet werden diese mit "#go &lt;ziel&gt;", dann wird
     Ziel ausgewählt und die Sachen zum Mud geschossen. Dabei
     ist zu beachten, dass die meisten Skripte bei einem Portal
     bzw. beim Sandtiger starten. ]]--
@@ -459,10 +459,10 @@ end
 				</Alias>
 				<Alias isActive="yes" isFolder="no">
 					<name>Altes dopath</name>
-					<script>-- Ersetzt das alte tf-dopath; übergeben wird ein String mit 
+					<script>-- Ersetzt das alte tf-dopath; übergeben wird ein String mit
 -- Ausgängen.
 
--- Bspw: "#dopath o o w n" macht dann jeweils send("o"), 
+-- Bspw: "#dopath o o w n" macht dann jeweils send("o"),
 -- send("o"), send("w"), send("n")
 
 alt_dopath(matches[2])</script>
@@ -488,7 +488,7 @@ alt_dopath(matches[2])</script>
 					<name>mmode</name>
 					<script>
 setMapperMode(matches[2])
-                    
+
                 </script>
 					<command></command>
 					<packageName></packageName>
@@ -499,7 +499,7 @@ setMapperMode(matches[2])
 					<script>
 mapper.currentArea = matches[2]
 echoM("Current Area: " .. mapper.currentArea)
-                    
+
                 </script>
 					<command></command>
 					<packageName></packageName>
@@ -521,7 +521,7 @@ mapper.currentRoom = 1
 centerview(1)
 
 echoM("Neue Map initialisiert.")
-                    
+
                 </script>
 					<command></command>
 					<packageName></packageName>
@@ -625,7 +625,7 @@ local helptext = [[
 ]]
 
 echo(helptext .. "\n")
-                    
+
                 </script>
 					<command></command>
 					<packageName></packageName>
@@ -699,10 +699,10 @@ function alt_ws(kommandos, lang)
     for k,v in ipairs(kommandos) do
         -- Wenn "#dopath" oder "#go", dann das Ali ausführen
         if (type(v) == "string" and string.sub(v,1,7) == "#dopath")
-            or (type(v) == "string" and string.sub(v,1,3) == "#go") 
-       then 
+            or (type(v) == "string" and string.sub(v,1,3) == "#go")
+       then
             expandAlias(v)
-        else    
+        else
         -- sonst ohne Ali Ersetzung senden (erst mal keine weiteren Ersetzungen
         -- vorgesehen.
             send(v)
@@ -742,14 +742,14 @@ end</script>
 
 --[[
 Etwas trickreich ist folgendes:
-Der "Script name" (bspw. "zeigeVitaldaten" muss genau dem Funktionsnamen für 
+Der "Script name" (bspw. "zeigeVitaldaten" muss genau dem Funktionsnamen für
 diese Funktion entsprechen, sonst tut das nicht).
 ]]--</script>
 				<eventHandlerList />
 				<Script isActive="yes" isFolder="no">
 					<name>initGMCP</name>
 					<packageName></packageName>
-					<script>function initGMCP() 
+					<script>function initGMCP()
     sendGMCP( [[Core.Supports.Debug 20 ]])
     sendGMCP( [[Core.Supports.Set [ "MG.char 1", "MG.room 1", "comm.channel 1" ] ]])
 end</script>
@@ -760,8 +760,8 @@ end</script>
 				<Script isActive="yes" isFolder="no">
 					<name>initBase</name>
 					<packageName></packageName>
-					<script>function initBase() 
-    ME.name = gmcp.MG.char.base.name 
+					<script>function initBase()
+    ME.name = gmcp.MG.char.base.name
     ME.stufe = gmcp.MG.char.info.level
 
     if not GUI.angezeigt then
@@ -788,11 +788,11 @@ end</script>
   ME.kp_max = gmcp.MG.char.maxvitals.max_sp
 
   -- Werte der Balken aktualisieren
-  
-  GUI.lp_anzeige:setValue(ME.lp, ME.lp_max, 
+
+  GUI.lp_anzeige:setValue(ME.lp, ME.lp_max,
       "&lt;b&gt; " .. ME.lp .. "/" .. ME.lp_max .. "&lt;/b&gt; ")
 
-  GUI.kp_anzeige:setValue(ME.kp, ME.kp_max, 
+  GUI.kp_anzeige:setValue(ME.kp, ME.kp_max,
       "&lt;b&gt; " .. ME.kp .. "/" .. ME.kp_max .. "&lt;/b&gt; ")
 
   -- Treffer? Dann LP Balken blinken lassen
@@ -814,8 +814,8 @@ function lp_anzeige_faerben()
   -- Je nach LP Verlust wird Farbe gruen/gelb/rot
 
   local lp_quote = ME.lp / ME.lp_max
-  GUI.lp_anzeige:setColor(255 * (1 - lp_quote), 
-                          255 * lp_quote, 
+  GUI.lp_anzeige:setColor(255 * (1 - lp_quote),
+                          255 * lp_quote,
                           50)
 end
 
@@ -852,7 +852,7 @@ end</script>
     r = 30
     g = 30
     b = 30
-  else  -- Farbuebergang gelb-&gt;orange-&gt;rot 
+  else  -- Farbuebergang gelb-&gt;orange-&gt;rot
     r = 255
     g = 255 - ME.gift * 25
     b = 0
@@ -907,7 +907,7 @@ end</script>
 
   ME.raum_kurz = gmcp.MG.room.info.short
   ME.raum_region = gmcp.MG.room.info.domain
-  ME.raum_id = string.sub(gmcp.MG.room.info.id, 1, 5) 
+  ME.raum_id = string.sub(gmcp.MG.room.info.id, 1, 5)
 
   -- Para?
 
@@ -989,7 +989,7 @@ end</script>
     x = 250, y = -65,
     width = 350, height = 20}, GUI.statuszeile)
 
-  -- Zeile 2  
+  -- Zeile 2
   GUI.ort_raum = Geyser.Label:new({
     name = "ort_raum",
     x = 250, y = -45,
@@ -1009,9 +1009,9 @@ end</script>
 
   GUI.lp_anzeige = Geyser.Gauge:new({
     name = "lp_anzeige",
-    x = 100, y = -25, 
+    x = 100, y = -25,
     width = 140, height = 20}, GUI.statuszeile)
-  GUI.lp_anzeige:setColor(0, 255, 50) 
+  GUI.lp_anzeige:setColor(0, 255, 50)
 
   GUI.kp_titel = Geyser.Label:new({
     name = "kp_titel",
@@ -1077,7 +1077,7 @@ function findArea(name)
         return areas[name]
     end
 end
-                    
+
             </script>
 				<eventHandlerList />
 			</Script>
@@ -1094,7 +1094,7 @@ function setMapperMode(mode)
         echoM("Fehler: Unbekannter Modus: '" .. mode .. "'")
     end
 end
-                    
+
             </script>
 				<eventHandlerList />
 			</Script>
@@ -1177,7 +1177,7 @@ mapper.intexitmap =
 -- Der ganze Kram hier ist dazu da, verschiedene Repraesentationen der
 -- Standardausgaenge ineinander zu konvertieren. Standardausgaenge
 -- koennen auf drei Arten repraesentiert sein:
--- 
+--
 -- * Loc(al):    Die deutschen Abkuerzungen, die auch im MUD verwendet werden.
 -- * Int(ernal): Englische Langversionen ("east", "west", etc.). Wird z.B. von
 --               getRoomExits zurueckgegeben.
@@ -1262,7 +1262,7 @@ function createRoom(area, hash)
     echoM("Erstelle Raum.\n  Area: " .. area .. "\n  Hash: " .. hash)
     return newRoom
 end
-                    
+
             </script>
 				<eventHandlerList />
 			</Script>
@@ -1334,7 +1334,7 @@ function handleRoomInfo()
         end
     end
 end
-                    
+
             </script>
 				<eventHandlerList>
 					<string>gmcp.MG.room.info</string>
@@ -1353,7 +1353,7 @@ function doSpeedWalk()
         if isSpecialIntExit(d)
         then
           send(d, false)
-        else	
+        else
         	send(exitInt2Loc(d), false)
 		end
     end
@@ -1362,7 +1362,7 @@ function doSpeedWalk()
     send("schau", false)
     mapper.mode = save_mode
 end
-                
+
             </script>
 				<eventHandlerList />
 			</Script>
@@ -1382,16 +1382,16 @@ end
 					<packageName></packageName>
 					<script>
 farben = {}
-farben.vg = 
+farben.vg =
   { komm = "cyan",
     ebenen = "magenta",
     info = "green",
     alarm = "white",
     script = "dark_green" }
-farben.hg = 
+farben.hg =
   { komm = "black",
     ebenen = "black",
-    info = "black", 
+    info = "black",
     alarm = "red",
     script = "black" }
 
@@ -1414,7 +1414,7 @@ function msg (type, what)
     echo(what)
   end
 end
-                    
+
                 </script>
 					<eventHandlerList />
 				</Script>
@@ -1432,7 +1432,7 @@ mapperconf = {}
 mapperconf.color = "royal_blue"
 -- Standardabstand zwischen zwei Raeumen
 mapperconf.scale = 5
-                    
+
                 </script>
 					<eventHandlerList />
 				</Script>
