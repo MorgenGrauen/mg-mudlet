@@ -1225,8 +1225,7 @@ end
 
 -- Baut (je nach Name) einen Standard- oder Spezialausgang.
 function addAnyExit(src, tgt, name)
-    if name == ""
-    then
+    if name == "" then
       return true
     end
     if isSpecialExit(name) then
