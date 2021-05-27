@@ -1302,8 +1302,8 @@ function handleRoomInfo()
             local roomName = gmcp.MG.room.info.short
             setRoomName(newRoom, roomName)
 
-            for _, v in pairs(gmcp.MG.room.info.exits) do
-                addStubExit(newRoom, v)
+            for _, exitname in pairs(gmcp.MG.room.info.exits) do
+                addStubExit(newRoom, exitname)
             end
 
             local x,y,z = getRoomCoordinates(mapper.currentRoom)
