@@ -1248,17 +1248,17 @@ end
 
 function addStubExit(src, name)
     -- Debug: -- echoM("Prüfe Stub.  Start: " .. src .. "  Befehl: " .. name )
-    if not getAnyExit(src, name) then
-        if not isSpecialExit(name) then
-            setExitStub(src, exitLoc2Num(name), true)
-            -- Debug: echoM("Erstelle Stub.  Befehl: " .. name)
-        else
-            -- Ausgänge wie "nordunten" werden (noch) nicht unterstützt
-            -- Debug: echoM("Befehl '" .. name .. "' uebersprungen, nicht in ueblicher Richtung.")
-        end
-    else
+    if getAnyExit(src, name) then
         -- Debug: echoM("Befehl '" .. name .. "' uebersprungen, da bereits ein Ausgang dorthin vorlag.")
+        return
     end
+    if isSpecialExit(name) then
+        -- Ausgänge wie "nordunten" werden (noch) nicht unterstützt
+        -- Debug: echoM("Befehl '" .. name .. "' uebersprungen, nicht in ueblicher Richtung.")
+        return
+    end
+    -- Debug: echoM("Erstelle Stub.  Befehl: " .. name)
+    setExitStub(src, exitLoc2Num(name), true)
 end
 
 -- Erstellt einen neuen Raum mit Area und Hash und gibt eine Meldung aus.
