@@ -1422,16 +1422,16 @@ end
 					<name>Mapper</name>
 					<packageName></packageName>
 					<script>
-mapperconf = {}
+mapperconf = mapperconf or {}
 
 -------------------------------------------------------
 -- Benutzerdefinierte Einstellungen fuer den Mapper. --
 -------------------------------------------------------
 
 -- Farbe fuer Mitteilungen des Mappers
-mapperconf.color = "royal_blue"
+mapperconf.color = mapperconf.color or "royal_blue"
 -- Standardabstand zwischen zwei Raeumen
-mapperconf.scale = 5
+mapperconf.scale = mapperconf.scale or 5
 
                 </script>
 					<eventHandlerList />
