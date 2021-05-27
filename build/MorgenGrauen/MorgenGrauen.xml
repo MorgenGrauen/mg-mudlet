@@ -1247,8 +1247,17 @@ function getAnyExit(room, name)
 end
 
 function addStubExit(src, name)
-    if not isSpecialExit(name) then
-      setExitStub(src, exitLoc2Num(name), true)
+    -- Debug: -- echoM("Prüfe Stub.  Start: " .. src .. "  Befehl: " .. name )
+    if not getAnyExit(src, name) then
+        if not isSpecialExit(name) then
+            setExitStub(src, exitLoc2Num(name), true)
+            -- Debug: echoM("Erstelle Stub.  Befehl: " .. name)
+        else
+            -- Ausgänge wie "nordunten" werden (noch) nicht unterstützt
+            -- Debug: echoM("Befehl '" .. name .. "' uebersprungen, nicht in ueblicher Richtung.")
+        end
+    else
+        -- Debug: echoM("Befehl '" .. name .. "' uebersprungen, da bereits ein Ausgang dorthin vorlag.")
     end
 end
 
