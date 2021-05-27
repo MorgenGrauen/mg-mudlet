@@ -1321,7 +1321,6 @@ function handleRoomInfo()
 
             addAnyExit(mapper.currentRoom, newRoom, exitname)
             mapper.currentRoom = newRoom
-            centerview(mapper.currentRoom)
         else
             -- Neuer Raum ist bekannt. Erstelle nur einen Ausgang.
 
@@ -1331,16 +1330,15 @@ function handleRoomInfo()
 
             mapper.currentRoom = knownRoom
             mapper.currentArea = getRoomAreaName(getRoomArea(mapper.currentRoom))
-            centerview(mapper.currentRoom)
         end
     elseif mapper.mode == "fix" then
         -- fix-Modus. Nur den aktuellen Raum setzen.
         if knownRoom &gt; -1 then
             mapper.currentRoom = knownRoom
             mapper.currentArea = getRoomAreaName(getRoomArea(mapper.currentRoom))
-            centerview(mapper.currentRoom)
         end
     end
+    centerview(mapper.currentRoom)
 end
 
             </script>
