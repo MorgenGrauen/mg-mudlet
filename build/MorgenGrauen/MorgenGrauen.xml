@@ -1302,7 +1302,7 @@ function handleRoomInfo()
             local roomName = gmcp.MG.room.info.short
             setRoomName(newRoom, roomName)
 
-			for _, v in pairs(gmcp.MG.room.info.exits) do
+            for _, v in pairs(gmcp.MG.room.info.exits) do
                 addStubExit(newRoom, v)
             end
 
