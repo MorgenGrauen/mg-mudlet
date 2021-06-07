@@ -1,0 +1,49 @@
+[
+  {
+    "name": "initGMCP",
+    "eventHandlerList": [ 
+      "gmcp.Char"
+    ]
+  },
+  {
+    "name": "initBase",
+    "eventHandlerList": [ 
+      "gmcp.MG.char.base",
+      "gmcp.MG.char.info"
+    ]
+  },
+  {
+    "name": "zeigeVitaldaten",
+    "eventHandlerList": [ 
+      "gmcp.MG.char.vitals",
+      "gmcp.MG.char.maxvitals"
+    ]
+  },
+  {
+    "name": "zeigeGift",
+    "eventHandlerList": [ 
+      "gmcp.MG.char.vitals"
+    ]
+  },
+  {
+    "name": "zeigeVorsicht",
+    "eventHandlerList": [ 
+      "gmcp.MG.char.wimpy"
+    ]
+  },
+  {
+    "name": "zeigeRaum",
+    "eventHandlerList": [ 
+      "gmcp.MG.room"
+    ]
+  },
+  {
+    "name": "zeigeEbenen",
+    "eventHandlerList": [ 
+      "gmcp.comm.channel"
+    ]
+  },
+  {
+    "name": "initGUI"
+  }
+]

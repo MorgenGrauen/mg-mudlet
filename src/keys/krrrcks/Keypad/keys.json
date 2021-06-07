@@ -1,0 +1,76 @@
+[
+  {
+    "name": "1 suedwesten", 
+    "command": "suedwesten", 
+    "keys": "keypad+1"
+  },
+  {
+    "name": "2 sueden", 
+    "command": "sueden", 
+    "keys": "keypad+2"
+  },
+  {
+    "name": "3 suedosten", 
+    "command": "suedosten", 
+    "keys": "keypad+3"
+  },
+  {
+    "name": "4 westen", 
+    "command": "westen", 
+    "keys": "keypad+4"
+  },
+  {
+    "name": "5 schau", 
+    "command": "schau", 
+    "keys": "keypad+5"
+  },
+  {
+    "name": "6 osten", 
+    "command": "osten", 
+    "keys": "keypad+6"
+  },
+  {
+    "name": "7 nordwesten", 
+    "command": "nordwesten", 
+    "keys": "keypad+7"
+  },
+  {
+    "name": "8 norden", 
+    "command": "norden", 
+    "keys": "keypad+8"
+  },
+  {
+    "name": "9 nordosten", 
+    "command": "nordosten", 
+    "keys": "keypad+9"
+  },
+  {
+    "name": "0 schau", 
+    "command": "schau", 
+    "keys": "keypad+0"
+  },
+  {
+    "name": ", ausruestung", 
+    "command": "ausruestung", 
+    "keys": "keypad+,"
+  },
+  {
+    "name": "+ unten", 
+    "command": "unten", 
+    "keys": "keypad+plus"
+  },
+  {
+    "name": "- oben", 
+    "command": "oben", 
+    "keys": "keypad+-"
+  },
+  {
+    "name": "* raus", 
+    "command": "raus", 
+    "keys": "keypad+*"
+  },
+  {
+    "name": "÷ kurz", 
+    "keys": "keypad+/"
+  }
+]

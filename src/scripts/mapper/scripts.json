@@ -1,0 +1,23 @@
+[
+  {
+    "name": "Initialisierung"
+  },
+  {
+    "name": "Areas"
+  },
+  {
+    "name": "Modes"
+  },
+  {
+    "name": "Ausgaenge"
+  },
+  {
+    "name": "handleRoomInfo",
+    "eventHandlerList": [ 
+      "gmcp.MG.room.info"
+    ]
+  },
+  {
+    "name": "doSpeedWalk"
+  }
+]
