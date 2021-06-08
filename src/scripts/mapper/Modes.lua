@@ -1,12 +1,16 @@
-
 -- Aendert den Mapper Mode und gibt eine entsprechende Meldung aus.
 function setMapperMode(mode)
+    if not mode then
+      echoM("Aktueller Modus: '" .. mapper.mode .. "'")
+    end
     if mode == "fix" or mode == "auto" then
-        echoM("Aendere Mapper-Modus nach: " .. mode)
-        mapper.mode = mode
+        if mode == mapper.mode then
+            echoM("Mapper-Modus war bereits: " .. mode)
+        else
+            echoM("Aendere Mapper-Modus nach: " .. mode)
+            mapper.mode = mode
+        end
     else
-        echoM("Fehler: Unbekannter Modus: '" .. mode .. "'")
+      echoM("Moegliche Modus: 'fix' und 'auto'")
     end
 end
-                    
-            

@@ -1,7 +1,7 @@
 [
   {
     "name": "mmode",
-    "regex": "^mmode (.+)$"
+    "regex": "^mmode(?:\\s+(.+))?$"
   },
   {
     "name": "marea",
