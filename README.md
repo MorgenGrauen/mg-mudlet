@@ -7,9 +7,9 @@ Das hier enthaltene Bündel an Skripten ist noch in Entwicklung.
 
 Wer Fehlerberichte, Anregungen oder Hinweise für Verbesserungen hat, nur her damit.
 
-Falls du eigene Skripte ins Paket einbringen möchtest, gibt es hier ein paar [Hinweise für Entwickler](readme/entwickler.md).
+Falls du eigene Skripte ins Paket einbringen möchtest, gibt es hier ein paar [Hinweise für Entwickler](https://github.com/MorgenGrauen/mg-mudlet/blob/master/readme/entwickler.md).
 
-Viele Grüße [von den Autoren](readme/version.md). Kontakt im Spiel, über die MG Webseite, Github, Social Media, usw.
+Viele Grüße [von den Autoren](https://github.com/MorgenGrauen/mg-mudlet/blob/master/readme/version.md). Kontakt im Spiel, über die MG Webseite, Github, Social Media, usw.
 
 
 Was schon funktioniert
@@ -54,7 +54,7 @@ Kurzanleitung
    * Verbinden zu _mg.mud.de_ Port _23_ 
    * (Weitere Charaktere benötigen eigene Profile)
 
-1. Dieses [Skript-Paket fürs MorgenGrauen](https://github.com/MorgenGrauen/mg-mudlet/raw/master/build/MorgenGrauen.mpackage) herunterladen. (Rechte Maustaste, Speichern unter ...)
+1. Dieses [Skript-Paket fürs MorgenGrauen](https://github.com/MorgenGrauen/mg-mudlet/releases/latest/download/MorgenGrauen.mpackage) herunterladen. (Rechte Maustaste, Speichern unter ...)
 
 2. In Mudlet einfügen per Drag & Drop.
    * Die o.g. Datei nehmen und auf das Mudlet-Fenster fallen lassen.
