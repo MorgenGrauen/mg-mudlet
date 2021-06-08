@@ -1,0 +1,3 @@
+-- Damit ich vor Einsatz des Mappers schon mal herumirren kann,
+-- hier ein paar Funktionen, um die bisherigen Wege nutzen zu können.
+
