@@ -7,9 +7,9 @@ Das hier enthaltene Bündel an Skripten ist noch in Entwicklung.
 
 Wer Fehlerberichte, Anregungen oder Hinweise für Verbesserungen hat, nur her damit.
 
-Falls du mithelfen und deine Skripte in dieses Paket einbringen möchtest, gibt es hier ein paar [Hinweise für Entwickler](readme/entwickler.md).
+Falls du eigene Skripte ins Paket einbringen möchtest, gibt es hier ein paar [Hinweise für Entwickler](readme/entwickler.md).
 
-Viele Grüße [von den Autoren](readme/version.md). Kontakt im Spiel, per MG Webseite, Github, Social Media, usw.
+Viele Grüße [von den Autoren](readme/version.md). Kontakt im Spiel, über die MG Webseite, Github, Social Media, usw.
 
 
 Was schon funktioniert
