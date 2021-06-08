@@ -1,0 +1,210 @@
+[
+  {
+    "name": "Kommunikation", 
+    "highlight": "yes", 
+    "highlightFG": "#00aaff", 
+    "highlightBG": "#000000", 
+    "patterns": [ 
+      {
+        "pattern": "^.* teilt Dir mit: .*$", 
+        "type": "regex",
+        "comment": "accepted trigger types are 'substring', 'regex', 'startOfLine', 'exactMatch', 'lua', 'spacer', 'color', 'colour', and 'prompt'"
+      },
+      {
+        "pattern": "^Du teilst .* mit: .*$", 
+        "type": "regex"
+      },
+      {
+        "pattern": "Du sagst:", 
+        "type": "substring"
+      },
+      {
+        "pattern": "sagt:", 
+        "type": "substring"
+      },
+      {
+        "pattern": "Du fragst", 
+        "type": "substring"
+      },
+      {
+        "pattern": "fragt:", 
+        "type": "substring"
+      },
+      {
+        "pattern": "Wecker klingelt bei Dir.", 
+        "type": "substring"
+      },
+      {
+        "pattern": "denkt:", 
+        "type": "substring"
+      },
+      {
+        "pattern": "Matrix:", 
+        "type": "substring"
+      },
+      {
+        "pattern": "[Team ", 
+        "type": "substring"
+      },
+      {
+        "pattern": "aus der Ferne", 
+        "type": "substring"
+      },
+      {
+        "pattern": "in der Ferne", 
+        "type": "substring"
+      },
+      {
+        "pattern": " fluestert Dir zu: ", 
+        "type": "substring"
+      },
+      {
+        "pattern": "Du fluesterst", 
+        "type": "substring"
+      },
+      {
+        "pattern": " fragt Dich: ", 
+        "type": "substring"
+      },
+      {
+        "pattern": " ruft:", 
+        "type": "substring"
+      },
+      {
+        "pattern": "Du rufst:", 
+        "type": "substring"
+      }
+    ]
+  },
+  {
+    "name": "Kampf Zustand", 
+    "patterns": [ 
+      {
+        "pattern": "ist absolut fit.", 
+        "type": "substring",
+        "comment": "accepted trigger types are 'substring', 'regex', 'startOfLine', 'exactMatch', 'lua', 'spacer', 'color', 'colour', and 'prompt'"
+      },
+      {
+        "pattern": "ist leicht geschwaecht.", 
+        "type": "substring"
+      },
+      {
+        "pattern": "ist schon etwas geschwaecht.", 
+        "type": "substring"
+      },
+      {
+        "pattern": "fuehlte sich auch schon besser.", 
+        "type": "substring"
+      },
+      {
+        "pattern": "fuehlte sich heute schon besser.", 
+        "type": "substring"
+      },
+      {
+        "pattern": "ist leicht angekratzt.", 
+        "type": "substring"
+      },
+      {
+        "pattern": "ist leicht angeschlagen.", 
+        "type": "substring"
+      },
+      {
+        "pattern": "ist nicht mehr taufrisch.", 
+        "type": "substring"
+      },
+      {
+        "pattern": "sieht nicht mehr taufrisch aus.", 
+        "type": "substring"
+      },
+      {
+        "pattern": "sieht recht mitgenommen aus.", 
+        "type": "substring"
+      },
+      {
+        "pattern": "macht einen mitgenommenen Eindruck.", 
+        "type": "substring"
+      },
+      {
+        "pattern": "wankt bereits bedenklich.", 
+        "type": "substring"
+      },
+      {
+        "pattern": "ist in keiner guten Verfassung.", 
+        "type": "substring"
+      },
+      {
+        "pattern": "braucht dringend einen Arzt.", 
+        "type": "substring"
+      },
+      {
+        "pattern": "steht auf der Schwelle des Todes.", 
+        "type": "substring"
+      }
+    ]
+  },
+  {
+    "name": "Kampf Infos", 
+    "patterns": [ 
+      {
+        "pattern": "faellt tot zu Boden.", 
+        "type": "substring"
+      }
+    ]
+  },
+  {
+    "name": "Kampf Flucht", 
+    "patterns": [ 
+      {
+        "pattern": "^Die Angst ist staerker als Du ... Du willst nur noch weg hier.$", 
+        "type": "regex"
+      }
+    ]
+  },
+  {
+    "name": "Alarm Post", 
+    "patterns": [
+      {
+        "pattern": "^Du hast \\d* neuen? Briefe? im Postamt liegen\\.$", 
+        "type": "regex"
+      },
+      {
+        "pattern": "Ein Postreiter ruft Dir aus einiger Entfernung zu, dass Du neue Post hast!", 
+        "type": "substring"
+      }
+    ]
+  },
+  {
+    "name": "Para & Normalwelt", 
+    "patterns": [ 
+      {
+        "pattern": "^(.*)Du bist hier im Innern einer (.*) schimmernden Kugel,$", 
+        "type": "regex"
+      },
+      {
+        "pattern": "^(.*)Im Innern einer (.*) schimmernden Kugel.$", 
+        "type": "regex"
+      }
+    ]
+  },
+  {
+    "name": "Bewegung Ausgaenge", 
+    "patterns": [ 
+      {
+        "pattern": "^Es gibt (.*) sichtbare Ausgaenge:", 
+        "type": "regex"
+      },
+      {
+        "pattern": "Es gibt einen sichtbaren Ausgang: ", 
+        "type": "startOfLine"
+      },
+      {
+        "pattern": "Es gibt keinen sichtbaren Ausgang.", 
+        "type": "startOfLine"
+      },
+      {
+        "pattern": "Es gibt keine sichtbaren Ausgaenge.", 
+        "type": "startOfLine"
+      }
+    ]
+  }
+]

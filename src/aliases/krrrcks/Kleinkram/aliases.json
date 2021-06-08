@@ -1,0 +1,22 @@
+[
+  {
+    "name": "Umlaute",
+    "regex": "ü|ö|ä|Ü|Ö|Ä|ß"
+  },
+  {
+    "name": "Haus betreten",
+    "regex": "^#haus(.*)$"
+  },
+  {
+    "name": "Hilfe",
+    "regex": "^#help$"
+  },
+  {
+    "name": "Home",
+    "regex": "^#home$"
+  },
+  {
+    "name": "Kämpfer Grüße",
+    "regex": "^#gruesse (.+)$"
+  }
+]

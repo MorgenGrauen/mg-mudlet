@@ -1,0 +1,1 @@
+setMapperMode(matches[2])

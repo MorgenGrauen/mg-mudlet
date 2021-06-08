@@ -1,0 +1,10 @@
+[
+  {
+    "name": "Weg ablaufen",
+    "regex": "^#go (.*)$"
+  },
+  {
+    "name": "Altes dopath",
+    "regex": "^#dopath (.*)$"
+  }
+]
