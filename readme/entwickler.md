@@ -48,4 +48,5 @@ Wo?
 * Kurz die Änderungen seit letztem Release beschreiben und an mehrere Orte posten:
 * Als offizielle "Release" bei Github, z.B. hier: https://github.com/MorgenGrauen/mg-mudlet/releases/tag/1.1
 * Im Spiel in der MPA Rubrik Mudclients
+* In Mudlet wird als Beschreibung automatisch das [Readme](README.md) von Github recyclet.
 
