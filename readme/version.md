@@ -7,10 +7,9 @@ Autoren
 * Talanis@MorgenGrauen - https://github.com/talanis85/krrrcks-mudlet
 * Brophy@MorgenGrauen - https://github.com/FGiesemann/mg-mudlet
 
-Versionen
-=========
 
-Derzeit keine Versionsnummern, eher evolutionäre Schübe oder sowas. :)
+Beiträge
+========
 
 Zesstra
 -------
@@ -64,6 +63,10 @@ Zaphob
 * Fenster-Resize entfernt, bringt keinen Unterschied, hab ich nicht verstanden.
 
 * Bewegung über Nummerntasten am Keypad auf besonderen Wunsch eines einzelnen Herrn.
+
+* Organisatorische Umstellungen, um parallele Entwicklungen zu vereinfachen
+* Zentrale Bereitstellung über das Github Profil des MorgenGrauen
+* Auslagerung der Code Objekte in einzelne Lua-Dateien
 
 
 Talanis

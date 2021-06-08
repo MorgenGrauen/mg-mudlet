@@ -7,14 +7,16 @@ Das hier enthaltene Bündel an Skripten ist noch in Entwicklung.
 
 Wer Fehlerberichte, Anregungen oder Hinweise für Verbesserungen hat, nur her damit.
 
-Viele Grüße [von den Autoren](version.md). Kontakt direkt hier, oder im Spiel, oder über die Webseite, usw.
+Falls du mithelfen und deine Skripte in dieses Paket einbringen möchtest, gibt es hier ein paar [Hinweise für Entwickler](readme/entwickler.md).
+
+Viele Grüße [von den Autoren](readme/version.md). Kontakt im Spiel, per MG Webseite, Github, Social Media, usw.
 
 
 Was schon funktioniert
 ----------------------
 
 * Hilfreiche Funktionen
-   * Mapper malt automatisch Karten
+   * Mapper malt (fast) automatisch Karten
    * Bewegung mittels Nummerntasten am Keypad
    * Unterstützung für Wegeskripte, wie aus TinyFugue bekannt ("go" & "dopath")
    * Umlaute werden bei Eingabe erkannt & beim Versand durch Äquivalente ersetzt
