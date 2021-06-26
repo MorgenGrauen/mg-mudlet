@@ -1,0 +1,8 @@
+[
+    {
+        "name": "onInstallPackage",
+        "eventHandlerList": [ 
+            "sysInstallPackage"
+          ]
+    }
+]
