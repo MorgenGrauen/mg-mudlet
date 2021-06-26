@@ -2,7 +2,7 @@
   {
     "name": "initGMCP",
     "eventHandlerList": [ 
-      "gmcp.Char"
+      "sysProtocolEnabled"
     ]
   },
   {
