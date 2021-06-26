@@ -1,7 +1,7 @@
 -- Dies setzt die Karte auf Werkszustand zurueck.
 
 -- Sonderfälle, behandeln wir irgendwann in der Zukunft
-if not gmcp.MG.room.info == nil or gmcp.MG.room.info.id == nil then
+if gmcp.MG.room.info == nil or gmcp.MG.room.info.id == nil then
     echoM("Bitte begebe dich in einen anderen Raum und versuche es noch einmal! Habe derzeit keinerlei Informationen ueber deinen aktuellen Standort im MorgenGrauen :(")
     return
 end
