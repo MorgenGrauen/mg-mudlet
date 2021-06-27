@@ -1,9 +1,16 @@
--- Dies setzt die Karte auf Werkszustand zurueck.
+-- Dieses Alias setzt die Karte auf Werkszustand zurueck.
 
--- Sonderfälle, behandeln wir irgendwann in der Zukunft
-if gmcp.MG.room.info == nil or gmcp.MG.room.info.id == nil then
-    echoM("Bitte begebe dich in einen anderen Raum und versuche es noch einmal! Habe derzeit keinerlei Informationen ueber deinen aktuellen Standort im MorgenGrauen :(")
-    return
+-- Hilfsfunktion:
+-- prüft ob ein bestimmtes Feld innerhalb einer komplexeren Tabelle exisitert
+
+local function isField(t, s)
+    if t == nil then return false end
+    local t = t
+    for key in s:gmatch('[^.]+') do
+        if t[key] == nil then return false end
+        t = t[key]
+    end
+    return true
 end
 
 -- vorhandene Räume löschen
@@ -18,24 +25,42 @@ for _, id in pairs(getAreaTable()) do
     end
 end
 
+-- currentArea zurücksetzen damit wir wirklich von vorne anfangen
+mapper.currentArea = "world"
+
 -- MapUserData löschen
 clearMapUserData()
 
--- ersten Raum aus aktuellen GMCP Daten erstellen
-local hash = gmcp.MG.room.info.id
+if isField(gmcp, "MG.room.info") then
+    -- ersten Raum aus aktuellen GMCP Daten erstellen
+    local roomData = gmcp.MG.room.info
+    local hash = roomData.id
 
-mapper.currentHash = hash
+    mapper.currentHash = hash
+    
+    local newRoom = createRoom(mapper.currentArea, hash)
 
-local newRoom = createRoom(mapper.currentArea, hash)
-local roomName = gmcp.MG.room.info.short
-setRoomName(newRoom, roomName)
+    setRoomName(newRoom, roomData.short)
 
--- im neuen Raum alle sichtbaren Ausgänge prüfen und ggf. Stubs erzeugen
-for _, exitname in pairs(gmcp.MG.room.info.exits) do
-    addStubExit(newRoom, exitname)
+    -- im neuen Raum alle sichtbaren Ausgänge prüfen und ggf. Stubs erzeugen
+    for _, exitname in pairs(roomData.exits) do
+        addStubExit(newRoom, exitname)
+    end
+
+    mapper.currentRoom = newRoom
+    centerview(newRoom)
+else
+    -- keine Raumdaten vorhanden
+    mapper.currentHash = nil
+
+    local newRoom = createRoomID()
+    addRoom(newRoom)
+    setRoomArea(newRoom, findArea(mapper.currentArea))
+    
+    echoM("Erstelle unbekannten Raum.\n  Area: " .. mapper.currentArea)
+
+    mapper.currentRoom = newRoom
+    centerview(newRoom)
 end
-
-mapper.currentRoom = newRoom
-centerview(newRoom)
 
 echoM("Neue Karte initialisiert.")
