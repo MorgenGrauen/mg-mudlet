@@ -61,3 +61,4 @@ else
 end
 
 echoM("Neue Karte initialisiert.")
+setMapperMode("auto")
