@@ -27,6 +27,7 @@ end
 
 -- currentArea zurücksetzen damit wir wirklich von vorne anfangen
 mapper.currentArea = "world"
+mapper.currentHash = nil
 
 -- MapUserData löschen
 clearMapUserData()
@@ -37,7 +38,7 @@ if isField(gmcp, "MG.room.info") then
     local hash = roomData.id
 
     mapper.currentHash = hash
-    
+
     local newRoom = createRoom(mapper.currentArea, hash)
 
     setRoomName(newRoom, roomData.short)
@@ -51,13 +52,9 @@ if isField(gmcp, "MG.room.info") then
     centerview(newRoom)
 else
     -- keine Raumdaten vorhanden
-    mapper.currentHash = nil
-
-    local newRoom = createRoomID()
-    addRoom(newRoom)
-    setRoomArea(newRoom, findArea(mapper.currentArea))
+    local newRoom = createRoom(mapper.currentArea, mapper.currentHash)
     
-    echoM("Erstelle unbekannten Raum.\n  Area: " .. mapper.currentArea)
+    setRoomName(newRoom, "Irgendwo im Nirgendwo")
 
     mapper.currentRoom = newRoom
     centerview(newRoom)
