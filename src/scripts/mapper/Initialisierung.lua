@@ -5,11 +5,11 @@ uninstallPackage("generic_mapper")
 mudlet = mudlet or {}
 mudlet.mapper_script = true
 
-mapper = {}
+mapper = mapper or {}
 
-mapper.mode = "fix"
-mapper.currentHash = nil
-mapper.currentArea = "world"
+mapper.mode = mapper.mode or "fix"
+mapper.currentHash = mapper.currentHash or nil
+mapper.currentArea = mapper.currentArea or "world"
 
 -- Den aktuellen Kartenmodus in der Karte anzeigen
 registerMapInfo("Kartenmodus", function() 

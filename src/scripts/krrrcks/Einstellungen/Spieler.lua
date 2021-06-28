@@ -1,16 +1,16 @@
 -- Variablen zum Spieler
 
-ME = {}
-ME.name = "Jemand"
-ME.stufe = 0
+ME = ME or {}
+ME.name = ME.name or "Jemand"
+ME.stufe = ME.stufe or 0
 
-ME.para = 0
-ME.vorsicht = 0
-ME.fluchtrichtung = ""
-ME.lp_alt = 0
+ME.para = ME.para or 0
+ME.vorsicht = ME.vorsicht or 0
+ME.fluchtrichtung = ME.fluchtrichtung or ""
+ME.lp_alt = ME.lp_alt or 0
 
-GUI = {}
-GUI.angezeigt = false
-GUI.lp_anzeige_blinkt = false
+GUI = GUI or {}
+GUI.angezeigt = GUI.angezeigt or false
+GUI.lp_anzeige_blinkt = GUI.lp_anzeige_blinkt or false
 
-wege = {}
+wege = wege or {}
