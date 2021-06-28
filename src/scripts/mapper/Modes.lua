@@ -9,6 +9,8 @@ function setMapperMode(mode)
         else
             echoM("Aendere Mapper-Modus nach: " .. mode)
             mapper.mode = mode
+            
+            updateMap() -- nur für die Anzeige vom Kartenmodus
         end
     else
       echoM("Moegliche Modus: 'fix' und 'auto'")
