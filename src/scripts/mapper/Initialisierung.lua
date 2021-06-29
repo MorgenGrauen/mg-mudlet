@@ -22,7 +22,7 @@ end)
 enableMapInfo("Kartenmodus")
 
 function echoM(str)
-    fg(getConfig("mapper.config", "royal_blue"))
+    fg(getConfig("mapper.messageColor", "royal_blue"))
     echo("[MAPPER] " .. str .. "\n")
     resetFormat()
 end
