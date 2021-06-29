@@ -4,5 +4,11 @@
         "eventHandlerList": [ 
             "sysInstallPackage"
           ]
+    },
+    {
+        "name": "onUninstallPackage",
+        "eventHandlerList": [ 
+            "sysUninstallPackage"
+          ]
     }
 ]
