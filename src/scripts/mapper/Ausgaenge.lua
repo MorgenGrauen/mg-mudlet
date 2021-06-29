@@ -94,7 +94,8 @@ function isSpecialIntExit(name) return mapper.intexitmap[name] == nil end
 -- Zur Positionierung neuer Raeume. Weist jeder Standardrichtung ein
 -- Koordinatendelta zu.
 function getExitCoordinates(name)
-    local d = mapperconf.scale
+    local d = getConfig("mapper.scale", 2)
+    
     if name == "n" or name == "norden" then
         return 0, d, 0
     elseif name == "no" or name == "nordosten" then
