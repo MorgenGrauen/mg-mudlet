@@ -10,5 +10,11 @@
         "eventHandlerList": [ 
             "sysUninstallPackage"
           ]
+    },
+    {
+        "name": "onExit",
+        "eventHandlerList": [ 
+            "sysExitEvent"
+          ]
     }
 ]
