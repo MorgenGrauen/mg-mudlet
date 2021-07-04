@@ -5,19 +5,22 @@ farben.vg =
     ebenen = "magenta",
     info = "green",
     alarm = "white",
-    script = "dark_green" }
+    script = "dark_green",
+    gag = "dark_slate_gray" }
 farben.hg = 
   { komm = "black",
     ebenen = "black",
     info = "black", 
     alarm = "red",
-    script = "black" }
+    script = "black",
+    gag = "black" }
 
 -- komm: Kommunikation wie teile-mit
 -- ebenen: Einfaerben der "normalen" Ebenen
 -- info: Einfaerben von Informationen des Muds (Status Gegner)
 -- alarm: Alarm-Nachrichten
 -- script: Nachrichten, die nicht vom Mud, sondern von einem Script stammen.
+-- gag: fast (!) unsichtbar auf schwarzem Hintergrund für unwichtigere Spieltexte.
 
 -- Einstellungen fuer Farben Kampfscroll
 
