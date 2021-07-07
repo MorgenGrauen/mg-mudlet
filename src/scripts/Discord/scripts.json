@@ -1,0 +1,41 @@
+[
+    {
+        "name": "setDiscordMG",
+        "eventHandlerList": [
+            "gmcp.MG"
+          ]
+    },
+    {
+        "name": "setDiscordStufe",
+        "eventHandlerList": [
+            "gmcp.MG.char.info.level"
+          ]
+    },
+    {
+        "name": "setDiscordGuild",
+        "eventHandlerList": [
+            "gmcp.MG.char.base.guild"
+          ]
+    },
+    {
+        "name": "setDiscordRaum",
+        "isActive": "no",
+        "eventHandlerList": [
+            "gmcp.MG.room"
+          ]
+    },
+    {
+        "name": "setDiscordLP",
+        "isActive": "no",
+        "eventHandlerList": [
+            "gmcp.MG.char.vitals",
+            "gmcp.MG.char.maxvitals"
+          ]
+    },
+    {
+        "name": "showDiscordTexts"
+    },
+    {
+        "name": "resetDiscordData"
+    }
+]
