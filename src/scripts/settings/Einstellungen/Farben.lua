@@ -2,7 +2,7 @@
 farben = {}
 farben.vg = 
   { komm = "cyan",
-    ebenen = "magenta",
+    ebenen = "hot_pink",
     info = "green",
     alarm = "white",
     script = "dark_green" }
