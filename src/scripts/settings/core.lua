@@ -37,7 +37,7 @@ function getConfig(index, defaultValue)
         if valueType == "number" then
             return tonumber(value)
         elseif valueType == "boolean" then
-            return not value == "0"
+            return not (value == "0") -- Klammern nicht vergessen!
         elseif valueType == "table" then
             -- Json in Lue Tabelle umwandeln
             return yajl.to_value(value)

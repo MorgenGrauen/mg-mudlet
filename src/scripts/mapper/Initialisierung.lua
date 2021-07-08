@@ -11,6 +11,12 @@ mapper.mode = mapper.mode or "fix"
 mapper.currentHash = mapper.currentHash or nil
 mapper.currentArea = mapper.currentArea or "world"
 
+-- Einstellmöglichkeiten
+
+getConfig("mapper.roomDistance", 2)
+getConfig("mapper.messageColor", "royal_blue")
+getConfig("mapper.showMap", true)
+
 -- Den aktuellen Kartenmodus in der Karte anzeigen
 registerMapInfo("Kartenmodus", function() 
     if mapper.mode == "fix" then
