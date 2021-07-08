@@ -206,5 +206,18 @@
         "type": "startOfLine"
       }
     ]
+  },
+  {
+    "name": "Suche Bezugspunkt",
+    "patterns": [
+      {
+        "pattern": "^Sowas siehst Du an/in .+ nicht\\. Du schaust Dich um\\.$",
+        "type": "regex"
+      },
+      {
+        "pattern": "Sowas siehst Du hier nicht. Du schaust Dich an.",
+        "type": "exactMatch"
+      }
+    ]
   }
 ]
