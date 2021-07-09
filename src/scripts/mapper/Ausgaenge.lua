@@ -163,7 +163,14 @@ function createRoom(area, hash)
     local newRoom = createRoomID()
     addRoom(newRoom)
     setRoomArea(newRoom, findArea(area))
-    setRoomIDbyHash(newRoom, hash)
+
+    if hash ~= nil then 
+        setRoomIDbyHash(newRoom, hash) 
+    else
+        -- just für die folgende Meldung...
+        hash = "ohne Hash"
+    end
+
     echoM("Erstelle Raum.\n  Area: " .. area .. "\n  Hash: " .. hash)
     return newRoom
 end
