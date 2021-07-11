@@ -14,8 +14,8 @@ function testMenu()
         {
             lineNumber = -1,
             configID = "mapper.roomDistance",
-            caption = "",
-            desc = "Abstand zwischen den Raeumen",
+            caption = "Abstand zwischen den Raeumen",
+            desc = "Langer Text hier als Beschreibung\nHoffentlich auch mehrzeilig...",
             format = function (value)
                 if value > 1 then
                     return string.format("%d Felder", value)
@@ -34,7 +34,7 @@ function testMenu()
         {
             lineNumber = -1,
             configID = "mapper.messageColor",
-            caption = "",
+            caption = "Farbe der Meldungen",
             desc = "Farbe der Meldungen",
             format = function (value)
                 return string.format("<%s>%s<reset>", value, value)
@@ -46,7 +46,7 @@ function testMenu()
         {
             lineNumber = -1,
             configID = "mapper.showMap",
-            caption = "",
+            caption = "Kartenfenster anzeigen",
             desc = "Soll das Kartenfenster angezeigt werden",
             format = function (value)
                 if value == true then
@@ -73,8 +73,11 @@ function showConfigMenu(data)
 
     for index, line in ipairs(menuData.lines) do
         line.lineNumber = getLastLineNumber("main")
-        cecho(string.format("- %-" .. maxW .. "s: ", line.desc))
 
+        -- Bezeichnung der Einstellung ausgeben
+        cecho(string.format("- %-" .. maxW .. "s: ", line.caption))
+
+        -- Wert der Einstellung formatieren
         local value = getConfig(line.configID)
         local formatedValue = ""
 
@@ -82,19 +85,31 @@ function showConfigMenu(data)
             formatedValue = line.format(value)    
         end
 
+        -- Wert ausgeben
         if line.widget ~= nil then
+            -- bei Einstellung mit Widget KEINEN Link erstellen!
             cecho("" .. formatedValue .. "\n")
-
-            cecho("\n")
-            line.widget(index, value)
-            cecho("\n")
         else
             cechoLink("<u>" .. formatedValue .. "</u>", "onClickValue(" .. index .. ")", "", true)
-            cecho("\n")
+            echo("\n")
+        end
+
+        -- Beschreibung ausgeben wenn vorhanden
+        if line.desc ~= nil and line.desc ~= "" then
+            echo("\n")
+            for _, dline in pairs(string.split(line.desc, "\n")) do
+                cecho(string.format("   <dim_gray>%-" .. maxW .. "s<reset>\n", dline))
+            end
+            
+            echo("\n")
+        end
+
+        -- Auswahlwidget anzeigen, falls angegeben
+        if line.widget ~= nil then
+            line.widget(index, value)
+            echo("\n")
         end
     end
-
-    echo("\n")
 end
 
 function onClickValue(index)
@@ -105,7 +120,7 @@ function onClickValue(index)
     moveCursor(0, line.lineNumber)
     selectCurrentLine()
   
-    creplaceLine(string.format("- %-" .. maxW .. "s: ", line.desc))
+    creplaceLine(string.format("- %-" .. maxW .. "s: ", line.caption))
   
     moveCursor(#getCurrentLine(), line.lineNumber)
     
@@ -137,7 +152,7 @@ function onSetValue(index, value)
     moveCursor(0, line.lineNumber)
     selectCurrentLine()
   
-    creplaceLine(string.format("- %-" .. maxW .. "s: ", line.desc))
+    creplaceLine(string.format("- %-" .. maxW .. "s: ", line.caption))
   
     moveCursor(#getCurrentLine(), line.lineNumber)
     
