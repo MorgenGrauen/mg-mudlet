@@ -4,7 +4,7 @@ function initBase()
 
     if not GUI.angezeigt then
         initGUI()
+        initCharGUI()
         GUI.angezeigt = true
     end
-
 end

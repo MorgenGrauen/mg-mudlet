@@ -1,0 +1,26 @@
+[
+  {
+    "name": "initCharGUI",
+    "eventHandlerList": [ 
+    ]
+  },
+  {
+    "name": "initCharFrame"
+  },
+  {
+    "name": "Avatar"
+  },
+  {
+    "name": "Attribs",
+    "isActive": "no"
+  },
+  {
+    "name": "Stufe"
+  },
+  {
+    "name": "Name, Gift"
+  },
+  {
+    "name": "LP, KP"
+  },
+]
