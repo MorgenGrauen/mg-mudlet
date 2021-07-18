@@ -22,7 +22,7 @@ end
 
 
 function oldGauges()
-  local imgPath = "C:/dev/mg-mudlet/img/emoji/"
+  local imgPath = "C:/dev/mg-mudlet/src/resources/CharGUI/"
   local Vo1Path = imgPath .. "../CharGui/Vo1.png" 
   local Vo2Path = imgPath .. "../CharGui/Vo2.png"
 

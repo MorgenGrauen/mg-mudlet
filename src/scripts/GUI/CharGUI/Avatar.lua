@@ -1,4 +1,4 @@
-local imgPath = "C:/dev/mg-mudlet/img/emoji/"
+local imgPath = "C:/dev/mg-mudlet/src/resources/CharGUI/"
 local AvatarPaths = {
   kaempfer = "2694 Schwerter 512.png",
   abenteurer = "1F9ED Kompass 512.png",
