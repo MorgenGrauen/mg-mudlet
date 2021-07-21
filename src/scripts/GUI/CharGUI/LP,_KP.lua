@@ -1,4 +1,12 @@
 function initGauges()
+  GUI.GaugeLPHeight = ME.report_kp and 16 or 36
+  GUI.GaugeKPHeight = ME.report_kp and 16 or 0
+  GUI.GaugeYStart = 20
+
+  initLP()
+  initVorsicht()
+  initKP()
+  
   oldGauges()
 end
 
@@ -8,8 +16,43 @@ function updateGauges()
   updateKP()
 end
 
-function updateLP()
+function initLP()
+  GUI.GaugeLP = Geyser.Gauge:new({
+    name = "GaugeLP",
+    x = 74, y = GUI.GaugeYStart,
+    width = 150, height = GUI.GaugeLPHeight
+  }, GUI.CharFrame)
+  GUI.GaugeLP:enableClickthrough()
+  registerAnonymousEventHandler("gmcp.MG.char.vitals", updateLP, false)
+  registerAnonymousEventHandler("gmcp.MG.char.maxvitals", updateLP, false)
+end
 
+function initVorsicht()
+
+end
+
+function initKP()
+
+end
+
+function updateLP()
+  ME.lp = gmcp.MG.char.vitals.hp
+  ME.lp_max = gmcp.MG.char.maxvitals.max_hp
+  local myLPQuota = ME.lp / ME.lp_max
+  local myLPText = ME.lp .. "/" .. ME.lp_max .. " (" .. string.format("%.0f", 100 * myLPQuota) .. "%)"
+  myLPText = "<b><center>" .. myLPText .. "</center></b> "
+  GUI.GaugeLP:setValue(ME.lp, ME.lp_max, myLPText)
+
+  local GaugeStyleSheet = [[
+    --border-top: 1px black solid;
+    --border-left: 1px black solid;
+    --border-bottom: 1px black solid;
+    --border-radius: 5;
+    padding: 3px;
+  ]]
+--  GaugeLP.front:setStyleSheet(GaugeStyleSheet)
+--  GaugeLP.back:setStyleSheet(GaugeStyleSheet)
+  GUI.GaugeLP:setColor(255 * (1 - myLPQuota), 255 * myLPQuota, 50)
 end
 
 function updateVorsicht()
@@ -25,33 +68,6 @@ function oldGauges()
   local imgPath = getMudletHomeDir() .. "/MorgenGrauen/CharGUI/"
   local Vo1Path = imgPath .. "/Vo1.png" 
   local Vo2Path = imgPath .. "/Vo2.png"
-
-  -- Gauges
-  GUI.GaugeLPHeight = ME.report_kp and 16 or 36
-  GUI.GaugeKPHeight = ME.report_kp and 16 or 0
-  GUI.GaugeYStart = 20
-  -- show GaugeLP
-  GUI.GaugeLP = Geyser.Gauge:new({
-    name = "GaugeLP",
-    x = 74, y = GUI.GaugeYStart,
-    width = 150, height = GUI.GaugeLPHeight
-  }, GUI.CharFrame)
-  local myLPQuota = ME.lp / ME.lp_max
-  local myLPText = ME.lp .. "/" .. ME.lp_max .. " (" .. string.format("%.0f", 100 * myLPQuota) .. "%)"
-  myLPText = "<b><center>" .. myLPText .. "</center></b> "
-  GUI.GaugeLP:setValue(ME.lp, ME.lp_max, myLPText)
-  local GaugeStyleSheet = [[
-    --border-top: 1px black solid;
-    --border-left: 1px black solid;
-    --border-bottom: 1px black solid;
-    --border-radius: 5;
-    padding: 3px;
-  ]]
---  GaugeLP.front:setStyleSheet(GaugeStyleSheet)
---  GaugeLP.back:setStyleSheet(GaugeStyleSheet)
-  GUI.GaugeLP:setColor(255 * (1 - myLPQuota), 255 * myLPQuota, 50)
-  GUI.GaugeLP:enableClickthrough()
-  
   
   GUI.GaugeLPVorsicht = Geyser.Container:new({
     name = "GaugeLPVorsicht",
