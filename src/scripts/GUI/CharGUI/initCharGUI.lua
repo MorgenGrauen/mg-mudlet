@@ -1,18 +1,19 @@
 function initCharGUI()
-
   getGMCPdata()
-
   initCharFrame()
 
   initName()
+  updateName()
 
   initGauges()
   updateGauges()
 
+  initFlucht()
+  updateFlucht()
+
   initAvatar()
   initStufe()
   showStufe()
-
 end
 
 function getGMCPdata()
@@ -36,6 +37,6 @@ function getGMCPdata()
   ME.report_vorsicht = gmcp.MG.char.wimpy and true or false
   if ME.report_vorsicht then
     ME.vorsicht = gmcp.MG.char.wimpy.wimpy
-    ME.fluchtrichtung = gmcp.MG.char.wimpy.wimpy_dir -- kann "0" sein
+    ME.fluchtrichtung = gmcp.MG.char.wimpy.wimpy_dir -- kann 0 (nicht "0") sein
   end
 end
