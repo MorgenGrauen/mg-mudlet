@@ -14,6 +14,7 @@ function initStufe()
   ]]))
   GUI.StufeLabel:enableClickthrough()
   GUI.StufeLabel:hide()
+  registerAnonymousEventHandler("gmcp.MG.char.info.level", showStufe, false)
 end
 
 function showStufe()  
