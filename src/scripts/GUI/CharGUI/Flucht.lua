@@ -23,10 +23,9 @@ function updateFlucht()
     else
       FluchtString = "Vo: " .. ME.vorsicht
     end
-    if ME.fluchtrichtung ~= 0 then 
+    if ME.fluchtrichtung and (ME.fluchtrichtung ~= 0) then 
       FluchtString = FluchtString .. ", FR: " .. ME.fluchtrichtung 
     end
   end
   GUI.FluchtLabel:echo("&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;" .. FluchtString)
 end
-registerAnonymousEventHandler(gmcp.MG.char.wimpy, updateFlucht, false)
