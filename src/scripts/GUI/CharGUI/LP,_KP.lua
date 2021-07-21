@@ -22,9 +22,9 @@ end
 
 
 function oldGauges()
-  local imgPath = getMudletHomeDir() .. "/@PKGNAME@/CharGUI/"
-  local Vo1Path = imgPath .. "../Vo1.png" 
-  local Vo2Path = imgPath .. "../Vo2.png"
+  local imgPath = getMudletHomeDir() .. "/MorgenGrauen/CharGUI/"
+  local Vo1Path = imgPath .. "/Vo1.png" 
+  local Vo2Path = imgPath .. "/Vo2.png"
 
   -- Gauges
   GUI.GaugeLPHeight = ME.report_kp and 16 or 36
@@ -39,7 +39,7 @@ function oldGauges()
   local myLPQuota = ME.lp / ME.lp_max
   local myLPText = ME.lp .. "/" .. ME.lp_max .. " (" .. string.format("%.0f", 100 * myLPQuota) .. "%)"
   myLPText = "<b><center>" .. myLPText .. "</center></b> "
-	GUI.GaugeLP:setValue(ME.lp, ME.lp_max, myLPText)
+  GUI.GaugeLP:setValue(ME.lp, ME.lp_max, myLPText)
   local GaugeStyleSheet = [[
     --border-top: 1px black solid;
     --border-left: 1px black solid;
@@ -95,7 +95,7 @@ function oldGauges()
     local myKPQuota = ME.kp / ME.kp_max
     local myKPText = ME.kp .. "/" .. ME.kp_max .. " (" .. string.format("%.0f", 100 * myKPQuota) .. "%)"
     myKPText = "<b><center>" .. myKPText .. "</center></b>"
-  	GUI.GaugeKP:setValue(ME.kp, ME.kp_max, myKPText)
+    GUI.GaugeKP:setValue(ME.kp, ME.kp_max, myKPText)
     GUI.GaugeKP:enableClickthrough()
   else
     if GUI.GaugeKP then GUI.GaugeKP:hide() end
