@@ -15,8 +15,9 @@ function initFlucht()
 end
 
 function updateFlucht()
-  local FluchtString = "Vo: " .. ME.vorsicht
+  local FluchtString = ""
   if ME.report_vorsicht then
+    local FluchtString = "Vo: " .. ME.vorsicht
     if ME.fluchtrichtung ~= 0 then 
       FluchtString = FluchtString .. ", FR: " .. ME.fluchtrichtung 
     end
