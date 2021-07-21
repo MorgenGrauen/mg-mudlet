@@ -10,6 +10,7 @@ function initName()
     font: italic;
   ]])
   GUI.NameLabel:enableClickthrough()
+  registerAnonymousEventHandler("gmcp.MG.char.vitals.poison", updateName, false)
 end
  
 function updateName()
@@ -31,6 +32,5 @@ function updateName()
   end
 
   NameString = f[[<center><b>{NameString}</b></center>]]
-  
-GUI.NameLabel:echo(NameString)
+  GUI.NameLabel:echo(NameString)
 end
