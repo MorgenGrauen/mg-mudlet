@@ -12,15 +12,21 @@ function initFlucht()
     font-size: 6pt;
   ]])
   GUI.FluchtLabel:enableClickthrough()
+  registerAnonymousEventHandler("gmcp.MG.char.wimpy", updateFlucht, false)
 end
 
 function updateFlucht()
   local FluchtString = ""
   if ME.report_vorsicht then
-    local FluchtString = "Vo: " .. ME.vorsicht
+    if ME.vorsicht == 0 then
+      FluchtString = "Vo: NIX"
+    else
+      FluchtString = "Vo: " .. ME.vorsicht
+    end
     if ME.fluchtrichtung ~= 0 then 
       FluchtString = FluchtString .. ", FR: " .. ME.fluchtrichtung 
     end
   end
   GUI.FluchtLabel:echo("&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;" .. FluchtString)
 end
+registerAnonymousEventHandler(gmcp.MG.char.wimpy, updateFlucht, false)
