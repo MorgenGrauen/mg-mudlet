@@ -22,9 +22,9 @@ end
 
 
 function oldGauges()
-  local imgPath = "C:/dev/mg-mudlet/src/resources/CharGUI/"
-  local Vo1Path = imgPath .. "../CharGui/Vo1.png" 
-  local Vo2Path = imgPath .. "../CharGui/Vo2.png"
+  local imgPath = getMudletHomeDir() .. "/@PKGNAME@/CharGUI/"
+  local Vo1Path = imgPath .. "../Vo1.png" 
+  local Vo2Path = imgPath .. "../Vo2.png"
 
   -- Gauges
   GUI.GaugeLPHeight = ME.report_kp and 16 or 36
