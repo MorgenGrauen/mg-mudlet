@@ -12,6 +12,8 @@ function initCharGUI()
   updateFlucht()
 
   initAvatar()
+  updateAvatar()
+  
   initStufe()
   showStufe()
 end
