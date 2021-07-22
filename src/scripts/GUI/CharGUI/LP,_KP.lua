@@ -5,15 +5,26 @@ function initGauges()
 
   initLP()
   initVorsicht()
-  initKP()
-  
+  if ME.report_kp then
+    initKP()
+  end
+
   oldGauges()
+
+  registerAnonymousEventHandler("gmcp.MG.char.vitals", updateLP, false)
+  registerAnonymousEventHandler("gmcp.MG.char.maxvitals", updateLP, false)
+  registerAnonymousEventHandler("gmcp.MG.char.vitals", updateKP, false)
+  registerAnonymousEventHandler("gmcp.MG.char.maxvitals", updateKP, false)
 end
 
 function updateGauges()
   updateLP()
   updateVorsicht()
-  updateKP()
+  if ME.report_kp then
+    updateKP()
+  else
+    if GUI.GaugeKP then GUI.GaugeKP:hide() end
+  end
 end
 
 function initLP()
@@ -23,8 +34,6 @@ function initLP()
     width = 150, height = GUI.GaugeLPHeight
   }, GUI.CharFrame)
   GUI.GaugeLP:enableClickthrough()
-  registerAnonymousEventHandler("gmcp.MG.char.vitals", updateLP, false)
-  registerAnonymousEventHandler("gmcp.MG.char.maxvitals", updateLP, false)
 end
 
 function initVorsicht()
@@ -32,7 +41,13 @@ function initVorsicht()
 end
 
 function initKP()
-
+  GUI.GaugeKP = Geyser.Gauge:new({
+    name = "GaugeKP",
+    x = 74, y = GUI.GaugeYStart + 4 + GUI.GaugeLPHeight,
+    width = 150, height = GUI.GaugeKPHeight
+  }, GUI.CharFrame)
+  GUI.GaugeKP:setColor(0, 50, 250)
+  GUI.GaugeKP:enableClickthrough()
 end
 
 function updateLP()
@@ -60,7 +75,10 @@ function updateVorsicht()
 end
 
 function updateKP()
-
+  local myKPQuota = ME.kp / ME.kp_max
+  local myKPText = ME.kp .. "/" .. ME.kp_max .. " (" .. string.format("%.0f", 100 * myKPQuota) .. "%)"
+  myKPText = "<b><center>" .. myKPText .. "</center></b>"
+  GUI.GaugeKP:setValue(ME.kp, ME.kp_max, myKPText)
 end
 
 
@@ -99,21 +117,4 @@ function oldGauges()
   GUI.GaugeLPVorsichtUnten:setBackgroundImage(Vo2Path)
   GUI.GaugeLPVorsichtUnten:enableClickthrough()
   GUI.GaugeLP.text:raise()
-  
-  
-  if ME.report_kp then
-    GUI.GaugeKP = Geyser.Gauge:new({
-      name = "GaugeKP",
-      x = 74, y = GUI.GaugeYStart + 4 + GUI.GaugeLPHeight,
-      width = 150, height = GUI.GaugeKPHeight
-    }, GUI.CharFrame)
-    GUI.GaugeKP:setColor(0, 50, 250)
-    local myKPQuota = ME.kp / ME.kp_max
-    local myKPText = ME.kp .. "/" .. ME.kp_max .. " (" .. string.format("%.0f", 100 * myKPQuota) .. "%)"
-    myKPText = "<b><center>" .. myKPText .. "</center></b>"
-    GUI.GaugeKP:setValue(ME.kp, ME.kp_max, myKPText)
-    GUI.GaugeKP:enableClickthrough()
-  else
-    if GUI.GaugeKP then GUI.GaugeKP:hide() end
-  end
 end
