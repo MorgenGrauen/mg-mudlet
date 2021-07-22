@@ -14,12 +14,12 @@ function initName()
 end
  
 function updateName()
+  -- Name um ggf. Giftsymbole erweitern
+  ME.gift = gmcp.MG.char.vitals.poison
+  local myGift = ME.gift
+  local GiftSymbol = "☠️"
   local NameString = ME.name
   NameString = f[[ {NameString} ]]
-
-  -- Name um ggf. Giftsymbole erweitern
-  local GiftSymbol = "☠️"
-  local myGift = ME.gift
 
   if myGift == 0 then      -- keins
     NameString = f[[<font color="white">{NameString}</font>]]
