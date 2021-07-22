@@ -75,6 +75,8 @@ function updateVorsicht()
 end
 
 function updateKP()
+  ME.kp = gmcp.MG.char.vitals.sp
+  ME.kp_max = gmcp.MG.char.maxvitals.max_sp
   local myKPQuota = ME.kp / ME.kp_max
   local myKPText = ME.kp .. "/" .. ME.kp_max .. " (" .. string.format("%.0f", 100 * myKPQuota) .. "%)"
   myKPText = "<b><center>" .. myKPText .. "</center></b>"
