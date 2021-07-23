@@ -16,6 +16,8 @@ function initFlucht()
 end
 
 function updateFlucht()
+  ME.vorsicht = gmcp.MG.char.wimpy.wimpy
+  ME.fluchtrichtung = gmcp.MG.char.wimpy.wimpy_dir
   local FluchtString = ""
   if ME.report_vorsicht then
     if ME.vorsicht == 0 then
