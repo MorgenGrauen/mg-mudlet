@@ -7,7 +7,7 @@ function onInstallPackage(_, packageName)
 
         -- Karte mit Startgebieten laden
         -- TODO: Alles folgende in eigenes Skript auslagern, das von hier aufgerufen wird.
-        loadMap(getMudletHomeDir() .. "/@PKGNAME@/" .. "map anfaenger v4.dat")
+        loadMap(getMudletHomeDir() .. "/@PKGNAME@/" .. "map anfaenger v8.dat")
         -- TODO: Vorab die vorhandene Karte speichern, falls Spieler bereits aktiv war?
 
         -- Wo befinden wir uns gerade auf der geladenen Karte?
