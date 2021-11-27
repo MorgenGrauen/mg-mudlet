@@ -3,7 +3,7 @@ MorgenGrauen in Mudlet
 
 Hier finden sich Mudlet-Skripte für das MUD [MorgenGrauen](http://mg.mud.de). 
 
-Das hier enthaltene Bündel an Skripten ist noch in Entwicklung. 
+Das hier enthaltene Bündel an Skripten ist weiterhin in Entwicklung. 
 
 Wer Fehlerberichte, Anregungen oder Hinweise für Verbesserungen hat, nur her damit.
 
