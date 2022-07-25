@@ -21,7 +21,7 @@ function updateName()
   local NameString = ME.name
   NameString = f[[ {NameString} ]]
 
-  if myGift == 0 then      -- keins
+  if not myGift or myGift == 0 then      -- keins
     NameString = f[[<font color="white">{NameString}</font>]]
   elseif myGift < 4 then  -- leicht
     NameString = f[[<font color="yellow">{GiftSymbol}{NameString}{GiftSymbol}</font>]]
