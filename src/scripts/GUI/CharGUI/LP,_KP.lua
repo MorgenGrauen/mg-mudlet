@@ -9,7 +9,7 @@ function initGauges()
     initKP()
   end
 
-  oldGauges()
+  -- oldGauges()
 
   registerAnonymousEventHandler("gmcp.MG.char.vitals", updateLP, false)
   registerAnonymousEventHandler("gmcp.MG.char.maxvitals", updateLP, false)
