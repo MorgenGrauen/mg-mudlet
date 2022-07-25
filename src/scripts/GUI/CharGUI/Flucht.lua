@@ -16,17 +16,20 @@ function initFlucht()
 end
 
 function updateFlucht()
-  ME.vorsicht = gmcp.MG.char.wimpy.wimpy
-  ME.fluchtrichtung = gmcp.MG.char.wimpy.wimpy_dir
   local FluchtString = ""
-  if ME.report_vorsicht then
-    if ME.vorsicht == 0 then
-      FluchtString = "Vo: NIX"
-    else
-      FluchtString = "Vo: " .. ME.vorsicht
-    end
-    if ME.fluchtrichtung and (ME.fluchtrichtung ~= 0) then 
-      FluchtString = FluchtString .. ", FR: " .. ME.fluchtrichtung 
+  if gmcp and gmcp.MG and gmcp.MG.char and gmcp.MG.char.wimpy 
+          and gmcp.MG.char.wimpy.wimpy and gmcp.MG.char.wimpy.wimpy_dir then
+    ME.vorsicht = gmcp.MG.char.wimpy.wimpy
+    ME.fluchtrichtung = gmcp.MG.char.wimpy.wimpy_dir
+    if ME.report_vorsicht then
+      if ME.vorsicht == 0 then
+        FluchtString = "Vo: NIX"
+      else
+        FluchtString = "Vo: " .. ME.vorsicht
+      end
+      if ME.fluchtrichtung and (ME.fluchtrichtung ~= 0) then 
+        FluchtString = FluchtString .. ", FR: " .. ME.fluchtrichtung 
+      end
     end
   end
   GUI.FluchtLabel:echo("&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;" .. FluchtString)
