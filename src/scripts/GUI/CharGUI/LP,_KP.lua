@@ -109,16 +109,23 @@ function initVorsicht()
 end
 
 function updateVorsicht()
-  ME.vorsicht = gmcp.MG.char.wimpy.wimpy
-
-  local VorsichtX = string.format("%.0f", 100 * (ME.vorsicht / ME.lp_max)) .. "%"
-  local VorsichtY = GUI.GaugeLPHeight - 3
-
-  GUI.GaugeLPVorsichtOben:move(VorsichtX, 0)
-  GUI.GaugeLPVorsichtOben:show()
-
-  GUI.GaugeLPVorsichtUnten:move(VorsichtX, VorsichtY)
-  GUI.GaugeLPVorsichtOben:show()
-
-  GUI.GaugeLP.text:raise()
+  if gmcp and gmcp.MG and gmcp.MG.char and gmcp.MG.char.wimpy and gmcp.MG.char.wimpy.wimpy then
+    ME.vorsicht = gmcp.MG.char.wimpy.wimpy
+  
+    local VorsichtX = string.format("%.0f", 100 * (ME.vorsicht / ME.lp_max)) .. "%"
+    local VorsichtY = GUI.GaugeLPHeight - 3
+  
+    GUI.GaugeLPVorsichtOben:move(VorsichtX, 0)
+    GUI.GaugeLPVorsichtOben:show()
+  
+    GUI.GaugeLPVorsichtUnten:move(VorsichtX, VorsichtY)
+    GUI.GaugeLPVorsichtUnten:show()
+  
+    GUI.GaugeLP.text:raise()
+    
+  elseif GUI and GUI.GaugeLPVorsichtOben and GUI.GaugeLPVorsichtUnten then
+    GUI.GaugeLPVorsichtUnten:hide()
+    GUI.GaugeLPVorsichtOben:hide()
+  
+  end
 end
