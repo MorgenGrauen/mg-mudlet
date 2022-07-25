@@ -15,7 +15,7 @@ function initCharFrame()
     ]],
     buttonFontSize = 8,
     buttonsize = 16,
-    titleText = "Charakter",
+    titleText = " ",
     titleTxtColor = "SaddleBrown",
   }) 
   
