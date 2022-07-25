@@ -39,6 +39,7 @@ function updateAvatar()
   -- Gilde gewechselt? Sollten wir anzeigen!
   -- Am besten nur neuen AvatarPath einfügen, Rest beibehalten 
   -- braucht Vadis CSSMan? https://forums.mudlet.org/viewtopic.php?t=3502
+  ME.gilde = gmcp.MG.char.base.guild or nil
   local AvatarPath = imgPath .. AvatarPaths[ME.gilde] or AvatarPaths["glitzer"]
   GUI.AvatarLabel:setStyleSheet(f[[
     xborder-color: rgba(113,75,50,100%);
