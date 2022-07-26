@@ -19,8 +19,6 @@ function zeigeRaum()
 
   -- Statuszeile aktualisieren
 
-  GUI.spieler:echo(ME.name .. " [" .. ME.stufe .. "]")
-
   GUI.ort_raum:echo(ME.raum_kurz)
   GUI.ort_region:echo(ME.raum_region .. " [" .. ME.raum_id .. "]")
 
