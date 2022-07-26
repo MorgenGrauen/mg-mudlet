@@ -12,7 +12,7 @@ function initGUI()
   -- Zeile 2: ort_raum (Region, Raumnummer, Para), ort_region (Ort kurz)
   -- Zeile 3: lp_titel, lp_anzeige (Lebenspunkte-Anzeige), kp_titel, kp_anzeige (KP-Anzeige), trenner_2
 
-  -- Bald:
+  -- Neu:
   -- Zeile 1: ort_raum (Region, Raumnummer, Para), ort_region (Ort kurz)
 
   GUI.statuszeile = Geyser.Container:new({name = "statuszeile", x=0, y=-30, width = 600, height=30})

@@ -17,6 +17,21 @@ function initCharFrame()
     buttonsize = 16,
     titleText = " ",
     titleTxtColor = "SaddleBrown",
-  }) 
-  
+  })
+    
+  function GUI.CharFrame:toggleFixedSize()
+    if not self.FixedSize then
+      self.connectedToBorder = {}
+      self.connectedToBorder.bottom = true
+      self.connectedToBorder.left = true
+      self.connectedToBorder.top = true
+      self.connectedToBorder.right = true
+      self:setAbsolute(true)
+      self.FixedSize = true
+    else
+      self.connectedToBorder = {}
+      self.FixedSize = false
+    end
+  end
+  GUI.CharFrame:toggleFixedSize() 
 end
