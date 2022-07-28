@@ -16,10 +16,12 @@ function initCharGUI()
   
   initStufe()
   showStufe()
+
+  -- oldAttribs -- tbd "Attribute"
 end
 
 function getGMCPdata()
-  ME.report_attribs = false -- tbd
+  ME.report_attribs = false -- tbd "Attribute"
 
   ME.name = gmcp.MG.char.base.name
   ME.stufe = gmcp.MG.char.info.level
