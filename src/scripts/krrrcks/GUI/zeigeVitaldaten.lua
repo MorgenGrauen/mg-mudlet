@@ -1,4 +1,6 @@
 function zeigeVitaldaten()
+  
+  if not (gmcp.MG.char.vitals and gmcp.MG.char.maxvitals) then return end
 
   -- GMCP Vitaldaten merken
 
