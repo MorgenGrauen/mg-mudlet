@@ -22,7 +22,7 @@
   {
     "name": "zeigeGift",
     "eventHandlerList": [ 
-      "gmcp.MG.char.vitals"
+      "gmcp.MG.char.vitals.poison"
     ]
   },
   {
