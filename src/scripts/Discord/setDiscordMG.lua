@@ -8,6 +8,7 @@ function setDiscordMG()
   setDiscordState("via Mudlet")
   setDiscordLargeIcon("drache")
   setDiscordLargeIconText("telnet mg.mud.de:4711")
+  setDiscordLink()
   if gmcp and gmcp.MG and gmcp.MG.char then
     if gmcp.MG.char.info and gmcp.MG.char.info.level then
       setDiscordStufe()
