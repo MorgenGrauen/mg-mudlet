@@ -1,9 +1,6 @@
 [
   {
-    "name": "initGMCP",
-    "eventHandlerList": [ 
-      "sysProtocolEnabled"
-    ]
+    "name": "initGMCP"
   },
   {
     "name": "initBase",
