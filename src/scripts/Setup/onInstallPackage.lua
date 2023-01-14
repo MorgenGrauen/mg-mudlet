@@ -4,6 +4,6 @@ function onInstallPackage(_, packageName)
         -- ausgeführt werden soll
 
         initGMCP("", "GMCP")
-        cecho([[<LimeGreen>[  OK  ] -<gold> Dein Mudlet-Paket fürs MorgenGrauen wurde erfolgreich installiert.]])
+        cecho([[<LimeGreen>[  OK  ]  -<gold> Dein Mudlet-Paket fürs MorgenGrauen wurde erfolgreich installiert.\n]])
     end
 end
