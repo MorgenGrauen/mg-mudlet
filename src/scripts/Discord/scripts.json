@@ -36,6 +36,9 @@
         "name": "showDiscordTexts"
     },
     {
+        "name": "showDiscordLink"
+    },
+    {
         "name": "resetDiscordData"
     }
 ]
