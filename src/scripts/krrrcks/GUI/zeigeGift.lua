@@ -1,4 +1,6 @@
 function zeigeGift()
+  
+  if not GUI.gift then return end
 
   ME.gift = gmcp.MG.char.vitals.poison
   local zeile = ""

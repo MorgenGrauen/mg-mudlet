@@ -4,6 +4,7 @@ function onInstallPackage(_, packageName)
         -- ausgeführt werden soll
 
         initGMCP("", "GMCP")
+        cecho([[<LimeGreen>[  OK  ]  -<gold> Dein Mudlet-Paket fürs MorgenGrauen wurde erfolgreich installiert.\n]])
 
         -- Karte mit Startgebieten laden
         -- TODO: Alles folgende in eigenes Skript auslagern, das von hier aufgerufen wird.
