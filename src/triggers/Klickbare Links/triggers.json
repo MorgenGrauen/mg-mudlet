@@ -1,0 +1,26 @@
+[
+  {
+    "name": "http(s) und www",
+    "highlight": "no",
+    "patterns": [ 
+      {
+        "pattern": "(?i:https?:\\/\\/\\S*)",
+        "type": "regex",
+        "comment": "accepted trigger types are 'substring', 'regex', 'startOfLine', 'exactMatch', 'lua', 'spacer', 'color', 'colour', and 'prompt'"
+      },
+      {
+        "pattern": "(?i:www\\.\\S*)",
+        "type": "regex"
+      }
+    ]
+  },
+  {
+    "name": "MG Email",
+    "patterns": [
+      {
+        "pattern": "mud@mg.mud.de",
+        "type": "substring"
+      }
+    ]
+  }
+]
