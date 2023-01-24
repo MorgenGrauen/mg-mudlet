@@ -1,0 +1,531 @@
+{
+    "anonymousAreaName": "Unnamed Area",
+    "areaCount": 4,
+    "areas": [
+        {
+            "id": -1,
+            "name": "Default Area",
+            "roomCount": 0,
+            "rooms": [
+            ]
+        },
+        {
+            "id": 1,
+            "name": "Welt",
+            "roomCount": 1,
+            "rooms": [
+                {
+                    "coordinates": [
+                        0,
+                        0,
+                        0
+                    ],
+                    "environment": -1,
+                    "exits": [
+                    ],
+                    "id": 1,
+                    "name": "?"
+                }
+            ]
+        },
+        {
+            "id": 2,
+            "name": "Wald - Wonnewichte",
+            "roomCount": 1,
+            "rooms": [
+                {
+                    "coordinates": [
+                        -22,
+                        36,
+                        0
+                    ],
+                    "environment": 258,
+                    "exits": [
+                    ],
+                    "hash": "592a9556a025775702a80903664ab955",
+                    "id": 2,
+                    "name": "Auf einem dunklen Platz im schattigen Wald."
+                }
+            ]
+        },
+        {
+            "id": 69,
+            "name": "Startgebiet",
+            "roomCount": 13,
+            "rooms": [
+                {
+                    "coordinates": [
+                        35,
+                        -4,
+                        0
+                    ],
+                    "environment": -1,
+                    "exits": [
+                        {
+                            "exitId": 996,
+                            "name": "south"
+                        }
+                    ],
+                    "hash": "b4eee52b57cf9d15f2afb93c85781b44",
+                    "id": 8,
+                    "name": "Beim Waffenschmied."
+                },
+                {
+                    "coordinates": [
+                        39,
+                        -4,
+                        0
+                    ],
+                    "environment": 292,
+                    "exits": [
+                        {
+                            "exitId": 984,
+                            "name": "south"
+                        }
+                    ],
+                    "hash": "83e38c60031c0173dcdcd58fd3df79e0",
+                    "id": 983,
+                    "name": "Eingang zur Zwergenstadt."
+                },
+                {
+                    "coordinates": [
+                        39,
+                        -6,
+                        0
+                    ],
+                    "environment": 292,
+                    "exits": [
+                        {
+                            "exitId": 983,
+                            "name": "north"
+                        },
+                        {
+                            "exitId": 985,
+                            "name": "east"
+                        },
+                        {
+                            "exitId": 993,
+                            "name": "west"
+                        },
+                        {
+                            "exitId": 991,
+                            "name": "south"
+                        }
+                    ],
+                    "hash": "50fb352c049647dbd1361af5e4c9e990",
+                    "id": 984,
+                    "name": "Kreuzung."
+                },
+                {
+                    "coordinates": [
+                        41,
+                        -6,
+                        0
+                    ],
+                    "environment": 292,
+                    "exits": [
+                        {
+                            "exitId": 989,
+                            "name": "north"
+                        },
+                        {
+                            "exitId": 986,
+                            "name": "east"
+                        },
+                        {
+                            "exitId": 984,
+                            "name": "west"
+                        },
+                        {
+                            "exitId": 990,
+                            "name": "south"
+                        }
+                    ],
+                    "hash": "f1624afaeed68f0f2725cb0abeeb2fd2",
+                    "id": 985,
+                    "name": "Gang."
+                },
+                {
+                    "coordinates": [
+                        43,
+                        -6,
+                        0
+                    ],
+                    "environment": 292,
+                    "exits": [
+                        {
+                            "exitId": 985,
+                            "name": "west"
+                        }
+                    ],
+                    "hash": "dded159f0734e2bb0ece89c593b4c66f",
+                    "id": 986,
+                    "name": "Eine Gangkreuzung."
+                },
+                {
+                    "coordinates": [
+                        41,
+                        -4,
+                        0
+                    ],
+                    "environment": -1,
+                    "exits": [
+                        {
+                            "exitId": 985,
+                            "name": "south"
+                        }
+                    ],
+                    "hash": "4d3ca5403ced525cf1dd1add6051266b",
+                    "id": 989,
+                    "name": "Zwergenpost.",
+                    "symbol": {
+                        "text": "📯"
+                    }
+                },
+                {
+                    "coordinates": [
+                        41,
+                        -8,
+                        0
+                    ],
+                    "environment": -1,
+                    "exits": [
+                        {
+                            "exitId": 985,
+                            "name": "north"
+                        },
+                        {
+                            "exitId": 2,
+                            "name": "steige auf biene"
+                        }
+                    ],
+                    "hash": "0ec9bbc39d218fdf138dac787e568b79",
+                    "id": 990,
+                    "name": "Zwergenkapelle.",
+                    "symbol": {
+                        "text": "🛐"
+                    }
+                },
+                {
+                    "coordinates": [
+                        39,
+                        -8,
+                        0
+                    ],
+                    "environment": 292,
+                    "exits": [
+                        {
+                            "exitId": 984,
+                            "name": "north"
+                        },
+                        {
+                            "exitId": 992,
+                            "name": "south"
+                        }
+                    ],
+                    "hash": "42301f9ec999bb469bc6fdc46ed621a0",
+                    "id": 991,
+                    "name": "Gang."
+                },
+                {
+                    "coordinates": [
+                        39,
+                        -10,
+                        0
+                    ],
+                    "environment": 292,
+                    "exits": [
+                        {
+                            "exitId": 991,
+                            "name": "north"
+                        }
+                    ],
+                    "hash": "6bbb21735ef1a15910d8f97638126f7c",
+                    "id": 992,
+                    "name": "Thronsaal."
+                },
+                {
+                    "coordinates": [
+                        37,
+                        -6,
+                        0
+                    ],
+                    "environment": 292,
+                    "exits": [
+                        {
+                            "exitId": 994,
+                            "name": "north"
+                        },
+                        {
+                            "exitId": 984,
+                            "name": "east"
+                        },
+                        {
+                            "exitId": 996,
+                            "name": "west"
+                        },
+                        {
+                            "exitId": 995,
+                            "name": "south"
+                        }
+                    ],
+                    "hash": "e30eab1d89e77b99f70381f8456a57e0",
+                    "id": 993,
+                    "name": "Gang."
+                },
+                {
+                    "coordinates": [
+                        37,
+                        -4,
+                        0
+                    ],
+                    "environment": -1,
+                    "exits": [
+                        {
+                            "exitId": 993,
+                            "name": "south"
+                        }
+                    ],
+                    "hash": "aa0d0cd6b6802375f8f034864eb0bb04",
+                    "id": 994,
+                    "name": "Die Diamantbar.",
+                    "symbol": {
+                        "text": "🍖"
+                    }
+                },
+                {
+                    "coordinates": [
+                        37,
+                        -8,
+                        0
+                    ],
+                    "environment": -1,
+                    "exits": [
+                        {
+                            "exitId": 993,
+                            "name": "north"
+                        }
+                    ],
+                    "hash": "938978119f78e8ffa091aa98422c3ead",
+                    "id": 995,
+                    "name": "Zwergenladen.",
+                    "symbol": {
+                        "text": "💰"
+                    }
+                },
+                {
+                    "coordinates": [
+                        35,
+                        -6,
+                        0
+                    ],
+                    "environment": 292,
+                    "exits": [
+                        {
+                            "exitId": 8,
+                            "name": "north"
+                        },
+                        {
+                            "exitId": 993,
+                            "name": "east"
+                        }
+                    ],
+                    "hash": "033560722da0d9feb7784e32c0520fd1",
+                    "id": 996,
+                    "name": "Gang."
+                }
+            ]
+        }
+    ],
+    "customEnvColors": [
+        {
+            "color24RGB": [
+                128,
+                0,
+                0
+            ],
+            "id": 257
+        },
+        {
+            "color24RGB": [
+                0,
+                128,
+                0
+            ],
+            "id": 258
+        },
+        {
+            "color24RGB": [
+                128,
+                128,
+                0
+            ],
+            "id": 259
+        },
+        {
+            "color24RGB": [
+                0,
+                0,
+                128
+            ],
+            "id": 260
+        },
+        {
+            "color24RGB": [
+                128,
+                0,
+                128
+            ],
+            "id": 261
+        },
+        {
+            "color24RGB": [
+                0,
+                128,
+                128
+            ],
+            "id": 262
+        },
+        {
+            "color24RGB": [
+                192,
+                192,
+                192
+            ],
+            "id": 263
+        },
+        {
+            "color24RGB": [
+                0,
+                0,
+                0
+            ],
+            "id": 264
+        },
+        {
+            "color24RGB": [
+                255,
+                0,
+                0
+            ],
+            "id": 265
+        },
+        {
+            "color24RGB": [
+                0,
+                255,
+                0
+            ],
+            "id": 266
+        },
+        {
+            "color24RGB": [
+                255,
+                255,
+                0
+            ],
+            "id": 267
+        },
+        {
+            "color24RGB": [
+                0,
+                0,
+                255
+            ],
+            "id": 268
+        },
+        {
+            "color24RGB": [
+                255,
+                0,
+                255
+            ],
+            "id": 269
+        },
+        {
+            "color24RGB": [
+                0,
+                255,
+                255
+            ],
+            "id": 270
+        },
+        {
+            "color24RGB": [
+                255,
+                255,
+                255
+            ],
+            "id": 271
+        },
+        {
+            "color24RGB": [
+                128,
+                128,
+                128
+            ],
+            "id": 272
+        },
+        {
+            "color24RGB": [
+                132,
+                132,
+                255
+            ],
+            "id": 289
+        },
+        {
+            "color24RGB": [
+                132,
+                66,
+                0
+            ],
+            "id": 290
+        },
+        {
+            "color24RGB": [
+                255,
+                132,
+                66
+            ],
+            "id": 291
+        },
+        {
+            "color24RGB": [
+                64,
+                64,
+                64
+            ],
+            "id": 292
+        }
+    ],
+    "defaultAreaName": "Default Area",
+    "formatVersion": 1,
+    "labelCount": 0,
+    "mapSymbolFontDetails": "Bitstream Vera Sans Mono,12,-1,5,50,0,0,0,0,0",
+    "mapSymbolFontFudgeFactor": 1,
+    "onlyMapSymbolFontToBeUsed": false,
+    "playerRoomColors": [
+        {
+            "color24RGB": [
+                0,
+                127,
+                0
+            ]
+        },
+        {
+            "color24RGB": [
+                170,
+                170,
+                127
+            ]
+        }
+    ],
+    "playerRoomInnerDiameterPercentage": 70,
+    "playerRoomOuterDiameterPercentage": 120,
+    "playerRoomStyle": 3,
+    "playersRoomId": {
+        "MorgenGrauen": 1
+    },
+    "roomCount": 25
+}
