@@ -1,0 +1,633 @@
+{
+	"anonymousAreaName": "Unnamed Area",
+	"areaCount": 4,
+	"areas": [{
+			"id": -1,
+			"name": "Default Area",
+			"roomCount": 0,
+			"rooms": []
+		},
+		{
+			"id": 1,
+			"name": "Welt",
+			"roomCount": 1,
+			"rooms": [{
+				"coordinates": [
+					0,
+					0,
+					0
+				],
+				"environment": -1,
+				"exits": [],
+				"id": 1,
+				"name": "?"
+			}]
+		},
+		{
+			"id": 2,
+			"name": "Wald - Wonnewichte",
+			"roomCount": 1,
+			"rooms": [{
+				"coordinates": [
+					-22,
+					36,
+					0
+				],
+				"environment": 258,
+				"exits": [],
+				"hash": "592a9556a025775702a80903664ab955",
+				"id": 2,
+				"name": "Auf einem dunklen Platz im schattigen Wald."
+			}]
+		},
+		{
+			"id": 80,
+			"name": "Startgebiet",
+			"roomCount": 23,
+			"rooms": [{
+					"coordinates": [
+						-20,
+						-30,
+						0
+					],
+					"environment": 292,
+					"exits": [{
+							"exitId": 2643,
+							"name": "east"
+						},
+						{
+							"exitId": 2683,
+							"name": "south"
+						}
+					],
+					"hash": "e0f281cbcfc32e9dd049abfac5418ce4",
+					"id": 2642,
+					"name": "Eingang von Katzmandu."
+				},
+				{
+					"coordinates": [
+						-18,
+						-30,
+						0
+					],
+					"environment": 292,
+					"exits": [{
+							"exitId": 2644,
+							"name": "east"
+						},
+						{
+							"exitId": 2642,
+							"name": "west"
+						}
+					],
+					"hash": "2d1806f2277b491145ea42fc20b3f83e",
+					"id": 2643,
+					"name": "Auf der Hauptstrasse von Katzmandu."
+				},
+				{
+					"coordinates": [
+						-16,
+						-30,
+						0
+					],
+					"environment": 292,
+					"exits": [{
+							"exitId": 2654,
+							"name": "north"
+						},
+						{
+							"exitId": 2645,
+							"name": "east"
+						},
+						{
+							"exitId": 2643,
+							"name": "west"
+						}
+					],
+					"hash": "5f2f9247adec395dc6dd3d0d9e61e39c",
+					"id": 2644,
+					"name": "Auf der Hauptstrasse von Katzmandu."
+				},
+				{
+					"coordinates": [
+						-14,
+						-30,
+						0
+					],
+					"environment": 292,
+					"exits": [{
+							"exitId": 2652,
+							"name": "east"
+						},
+						{
+							"exitId": 2644,
+							"name": "west"
+						},
+						{
+							"exitId": 2646,
+							"name": "south"
+						}
+					],
+					"hash": "16f29e99ddde4421f3fd2891b232622e",
+					"id": 2645,
+					"name": "Auf der Hauptstrasse von Katzmandu."
+				},
+				{
+					"coordinates": [
+						-14,
+						-32,
+						0
+					],
+					"environment": 292,
+					"exits": [{
+							"exitId": 2645,
+							"name": "north"
+						},
+						{
+							"exitId": 2647,
+							"name": "south"
+						}
+					],
+					"hash": "78c3b209f0ef327d23b519dbc93ac181",
+					"id": 2646,
+					"name": "Auf der Hauptstrasse von Katzmandu."
+				},
+				{
+					"coordinates": [
+						-14,
+						-34,
+						0
+					],
+					"environment": 292,
+					"exits": [{
+							"exitId": 2646,
+							"name": "north"
+						},
+						{
+							"exitId": 2649,
+							"name": "west"
+						},
+						{
+							"exitId": 2648,
+							"name": "south"
+						}
+					],
+					"hash": "5b8d4547172257a249752abf0863df80",
+					"id": 2647,
+					"name": "Auf der Hauptstrasse von Katzmandu."
+				},
+				{
+					"coordinates": [
+						-14,
+						-36,
+						0
+					],
+					"environment": 292,
+					"exits": [{
+							"exitId": 2647,
+							"name": "north"
+						},
+						{
+							"exitId": 2690,
+							"name": "west"
+						},
+						{
+							"exitId": 2696,
+							"name": "south"
+						}
+					],
+					"hash": "b014aa1a73539eabd67599ccd6e06498",
+					"id": 2648,
+					"name": "Auf der Hauptstrasse von Katzmandu."
+				},
+				{
+					"coordinates": [
+						-16,
+						-34,
+						0
+					],
+					"environment": 257,
+					"exits": [{
+						"exitId": 2647,
+						"name": "east"
+					}],
+					"hash": "34517c17591eddff31412e52d83f6bc5",
+					"id": 2649,
+					"name": "Die Gilde der Katzenkrieger.",
+					"symbol": {
+						"text": "📜"
+					}
+				},
+				{
+					"coordinates": [
+						-12,
+						-30,
+						0
+					],
+					"environment": 257,
+					"exits": [{
+						"exitId": 2645,
+						"name": "west"
+					}],
+					"hash": "45fd01f599a2e84e028e6a43743560fc",
+					"id": 2652,
+					"name": "Das Postamt von Katzmandu.",
+					"symbol": {
+						"text": "📯"
+					}
+				},
+				{
+					"coordinates": [
+						-16,
+						-28,
+						0
+					],
+					"environment": 257,
+					"exits": [{
+						"exitId": 2644,
+						"name": "south"
+					}],
+					"hash": "1dc338caabb41790415cc71606d63a2f",
+					"id": 2654,
+					"name": "Der Laden von Katzmandu.",
+					"symbol": {
+						"text": "💰"
+					}
+				},
+				{
+					"coordinates": [
+						-20,
+						-32,
+						0
+					],
+					"environment": 292,
+					"exits": [{
+							"exitId": 2642,
+							"name": "north"
+						},
+						{
+							"exitId": 2684,
+							"name": "south"
+						}
+					],
+					"hash": "aa1ef1709fdd54129754ebaee22eff5c",
+					"id": 2683,
+					"name": "Auf der Hauptstrasse von Katzmandu."
+				},
+				{
+					"coordinates": [
+						-20,
+						-34,
+						0
+					],
+					"environment": 292,
+					"exits": [{
+							"exitId": 2683,
+							"name": "north"
+						},
+						{
+							"exitId": 2685,
+							"name": "south"
+						}
+					],
+					"hash": "b468c6480149b99735abf22713610c7b",
+					"id": 2684,
+					"name": "Auf der Hauptstrasse von Katzmandu."
+				},
+				{
+					"coordinates": [
+						-20,
+						-36,
+						0
+					],
+					"environment": 292,
+					"exits": [{
+							"exitId": 2684,
+							"name": "north"
+						},
+						{
+							"exitId": 2689,
+							"name": "east"
+						},
+						{
+							"exitId": 2686,
+							"name": "south"
+						}
+					],
+					"hash": "c29046d1e475ff340325cc480c6f3f8c",
+					"id": 2685,
+					"name": "Auf der Hauptstrasse von Katzmandu."
+				},
+				{
+					"coordinates": [
+						-20,
+						-38,
+						0
+					],
+					"environment": 257,
+					"exits": [{
+						"exitId": 2685,
+						"name": "north"
+					}],
+					"hash": "7d05d2f348a7a3f75ba1500f18e954cb",
+					"id": 2686,
+					"name": "Im 'Katzenjammer'.",
+					"symbol": {
+						"text": "🍖"
+					}
+				},
+				{
+					"coordinates": [
+						-18,
+						-36,
+						0
+					],
+					"environment": 292,
+					"exits": [{
+							"exitId": 2691,
+							"name": "north"
+						},
+						{
+							"exitId": 2690,
+							"name": "east"
+						},
+						{
+							"exitId": 2685,
+							"name": "west"
+						}
+					],
+					"hash": "ace97c1da7754d8f6319d1e3709d14cc",
+					"id": 2689,
+					"name": "Auf der Hauptstrasse von Katzmandu."
+				},
+				{
+					"coordinates": [
+						-16,
+						-36,
+						0
+					],
+					"environment": 292,
+					"exits": [{
+							"exitId": 2648,
+							"name": "east"
+						},
+						{
+							"exitId": 2689,
+							"name": "west"
+						}
+					],
+					"hash": "c913902674bd93d4928bc890efdcaf4b",
+					"id": 2690,
+					"name": "Auf der Hauptstrasse von Katzmandu."
+				},
+				{
+					"coordinates": [
+						-18,
+						-34,
+						0
+					],
+					"environment": 292,
+					"exits": [{
+							"exitId": 2692,
+							"name": "north"
+						},
+						{
+							"exitId": 2689,
+							"name": "south"
+						}
+					],
+					"hash": "baa74fac2113c5fb3ffab335436ff60e",
+					"id": 2691,
+					"name": "Gang zum heiligen Dom."
+				},
+				{
+					"coordinates": [
+						-18,
+						-32,
+						0
+					],
+					"environment": 257,
+					"exits": [{
+							"exitId": 2691,
+							"name": "south"
+						},
+						{
+							"exitId": 2,
+							"name": "steige auf biene"
+						}
+					],
+					"hash": "19f9878bc48c983fa24c9a03063a2f15",
+					"id": 2692,
+					"name": "Im heiligen Dom der Felinen.",
+					"symbol": {
+						"text": "🛐"
+					}
+				},
+				{
+					"coordinates": [
+						-14,
+						-38,
+						0
+					],
+					"environment": 257,
+					"exits": [{
+						"exitId": 2648,
+						"name": "north"
+					}],
+					"hash": "12308d918bc08dcfd7fd7c156c2d2a84",
+					"id": 2696,
+					"name": "Die Bibliothek von Katzmandu."
+				}
+			]
+		}
+	],
+	"customEnvColors": [{
+			"color24RGB": [
+				128,
+				0,
+				0
+			],
+			"id": 257
+		},
+		{
+			"color24RGB": [
+				0,
+				128,
+				0
+			],
+			"id": 258
+		},
+		{
+			"color24RGB": [
+				128,
+				128,
+				0
+			],
+			"id": 259
+		},
+		{
+			"color24RGB": [
+				0,
+				0,
+				128
+			],
+			"id": 260
+		},
+		{
+			"color24RGB": [
+				128,
+				0,
+				128
+			],
+			"id": 261
+		},
+		{
+			"color24RGB": [
+				0,
+				128,
+				128
+			],
+			"id": 262
+		},
+		{
+			"color24RGB": [
+				192,
+				192,
+				192
+			],
+			"id": 263
+		},
+		{
+			"color24RGB": [
+				0,
+				0,
+				0
+			],
+			"id": 264
+		},
+		{
+			"color24RGB": [
+				255,
+				0,
+				0
+			],
+			"id": 265
+		},
+		{
+			"color24RGB": [
+				0,
+				255,
+				0
+			],
+			"id": 266
+		},
+		{
+			"color24RGB": [
+				255,
+				255,
+				0
+			],
+			"id": 267
+		},
+		{
+			"color24RGB": [
+				0,
+				0,
+				255
+			],
+			"id": 268
+		},
+		{
+			"color24RGB": [
+				255,
+				0,
+				255
+			],
+			"id": 269
+		},
+		{
+			"color24RGB": [
+				0,
+				255,
+				255
+			],
+			"id": 270
+		},
+		{
+			"color24RGB": [
+				255,
+				255,
+				255
+			],
+			"id": 271
+		},
+		{
+			"color24RGB": [
+				128,
+				128,
+				128
+			],
+			"id": 272
+		},
+		{
+			"color24RGB": [
+				132,
+				132,
+				255
+			],
+			"id": 289
+		},
+		{
+			"color24RGB": [
+				132,
+				66,
+				0
+			],
+			"id": 290
+		},
+		{
+			"color24RGB": [
+				255,
+				132,
+				66
+			],
+			"id": 291
+		},
+		{
+			"color24RGB": [
+				64,
+				64,
+				64
+			],
+			"id": 292
+		}
+	],
+	"defaultAreaName": "Default Area",
+	"formatVersion": 1,
+	"labelCount": 0,
+	"mapSymbolFontDetails": "Bitstream Vera Sans Mono,12,-1,5,50,0,0,0,0,0",
+	"mapSymbolFontFudgeFactor": 1,
+	"onlyMapSymbolFontToBeUsed": false,
+	"playerRoomColors": [{
+			"color24RGB": [
+				0,
+				127,
+				0
+			]
+		},
+		{
+			"color24RGB": [
+				170,
+				170,
+				127
+			]
+		}
+	],
+	"playerRoomInnerDiameterPercentage": 70,
+	"playerRoomOuterDiameterPercentage": 120,
+	"playerRoomStyle": 3,
+	"playersRoomId": {
+		"MorgenGrauen": 1
+	},
+	"roomCount": 21
+}
