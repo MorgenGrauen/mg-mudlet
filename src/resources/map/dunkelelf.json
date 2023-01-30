@@ -548,6 +548,54 @@
                     }
                 }
             ]
+        },
+        {
+            "id": 128,
+            "name": "Dunkelelfengilde",
+            "roomCount": 2,
+            "rooms": [
+                {
+                    "coordinates": [
+                        -18,
+                        16,
+                        -3
+                    ],
+                    "environment": 257,
+                    "exits": [
+                        {
+                            "exitId": 4140,
+                            "name": "northwest"
+                        },
+                        {
+                            "exitId": 4143,
+                            "name": "west"
+                        }
+                    ],
+                    "hash": "85063881e64ee4abb2701dc2002a5f31",
+                    "id": 4142,
+                    "name": "Eingangshalle der Dunkelelfengilde."
+                },
+                {
+                    "coordinates": [
+                        -20,
+                        16,
+                        -3
+                    ],
+                    "environment": 257,
+                    "exits": [
+                        {
+                            "exitId": 4142,
+                            "name": "east"
+                        }
+                    ],
+                    "hash": "4723095675f3b82795c3267a65c980e0",
+                    "id": 4143,
+                    "name": "Im Raum von Nenais'u.",
+                    "symbol": {
+                        "text": "📜"
+                    }
+                }
+            ]
         }
     ],
     "customEnvColors": [
