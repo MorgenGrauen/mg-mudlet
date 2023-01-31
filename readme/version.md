@@ -6,6 +6,7 @@ Autoren
 * Zaphob@MorgenGrauen - https://github.com/kebap/krrrcks-mudlet
 * Talanis@MorgenGrauen - https://github.com/talanis85/krrrcks-mudlet
 * Brophy@MorgenGrauen - https://github.com/FGiesemann/mg-mudlet
+* Galad@MorgenGrauen - https://github.com/Fausti/mg-mudlet
 
 
 Beiträge
@@ -70,15 +71,24 @@ Zaphob
 
 
 Talanis
-------
+-------
 
 * Erste Version eines Mappers.
-
 * Einfacher Speedwalker.
 
 
 Brophy
 ------
 
-* Erweiterungen des Mappers um Stub-Exits und die Verwendung von Spezialausgängen
-  im Speedwalk
+* Erweiterungen des Mappers um Stub-Exits 
+* Verwendung von Spezialausgängen im Speedwalk
+
+
+Fausti
+------
+
+* Struktur für Code, der automatisch bei der Installation ausgeführt wird
+* Zentrale Struktur zur Verwaltung aller Einstellungen (noch in Arbeit) 
+
+* Neue Karten werden jetzt viel umfassender initialisiert als vorher 
+* Anzeige des aktuellen Mapper-Modus direkt auf der Karte
