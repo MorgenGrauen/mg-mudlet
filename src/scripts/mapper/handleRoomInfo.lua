@@ -28,15 +28,37 @@ function handleRoomInfo()
         if knownRoom == -1 then
             -- Neuer Raum ist nicht bekannt. Erstelle Raum und entsprechenden Ausgang
 
-            local newRoom = createRoom(mapper.currentArea, hash)
+            local needsUpdate = getRoomHashByID(mapper.currentRoom) == nil
+            local newRoom
+
+            if needsUpdate then
+                -- wir befinden uns wahrschenlich im ersten erstellten Raum, der allerdings
+                -- ein Sonderraum war...
+
+                newRoom = mapper.currentRoom
+                
+                setRoomArea(newRoom, findArea(mapper.currentArea))
+
+                setRoomIDbyHash(newRoom, hash)
+    
+                echoM("Aktualisiere Raum.\n  Area: " .. mapper.currentArea .. "\n  Hash: " .. hash)
+            else
+                newRoom = createRoom(mapper.currentArea, hash)
+            end
+
             local roomName = gmcp.MG.room.info.short
             setRoomName(newRoom, roomName)
 
-            local x,y,z = getRoomCoordinates(mapper.currentRoom)
-            local dx,dy,dz = getExitCoordinates(exitname)
-            setRoomCoordinates(newRoom, x+dx, y+dy, z+dz)
+            if not needsUpdate then
+                -- bei Raumupdates brauchen wir keine neuen Koordinaten setzen
+                local x,y,z = getRoomCoordinates(mapper.currentRoom)
+                local dx,dy,dz = getExitCoordinates(exitname)
+                setRoomCoordinates(newRoom, x+dx, y+dy, z+dz)
 
-            addAnyExit(mapper.currentRoom, newRoom, exitname)
+                -- auch brauchen wir keinen Ausgang, haben ja den Raum auf der Karte nicht gewechselt
+                addAnyExit(mapper.currentRoom, newRoom, exitname)
+            end
+
             mapper.currentRoom = newRoom
         else
             -- Neuer Raum ist bekannt. Erstelle nur einen Ausgang.
