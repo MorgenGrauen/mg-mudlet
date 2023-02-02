@@ -1,20 +1,17 @@
 function zeigeRaum()
 
-  ME.raum_kurz = gmcp.MG.room.info.short
-  ME.raum_region = gmcp.MG.room.info.domain
-  ME.raum_id = string.sub(gmcp.MG.room.info.id, 1, 5) 
+  local roomData = gmcp.MG.room.info
+  ME.raum_kurz = roomData.short
+  ME.raum_region = roomData.domain
+  ME.raum_id = string.sub(roomData.id, 1, 5) 
 
   -- Para?
 
   if ME.para > 0 then
     ME.raum_region = "Para-" .. ME.raum_region
-    r = 255
-    g = 0
-    b = 0
+    r, g, b = 255, 0, 0
   else
-    r = 30
-    g = 30
-    b = 30
+    r, g, b = 30, 30, 30
   end
 
   -- Statuszeile aktualisieren
