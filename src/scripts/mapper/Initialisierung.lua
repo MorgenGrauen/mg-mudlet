@@ -21,6 +21,17 @@ registerMapInfo("Kartenmodus", function()
 end)
 enableMapInfo("Kartenmodus")
 
+-- Den aktuellen Raum und Regionsinfos in der Karte anzeigen
+registerMapInfo("Rauminfos", function() 
+    local raum_name = ME.raum_kurz
+    local region_infos = f"{ME.raum_region} [{ME.raum_id}]"
+    local r, g, b = 30, 30, 30
+    if ME.para > 0 then r, g, b = unpack(color_table.tomato) end
+    return f"{raum_name}\n{region_infos}", false, false, r, b, g
+end)
+enableMapInfo("Rauminfos")
+
+
 function echoM(str)
     fg(mapperconf.color)
     echo("[MAPPER] " .. str .. "\n")
