@@ -1,4 +1,5 @@
 function zeigeRaum()
+  if not table.is_field(gmcp, "MG.room.info") then return end
 
   local roomData = gmcp.MG.room.info
   ME.raum_kurz = roomData.short
