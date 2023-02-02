@@ -1,7 +1,7 @@
 -- Hilfsfunktion:
 -- prüft ob ein bestimmtes Feld innerhalb einer komplexeren Tabelle exisitert
 
-function table.isField(t, s)
+function table.is_field(t, s)
     if t == nil then return false end
     local t = t
     for key in s:gmatch('[^.]+') do

@@ -19,7 +19,7 @@ mapper.currentHash = nil
 -- MapUserData löschen
 clearMapUserData()
 
-if table.isField(gmcp, "MG.room.info") then
+if table.is_field(gmcp, "MG.room.info") then
     -- ersten Raum aus aktuellen GMCP Daten erstellen
     local roomData = gmcp.MG.room.info
     local hash = roomData.id
