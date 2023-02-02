@@ -8,8 +8,10 @@ function onInstallPackage(_, packageName)
 
         -- Karte mit Startgebieten laden
         -- TODO: Alles folgende in eigenes Skript auslagern, das von hier aufgerufen wird.
+
+        -- TODO: Passende Karte je nach Rasse laden. Nicht mehr die v8 Karte bereitstellen.
         loadMap(getMudletHomeDir() .. "/@PKGNAME@/" .. "map anfaenger v8.dat")
-        -- TODO: Vorab die vorhandene Karte speichern, falls Spieler bereits aktiv war?
+        -- TODO: Vorab eine ggf. vorhandene Karte speichern, falls Spieler bereits aktiv war!
 
         -- Wo befinden wir uns gerade auf der geladenen Karte?
         local found = false
@@ -34,27 +36,30 @@ function onInstallPackage(_, packageName)
 
         else
           -- Sonst irgendwo anders einen neuen Raum anlegen, von dem aus kartographiert werden kann.
+          -- TODO: Ist vmtl. so nicht nötig, da Map für diesen Zweck bereits einen Raum "1" enthält!
           mapper.currentArea = "world"
 
-          -- Folgendes 1:1 aus neuem Alias "minit" kopiert - TODO: dort und hier in gemeinsame Funktion auslagern!
+          -- Folgendes 1:1 aus neuem Alias "minit" kopiert 
+          -- TODO: dort und hier in gemeinsame Funktion auslagern!
+          do
+            -- ersten Raum aus aktuellen GMCP Daten erstellen
+            hash = gmcp.MG.room.info.id
 
-          -- ersten Raum aus aktuellen GMCP Daten erstellen
-          hash = gmcp.MG.room.info.id
+            mapper.currentHash = hash
 
-          mapper.currentHash = hash
+            local newRoom = createRoom(mapper.currentArea, hash)
+            local roomName = gmcp.MG.room.info.short
+            setRoomName(newRoom, roomName)
 
-          local newRoom = createRoom(mapper.currentArea, hash)
-          local roomName = gmcp.MG.room.info.short
-          setRoomName(newRoom, roomName)
+            -- im neuen Raum alle sichtbaren Ausgänge prüfen und ggf. Stubs erzeugen
+            for _, exitname in pairs(gmcp.MG.room.info.exits) do
+                addStubExit(newRoom, exitname)
+            end
 
-          -- im neuen Raum alle sichtbaren Ausgänge prüfen und ggf. Stubs erzeugen
-          for _, exitname in pairs(gmcp.MG.room.info.exits) do
-              addStubExit(newRoom, exitname)
+            mapper.currentRoom = newRoom
+            centerview(newRoom)
+
           end
-
-          mapper.currentRoom = newRoom
-          centerview(newRoom)
-
           -- Ende "minit"
         end
 
