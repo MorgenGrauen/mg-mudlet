@@ -1,4 +1,1 @@
-selectCurrentLine()
-fg(farben.vg.gag)
-bg(farben.hg.gag)
-resetFormat()
+zeile_faerben("gag")

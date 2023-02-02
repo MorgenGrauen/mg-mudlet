@@ -1,19 +1,11 @@
 -- Prüfung über Portal 23
 
-selectCurrentLine()
-
 if (matches[3] == "gruenlich") then
-    fg(farben.vg.info)
-    bg(farben.hg.info)
-
+    zeile_faerben("info")
     ME.para = 0
-end
-
-if (matches[3] == "roetlich") then
-    fg(farben.vg.alarm)
-    bg(farben.hg.alarm)
+elseif (matches[3] == "roetlich") then
+    zeile_faerben("alarm")
     ME.para = 1
 end
 
 zeigeRaum()
-resetFormat()
