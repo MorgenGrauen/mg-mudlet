@@ -25,7 +25,7 @@ farben = farben or
 
 -- Einstellungen fuer Farben Kampfscroll
 
-function text_faerben(type, text)
+function faerbeText(type, text)
   -- setzt Vordergrund- und Hintergrundfarbe je nach Typ der Kommunikation, und schreibt dann den Text in bunt 
   local vg = farben.vg[type]
   local hg = farben.hg[type]
@@ -36,7 +36,7 @@ function text_faerben(type, text)
   end
 end
 
-function zeile_faerben(type)
+function faerbeZeile(type)
   -- ändert Vordergrund- und Hintergrundfarbe der aktuellen (ganzen) Zeile je nach Typ der Kommunikation
   -- Keine Ahnung, ob das besser geht, aber ich will die ganze Zeile einfärben und nicht nur den "Match".
   local vg = farben.vg[type]
@@ -49,7 +49,7 @@ function zeile_faerben(type)
   end
 end
 
-function auswahl_faerben(type)
+function faerbeAuswahl(type)
   -- ändert Vordergrund- und Hintergrundfarbe der (bereits vorher erfolgten) Auswahl je nach Typ der Kommunikation
   local vg = farben.vg[type]
   local hg = farben.hg[type]

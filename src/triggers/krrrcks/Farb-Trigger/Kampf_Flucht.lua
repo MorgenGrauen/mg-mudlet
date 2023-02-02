@@ -1,1 +1,1 @@
-zeile_faerben("info")
+faerbeZeile("info")

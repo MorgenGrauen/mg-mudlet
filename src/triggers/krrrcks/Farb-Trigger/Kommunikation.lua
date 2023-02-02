@@ -1,1 +1,1 @@
-zeile_faerben("komm")
+faerbeZeile("komm")

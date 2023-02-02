@@ -33,5 +33,5 @@ else
   ausgabe = " (???%)"
 end
 
-zeile_faerben("info")
-text_faerben("info", ausgabe)
+faerbeZeile("info")
+faerbeText("info", ausgabe)

@@ -1,1 +1,1 @@
-zeile_faerben("gag")
+faerbeZeile("gag")

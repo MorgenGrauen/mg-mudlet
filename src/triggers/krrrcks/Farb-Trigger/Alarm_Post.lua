@@ -1,1 +1,1 @@
-zeile_faerben("alarm")
+faerbeZeile("alarm")
