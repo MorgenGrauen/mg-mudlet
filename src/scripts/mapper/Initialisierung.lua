@@ -38,7 +38,6 @@ registerMapInfo("Modus", function()
 end)
 enableMapInfo("Modus")
 
-
  -- Standard-Anzeige im Mudlet-Mapper wird dann nicht benötigt
 disableMapInfo("Short")
 disableMapInfo("Full")
