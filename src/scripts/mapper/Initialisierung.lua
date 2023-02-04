@@ -11,15 +11,36 @@ mapper.mode = mapper.mode or "fix"
 mapper.currentHash = mapper.currentHash or nil
 mapper.currentArea = mapper.currentArea or "world"
 
--- Den aktuellen Kartenmodus in der Karte anzeigen
-registerMapInfo("Kartenmodus", function() 
-    if mapper.mode == "fix" then
-        return "", false, true, unpack(color_table.tomato)
-    else
-        return "Kartenmodus: automatisch erweitern", false, true, unpack(color_table.tomato)
-    end
+-- Die aktuellen Rauminfos in der Karte anzeigen
+registerMapInfo("Raum", function() 
+    local raum_name = ME.raum_kurz
+    local r, g, b = 200, 200, 200
+    if ME.para > 0 then r, g, b = unpack(color_table.tomato) end
+    return raum_name, false, false, r, b, g
 end)
-enableMapInfo("Kartenmodus")
+enableMapInfo("Raum")
+
+-- Die aktuellen Regionsinfos in der Karte anzeigen
+registerMapInfo("Region", function() 
+    local region_infos = f"{ME.raum_region} [{ME.raum_id}]"
+    local r, g, b = 200, 200, 200
+    if ME.para > 0 then r, g, b = unpack(color_table.tomato) end
+    return region_infos, false, false, r, b, g
+end)
+enableMapInfo("Region")
+
+-- Den aktuellen Kartenmodus in der Karte anzeigen
+registerMapInfo("Modus", function() 
+    local mapper_modus = (mapper.mode == "fix") and 
+        "Karte wird NICHT automatisch erweitert" or
+        "Karte wird automatisch erweitert"
+    return mapper_modus, false, true, 200, 200, 200
+end)
+enableMapInfo("Modus")
+
+ -- Standard-Anzeige im Mudlet-Mapper wird dann nicht benötigt
+disableMapInfo("Short")
+disableMapInfo("Full")
 
 function echoM(str)
     fg(mapperconf.color)
