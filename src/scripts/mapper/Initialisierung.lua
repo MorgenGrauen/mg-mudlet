@@ -31,6 +31,9 @@ registerMapInfo("Rauminfos", function()
 end)
 enableMapInfo("Rauminfos")
 
+ -- Standard-Anzeige im Mudlet-Mapper wird dann nicht benötigt
+disableMapInfo("Short")
+disableMapInfo("Full")
 
 function echoM(str)
     fg(mapperconf.color)
