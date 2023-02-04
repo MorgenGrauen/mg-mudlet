@@ -11,15 +11,23 @@ mapper.mode = mapper.mode or "fix"
 mapper.currentHash = mapper.currentHash or nil
 mapper.currentArea = mapper.currentArea or "world"
 
--- Den aktuellen Raum und Regionsinfos in der Karte anzeigen
-registerMapInfo("Rauminfos", function() 
+-- Die aktuellen Rauminfos in der Karte anzeigen
+registerMapInfo("Raum", function() 
     local raum_name = ME.raum_kurz
+    local r, g, b = 200, 200, 200
+    if ME.para > 0 then r, g, b = unpack(color_table.tomato) end
+    return raum_name, false, false, r, b, g
+end)
+enableMapInfo("Raum")
+
+-- Die aktuellen Regionsinfos in der Karte anzeigen
+registerMapInfo("Region", function() 
     local region_infos = f"{ME.raum_region} [{ME.raum_id}]"
     local r, g, b = 200, 200, 200
     if ME.para > 0 then r, g, b = unpack(color_table.tomato) end
-    return f"{raum_name}\n{region_infos}", false, false, r, b, g
+    return region_infos, false, false, r, b, g
 end)
-enableMapInfo("Rauminfos")
+enableMapInfo("Region")
 
 -- Den aktuellen Kartenmodus in der Karte anzeigen
 registerMapInfo("Kartenmodus", function() 
