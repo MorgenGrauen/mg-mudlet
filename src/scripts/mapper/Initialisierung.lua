@@ -25,7 +25,7 @@ enableMapInfo("Kartenmodus")
 registerMapInfo("Rauminfos", function() 
     local raum_name = ME.raum_kurz
     local region_infos = f"{ME.raum_region} [{ME.raum_id}]"
-    local r, g, b = 30, 30, 30
+    local r, g, b = 200, 200, 200
     if ME.para > 0 then r, g, b = unpack(color_table.tomato) end
     return f"{raum_name}\n{region_infos}", false, false, r, b, g
 end)
