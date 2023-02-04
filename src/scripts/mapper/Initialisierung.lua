@@ -24,9 +24,9 @@ enableMapInfo("Rauminfos")
 -- Den aktuellen Kartenmodus in der Karte anzeigen
 registerMapInfo("Kartenmodus", function() 
     if mapper.mode == "fix" then
-        return "", false, true, unpack(color_table.tomato)
+        return "Karte wird NICHT automatisch erweitert", false, true, 200, 200, 200
     else
-        return "Kartenmodus: automatisch erweitern", false, true, unpack(color_table.tomato)
+        return "Karte wird automatisch erweitert", false, true, 200, 200, 200
     end
 end)
 enableMapInfo("Kartenmodus")
