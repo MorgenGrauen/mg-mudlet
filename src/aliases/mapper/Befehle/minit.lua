@@ -1,18 +1,5 @@
 -- Dieses Alias setzt die Karte auf Werkszustand zurueck.
 
--- Hilfsfunktion:
--- prüft ob ein bestimmtes Feld innerhalb einer komplexeren Tabelle exisitert
-
-local function isField(t, s)
-    if t == nil then return false end
-    local t = t
-    for key in s:gmatch('[^.]+') do
-        if t[key] == nil then return false end
-        t = t[key]
-    end
-    return true
-end
-
 -- vorhandene Räume löschen
 for id, _ in pairs(getRooms()) do
     deleteRoom(id)
@@ -32,7 +19,7 @@ mapper.currentHash = nil
 -- MapUserData löschen
 clearMapUserData()
 
-if isField(gmcp, "MG.room.info") then
+if table.is_field(gmcp, "MG.room.info") then
     -- ersten Raum aus aktuellen GMCP Daten erstellen
     local roomData = gmcp.MG.room.info
     local hash = roomData.id
