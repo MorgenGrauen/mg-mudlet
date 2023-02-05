@@ -21,10 +21,13 @@ end)
 enableMapInfo("Raum")
 
 -- Die aktuellen Regionsinfos in der Karte anzeigen
-registerMapInfo("Region", function() 
-    local region_infos = f"{ME.raum_region} [{ME.raum_id}]"
+registerMapInfo("Region", function()
     local r, g, b = 200, 200, 200
-    if ME.para > 0 then r, g, b = unpack(color_table.tomato) end
+    local region_infos = nil
+    if ME.raum_region and ME.raum_id then
+      region_infos = f"{ME.raum_region} [{ME.raum_id}]"
+      if ME.para > 0 then r, g, b = unpack(color_table.tomato) end
+    end
     return region_infos, false, false, r, b, g
 end)
 enableMapInfo("Region")
