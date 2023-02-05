@@ -1,16 +1,51 @@
+-- Dieses Alias setzt die Karte auf Werkszustand zurueck.
 
--- Dies setzt die Karte auf Werkszustand zurueck.
-
-for i,name in pairs(getRooms()) do
-    deleteRoom(i)
+-- vorhandene Räume löschen
+for id, _ in pairs(getRooms()) do
+    deleteRoom(id)
 end
 
-addRoom(1)
-setRoomArea(1, findArea("world"))
-setRoomIDbyHash(1, mapper.currentHash)
-mapper.currentRoom = 1
-centerview(1)
+-- vorhandene Gebiete löschen, ausser "Default Area"
+for _, id in pairs(getAreaTable()) do
+    if id > -1 then
+        deleteArea(id)
+    end
+end
 
-echoM("Neue Map initialisiert.")
-                    
-                
+-- currentArea zurücksetzen damit wir wirklich von vorne anfangen
+mapper.currentArea = "world"
+mapper.currentHash = nil
+
+-- MapUserData löschen
+clearMapUserData()
+
+if table.is_field(gmcp, "MG.room.info") then
+    -- ersten Raum aus aktuellen GMCP Daten erstellen
+    local roomData = gmcp.MG.room.info
+    local hash = roomData.id
+
+    mapper.currentHash = hash
+
+    local newRoom = createRoom(mapper.currentArea, hash)
+
+    setRoomName(newRoom, roomData.short)
+
+    -- im neuen Raum alle sichtbaren Ausgänge prüfen und ggf. Stubs erzeugen
+    for _, exitname in pairs(roomData.exits) do
+        addStubExit(newRoom, exitname)
+    end
+
+    mapper.currentRoom = newRoom
+    centerview(newRoom)
+else
+    -- keine Raumdaten vorhanden
+    local newRoom = createRoom(mapper.currentArea, mapper.currentHash)
+    
+    setRoomName(newRoom, "Irgendwo im Nirgendwo")
+
+    mapper.currentRoom = newRoom
+    centerview(newRoom)
+end
+
+echoM("Neue Karte initialisiert.")
+setMapperMode("auto")
