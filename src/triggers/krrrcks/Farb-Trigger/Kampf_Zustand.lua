@@ -33,8 +33,5 @@ else
   ausgabe = " (???%)"
 end
 
-selectCurrentLine()
-fg(farben.vg.info)
-bg(farben.hg.info)
-echo(ausgabe)
-resetFormat()
+faerbeZeile("info")
+faerbeText("info", ausgabe)
