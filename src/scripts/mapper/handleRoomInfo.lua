@@ -3,7 +3,10 @@
 -- Hier werden Raeume gebaut, Ausgaenge verbunden und die aktuelle Position in der Map
 -- gesetzt.
 function handleRoomInfo()
-    local hash = gmcp.MG.room.info.id
+    if not table.is_field(gmcp, "MG.room.info") then return end
+
+    local roomData = gmcp.MG.room.info
+    local hash = roomData.id
 
     -- Manchmal kam das irgendwie doppelt. Fangen wir hier ab.
     if hash == mapper.currentHash then
@@ -46,7 +49,7 @@ function handleRoomInfo()
                 newRoom = createRoom(mapper.currentArea, hash)
             end
 
-            local roomName = gmcp.MG.room.info.short
+            local roomName = roomData.short
             setRoomName(newRoom, roomName)
 
             if not needsUpdate then
@@ -72,7 +75,7 @@ function handleRoomInfo()
         end
         
         -- im neuen Raum alle sichtbaren Ausgänge prüfen und ggf. Stubs erzeugen
-        for _, exitname in pairs(gmcp.MG.room.info.exits) do
+        for _, exitname in pairs(roomData.exits) do
             addStubExit(mapper.currentRoom, exitname)
         end
         

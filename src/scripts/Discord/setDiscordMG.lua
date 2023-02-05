@@ -9,12 +9,11 @@ function setDiscordMG()
   setDiscordLargeIcon("drache")
   setDiscordLargeIconText("telnet mg.mud.de:4711")
   setDiscordLink()
-  if gmcp and gmcp.MG and gmcp.MG.char then
-    if gmcp.MG.char.info and gmcp.MG.char.info.level then
-      setDiscordStufe()
-    end
-    if gmcp.MG.char.base and gmcp.MG.char.base.guild then
-      setDiscordGuild()
-    end
+  -- TODO: Eigentlich muss nur folgendes regelmäßig aktualisiert werden und nur bei wenigen Events!
+  if table.is_field(gmcp, "MG.char.info.level") then
+    setDiscordStufe()
+  end
+  if table.is_field(gmcp, "MG.char.base.guild") then
+    setDiscordGuild()
   end
 end
