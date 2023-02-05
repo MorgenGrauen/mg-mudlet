@@ -15,7 +15,7 @@ function zeigeVorsicht()
 
   -- Fluchtrichtung anzeigen, nur wenn gesetzt
 
-  if ME.fluchtrichtung ~= 0 then
+  if ME.fluchtrichtung and ME.fluchtrichtung ~= "" then
     zeile = zeile .. ", FR: " .. ME.fluchtrichtung
   end
 
