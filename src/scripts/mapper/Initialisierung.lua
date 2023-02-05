@@ -7,7 +7,7 @@ mudlet.mapper_script = true
 
 mapper = mapper or {}
 
-mapper.mode = mapper.mode or "fix"
+mapper.mode = mapper.mode or "auto"
 mapper.currentHash = mapper.currentHash or nil
 mapper.currentArea = mapper.currentArea or "world"
 
