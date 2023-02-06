@@ -1,8 +1,13 @@
 [
   {
-    "name": "0 schau", 
-    "command": "schau", 
+    "name": "0 inventar", 
+    "command": "inv", 
     "keys": "keypad+0"
+  },
+  {
+    "name": "5 schau", 
+    "command": "schau", 
+    "keys": "keypad+5"
   },
   {
     "name": ", ausruestung", 
@@ -48,11 +53,6 @@
     "name": "4 westen", 
     "command": "westen", 
     "keys": "keypad+4"
-  },
-  {
-    "name": "5 schau", 
-    "command": "schau", 
-    "keys": "keypad+5"
   },
   {
     "name": "6 osten", 
