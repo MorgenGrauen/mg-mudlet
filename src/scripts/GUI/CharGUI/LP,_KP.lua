@@ -5,17 +5,21 @@ function initGauges()
 
   initLP()
   initVorsicht()
+  registerAnonymousEventHandler("gmcp.MG.char.vitals", updateLP, false)
+  registerAnonymousEventHandler("gmcp.MG.char.maxvitals", updateLP, false)
+
   if ME.report_kp then
     initKP()
+    registerAnonymousEventHandler("gmcp.MG.char.vitals", updateKP, false)
+    registerAnonymousEventHandler("gmcp.MG.char.maxvitals", updateKP, false)
+  end
+
+  if ME.report_vorsicht then
+    registerAnonymousEventHandler("gmcp.MG.char.wimpy", updateVorsicht, false)
   end
 
   -- oldGauges()
 
-  registerAnonymousEventHandler("gmcp.MG.char.vitals", updateLP, false)
-  registerAnonymousEventHandler("gmcp.MG.char.maxvitals", updateLP, false)
-  registerAnonymousEventHandler("gmcp.MG.char.vitals", updateKP, false)
-  registerAnonymousEventHandler("gmcp.MG.char.maxvitals", updateKP, false)
-  registerAnonymousEventHandler("gmcp.MG.char.wimpy", updateVorsicht, false)
 end
 
 function updateGauges()
