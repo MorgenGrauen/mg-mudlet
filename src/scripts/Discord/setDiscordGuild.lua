@@ -16,6 +16,9 @@ local symbole = {
 
 function setDiscordGuild()
   -- Anzeige von passenden kleinen Bildchen je nach Gilde
-  local meinSymbol = symbole[gmcp.MG.char.base.guild] or "glitzer"
+  local meinSymbol = "glitzer"
+  if table.is_field(gmcp, "MG.char.base") then 
+    meinSymbol = symbole[gmcp.MG.char.base.guild] or "glitzer"
+  end
   setDiscordSmallIcon(meinSymbol)
 end

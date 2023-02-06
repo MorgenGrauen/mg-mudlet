@@ -1,6 +1,5 @@
 function zeigeGift()
-  
-  if not GUI.gift then return end
+  if not (GUI.gift and table.is_field(gmcp, "MG.char.vitals")) then return end
 
   ME.gift = gmcp.MG.char.vitals.poison
   local zeile = ""

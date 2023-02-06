@@ -1,8 +1,9 @@
 function zeigeVitaldaten()
 
-  if not (gmcp.MG.char.vitals and gmcp.MG.char.maxvitals
-          and GUI.lp_anzeige and GUI.kp_anzeige) then return end
-  
+  if not (table.is_field(gmcp, "MG.char.vitals") and 
+          table.is_field(gmcp, "MG.char.maxvitals") and
+          GUI.lp_anzeige and GUI.kp_anzeige) then return end
+
   -- GMCP Vitaldaten merken
 
   ME.lp = gmcp.MG.char.vitals.hp

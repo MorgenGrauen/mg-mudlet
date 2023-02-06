@@ -139,6 +139,38 @@
       {
         "pattern": "steht auf der Schwelle des Todes.", 
         "type": "substring"
+      },
+      {
+        "pattern": "ist schon ein wenig schwaecher.", 
+        "type": "substring"
+      },
+      {
+        "pattern": "fuehlte sich heute auch schon besser.", 
+        "type": "substring"
+      },
+      {
+        "pattern": "sieht ein wenig angekratzt aus.", 
+        "type": "substring"
+      },
+      {
+        "pattern": "ist deutlich angekratzt.", 
+        "type": "substring"
+      },
+      {
+        "pattern": "ist schon so gut wie bei Lars.", 
+        "type": "substring"
+      },
+      {
+        "pattern": "braucht dringend aerztliche Behandlung.", 
+        "type": "substring"
+      },
+      {
+        "pattern": "war auch schon mal deutlich besser drauf.", 
+        "type": "substring"
+      },
+      {
+        "pattern": "schwankt und wankt.", 
+        "type": "substring"
       }
     ]
   },
