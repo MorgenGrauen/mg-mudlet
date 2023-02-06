@@ -44,6 +44,90 @@
     "command": "nordosten", 
     "keys": "keypad+9"
   },
+
+
+  {
+    "name": "ALT+1 suedwestoben", 
+    "command": "suedwestoben", 
+    "keys": "alt+keypad+1"
+  },
+  {
+    "name": "ALT+2 suedoben", 
+    "command": "suedoben", 
+    "keys": "alt+keypad+2"
+  },
+  {
+    "name": "ALT+3 suedostoben", 
+    "command": "suedostoben", 
+    "keys": "alt+keypad+3"
+  },
+  {
+    "name": "ALT+4 westoben", 
+    "command": "westoben", 
+    "keys": "alt+keypad+4"
+  },
+  {
+    "name": "ALT+6 ostoben", 
+    "command": "ostoben", 
+    "keys": "alt+keypad+6"
+  },
+  {
+    "name": "ALT+7 nordwestoben", 
+    "command": "nordwestoben", 
+    "keys": "alt+keypad+7"
+  },
+  {
+    "name": "ALT+8 nordoben", 
+    "command": "nordoben", 
+    "keys": "alt+keypad+8"
+  },
+  {
+    "name": "ALT+9 nordostoben", 
+    "command": "nordostoben", 
+    "keys": "alt+keypad+9"
+  },
+
+  {
+    "name": "STRG+1 suedwestunten", 
+    "command": "suedwestunten", 
+    "keys": "ctrl+keypad+1"
+  },
+  {
+    "name": "STRG+2 suedunten", 
+    "command": "suedunten", 
+    "keys": "ctrl+keypad+2"
+  },
+  {
+    "name": "STRG+3 suedostunten", 
+    "command": "suedostunten", 
+    "keys": "ctrl+keypad+3"
+  },
+  {
+    "name": "STRG+4 westunten", 
+    "command": "westunten", 
+    "keys": "ctrl+keypad+4"
+  },
+  {
+    "name": "STRG+6 ostunten", 
+    "command": "ostunten", 
+    "keys": "ctrl+keypad+6"
+  },
+  {
+    "name": "STRG+7 nordwestunten", 
+    "command": "nordwestunten", 
+    "keys": "ctrl+keypad+7"
+  },
+  {
+    "name": "STRG+8 nordunten", 
+    "command": "nordunten", 
+    "keys": "ctrl+keypad+8"
+  },
+  {
+    "name": "STRG+9 nordostunten", 
+    "command": "nordostunten", 
+    "keys": "ctrl+keypad+9"
+  },
+
   {
     "name": "0 schau", 
     "command": "schau", 
