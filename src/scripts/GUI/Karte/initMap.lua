@@ -8,7 +8,7 @@ function initMap()
     Adjustable.Container:new(
         {
         name = "MapFrame",
-        x = 100, y = 100, 
+        x = -360, y = 0,
         padding = 2, width = 360, height = 240,
         adjLabelstyle = [[ 
             border-color: rgba(113, 75, 50, 100%);
