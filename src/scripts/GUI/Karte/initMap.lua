@@ -31,7 +31,7 @@ function initMap()
     --  GUI.Karte.mapper or
     Geyser.Mapper:new(
         {
-        name = "Mapper"
+        name = "Mapper",
         x = 0, y = 12, 
         width = "100%", 
         height = "100%-17", 
