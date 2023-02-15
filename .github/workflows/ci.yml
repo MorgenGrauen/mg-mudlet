@@ -40,5 +40,5 @@ jobs:
           # GitHub only allows you to upload zip files, so we let them
           # zip it up and upload it. That's all the .mpackage is anyway
           # just with a different file extension
-          name: MorgenGrauen_({{ github.run_number }})
+          name: MorgenGrauen (${{ github.run_number }})
           path: build/tmp/

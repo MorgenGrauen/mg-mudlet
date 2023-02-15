@@ -30,7 +30,7 @@ registerMapInfo("Region", function()
     end
     return region_infos, false, false, r, b, g
 end)
-enableMapInfo("Region")
+disableMapInfo("Region")
 
 -- Den aktuellen Kartenmodus in der Karte anzeigen
 registerMapInfo("Modus", function() 
@@ -39,7 +39,7 @@ registerMapInfo("Modus", function()
         "Karte wird automatisch erweitert"
     return mapper_modus, false, true, 200, 200, 200
 end)
-enableMapInfo("Modus")
+disableMapInfo("Modus")
 
  -- Standard-Anzeige im Mudlet-Mapper wird dann nicht benötigt
 disableMapInfo("Short")
