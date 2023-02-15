@@ -10,7 +10,7 @@ function onInstallPackage(_, packageName)
         -- TODO: Alles folgende in eigenes Skript auslagern, das von hier aufgerufen wird.
 
         -- TODO: Passende Karte je nach Rasse laden. Nicht mehr die v8 Karte bereitstellen.
-        loadMap(getMudletHomeDir() .. "/@PKGNAME@/" .. "map/map anfaenger v8.dat")
+        loadMap(getMudletHomeDir() .. "/@PKGNAME@/" .. "map/anfaenger v8.dat")
         -- TODO: Vorab eine ggf. vorhandene Karte speichern, falls Spieler bereits aktiv war!
 
         -- Wo befinden wir uns gerade auf der geladenen Karte?
