@@ -5,6 +5,6 @@ function onInstallPackage(_, packageName)
 
         initGMCP("", "GMCP")
 
-        EMCO = require("@PKGNAME@.resources.emco.emco")
+        initEMCO()
     end
 end
