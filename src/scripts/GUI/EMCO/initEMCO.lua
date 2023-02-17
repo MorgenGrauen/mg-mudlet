@@ -58,10 +58,16 @@ function initChatbox()
             y = "0",
             width = "100%",
             height = "100%",
+            consoleColor = "black",
+            consoles = {
+                "Alles", 
+                "Ebenen", 
+                "Mitteilungen",
+                "Debug"
+            },
             allTab = true,
             allTabName = "Alles",
-            consoleColor = "black",
-            consoles = {"Alles", "Ebenen", "Mitteilungen"},
+            allTabExclusions = { "Debug" },
             mapTab = false,
             activeTabCSS = tab_active_style,
             inactiveTabCSS = tab_inactive_style,
