@@ -1,6 +1,4 @@
 function zeigeEbenen()
-  fg(farben.vg.ebenen)
-  bg(farben.hg.ebenen)
-  echo(gmcp.comm.channel.msg)
-  resetFormat()
+  if not table.is_field(gmcp, "comm.channel") then return end
+  faerbeText("ebenen", gmcp.comm.channel.msg)
 end

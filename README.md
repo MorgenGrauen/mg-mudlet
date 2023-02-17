@@ -1,13 +1,13 @@
 MorgenGrauen in Mudlet
 ======================
 
-Hier finden sich Mudlet-Skripte für das MUD [MorgenGrauen](http://mg.mud.de). 
+Hier finden sich [Mudlet](https://github.com/Mudlet/Mudlet)-Skripte für das MUD [MorgenGrauen](http://mg.mud.de). 
 
-Das hier enthaltene Bündel an Skripten ist noch in Entwicklung. 
+Das hier enthaltene Bündel an Skripten wird seit 2013 immer weiter entwickelt.
 
 Wer Fehlerberichte, Anregungen oder Hinweise für Verbesserungen hat, nur her damit.
 
-Falls du eigene Skripte ins Paket einbringen möchtest, gibt es hier ein paar [Hinweise für Entwickler](https://github.com/MorgenGrauen/mg-mudlet/blob/master/readme/entwickler.md).
+Falls du deine Skripte mit einbringen möchtest, gibt es hier ein paar [Hinweise für Entwickler](https://github.com/MorgenGrauen/mg-mudlet/blob/master/readme/entwickler.md).
 
 Viele Grüße [von den Autoren](https://github.com/MorgenGrauen/mg-mudlet/blob/master/readme/version.md). Kontakt im Spiel, über die MG Webseite, Github, Social Media, usw.
 
@@ -38,7 +38,7 @@ Was schon funktioniert
      einem Seherportal vorbeilaufen.)
 
 
-Was noch offen ist
+Was noch nicht enthalten ist
 ------------------
 
 * Kampfscroll reduzieren

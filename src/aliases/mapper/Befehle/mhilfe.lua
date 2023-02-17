@@ -25,7 +25,7 @@ local helptext = [[
     - auto: Auto-Mapping-Modus. Der Mapper versucht (mithilfe von GMCP-Raum-IDs)
             automatisch eine Karte aufzubauen (siehe unten).
 
-    Mit dem Befehl 'mmode <fixed|auto>' kann zwischen den Modi gewechselt werden.
+    Mit dem Befehl 'mmode <fix|auto>' kann zwischen den Modi gewechselt werden.
 
 3. Der Automapper
 

@@ -1,7 +1,9 @@
 function zeigeVorsicht()
+  if not table.is_field(gmcp, "MG.char.wimpy") then return end
 
-  ME.vorsicht = gmcp.MG.char.wimpy.wimpy
-  ME.fluchtrichtung = gmcp.MG.char.wimpy.wimpy_dir
+  local wimpyData = gmcp.MG.char.wimpy
+  ME.vorsicht = wimpyData.wimpy
+  ME.fluchtrichtung = wimpyData.wimpy_dir
 
   -- Prinz Eisenherz?
 
@@ -13,12 +15,11 @@ function zeigeVorsicht()
 
   -- Fluchtrichtung anzeigen, nur wenn gesetzt
 
-  if ME.fluchtrichtung ~= 0 then
+  if ME.fluchtrichtung and ME.fluchtrichtung ~= "" then
     zeile = zeile .. ", FR: " .. ME.fluchtrichtung
   end
 
   -- Statuszeile aktualisieren
 
   GUI.vorsicht:echo(zeile)
-
 end
