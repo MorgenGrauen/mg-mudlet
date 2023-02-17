@@ -15,20 +15,19 @@ GUI.Chatbox = GUI.Chatbox or {
 }
 
 function initChatbox()
-    -- Angleichen an MG Farben!
     local active_stylesheet = [[
-        background-color: rgb(240,198,32,255); 
+        background-color: rgba(201, 180, 123, 100%);
         border-width: 1px; 
         border-style: solid; 
-        border-color: rgb(113,75,50,255); 
-        border-radius: 10px;
+        border-color: rgba(113, 75, 50, 100%); 
+        border-radius: 8px;
     ]]
     local inactive_stylesheet = [[
-        background-color: rgb(50,76,113,255); 
+        background-color:rgba(200, 200, 160, 20%);
         border-width: 1px; 
         border-style: solid; 
-        border-color: rgb(113,75,50,255);
-        border-radius: 10px;
+        border-color: rgba(113, 75, 50, 100%);
+        border-radius: 8px;
     ]]
 
     GUI.Chatbox.Object.AdjCon = 
@@ -39,7 +38,7 @@ function initChatbox()
             padding = 2, width = 360, height = 100% - 240,
             adjLabelstyle = [[ 
                 border-color: rgba(113, 75, 50, 100%);
-                border-width: 1px; border-style: solid; border-radius: 10px; 
+                border-width: 1px; border-style: solid; border-radius: 8px; 
                 background-color:rgba(0, 0, 0, 100%);
             ]],
             buttonstyle=[[
