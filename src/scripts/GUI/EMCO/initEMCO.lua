@@ -15,19 +15,28 @@ GUI.Chatbox = GUI.Chatbox or {
 }
 
 function initChatbox()
-    local active_stylesheet = [[
+    local tab_active_style = [[
         background-color: rgba(201, 180, 123, 100%);
         border-width: 1px; 
         border-style: solid; 
         border-color: rgba(113, 75, 50, 100%); 
         border-radius: 8px;
     ]]
-    local inactive_stylesheet = [[
+    local tab_inactive_style = [[
         background-color:rgba(200, 200, 160, 20%);
         border-width: 1px; 
         border-style: solid; 
         border-color: rgba(113, 75, 50, 100%);
         border-radius: 8px;
+    ]]
+    local title_style = [[ 
+        border-color: rgba(113, 75, 50, 100%);
+        border-width: 1px; border-style: solid; border-radius: 10px; 
+        background-color:rgba(0, 0, 0, 100%);
+    ]]
+    local button_style = [[
+        QLabel{ border-radius: 7px; background-color: rgba(140,140,140,20%);}
+        QLabel::hover{ background-color: rgba(160, 160, 160, 50%);}
     ]]
 
     GUI.Chatbox.Object.AdjCon = 
@@ -36,15 +45,8 @@ function initChatbox()
             name = "GUI.Chatbox.Object.AdjCon"
             x = -360, y = 240,
             padding = 2, width = 360, height = 100% - 240,
-            adjLabelstyle = [[ 
-                border-color: rgba(113, 75, 50, 100%);
-                border-width: 1px; border-style: solid; border-radius: 8px; 
-                background-color:rgba(0, 0, 0, 100%);
-            ]],
-            buttonstyle=[[
-                QLabel{ border-radius: 7px; background-color: rgba(140,140,140,20%);}
-                QLabel::hover{ background-color: rgba(160, 160, 160, 50%);}
-            ]],
+            adjLabelstyle = title_style,
+            buttonstyle = button_style,
             buttonFontSize = 8,
             buttonsize = 16,
             titleText = "Kommunikation",
@@ -65,8 +67,8 @@ function initChatbox()
             consoleColor = "black",
             consoles = {"Alles", "Ebenen", "Mitteilungen"},
             mapTab = false,
-            activeTabCSS = active_stylesheet,
-            inactiveTabCSS = inactive_stylesheet,
+            activeTabCSS = tab_active_style,
+            inactiveTabCSS = tab_inactive_style,
             preserveBackground = true,
             blink = false
     }, GUI.Chatbox.Object.AdjCon)
