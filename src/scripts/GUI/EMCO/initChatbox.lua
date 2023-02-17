@@ -1,4 +1,4 @@
-local EMCO = require("@PKGNAME@.resources.emco.emco")
+local EMCO = require("@PKGNAME@.emco")
 
 GUI.Chatbox = GUI.Chatbox or {
     Config = {
