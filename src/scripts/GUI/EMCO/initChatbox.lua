@@ -34,10 +34,10 @@ function initChatbox()
         QLabel::hover{ background-color: rgba(160, 160, 160, 50%);}
     ]]
 
-    GUI.Chatbox.AdjCon = 
+    GUI.Chatbox.AdjCon =
         -- GUI.Chatbox.AdjCon or
         Adjustable.Container:new({
-            name = "GUI.Chatbox.AdjCon"
+            name = "GUI.Chatbox.AdjCon",
             x = -360, y = 240,
             padding = 2, width = 360, height = 100% - 240,
             adjLabelstyle = title_style,
@@ -49,7 +49,7 @@ function initChatbox()
             attached = "right",
     })  -- Position unterhalb Mapperbox!
 
-    GUI.Chatbox.EMCO = 
+    GUI.Chatbox.EMCO =
         -- GUI.Chatbox.EMCO or
         EMCO:new({
             name = "GUI.Chatbox.EMCO",
@@ -59,8 +59,8 @@ function initChatbox()
             height = "100%",
             consoleColor = "black",
             consoles = {
-                "Alles", 
-                "Ebenen", 
+                "Alles",
+                "Ebenen",
                 "Mitteilungen",
                 "Debug"
             },
