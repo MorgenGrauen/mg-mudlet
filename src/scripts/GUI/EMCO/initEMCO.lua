@@ -16,22 +16,18 @@ GUI.Chatbox = GUI.Chatbox or {
 
 function initChatbox()
     local tab_active_style = [[
+        border-color: rgba(113, 75, 50, 100%);
+        border-width: 1px; border-style: solid; border-radius: 8px;
         background-color: rgba(201, 180, 123, 100%);
-        border-width: 1px; 
-        border-style: solid; 
-        border-color: rgba(113, 75, 50, 100%); 
-        border-radius: 8px;
     ]]
     local tab_inactive_style = [[
+        border-color: rgba(113, 75, 50, 100%);
+        border-width: 1px; border-style: solid; border-radius: 8px;
         background-color:rgba(200, 200, 160, 20%);
-        border-width: 1px; 
-        border-style: solid; 
-        border-color: rgba(113, 75, 50, 100%);
-        border-radius: 8px;
     ]]
-    local title_style = [[ 
+    local title_style = [[
         border-color: rgba(113, 75, 50, 100%);
-        border-width: 1px; border-style: solid; border-radius: 10px; 
+        border-width: 1px; border-style: solid; border-radius: 10px;
         background-color:rgba(0, 0, 0, 100%);
     ]]
     local button_style = [[
