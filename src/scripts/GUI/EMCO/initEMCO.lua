@@ -32,7 +32,7 @@ function initChatbox()
     ]]
 
     GUI.Chatbox.Object.AdjCon = 
-    --    GUI.Chatbox.Object.AdjCon or
+        -- GUI.Chatbox.Object.AdjCon or
         Adjustable.Container:new({
             name = "GUI.Chatbox.Object.AdjCon"
             x = -360, y = 240,
@@ -53,21 +53,23 @@ function initChatbox()
             attached = "right",
     })  -- Position unterhalb Mapperbox!
 
-    GUI.Chatbox.Object.EMCO = EMCO:new({
-        name = "GUI.Chatbox.Object.EMCO",
-        allTab = true,
-        allTabName = "Alles",
-        x = "0",
-        y = "0",
-        width = "100%",
-        height = "100%",
-        consoleColor = "black",
-        consoles = {"Alles", "Ebenen", "Mitteilungen"},
-        mapTab = false,
-        activeTabCSS = active_stylesheet,
-        inactiveTabCSS = inactive_stylesheet,
-        preserveBackground = true,
-        blink = false
+    GUI.Chatbox.Object.EMCO = 
+        -- GUI.Chatbox.Object.EMCO or
+        EMCO:new({
+            name = "GUI.Chatbox.Object.EMCO",
+            x = "0",
+            y = "0",
+            width = "100%",
+            height = "100%",
+            allTab = true,
+            allTabName = "Alles",
+            consoleColor = "black",
+            consoles = {"Alles", "Ebenen", "Mitteilungen"},
+            mapTab = false,
+            activeTabCSS = active_stylesheet,
+            inactiveTabCSS = inactive_stylesheet,
+            preserveBackground = true,
+            blink = false
     }, GUI.Chatbox.Object.AdjCon)
 
     GUI.Chatbox.Object.AdjCon:connectToBorder("top")
