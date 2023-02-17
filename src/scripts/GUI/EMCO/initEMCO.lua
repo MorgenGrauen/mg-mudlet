@@ -1,6 +1,6 @@
 local EMCO = require("@PKGNAME@.resources.emco.emco")
 
-Chatbox = Chatbox or {
+GUI.Chatbox = GUI.Chatbox or {
     Config = {
         Ebenen = {
             ShowInWindow = true,
@@ -19,10 +19,13 @@ function initChatbox()
     local active_stylesheet = [[background-color: rgb(240,198,32,255); border-width: 1px; border-style: solid; border-color: rgb(113,75,50,255); border-radius: 10px;]]
     local inactive_stylesheet = [[background-color: rgb(50,76,113,255); border-width: 1px; border-style: solid; border-color: rgb(113,75,50,255); border-radius: 10px;]]
 
-    Chatbox.GUI.UW = Chatbox.GUI.UW or
-        Geyser.UserWindow:new({name = "Chat"})  -- Adjustable maybe?
+    GUI.Chatbox.GUI.AdjCon = 
+        GUI.Chatbox.GUI.AdjCon or
+        Adjustable.Container:new({
+            name = "GUI.Chatbox.GUI.AdjCon"
+    })  -- Position unterhalb Mapperbox!
 
-    Chatbox.GUI.EMCO = EMCO:new({
+    GUI.Chatbox.GUI.EMCO = EMCO:new({
         name = "Chatbox.GUI.EMCO",
         allTab = true,
         allTabName = "Alles",
@@ -37,5 +40,5 @@ function initChatbox()
         inactiveTabCSS = inactive_stylesheet,
         preserveBackground = true,
         blink = false
-    }, Chatbox.GUI.UW)
+    }, GUI.Chatbox.GUI.AdjCon)
 end
