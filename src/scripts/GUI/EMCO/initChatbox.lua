@@ -1,7 +1,6 @@
 local EMCO = require("@PKGNAME@.resources.emco.emco")
 
 GUI.Chatbox = GUI.Chatbox or {
-    Object = {},
     Config = {
         Ebenen = {
             ShowInWindow = true,
@@ -35,10 +34,10 @@ function initChatbox()
         QLabel::hover{ background-color: rgba(160, 160, 160, 50%);}
     ]]
 
-    GUI.Chatbox.Object.AdjCon = 
-        -- GUI.Chatbox.Object.AdjCon or
+    GUI.Chatbox.AdjCon = 
+        -- GUI.Chatbox.AdjCon or
         Adjustable.Container:new({
-            name = "GUI.Chatbox.Object.AdjCon"
+            name = "GUI.Chatbox.AdjCon"
             x = -360, y = 240,
             padding = 2, width = 360, height = 100% - 240,
             adjLabelstyle = title_style,
@@ -50,10 +49,10 @@ function initChatbox()
             attached = "right",
     })  -- Position unterhalb Mapperbox!
 
-    GUI.Chatbox.Object.EMCO = 
-        -- GUI.Chatbox.Object.EMCO or
+    GUI.Chatbox.EMCO = 
+        -- GUI.Chatbox.EMCO or
         EMCO:new({
-            name = "GUI.Chatbox.Object.EMCO",
+            name = "GUI.Chatbox.EMCO",
             x = "0",
             y = "0",
             width = "100%",
@@ -73,10 +72,10 @@ function initChatbox()
             inactiveTabCSS = tab_inactive_style,
             preserveBackground = true,
             blink = false
-    }, GUI.Chatbox.Object.AdjCon)
+    }, GUI.Chatbox.AdjCon)
 
     tempTimer(0, function ()
-        GUI.Chatbox.Object.AdjCon:connectToBorder("top")
-        GUI.Chatbox.Object.AdjCon:connectToBorder("bottom")
+        GUI.Chatbox.AdjCon:connectToBorder("top")
+        GUI.Chatbox.AdjCon:connectToBorder("bottom")
     end)
 end
