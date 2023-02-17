@@ -1,4 +1,4 @@
-function onInstallPackage(_, packageName)
+function onInstall(_, packageName)
     -- alles was NUR direkt nach der Installation des MG Pakets ausgeführt werden soll
     if not packageName == "@PKGNAME@" then return end
 
