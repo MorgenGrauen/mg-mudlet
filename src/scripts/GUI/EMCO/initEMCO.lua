@@ -75,6 +75,8 @@ function initChatbox()
             blink = false
     }, GUI.Chatbox.Object.AdjCon)
 
-    GUI.Chatbox.Object.AdjCon:connectToBorder("top")
-    GUI.Chatbox.Object.AdjCon:connectToBorder("bottom")
+    tempTimer(0, function ()
+        GUI.Chatbox.Object.AdjCon:connectToBorder("top")
+        GUI.Chatbox.Object.AdjCon:connectToBorder("bottom")
+    end)
 end

@@ -3,8 +3,8 @@ function initMapperBox()
     -- GUI.Karte or 
     {}
 
-    GUI.Karte.testCon = 
-    -- GUI.Karte.testCon or 
+    GUI.Karte.AdjCon = 
+    -- GUI.Karte.AdjCon or 
     Adjustable.Container:new(
         {
         name = "MapFrame",
@@ -36,8 +36,14 @@ function initMapperBox()
         width = "100%", 
         height = "100%-17", 
         }, 
-        GUI.Karte.testCon
+        GUI.Karte.AdjCon
     )
     
     setMapZoom(5)
+
+    tempTimer(0, function ()
+        GUI.Karte.AdjCon:connectToBorder("top")
+        GUI.Karte.AdjCon:connectToBorder("bottom")
+    end)
+
 end
