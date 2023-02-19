@@ -1,5 +1,6 @@
 local EMCO = require("MorgenGrauen.emco")
 
+GUI = GUI or {}
 GUI.Chatbox = GUI.Chatbox or {
     Config = {
         Ebenen = {
