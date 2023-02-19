@@ -1,4 +1,5 @@
 function initMapperbox()
+    GUI = GUI or {}
     GUI.Karte =
     -- GUI.Karte or
     {}
