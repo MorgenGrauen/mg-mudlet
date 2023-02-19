@@ -2,11 +2,12 @@ function onInstall(_, packageName)
     -- alles was NUR direkt nach der Installation des MG Pakets ausgeführt werden soll
     if not packageName == "@PKGNAME@" then return end
 
-    initGMCP("", "GMCP")
+    tempTimer(0, function()
+        initGMCP("", "GMCP")
 
-    initMapperbox()
-    initChatbox()
+        initMapperbox()
+        initChatbox()
 
-    cecho("<LimeGreen>[  OK  ]  -<gold> Dein Mudlet-Paket fürs MorgenGrauen wurde erfolgreich installiert.\n")
-
+        cecho("<LimeGreen>[  OK  ]  -<gold> Dein Mudlet-Paket fürs MorgenGrauen wurde erfolgreich installiert.\n")
+    end)
 end
