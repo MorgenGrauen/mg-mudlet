@@ -1,4 +1,4 @@
-local EMCO = require("@PKGNAME@.emco")
+local EMCO = require("MorgenGrauen.emco")
 
 GUI.Chatbox = GUI.Chatbox or {
     Config = {
@@ -39,7 +39,7 @@ function initChatbox()
         Adjustable.Container:new({
             name = "GUI.Chatbox.AdjCon",
             x = -360, y = 240,
-            padding = 2, width = 360, height = 100% - 240,
+            padding = 2, width = 360, height = "100%-240px",
             adjLabelstyle = title_style,
             buttonstyle = button_style,
             buttonFontSize = 8,
@@ -53,10 +53,10 @@ function initChatbox()
         -- GUI.Chatbox.EMCO or
         EMCO:new({
             name = "GUI.Chatbox.EMCO",
-            x = "0",
-            y = "0",
+            x = "0", y = "12",
             width = "100%",
-            height = "100%",
+            height = "100%-17px",
+            gap = 5,
             consoleColor = "black",
             consoles = {
                 "Alles",
@@ -74,7 +74,7 @@ function initChatbox()
             blink = false
     }, GUI.Chatbox.AdjCon)
 
-    tempTimer(0, function ()
+    tempTimer(0, function()
         GUI.Chatbox.AdjCon:connectToBorder("top")
         GUI.Chatbox.AdjCon:connectToBorder("bottom")
     end)
