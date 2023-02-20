@@ -69,6 +69,7 @@ function initChatbox()
             allTabName = "Alles",
             allTabExclusions = { "Debug" },
             mapTab = false,
+            activeTabFGColor = "black",
             activeTabCSS = tab_active_style,
             inactiveTabCSS = tab_inactive_style,
             preserveBackground = true,
