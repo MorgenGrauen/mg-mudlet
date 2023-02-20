@@ -1,9 +1,13 @@
-function onInstallPackage(_, packageName)
-    if packageName == "MorgenGrauen" then
-        -- hier kommt alles rein das NUR direkt nach der Installation des MG Pakets
-        -- ausgeführt werden soll
+function onInstall(_, packageName)
+    -- alles was NUR direkt nach der Installation des MG Pakets ausgeführt werden soll
+    if not packageName == "@PKGNAME@" then return end
 
+    tempTimer(0, function()
         initGMCP("", "GMCP")
+
+        initMapperbox()
+        initChatbox()
+
         cecho("<LimeGreen>[  OK  ]  -<gold> Dein Mudlet-Paket fürs MorgenGrauen wurde erfolgreich installiert.\n")
 
         -- Karte mit Startgebieten laden
@@ -69,5 +73,5 @@ function onInstallPackage(_, packageName)
           setMapperMode("fix")
           tempTimer(1, f"setMapperMode('{mode}')")
         end
-    end
+    end)
 end

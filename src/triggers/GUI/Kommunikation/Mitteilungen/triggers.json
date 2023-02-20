@@ -1,0 +1,35 @@
+[
+    {
+        "name": "Du teilst Jemand etwas mit",
+        "script": "zeigeMitteilung()",
+        "patterns": [
+            {
+                "pattern": "^Du teilst (.*?) mit: (.*)$",
+                "type": "regex",
+                "comment": "accepted trigger types are 'substring', 'regex', 'startOfLine', 'exactMatch', 'lua', 'spacer', 'color', 'colour', and 'prompt'"
+            }
+        ]
+    }, {
+        "name": "Jemand teilt Dir etwas mit",
+        "script": "zeigeMitteilung()",
+        "patterns": [
+            {
+                "pattern": "^(.*?) teilt Dir mit: (.*)$",
+                "type": "regex"
+            }
+        ]
+    }, {
+        "name": "Etwas passiert in/aus der Ferne",
+        "script": "zeigeMitteilung()",
+        "patterns": [
+            {
+                "pattern": "aus der Ferne",
+                "type": "substring"
+            },
+            {
+                "pattern": "in der Ferne",
+                "type": "substring"
+            }
+        ]
+    }
+]

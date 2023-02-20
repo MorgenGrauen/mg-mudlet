@@ -1,17 +1,17 @@
 
-farben = farben or 
-{ vg =  
+farben = farben or
+{ vg =
   { komm = "cyan",
     ebenen = "hot_pink",
     info = "green",
     alarm = "white",
     script = "dark_green",
-    gag = "dark_slate_gray" 
+    gag = "dark_slate_gray"
   },
-  hg = 
+  hg =
   { komm = "black",
     ebenen = "black",
-    info = "black", 
+    info = "black",
     alarm = "red",
     script = "black",
     gag = "black" }
@@ -26,13 +26,13 @@ farben = farben or
 -- Einstellungen fuer Farben Kampfscroll
 
 function faerbeText(type, text)
-  -- setzt Vordergrund- und Hintergrundfarbe je nach Typ der Kommunikation, und schreibt dann den Text in bunt 
+  -- setzt Vordergrund- und Hintergrundfarbe je nach Typ der Kommunikation, und schreibt dann den Text in bunt
   local vg = farben.vg[type]
   local hg = farben.hg[type]
   if vg and hg then
     cecho("<"..vg..":"..hg..">"..text)
   else
-    echo(what)
+    echo(text)
   end
 end
 
@@ -58,4 +58,14 @@ function faerbeAuswahl(type)
     bg(hg)
     resetFormat()
   end
+end
+
+function liefereFarbigenText(type, text)
+  -- setzt Vordergrund- und Hintergrundfarbe je nach Typ der Kommunikation, und schreibt dann den Text in bunt
+  local vg = farben.vg[type]
+  local hg = farben.hg[type]
+  if vg and hg then
+    return("<"..vg..":"..hg..">"..text)
+  end
+  return(text)
 end
