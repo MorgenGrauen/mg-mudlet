@@ -11,33 +11,35 @@ mapper.mode = mapper.mode or "auto"
 mapper.currentHash = mapper.currentHash or nil
 mapper.currentArea = mapper.currentArea or "world"
 
+local paraFarbe = color_table.SaddleBrown
+
 -- Die aktuellen Rauminfos in der Karte anzeigen
-registerMapInfo("Raum", function() 
+registerMapInfo("Raum", function()
     local raum_name = ME.raum_kurz
-    local r, g, b = 200, 200, 200
-    if ME.para > 0 then r, g, b = unpack(color_table.tomato) end
-    return raum_name, false, false, r, b, g
+    local r, g, b = 0, 0, 0
+    if ME.para > 0 then r, g, b = unpack(paraFarbe) end
+    return raum_name, true, false, r, g, b
 end)
 enableMapInfo("Raum")
 
 -- Die aktuellen Regionsinfos in der Karte anzeigen
 registerMapInfo("Region", function()
-    local r, g, b = 200, 200, 200
+    local r, g, b = 0, 0, 0
     local region_infos = nil
     if ME.raum_region and ME.raum_id then
       region_infos = f"{ME.raum_region} [{ME.raum_id}]"
-      if ME.para > 0 then r, g, b = unpack(color_table.tomato) end
+      if ME.para > 0 then r, g, b = unpack(paraFarbe) end
     end
-    return region_infos, false, false, r, b, g
+    return region_infos, false, false, r, g, b
 end)
 disableMapInfo("Region")
 
 -- Den aktuellen Kartenmodus in der Karte anzeigen
-registerMapInfo("Modus", function() 
-    local mapper_modus = (mapper.mode == "fix") and 
+registerMapInfo("Modus", function()
+    local mapper_modus = (mapper.mode == "fix") and
         "Karte wird NICHT automatisch erweitert" or
         "Karte wird automatisch erweitert"
-    return mapper_modus, false, true, 200, 200, 200
+    return mapper_modus, false, true, 0, 0, 0
 end)
 disableMapInfo("Modus")
 
