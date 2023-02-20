@@ -1,10 +1,26 @@
 [
     {
-        "name": "onInstallPackage",
+        "name": "helpers"
+    },{
+        "name": "onInstall",
         "eventHandlerList": [ 
-            "sysInstallPackage"
+            "sysInstall"
           ]
     },{
-        "name": "helpers"
+        "name": "onUninstall",
+        "eventHandlerList": [ 
+            "sysUninstall"
+          ]
+    },{
+        "name": "onStart",
+        "eventHandlerList": [ 
+            "sysLoadEvent"
+          ]
+    },{
+        "name": "onExit",
+        "eventHandlerList": [ 
+            "sysExitEvent"
+          ]
     }
 ]
+
