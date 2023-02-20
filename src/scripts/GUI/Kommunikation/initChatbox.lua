@@ -1,4 +1,4 @@
-local EMCO = require("MorgenGrauen.emco")
+local EMCO = require("@PKGNAME@.demonnic.emco")
 
 GUI = GUI or {}
 GUI.Chatbox = GUI.Chatbox or {
