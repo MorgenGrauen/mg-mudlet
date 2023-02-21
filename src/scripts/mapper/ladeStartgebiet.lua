@@ -2,11 +2,19 @@ function ladeStartgebiet()
     -- Karte mit Startgebieten laden
 
     if istBereitsKarteVorhanden() then
-        -- TODO: Da Spieler bereits aktiv war, hier die vorhandene Karte speichern, bevor sie unten überschrieben wird!
+        echoM("Es war bereits eine Karte vorhanden. Speichere Backup, bevor sie überschrieben wird...")
+        local datetimestamp = getTime([true, "yyyy-MM-dd_hh-mm-ss")
+        local savedok = saveMap(f"{getMudletHomeDir()}/map/Backup_{datetimestamp}.dat")
+        if not savedok then
+            echoM("Backup fehlgeschlagen! Breche ab. :(")
+            return
+        else
+            echoM("Backup erfolgreich!")
+        end
     end
-    
 
     -- TODO: Passende Karte je nach Rasse laden. Nicht mehr die v8 Karte bereitstellen.
+    echoM("Lade Karte des Startgebietes...")
     loadMap(getMudletHomeDir() .. "/@PKGNAME@/" .. "map/anfaenger v8.dat")
 
     -- Wo befinden wir uns gerade auf der geladenen Karte?
@@ -25,6 +33,7 @@ function ladeStartgebiet()
 
     if found then
         -- Ah, wir sind in einem Startgebiet. Dann Mapper dorthin ausrichten!
+        echoM("Startgebiet gefunden. Blende es ein...")
         mapper.currentHash = currentHash
         mapper.currentRoom = currentRoom
         mapper.currentArea = getRoomArea(currentRoom)
@@ -32,6 +41,7 @@ function ladeStartgebiet()
 
     else
         -- Sonst irgendwo anders einen neuen Raum anlegen, von dem aus kartographiert werden kann.
+        echoM("Aktuelle Position nicht im Startgebiet gefunden. Beginne eine neue Gebietskarte...")
         -- TODO: Ist vmtl. so nicht nötig, da Map für diesen Zweck bereits einen Raum "1" enthält!
         mapper.currentArea = "world"
         erstelleErstenRaum()
