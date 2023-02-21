@@ -10,19 +10,28 @@ function ladeStartgebiet()
     if istBereitsKarteVorhanden() then
         echoM("Es war bereits eine Karte vorhanden. Speichere Backup, bevor sie überschrieben wird...")
         local datetimestamp = getTime([true, "yyyy-MM-dd_hh-mm-ss")
-        local savedok = saveMap(f"{getMudletHomeDir()}/map/Backup_{datetimestamp}.dat")
-        if not savedok then
+        local success = saveMap(f"{getMudletHomeDir()}/map/Backup_{datetimestamp}.dat")
+        if not success then
             echoM("Backup fehlgeschlagen! Breche ab. :(")
             return
-        else
-            echoM("Backup erfolgreich!")
+        echoM("Backup erfolgreich!")
         end
     end
 
-    -- TODO: Passende Karte je nach Rasse laden. Nicht mehr die v8 Karte bereitstellen.
-    echoM("Lade Karte des Startgebietes...")
     local race = gmcp.MG.char.base.race
-    loadMap(getMudletHomeDir() .. "/@PKGNAME@/" .. "map/anfaenger v8.dat")
+    local bekannteKarten = { "dunkelelf", "elf", "feline", "goblin", "hobbit", "mensch", "ork", "zwerg" }
+    if table.contains(bekannteKarten, race) then 
+        echoM("Lade Karte des ({race}-bekannten) Startgebietes...")
+        local success = loadJsonMap(f"{getMudletHomeDir()}/@PKGNAME@/map/{race}.json")
+        if success then
+            echoM("Laden erfolgreich.")
+        else
+            echoM("Laden fehlgeschlagen! :(")
+        end
+    else
+        echoM(f"Unbekannte Rasse: {race}. Lade leere Karte ohne Startgebiet...")
+        loadMap("_")
+    end
 
     -- Wo befinden wir uns gerade auf der geladenen Karte?
     local found = false
@@ -43,7 +52,7 @@ function ladeStartgebiet()
 
     if found then
         -- Ah, wir sind in einem Startgebiet. Dann Mapper dorthin ausrichten!
-        echoM("Startgebiet gefunden. Blende es ein...")
+        echoM("Aktuelle Position auf Karte gefunden. Blende Gebiet ein...")
         mapper.currentHash = currentHash
         mapper.currentRoom = currentRoom
         mapper.currentArea = getRoomArea(currentRoom)
@@ -51,7 +60,7 @@ function ladeStartgebiet()
 
     else
         -- Sonst irgendwo anders einen neuen Raum anlegen, von dem aus kartographiert werden kann.
-        echoM("Aktuelle Position nicht im Startgebiet gefunden. Beginne eine neue Gebietskarte...")
+        echoM("Aktuelle Position nicht auf Karte gefunden. Beginne eine neue Gebietskarte...")
         -- TODO: Ist vmtl. so nicht nötig, da Map für diesen Zweck bereits einen Raum "1" enthält!
         mapper.currentArea = "world"
         erstelleErstenRaum()
