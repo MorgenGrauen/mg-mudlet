@@ -1,6 +1,12 @@
 function ladeStartgebiet()
     -- Karte mit Startgebieten laden
 
+    if not table.is_field(gmcp, "MG.char.base") then
+        -- Rasse unbekannt. Warte auf passendes GMCP Event, dann starte diese Funktion nochmal einmalig von vorne. Jetzt aber Abbruch!
+        registerAnonymousEventHandler("gmcp.MG.char.base", ladeStartgebiet, true)
+        return
+    end
+
     if istBereitsKarteVorhanden() then
         echoM("Es war bereits eine Karte vorhanden. Speichere Backup, bevor sie überschrieben wird...")
         local datetimestamp = getTime([true, "yyyy-MM-dd_hh-mm-ss")
@@ -15,6 +21,7 @@ function ladeStartgebiet()
 
     -- TODO: Passende Karte je nach Rasse laden. Nicht mehr die v8 Karte bereitstellen.
     echoM("Lade Karte des Startgebietes...")
+    local race = gmcp.MG.char.base.race
     loadMap(getMudletHomeDir() .. "/@PKGNAME@/" .. "map/anfaenger v8.dat")
 
     -- Wo befinden wir uns gerade auf der geladenen Karte?
@@ -29,6 +36,7 @@ function ladeStartgebiet()
                 currentRoom = id
                 currentHash = getRoomHashByID(id)
                 found = true
+                break -- TODO: Könnte hier ggf. die zwei "current" Variablen einsparen?
             end
         end
     end
