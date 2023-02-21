@@ -1,12 +1,14 @@
 function ladeStartgebiet()
-    -- Karte mit Startgebieten laden
+    -- Karte mit Startgebiet der aktuellen Rasse laden
 
+    -- Rasse bekannt?
     if not table.is_field(gmcp, "MG.char.base") then
         -- Rasse unbekannt. Warte auf passendes GMCP Event, dann starte diese Funktion nochmal einmalig von vorne. Jetzt aber Abbruch!
         registerAnonymousEventHandler("gmcp.MG.char.base", ladeStartgebiet, true)
         return
     end
 
+    -- Ggf. Backup vorab?
     if istBereitsKarteVorhanden() then
         echoM("Es war bereits eine Karte vorhanden. Speichere Backup, bevor sie überschrieben wird...")
         local datetimestamp = getTime([true, "yyyy-MM-dd_hh-mm-ss")
@@ -18,6 +20,7 @@ function ladeStartgebiet()
         end
     end
 
+    -- Lade Karte passend zur Rasse
     local race = gmcp.MG.char.base.race
     local bekannteKarten = { "dunkelelf", "elf", "feline", "goblin", "hobbit", "mensch", "ork", "zwerg" }
     if table.contains(bekannteKarten, race) then 
