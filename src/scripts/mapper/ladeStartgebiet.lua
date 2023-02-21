@@ -11,7 +11,7 @@ function ladeStartgebiet()
     -- Ggf. Backup vorab?
     if istBereitsKarteVorhanden() then
         echoM("Es war bereits eine Karte vorhanden. Speichere Backup, bevor sie überschrieben wird...")
-        local datetimestamp = getTime([true, "yyyy-MM-dd_hh-mm-ss")
+        local datetimestamp = getTime(true, "yyyy-MM-dd_hh-mm-ss")
         local success = saveMap(f"{getMudletHomeDir()}/map/Backup_{datetimestamp}.dat")
         if not success then
             echoM("Backup fehlgeschlagen! Breche ab. :(")
