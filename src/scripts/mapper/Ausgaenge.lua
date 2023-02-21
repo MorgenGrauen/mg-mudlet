@@ -95,29 +95,30 @@ function isSpecialIntExit(name) return mapper.intexitmap[name] == nil end
 -- Koordinatendelta zu.
 function getExitCoordinates(name)
     local d = mapperconf.scale
-    if name == "n" or name == "norden" then
-        return 0, d, 0
-    elseif name == "no" or name == "nordosten" then
-        return d, d, 0
-    elseif name == "o" or name == "osten" then
-        return d, 0, 0
-    elseif name == "so" or name == "suedosten" then
-        return d, -d, 0
-    elseif name == "s" or name == "sueden" then
-        return 0, -d, 0
-    elseif name == "sw" or name == "suedwesten" then
-        return -d, -d, 0
-    elseif name == "w" or name == "westen" then
-        return -d, 0, 0
-    elseif name == "nw" or name == "nordwesten" then
-        return -d, d, 0
-    elseif name == "ob" or name == "oben" then
-        return 0, 0, 1
-    elseif name == "u" or name == "unten" then
-        return 0, 0, -1
-    else
-        return 0, 0, 0
-    end
+    local exitCoordinates = {
+        n:          {  0,  d,  0 },
+        norden:     {  0,  d,  0 },
+        no:         {  d,  d,  0 },
+        nordosten:  {  d,  d,  0 },
+        o:          {  d,  0,  0 },
+        osten:      {  d,  0,  0 },
+        so:         {  d, -d,  0 },
+        suedosten:  {  d, -d,  0 },
+        s:          {  0, -d,  0 },
+        sueden:     {  0, -d,  0 },
+        sw:         { -d, -d,  0 },
+        suedwesten: { -d, -d,  0 },
+        w:          { -d,  0,  0 },
+        westen:     { -d,  0,  0 },
+        nw:         { -d,  d,  0 },
+        nordwesten: { -d,  d,  0 },
+
+        ob:         {  0,  0,  1 },
+        oben:       {  0,  0,  1 },
+        u:          {  0,  0, -1 },
+        unten:      {  0,  0, -1 },
+    }
+    return exitCoordinates[name] or { 0, 0, 0 }
 end
 
 -- Baut (je nach Name) einen Standard- oder Spezialausgang.
