@@ -46,6 +46,6 @@ function ladeStartgebiet()
 end
 
 function istBereitsKarteVorhanden()
-    -- TODO: Prüft, ob Spieler bereits aktiv war, und Räume usw. angelegt hatte, dann true, sonst false
-    return true
+    -- Prüft, ob Spieler bereits aktiv war, und Räume/Areas angelegt hatte, dann true, sonst false
+    return not (table.is_empty(getRooms()) and table.is_empty(getAreaTableSwap()))
 end
