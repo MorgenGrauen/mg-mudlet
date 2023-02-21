@@ -1,9 +1,13 @@
 function ladeStartgebiet()
     -- Karte mit Startgebieten laden
 
+    if istBereitsKarteVorhanden() then
+        -- TODO: Da Spieler bereits aktiv war, hier die vorhandene Karte speichern, bevor sie unten überschrieben wird!
+    end
+    
+
     -- TODO: Passende Karte je nach Rasse laden. Nicht mehr die v8 Karte bereitstellen.
     loadMap(getMudletHomeDir() .. "/@PKGNAME@/" .. "map/anfaenger v8.dat")
-    -- TODO: Vorab eine ggf. vorhandene Karte speichern, falls Spieler bereits aktiv war!
 
     -- Wo befinden wir uns gerade auf der geladenen Karte?
     local found = false
@@ -31,10 +35,11 @@ function ladeStartgebiet()
         -- TODO: Ist vmtl. so nicht nötig, da Map für diesen Zweck bereits einen Raum "1" enthält!
         mapper.currentArea = "world"
 
-        -- Folgendes 1:1 aus neuem Alias "minit" kopiert 
+        -- Folgendes 1:1 aus der neuen Funktion "minit" kopiert.
         -- TODO: dort und hier in gemeinsame Funktion auslagern!
         do
         -- ersten Raum aus aktuellen GMCP Daten erstellen
+        
         hash = gmcp.MG.room.info.id
 
         mapper.currentHash = hash
@@ -61,4 +66,9 @@ function ladeStartgebiet()
         setMapperMode("fix")
         tempTimer(1, f"setMapperMode('{mode}')")
     end
+end
+
+function istBereitsKarteVorhanden()
+    -- TODO: Prüft, ob Spieler bereits aktiv war, und Räume usw. angelegt hatte, dann true, sonst false
+    return true
 end
