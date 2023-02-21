@@ -34,30 +34,7 @@ function ladeStartgebiet()
         -- Sonst irgendwo anders einen neuen Raum anlegen, von dem aus kartographiert werden kann.
         -- TODO: Ist vmtl. so nicht nötig, da Map für diesen Zweck bereits einen Raum "1" enthält!
         mapper.currentArea = "world"
-
-        -- Folgendes 1:1 aus der neuen Funktion "minit" kopiert.
-        -- TODO: dort und hier in gemeinsame Funktion auslagern!
-        do
-        -- ersten Raum aus aktuellen GMCP Daten erstellen
-        
-        hash = gmcp.MG.room.info.id
-
-        mapper.currentHash = hash
-
-        local newRoom = createRoom(mapper.currentArea, hash)
-        local roomName = gmcp.MG.room.info.short
-        setRoomName(newRoom, roomName)
-
-        -- im neuen Raum alle sichtbaren Ausgänge prüfen und ggf. Stubs erzeugen
-        for _, exitname in pairs(gmcp.MG.room.info.exits) do
-            addStubExit(newRoom, exitname)
-        end
-
-        mapper.currentRoom = newRoom
-        centerview(newRoom)
-
-        end
-        -- Ende "minit"
+        erstelleErstenRaumAusGmcpDaten()
     end
 
     -- wegen initGMCP kommt gleich noch GMCP.MG.room zurück und wir wollen keinen weiteren Raum erstellen!
