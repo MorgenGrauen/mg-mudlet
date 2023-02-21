@@ -19,15 +19,17 @@ function ladeStartgebiet()
 
     -- Wo befinden wir uns gerade auf der geladenen Karte?
     local found = false
-    local hash = gmcp.MG.room.info.id -- TODO: prüfen, gibt es das überhaupt schon?
     local currentRoom
     local currentHash
-    -- Ganze Karte prüfen, ob wir unseren Hash wiederfinden
-    for id, _ in pairs(getRooms()) do
-        if hash == getRoomHashByID(id) then
-        currentRoom = id
-        currentHash = getRoomHashByID(id)
-        found = true
+    if table.is_field(gmcp, "MG.room.info") then
+        local hash = gmcp.MG.room.info.id
+        -- Ganze Karte prüfen, ob wir unseren Hash wiederfinden
+        for id, _ in pairs(getRooms()) do
+            if hash == getRoomHashByID(id) then
+                currentRoom = id
+                currentHash = getRoomHashByID(id)
+                found = true
+            end
         end
     end
 
