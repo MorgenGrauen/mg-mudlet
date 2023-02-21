@@ -34,7 +34,7 @@ function ladeStartgebiet()
         -- Sonst irgendwo anders einen neuen Raum anlegen, von dem aus kartographiert werden kann.
         -- TODO: Ist vmtl. so nicht nötig, da Map für diesen Zweck bereits einen Raum "1" enthält!
         mapper.currentArea = "world"
-        erstelleErstenRaumAusGmcpDaten()
+        erstelleErstenRaum()
     end
 
     -- wegen initGMCP kommt gleich noch GMCP.MG.room zurück und wir wollen keinen weiteren Raum erstellen!

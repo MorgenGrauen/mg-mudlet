@@ -19,6 +19,14 @@ function minit()
     -- MapUserData löschen
     clearMapUserData()
 
+    erstelleErstenRaum()
+
+    echoM("Neue Karte initialisiert.")
+    setMapperMode("auto")
+
+end
+
+function erstelleErstenRaum()
     if table.is_field(gmcp, "MG.room.info") then
         erstelleErstenRaumAusGmcpDaten()
     else
@@ -30,13 +38,9 @@ function minit()
         mapper.currentRoom = newRoom
         centerview(newRoom)
     end
-
-    echoM("Neue Karte initialisiert.")
-    setMapperMode("auto")
-
 end
 
-function erstelleErstenRaumAusGmcpDaten()
+local function erstelleErstenRaumAusGmcpDaten()
     local roomData = gmcp.MG.room.info
     local hash = roomData.id
 
