@@ -4,6 +4,7 @@ function ladeStartgebiet()
     -- Rasse bekannt?
     if not table.is_field(gmcp, "MG.char.base") then
         -- Rasse unbekannt. Warte auf passendes GMCP Event, dann starte diese Funktion nochmal einmalig von vorne. Jetzt aber Abbruch!
+        echoM("Kann noch kein Startgebiet anzeigen, weil noch kein Spieler eingeloggt ist. Warte...")
         registerAnonymousEventHandler("gmcp.MG.char.base", ladeStartgebiet, true)
         return
     end
