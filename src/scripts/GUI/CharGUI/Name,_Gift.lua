@@ -1,12 +1,12 @@
 function initName()
   GUI.NameLabel = Geyser.Label:new({
     name = "NameLabel", fgColor = "white",
-    x = 64, y = 0, padding = 0,width = 170, height = 17
+    x = 64, y = 0, padding = 0, width = 170, height = 17
     }, GUI.CharFrame)
   GUI.NameLabel:setStyleSheet([[
-    border-color: rgb(113,75,50,255);
+    border-color: rgb(113, 75, 50, 255);
     border-width: 1px; border-style: solid; border-radius: 8px;
-    background-color:rgba(200,200,160,20%);
+    background-color:rgba(200, 200, 160, 20%);
     font: italic;
   ]])
   GUI.NameLabel:enableClickthrough()

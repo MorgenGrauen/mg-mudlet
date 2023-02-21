@@ -15,9 +15,9 @@ function oldAttribs()
       message = [[<center>20&nbsp;10<br>&nbsp;5&nbsp;&nbsp;2</center>]]
     }, GUI.AttribsFrame)
     GUI.AttribsLabel:setStyleSheet([[
-      border-color: rgba(0,0,0,0%);
+      border-color: rgba(0, 0, 0, 0%);
       border-width: 0px; border-style: solid; border-radius: 10px;
-      background-color: rgba(201,180,123,100%);
+      background-color: rgba(201, 180, 123, 100%);
       font-size: 10pt;
     ]])
   else

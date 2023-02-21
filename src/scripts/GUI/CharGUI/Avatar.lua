@@ -26,9 +26,9 @@ function initAvatar()
     x = 0, y = 0, width = "100%", height = "100%", 
   }, GUI.AvatarFrame)
   GUI.AvatarLabel:setStyleSheet(f[[
-    xborder-color: rgba(113,75,50,100%);
+    xborder-color: rgba(113, 75, 50, 100%);
     xborder-width: 1px; border-style: solid; xborder-radius: 37px;
-    xbackground-color:rgba(200,200,160,20%);
+    xbackground-color:rgba(200, 200, 160, 20%);
     qproperty-alignment: AlignCenter;
   ]])
   GUI.AvatarLabel:enableClickthrough()
@@ -42,9 +42,9 @@ function updateAvatar()
   ME.gilde = gmcp.MG.char.base.guild or nil
   local AvatarPath = imgPath .. AvatarPaths[ME.gilde] or AvatarPaths["glitzer"]
   GUI.AvatarLabel:setStyleSheet(f[[
-    xborder-color: rgba(113,75,50,100%);
+    xborder-color: rgba(113, 75, 50, 100%);
     xborder-width: 1px; border-style: solid; xborder-radius: 37px;
-    xbackground-color:rgba(200,200,160,20%);
+    xbackground-color:rgba(200, 200, 160, 20%);
     qproperty-alignment: AlignCenter;
     border-image: url("{AvatarPath}");
   ]])

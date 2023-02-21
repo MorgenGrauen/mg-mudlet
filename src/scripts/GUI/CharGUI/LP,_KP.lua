@@ -96,7 +96,7 @@ function initVorsicht()
     x = VorsichtX, y = 0,
     width = 15, height = 7
   }, GUI.GaugeLPVorsicht)
-  GUI.GaugeLPVorsichtOben:setStyleSheet([[background-color: rgba(0,0,0,0%);]])
+  GUI.GaugeLPVorsichtOben:setStyleSheet([[background-color: rgba(0, 0, 0, 0%);]])
   GUI.GaugeLPVorsichtOben:setBackgroundImage(Vo1Path)
   GUI.GaugeLPVorsichtOben:enableClickthrough()
   GUI.GaugeLPVorsichtOben:hide()
@@ -106,7 +106,7 @@ function initVorsicht()
     x = 0, y = 0,
     width = 15, height = 7
   }, GUI.GaugeLPVorsicht)
-  GUI.GaugeLPVorsichtUnten:setStyleSheet([[background-color: rgba(0,0,0,0%);]])
+  GUI.GaugeLPVorsichtUnten:setStyleSheet([[background-color: rgba(0, 0, 0, 0%);]])
   GUI.GaugeLPVorsichtUnten:setBackgroundImage(Vo2Path)
   GUI.GaugeLPVorsichtUnten:enableClickthrough()
   GUI.GaugeLPVorsichtUnten:hide()

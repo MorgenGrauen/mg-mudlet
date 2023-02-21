@@ -8,9 +8,9 @@ function initStufe()
     x = 0, y = 0, width = "100%", height = "100%",
   }, GUI.StufeFrame)
   GUI.StufeLabel:setStyleSheet(f([[
-    border-color: rgba(0,0,0,0%);
+    border-color: rgba(0, 0, 0, 0%);
     border-width: 0px; border-style: solid; border-radius: 8px;
-    background-color: rgba(201,180,123,100%);
+    background-color: rgba(201, 180, 123, 100%);
   ]]))
   GUI.StufeLabel:enableClickthrough()
   GUI.StufeLabel:hide()
