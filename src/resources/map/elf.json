@@ -72,10 +72,6 @@
                         {
                             "exitId": 59,
                             "name": "south"
-                        },
-                        {
-                            "exitId": 49,
-                            "name": "southwest"
                         }
                     ],
                     "hash": "fa90efb5f2aae190df97a17777f365fb",
