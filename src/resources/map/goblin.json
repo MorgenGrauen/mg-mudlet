@@ -183,10 +183,6 @@
                     "environment": 258,
                     "exits": [
                         {
-                            "exitId": 1334,
-                            "name": "northeast"
-                        },
-                        {
                             "exitId": 9,
                             "name": "southeast"
                         },
