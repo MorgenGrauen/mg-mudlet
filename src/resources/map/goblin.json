@@ -67,7 +67,7 @@
                         }
                     ],
                     "hash": "5804106b5105b2f9ec6cedcb8ff84d98",
-                    "id": 1,
+                    "id": 3,
                     "name": "In einer kleinen Holzhuette."
                 },
                 {
@@ -229,7 +229,7 @@
                             "name": "west"
                         },
                         {
-                            "exitId": 1,
+                            "exitId": 3,
                             "name": "klopfe an"
                         },
                         {
