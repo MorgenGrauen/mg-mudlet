@@ -27,7 +27,7 @@ function ladeStartgebiet()
     local race = string.lower(gmcp.MG.char.base.race)
     local bekannteKarten = { "dunkelelf", "elf", "feline", "goblin", "hobbit", "mensch", "ork", "zwerg" }
     if table.contains(bekannteKarten, race) then
-        echoM("Lade Karte des ({race}-bekannten) Startgebietes...")
+        echoM(f"Lade Karte des ({race}-bekannten) Startgebietes...")
         local success = loadJsonMap(f"{getMudletHomeDir()}/@PKGNAME@/map/{race}.json")
         if success then
             echoM("Laden erfolgreich.")
