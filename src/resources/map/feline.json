@@ -608,12 +608,13 @@
 	"mapSymbolFontDetails": "Bitstream Vera Sans Mono,12,-1,5,50,0,0,0,0,0",
 	"mapSymbolFontFudgeFactor": 1,
 	"onlyMapSymbolFontToBeUsed": false,
-	"playerRoomColors": [{
-			"color24RGB": [
-				0,
-				127,
-				0
-			]
+	"playerRoomColors": [
+		{
+            "color24RGB": [
+                113,
+                75,
+                50
+            ]
 		},
 		{
 			"color24RGB": [
