@@ -1,6 +1,8 @@
 function ladeStartgebiet()
     -- Karte mit Startgebiet der aktuellen Rasse laden
 
+    if GUI and GUI.StartgebietGeladen then return end
+
     -- Rasse bekannt?
     if not table.is_field(gmcp, "MG.char.base") then
         -- Rasse unbekannt. Warte auf passendes GMCP Event, dann starte diese Funktion nochmal einmalig von vorne. Jetzt aber Abbruch!
@@ -24,7 +26,7 @@ function ladeStartgebiet()
     -- Lade Karte passend zur Rasse
     local race = gmcp.MG.char.base.race
     local bekannteKarten = { "dunkelelf", "elf", "feline", "goblin", "hobbit", "mensch", "ork", "zwerg" }
-    if table.contains(bekannteKarten, race) then 
+    if table.contains(bekannteKarten, race) then
         echoM("Lade Karte des ({race}-bekannten) Startgebietes...")
         local success = loadJsonMap(f"{getMudletHomeDir()}/@PKGNAME@/map/{race}.json")
         if success then
@@ -76,6 +78,9 @@ function ladeStartgebiet()
         setMapperMode("fix")
         tempTimer(1, f"setMapperMode('{mode}')")
     end
+
+    GUI = GUI or {}
+    GUI.StartgebietGeladen = true
 end
 
 function istBereitsKarteVorhanden()
