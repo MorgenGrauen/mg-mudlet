@@ -62,7 +62,7 @@
                     "environment": -1,
                     "exits": [
                         {
-                            "exitId": 1338,
+                            "exitId": 4,
                             "name": "out"
                         }
                     ],
@@ -79,16 +79,16 @@
                     "environment": 258,
                     "exits": [
                         {
-                            "exitId": 1335,
+                            "exitId": 7,
                             "name": "northwest"
                         },
                         {
-                            "exitId": 1339,
+                            "exitId": 5,
                             "name": "east"
                         }
                     ],
                     "hash": "b91bea7773b69fb5c832ab364dd2244a",
-                    "id": 9,
+                    "id": 6,
                     "name": "Bei einem Menhir auf der Weisstannenlichtung."
                 },
                 {
@@ -100,16 +100,16 @@
                     "environment": 292,
                     "exits": [
                         {
-                            "exitId": 1355,
+                            "exitId": 10,
                             "name": "northeast"
                         },
                         {
-                            "exitId": 167,
+                            "exitId": 23,
                             "name": "northwest"
                         }
                     ],
                     "hash": "682e6efe14ad42c61de2a054cdf22114",
-                    "id": 166,
+                    "id": 22,
                     "name": "In einem Kaff."
                 },
                 {
@@ -121,16 +121,16 @@
                     "environment": 292,
                     "exits": [
                         {
-                            "exitId": 166,
+                            "exitId": 22,
                             "name": "southeast"
                         },
                         {
-                            "exitId": 172,
+                            "exitId": 24,
                             "name": "southwest"
                         }
                     ],
                     "hash": "a387c0464ffee8b3c1c01a57efbb2005",
-                    "id": 167,
+                    "id": 23,
                     "name": "In einem Kaff."
                 },
                 {
@@ -142,16 +142,16 @@
                     "environment": 292,
                     "exits": [
                         {
-                            "exitId": 167,
+                            "exitId": 23,
                             "name": "northeast"
                         },
                         {
-                            "exitId": 173,
+                            "exitId": 25,
                             "name": "east"
                         }
                     ],
                     "hash": "35b141f0e93258adce3f3949cd675a53",
-                    "id": 172,
+                    "id": 24,
                     "name": "In einem Kaff."
                 },
                 {
@@ -163,12 +163,12 @@
                     "environment": 257,
                     "exits": [
                         {
-                            "exitId": 172,
+                            "exitId": 24,
                             "name": "west"
                         }
                     ],
                     "hash": "8e8b6cd5d284f16f9777ca4e6abecaa7",
-                    "id": 173,
+                    "id": 25,
                     "name": "In einer ehemaligen Kirche.",
                     "symbol": {
                         "text": "🛐"
@@ -183,16 +183,16 @@
                     "environment": 258,
                     "exits": [
                         {
-                            "exitId": 9,
+                            "exitId": 6,
                             "name": "southeast"
                         },
                         {
-                            "exitId": 1336,
+                            "exitId": 8,
                             "name": "southwest"
                         }
                     ],
                     "hash": "134a9de6bd0d0c8f9b9a2ab53cfac322",
-                    "id": 1335,
+                    "id": 7,
                     "name": "Bei einem Menhir auf der Weisstannenlichtung."
                 },
                 {
@@ -204,16 +204,16 @@
                     "environment": 258,
                     "exits": [
                         {
-                            "exitId": 1335,
+                            "exitId": 7,
                             "name": "northeast"
                         },
                         {
-                            "exitId": 1354,
+                            "exitId": 9,
                             "name": "southwest"
                         }
                     ],
                     "hash": "19bfd94ea086e3446090fb76607e10a5",
-                    "id": 1336,
+                    "id": 8,
                     "name": "Auf einem Waldweg."
                 },
                 {
@@ -225,7 +225,7 @@
                     "environment": 258,
                     "exits": [
                         {
-                            "exitId": 1339,
+                            "exitId": 5,
                             "name": "west"
                         },
                         {
@@ -238,7 +238,7 @@
                         }
                     ],
                     "hash": "3f5ec7d2de2bcc5ea29968c2c451c62b",
-                    "id": 1338,
+                    "id": 4,
                     "name": "Bei einer Huette an der Suedostecke der Waldlichtung."
                 },
                 {
@@ -250,16 +250,16 @@
                     "environment": 258,
                     "exits": [
                         {
-                            "exitId": 1338,
+                            "exitId": 4,
                             "name": "east"
                         },
                         {
-                            "exitId": 9,
+                            "exitId": 6,
                             "name": "west"
                         }
                     ],
                     "hash": "c4ac6cd89dab85f83b03d92d1ee5447d",
-                    "id": 1339,
+                    "id": 5,
                     "name": "Vor einem Loch auf der Weisstannenlichtung."
                 },
                 {
@@ -271,16 +271,16 @@
                     "environment": 258,
                     "exits": [
                         {
-                            "exitId": 1336,
+                            "exitId": 8,
                             "name": "northeast"
                         },
                         {
-                            "exitId": 1355,
+                            "exitId": 10,
                             "name": "south"
                         }
                     ],
                     "hash": "9409bee44a5646968f65a584709b2cc1",
-                    "id": 1354,
+                    "id": 9,
                     "name": "Vor dem Dorfeingang."
                 },
                 {
@@ -292,20 +292,20 @@
                     "environment": 292,
                     "exits": [
                         {
-                            "exitId": 1354,
+                            "exitId": 9,
                             "name": "north"
                         },
                         {
-                            "exitId": 1356,
+                            "exitId": 11,
                             "name": "southeast"
                         },
                         {
-                            "exitId": 166,
+                            "exitId": 22,
                             "name": "southwest"
                         }
                     ],
                     "hash": "40cf51f460ce1c8f519433afd70a4bac",
-                    "id": 1355,
+                    "id": 10,
                     "name": "In einem Kaff."
                 },
                 {
@@ -317,20 +317,20 @@
                     "environment": 292,
                     "exits": [
                         {
-                            "exitId": 1355,
+                            "exitId": 10,
                             "name": "northwest"
                         },
                         {
-                            "exitId": 1370,
+                            "exitId": 21,
                             "name": "west"
                         },
                         {
-                            "exitId": 1357,
+                            "exitId": 12,
                             "name": "southwest"
                         }
                     ],
                     "hash": "876465d3cf15c7dad979dd211584f0f2",
-                    "id": 1356,
+                    "id": 11,
                     "name": "In einem Kaff."
                 },
                 {
@@ -342,16 +342,16 @@
                     "environment": 292,
                     "exits": [
                         {
-                            "exitId": 1356,
+                            "exitId": 11,
                             "name": "northeast"
                         },
                         {
-                            "exitId": 1358,
+                            "exitId": 13,
                             "name": "southeast"
                         }
                     ],
                     "hash": "d3fd2bf6cbbe47859b92bdcbdbc3d08e",
-                    "id": 1357,
+                    "id": 12,
                     "name": "In einem Kaff."
                 },
                 {
@@ -363,16 +363,16 @@
                     "environment": 292,
                     "exits": [
                         {
-                            "exitId": 1357,
+                            "exitId": 12,
                             "name": "northwest"
                         },
                         {
-                            "exitId": 1359,
+                            "exitId": 14,
                             "name": "southwest"
                         }
                     ],
                     "hash": "a4437626b3c170786e35146d30dabebd",
-                    "id": 1358,
+                    "id": 13,
                     "name": "In einem Kaff."
                 },
                 {
@@ -384,16 +384,16 @@
                     "environment": 292,
                     "exits": [
                         {
-                            "exitId": 1358,
+                            "exitId": 13,
                             "name": "northeast"
                         },
                         {
-                            "exitId": 1360,
+                            "exitId": 15,
                             "name": "northwest"
                         }
                     ],
                     "hash": "01f8d6d6be652297603eb7230c474f74",
-                    "id": 1359,
+                    "id": 14,
                     "name": "In einem Kaff."
                 },
                 {
@@ -405,20 +405,20 @@
                     "environment": 292,
                     "exits": [
                         {
-                            "exitId": 1366,
+                            "exitId": 16,
                             "name": "south"
                         },
                         {
-                            "exitId": 1359,
+                            "exitId": 14,
                             "name": "southeast"
                         },
                         {
-                            "exitId": 1361,
+                            "exitId": 17,
                             "name": "southwest"
                         }
                     ],
                     "hash": "d14012b355e45d198879fee4035a63af",
-                    "id": 1360,
+                    "id": 15,
                     "name": "In einem Kaff."
                 },
                 {
@@ -430,16 +430,16 @@
                     "environment": 292,
                     "exits": [
                         {
-                            "exitId": 1360,
+                            "exitId": 15,
                             "name": "northeast"
                         },
                         {
-                            "exitId": 1362,
+                            "exitId": 18,
                             "name": "northwest"
                         }
                     ],
                     "hash": "13abeda2a032366531b1c060b8f36482",
-                    "id": 1361,
+                    "id": 17,
                     "name": "In einem Kaff."
                 },
                 {
@@ -451,16 +451,16 @@
                     "environment": 292,
                     "exits": [
                         {
-                            "exitId": 1363,
+                            "exitId": 19,
                             "name": "northeast"
                         },
                         {
-                            "exitId": 1361,
+                            "exitId": 17,
                             "name": "southeast"
                         }
                     ],
                     "hash": "cf955ece790975b8e2a47706f7d0202c",
-                    "id": 1362,
+                    "id": 18,
                     "name": "In einem Kaff."
                 },
                 {
@@ -472,16 +472,16 @@
                     "environment": 292,
                     "exits": [
                         {
-                            "exitId": 1364,
+                            "exitId": 20,
                             "name": "west"
                         },
                         {
-                            "exitId": 1362,
+                            "exitId": 18,
                             "name": "southwest"
                         }
                     ],
                     "hash": "e5194916282247872f6e147a72684a53",
-                    "id": 1363,
+                    "id": 19,
                     "name": "In einem Kaff."
                 },
                 {
@@ -493,12 +493,12 @@
                     "environment": 257,
                     "exits": [
                         {
-                            "exitId": 1363,
+                            "exitId": 19,
                             "name": "east"
                         }
                     ],
                     "hash": "7c943e6dd8c79a4daba62611b39434ae",
-                    "id": 1364,
+                    "id": 20,
                     "name": "In einem Subbamargt.",
                     "symbol": {
                         "text": "💰"
@@ -513,12 +513,12 @@
                     "environment": 257,
                     "exits": [
                         {
-                            "exitId": 1360,
+                            "exitId": 15,
                             "name": "north"
                         }
                     ],
                     "hash": "1b0ed2d008d48fb029336a1c6c5e4d18",
-                    "id": 1366,
+                    "id": 16,
                     "name": "In einer Huette.",
                     "symbol": {
                         "text": "📜"
@@ -533,12 +533,12 @@
                     "environment": 257,
                     "exits": [
                         {
-                            "exitId": 1356,
+                            "exitId": 11,
                             "name": "east"
                         }
                     ],
                     "hash": "4f870ee120be744d68e69a5140762762",
-                    "id": 1370,
+                    "id": 21,
                     "name": "In einer Kneipe.",
                     "symbol": {
                         "text": "🍖"
