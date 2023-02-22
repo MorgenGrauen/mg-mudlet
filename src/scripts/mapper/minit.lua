@@ -32,7 +32,7 @@ function erstelleErstenRaum()
     else
         -- keine Raumdaten vorhanden
         local newRoom = createRoom(mapper.currentArea, mapper.currentHash)
-        
+
         setRoomName(newRoom, "Irgendwo im Nirgendwo")
 
         mapper.currentRoom = newRoom
@@ -40,7 +40,7 @@ function erstelleErstenRaum()
     end
 end
 
-local function erstelleErstenRaumAusGmcpDaten()
+function erstelleErstenRaumAusGmcpDaten()
     local roomData = gmcp.MG.room.info
     local hash = roomData.id
 
@@ -57,4 +57,4 @@ local function erstelleErstenRaumAusGmcpDaten()
 
     mapper.currentRoom = newRoom
     centerview(newRoom)
-end 
+end
