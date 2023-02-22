@@ -24,7 +24,7 @@ function ladeStartgebiet()
     end
 
     -- Lade Karte passend zur Rasse
-    local race = gmcp.MG.char.base.race
+    local race = string.lower(gmcp.MG.char.base.race)
     local bekannteKarten = { "dunkelelf", "elf", "feline", "goblin", "hobbit", "mensch", "ork", "zwerg" }
     if table.contains(bekannteKarten, race) then
         echoM("Lade Karte des ({race}-bekannten) Startgebietes...")
