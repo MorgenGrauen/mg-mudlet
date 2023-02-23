@@ -33,7 +33,7 @@ function handleRoomInfo()
             setRoomName(newRoom, roomName)
 
             local x,y,z = getRoomCoordinates(mapper.currentRoom)
-            local dx,dy,dz = getExitCoordinates(exitname)
+            local dx,dy,dz = unpack(getExitCoordinates(exitname))
             setRoomCoordinates(newRoom, x+dx, y+dy, z+dz)
 
             addAnyExit(mapper.currentRoom, newRoom, exitname)
@@ -48,12 +48,12 @@ function handleRoomInfo()
             mapper.currentRoom = knownRoom
             mapper.currentArea = getRoomAreaName(getRoomArea(mapper.currentRoom))
         end
-        
+
         -- im neuen Raum alle sichtbaren Ausgänge prüfen und ggf. Stubs erzeugen
         for _, exitname in pairs(gmcp.MG.room.info.exits) do
             addStubExit(mapper.currentRoom, exitname)
         end
-        
+
     elseif mapper.mode == "fix" then
         -- fix-Modus. Nur den aktuellen Raum setzen.
         if knownRoom > -1 then
@@ -63,5 +63,4 @@ function handleRoomInfo()
     end
     centerview(mapper.currentRoom)
 end
-                    
-            
+
