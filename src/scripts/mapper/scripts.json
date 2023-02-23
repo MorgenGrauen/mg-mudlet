@@ -1,5 +1,4 @@
-[
-  {
+[ {
     "name": "Initialisierung"
   },
   {
@@ -13,11 +12,12 @@
   },
   {
     "name": "handleRoomInfo",
-    "eventHandlerList": [ 
-      "gmcp.MG.room.info"
-    ]
+    "eventHandlerList": ["gmcp.MG.room.info"]
   },
   {
     "name": "doSpeedWalk"
+  },
+  {
+    "name": "minit"
   }
 ]

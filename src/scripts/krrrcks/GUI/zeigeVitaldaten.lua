@@ -1,19 +1,29 @@
 function zeigeVitaldaten()
 
+  if not (table.is_field(gmcp, "MG.char.vitals") and 
+          table.is_field(gmcp, "MG.char.maxvitals") and
+          GUI.lp_anzeige and GUI.kp_anzeige) then return end
+  
   -- GMCP Vitaldaten merken
 
   ME.lp = gmcp.MG.char.vitals.hp
   ME.lp_max = gmcp.MG.char.maxvitals.max_hp
-  ME.kp = gmcp.MG.char.vitals.sp
+  local lp_anzeigetext = "<b> " .. ME.lp .. "/" .. ME.lp_max .. "</b> "
+  
   ME.kp_max = gmcp.MG.char.maxvitals.max_sp
+  local kp_anzeigetext
+  -- Vielleicht hat der Spieler noch keinen KP-Report!
+  if gmcp.MG.char.vitals.sp then
+    ME.kp = gmcp.MG.char.vitals.sp
+    kp_anzeigetext = "<b> " .. ME.kp .. "/" .. ME.kp_max .. "</b> "
+  else
+    ME.kp = ME.kp_max
+    kp_anzeigetext = "<b> max. " .. ME.kp .. "</b> "
+  end
 
   -- Werte der Balken aktualisieren
-  
-  GUI.lp_anzeige:setValue(ME.lp, ME.lp_max, 
-      "<b> " .. ME.lp .. "/" .. ME.lp_max .. "</b> ")
-
-  GUI.kp_anzeige:setValue(ME.kp, ME.kp_max, 
-      "<b> " .. ME.kp .. "/" .. ME.kp_max .. "</b> ")
+  GUI.lp_anzeige:setValue(ME.lp, ME.lp_max, lp_anzeigetext)
+  GUI.kp_anzeige:setValue(ME.kp, ME.kp_max, kp_anzeigetext)
 
   -- Treffer? Dann LP Balken blinken lassen
 

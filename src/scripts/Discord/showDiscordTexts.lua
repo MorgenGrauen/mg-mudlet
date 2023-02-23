@@ -1,0 +1,11 @@
+function showDiscordTexts()
+  print("Detail: ", getDiscordDetail())
+  print("State: ", getDiscordState())
+  print("Large Icon: ", getDiscordLargeIcon())
+  print("Large Icon Text: ", getDiscordLargeIconText())
+  print("Small Icon: ", getDiscordSmallIcon())
+  print("Small Icon Text: ", getDiscordSmallIconText())
+  print("Time Stamps: ", getDiscordTimeStamps())
+  print("Party: ", getDiscordParty())
+  print("\n")
+end

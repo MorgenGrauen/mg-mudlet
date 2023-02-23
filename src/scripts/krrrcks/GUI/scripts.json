@@ -1,46 +1,37 @@
 [
   {
-    "name": "initGMCP",
-    "eventHandlerList": [ 
-      "sysProtocolEnabled"
-    ]
+    "name": "initGMCP"
   },
   {
     "name": "initBase",
-    "eventHandlerList": [ 
+    "eventHandlerList": [
       "gmcp.MG.char.base",
       "gmcp.MG.char.info"
     ]
   },
   {
     "name": "zeigeVitaldaten",
-    "eventHandlerList": [ 
+    "eventHandlerList": [
       "gmcp.MG.char.vitals",
       "gmcp.MG.char.maxvitals"
     ]
   },
   {
     "name": "zeigeGift",
-    "eventHandlerList": [ 
-      "gmcp.MG.char.vitals"
+    "eventHandlerList": [
+      "gmcp.MG.char.vitals.poison"
     ]
   },
   {
     "name": "zeigeVorsicht",
-    "eventHandlerList": [ 
+    "eventHandlerList": [
       "gmcp.MG.char.wimpy"
     ]
   },
   {
     "name": "zeigeRaum",
-    "eventHandlerList": [ 
+    "eventHandlerList": [
       "gmcp.MG.room"
-    ]
-  },
-  {
-    "name": "zeigeEbenen",
-    "eventHandlerList": [ 
-      "gmcp.comm.channel"
     ]
   },
   {
