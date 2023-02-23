@@ -152,7 +152,7 @@ function getExitCoordinates(name)
         , nwu =           { -d,  d, -1 }
         , nordwestunten = { -d,  d, -1 }
     }
-    return exitCoordinates[name] or { 0, 0, 0 }
+    return unpack(exitCoordinates[name]) or 0, 0, 0
 end
 
 -- Baut (je nach Name) einen Standard- oder Spezialausgang.
