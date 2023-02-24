@@ -46,11 +46,3 @@ disableMapInfo("Modus")
  -- Standard-Anzeige im Mudlet-Mapper wird dann nicht benötigt
 disableMapInfo("Short")
 disableMapInfo("Full")
-
-function echoM(str)
-    -- TODO: Mit faerbeText() harmonisieren..!
-    -- TODO: Mapper-Infos in Debug-Tab hinter Mapper verschieben?
-    fg(mapperconf.color)
-    echo("[MAPPER] " .. str .. "\n")
-    resetFormat()
-end
