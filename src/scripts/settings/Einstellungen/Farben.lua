@@ -23,8 +23,8 @@ farben = farben or
 
 -- Einstellungen fuer Farben Kampfscroll
 
+--- Setzt Vordergrund- und Hintergrundfarbe je nach Typ der Kommunikation, und schreibt dann den Text in bunt
 function faerbeText(type, text)
-  -- setzt Vordergrund- und Hintergrundfarbe je nach Typ der Kommunikation, und schreibt dann den Text in bunt
   local vg = farben.vg[type]
   local hg = farben.hg[type]
   if vg and hg then
@@ -34,9 +34,9 @@ function faerbeText(type, text)
   end
 end
 
+--- Ändert Vordergrund- und Hintergrundfarbe der aktuellen (ganzen) Zeile je nach Typ der Kommunikation
+-- Keine Ahnung, ob das besser geht, aber ich will die ganze Zeile einfärben und nicht nur den "Match".
 function faerbeZeile(type)
-  -- ändert Vordergrund- und Hintergrundfarbe der aktuellen (ganzen) Zeile je nach Typ der Kommunikation
-  -- Keine Ahnung, ob das besser geht, aber ich will die ganze Zeile einfärben und nicht nur den "Match".
   local vg = farben.vg[type]
   local hg = farben.hg[type]
   if vg and hg then
@@ -47,8 +47,8 @@ function faerbeZeile(type)
   end
 end
 
+--- Ändert Vordergrund- und Hintergrundfarbe der (bereits vorher erfolgten) Auswahl je nach Typ der Kommunikation
 function faerbeAuswahl(type)
-  -- ändert Vordergrund- und Hintergrundfarbe der (bereits vorher erfolgten) Auswahl je nach Typ der Kommunikation
   local vg = farben.vg[type]
   local hg = farben.hg[type]
   if vg and hg then
@@ -58,8 +58,8 @@ function faerbeAuswahl(type)
   end
 end
 
+--- Setzt Vordergrund- und Hintergrundfarbe je nach Typ der Kommunikation, und schreibt dann den Text in bunt
 function liefereFarbigenText(type, text)
-  -- setzt Vordergrund- und Hintergrundfarbe je nach Typ der Kommunikation, und schreibt dann den Text in bunt
   local vg = farben.vg[type]
   local hg = farben.hg[type]
   if vg and hg then
@@ -68,22 +68,28 @@ function liefereFarbigenText(type, text)
   return(text)
 end
 
+--- Setzt Namen von Spieler und Ebene im gegebenen Text bunt für hecho()
+-- Pattern muss [ und ] escapen mit % da hier Lua Regex zugrunde liegt
+-- Das ] ist absichtlich nicht enthalten, damit Emotes erkannt werden.
+-- @param text Text einer Ebene inkl. Senderkennung wie: [Tod:Lars] Huhu!
+-- @param spieler Wer schreibt auf der Ebene? Bspw. Lars
+-- @param ebene Auf welcher Ebene wird geschrieben? Bspw. Tod
+-- @return farbigerText Derselbe Text, nur in Farbe!
 function liefereFarbigeEbene(text, spieler, ebene)
-  -- setzt Spieler und Ebenenname im gegebenen Text bunt für hecho()
-  -- Pattern muss [ und ] escapen mit % da hier Lua Regex zugrunde liegt
-  -- Das ] ist absichtlich nicht enthalten, damit Emotes erkannt werden.
   local pattern = f"%[{ebene}:{spieler}"
   local colored_text = f"[{color_text_for_hecho(ebene)}:{color_text_for_hecho(spieler)}"
   return text:gsub(pattern, colored_text)
 end
 
--- Inspiration:
+--- Färbt den gegebenen Text in seine einzigartige Farbe (vorbereitet zur Ausgabe per hecho())
+-- Inspiration, um Farben aus Text abzuleiten:
 -- - https://stackoverflow.com/questions/3426404/create-a-hexadecimal-colour-based-on-a-string-with-javascript
 -- - https://stackoverflow.com/questions/68317097/how-to-properly-convert-hsl-colors-to-rgb-colors-in-lua
-
-function color_text_for_hecho(string_input)
-  local red, green, blue = string_to_color(string_input)
-  local hecho_format = f"#{math.DecToHex(red)}{math.DecToHex(green)}{math.DecToHex(blue)}{string_input}#r"
+-- @param text Beliebiger Text, der gefärbt werden soll
+-- @return farbigerText Derselbe Text, nur in Farbe! Am Ende wird Format zurückgesetzt.
+function color_text_for_hecho(text)
+  local red, green, blue = string_to_color(text)
+  local hecho_format = f"#{math.DecToHex(red)}{math.DecToHex(green)}{math.DecToHex(blue)}{text}#r"
   return hecho_format
 end
 
@@ -138,11 +144,18 @@ function HSL_to_RGB(hue, saturation, lightness)
     return math.round(r * 255), math.round(g * 255), math.round(b * 255)
 end
 
+--- Rundet auf/ab, anstatt einfach nur ab wie math.floor()
+-- @param num Die zu rundende Zahl
+-- @param numDecimalPlaces[opt=0] Anzahl der Dezimalstellen
+-- @return roundedNumber Die auf-/abgerundete Zahl
 function math.round(num, numDecimalPlaces)
   local mult = 10^(numDecimalPlaces or 0)
   return math.floor(num * mult + 0.5) / mult
 end
 
+--- Wandelt eine Dezimalzahl in eine Hexadezimalzahl um
+-- @param num Die zu wandelnde Dezimalzahl
+-- @return numAsHex Die hexadezimale Darstellung der Zahl als String
 function math.DecToHex(num)
   return string.format("%x", num)
 end
