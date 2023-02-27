@@ -34,7 +34,7 @@ mapper.exitmap =
     , suedwesten = 8
     , oben = 9
     , unten = 10
-    }
+}
 
 mapper.intexitmap =
     { north = 1
@@ -69,12 +69,12 @@ mapper.intexitmap =
     , s = 6
     , se = 7
     , sw = 8
-    }
+}
 
 -- Der ganze Kram hier ist dazu da, verschiedene Repraesentationen der
 -- Standardausgaenge ineinander zu konvertieren. Standardausgaenge
 -- koennen auf drei Arten repraesentiert sein:
--- 
+--
 -- * Loc(al):    Die deutschen Abkuerzungen, die auch im MUD verwendet werden.
 -- * Int(ernal): Englische Langversionen ("east", "west", etc.). Wird z.B. von
 --               getRoomExits zurueckgegeben.
@@ -95,29 +95,64 @@ function isSpecialIntExit(name) return mapper.intexitmap[name] == nil end
 -- Koordinatendelta zu.
 function getExitCoordinates(name)
     local d = mapperconf.scale
-    if name == "n" or name == "norden" then
-        return 0, d, 0
-    elseif name == "no" or name == "nordosten" then
-        return d, d, 0
-    elseif name == "o" or name == "osten" then
-        return d, 0, 0
-    elseif name == "so" or name == "suedosten" then
-        return d, -d, 0
-    elseif name == "s" or name == "sueden" then
-        return 0, -d, 0
-    elseif name == "sw" or name == "suedwesten" then
-        return -d, -d, 0
-    elseif name == "w" or name == "westen" then
-        return -d, 0, 0
-    elseif name == "nw" or name == "nordwesten" then
-        return -d, d, 0
-    elseif name == "ob" or name == "oben" then
-        return 0, 0, 1
-    elseif name == "u" or name == "unten" then
-        return 0, 0, -1
-    else
-        return 0, 0, 0
-    end
+    local exitCoordinates =
+        { n =          {  0,  d,  0 }
+        , norden =     {  0,  d,  0 }
+        , no =         {  d,  d,  0 }
+        , nordosten =  {  d,  d,  0 }
+        , o =          {  d,  0,  0 }
+        , osten =      {  d,  0,  0 }
+        , so =         {  d, -d,  0 }
+        , suedosten =  {  d, -d,  0 }
+        , s =          {  0, -d,  0 }
+        , sueden =     {  0, -d,  0 }
+        , sw =         { -d, -d,  0 }
+        , suedwesten = { -d, -d,  0 }
+        , w =          { -d,  0,  0 }
+        , westen =     { -d,  0,  0 }
+        , nw =         { -d,  d,  0 }
+        , nordwesten = { -d,  d,  0 }
+
+        , ob =         {  0,  0,  1 }
+        , oben =       {  0,  0,  1 }
+        , u =          {  0,  0, -1 }
+        , unten =      {  0,  0, -1 }
+
+        , nob =           {  0,  d,  1 }
+        , nordoben =      {  0,  d,  1 }
+        , noob =          {  d,  d,  1 }
+        , nordostoben =   {  d,  d,  1 }
+        , oob =           {  d,  0,  1 }
+        , ostoben =       {  d,  0,  1 }
+        , soob =          {  d, -d,  1 }
+        , suedostoben =   {  d, -d,  1 }
+        , sob =           {  0, -d,  1 }
+        , suedoben =      {  0, -d,  1 }
+        , swob =          { -d, -d,  1 }
+        , suedwestoben =  { -d, -d,  1 }
+        , wob =           { -d,  0,  1 }
+        , westoben =      { -d,  0,  1 }
+        , nwob =          { -d,  d,  1 }
+        , nordwestoben =  { -d,  d,  1 }
+
+        , nu =            {  0,  d, -1 }
+        , nordunten =     {  0,  d, -1 }
+        , nou =           {  d,  d, -1 }
+        , nordostunten =  {  d,  d, -1 }
+        , ou =            {  d,  0, -1 }
+        , ostunten =      {  d,  0, -1 }
+        , sou =           {  d, -d, -1 }
+        , suedostunten =  {  d, -d, -1 }
+        , su =            {  0, -d, -1 }
+        , suedunten =     {  0, -d, -1 }
+        , swu =           { -d, -d, -1 }
+        , suedwestunten = { -d, -d, -1 }
+        , wu =            { -d,  0, -1 }
+        , westunten =     { -d,  0, -1 }
+        , nwu =           { -d,  d, -1 }
+        , nordwestunten = { -d,  d, -1 }
+    }
+    return exitCoordinates[name] or { 0, 0, 0 }
 end
 
 -- Baut (je nach Name) einen Standard- oder Spezialausgang.

@@ -1,0 +1,8 @@
+[
+    {
+        "name": "zeigeEbene",
+        "eventHandlerList": [
+            "gmcp.comm.channel"
+          ]
+    }
+]
