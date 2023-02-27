@@ -17,21 +17,21 @@ local AvatarPaths = {
 }
 
 function initAvatar()
-  GUI.AvatarFrame = Geyser.Container:new({
+  GUI.Char.AvatarFrame = Geyser.Container:new({
     name = "AvatarFrame", 
     x = 0, y = 0, padding = 0,width = 74, height = 74, 
-  }, GUI.CharFrame)
-  GUI.AvatarLabel = Geyser.Label:new({
+  }, GUI.Char.Frame)
+  GUI.Char.AvatarLabel = Geyser.Label:new({
     name = "AvatarLabel",
     x = 0, y = 0, width = "100%", height = "100%", 
-  }, GUI.AvatarFrame)
-  GUI.AvatarLabel:setStyleSheet(f[[
+  }, GUI.Char.AvatarFrame)
+  GUI.Char.AvatarLabel:setStyleSheet(f[[
     xborder-color: rgba(113, 75, 50, 100%);
     xborder-width: 1px; border-style: solid; xborder-radius: 37px;
     xbackground-color:rgba(200, 200, 160, 20%);
     qproperty-alignment: AlignCenter;
   ]])
-  GUI.AvatarLabel:enableClickthrough()
+  GUI.Char.AvatarLabel:enableClickthrough()
   registerAnonymousEventHandler("gmcp.MG.char.base.guild", updateAvatar, false)  
 end
 
@@ -41,7 +41,7 @@ function updateAvatar()
   -- braucht Vadis CSSMan? https://forums.mudlet.org/viewtopic.php?t=3502
   ME.gilde = gmcp.MG.char.base.guild or nil
   local AvatarPath = imgPath .. AvatarPaths[ME.gilde] or AvatarPaths["glitzer"]
-  GUI.AvatarLabel:setStyleSheet(f[[
+  GUI.Char.AvatarLabel:setStyleSheet(f[[
     xborder-color: rgba(113, 75, 50, 100%);
     xborder-width: 1px; border-style: solid; xborder-radius: 37px;
     xbackground-color:rgba(200, 200, 160, 20%);

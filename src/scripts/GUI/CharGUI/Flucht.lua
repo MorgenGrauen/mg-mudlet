@@ -1,9 +1,9 @@
 function initFlucht()
-  GUI.FluchtLabel = Geyser.Label:new({
+  GUI.Char.FluchtLabel = Geyser.Label:new({
     name = "FluchtLabel", fgColor = "white",
     x = 64, y = 56, padding = 0,width = 170, height = 17
-  }, GUI.CharFrame)
-  GUI.FluchtLabel:setStyleSheet([[
+  }, GUI.Char.Frame)
+  GUI.Char.FluchtLabel:setStyleSheet([[
     border-color: rgba(0, 0, 0, 0%);
     border-width: 0px;
     border-style: solid;
@@ -11,7 +11,7 @@ function initFlucht()
     background-color: rgba(201, 180, 123, 0%);
     font-size: 6pt;
   ]])
-  GUI.FluchtLabel:enableClickthrough()
+  GUI.Char.FluchtLabel:enableClickthrough()
   registerAnonymousEventHandler("gmcp.MG.char.wimpy", updateFlucht, false)
 end
 
@@ -37,5 +37,5 @@ function updateFlucht()
     end
 
   end
-  GUI.FluchtLabel:echo("&nbsp;&nbsp;" .. FluchtString)
+  GUI.Char.FluchtLabel:echo("&nbsp;&nbsp;" .. FluchtString)
 end

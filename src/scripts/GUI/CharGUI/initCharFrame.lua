@@ -1,6 +1,6 @@
 function initCharFrame()
 
-  GUI.CharFrame = Adjustable.Container:new({
+  GUI.Char.Frame = Adjustable.Container:new({
     name = "CharFrame",
     x = 100, y = 100, 
     padding = 2, width = 240, height = 80,
@@ -19,7 +19,7 @@ function initCharFrame()
     titleTxtColor = "SaddleBrown",
   })
     
-  function GUI.CharFrame:toggleFixedSize()
+  function GUI.Char.Frame:toggleFixedSize()
     if not self.FixedSize then
       self.connectedToBorder = {}
       self.connectedToBorder.bottom = true
@@ -33,5 +33,5 @@ function initCharFrame()
       self.FixedSize = false
     end
   end
-  GUI.CharFrame:toggleFixedSize() 
+  GUI.Char.Frame:toggleFixedSize() 
 end

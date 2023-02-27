@@ -1,4 +1,7 @@
 function initCharGUI()
+  GUI = GUI or {}
+  GUI.Char = GUI.Char or {}
+
   getGMCPdata()
   initCharFrame()
 
