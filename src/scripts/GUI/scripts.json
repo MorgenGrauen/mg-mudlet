@@ -10,37 +10,9 @@
     ]
   },
   {
-    "name": "zeigeVitaldaten",
-    "eventHandlerList": [ 
-      "gmcp.MG.char.vitals",
-      "gmcp.MG.char.maxvitals"
-    ]
-  },
-  {
-    "name": "zeigeGift",
-    "eventHandlerList": [ 
-      "gmcp.MG.char.vitals.poison"
-    ]
-  },
-  {
-    "name": "zeigeVorsicht",
-    "eventHandlerList": [ 
-      "gmcp.MG.char.wimpy"
-    ]
-  },
-  {
-    "name": "zeigeRaum",
-    "eventHandlerList": [ 
-      "gmcp.MG.room"
-    ]
-  },
-  {
     "name": "zeigeEbenen",
     "eventHandlerList": [ 
       "gmcp.comm.channel"
     ]
-  },
-  {
-    "name": "initGUI"
   }
 ]

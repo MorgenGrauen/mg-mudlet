@@ -18,8 +18,6 @@ function initGauges()
     registerAnonymousEventHandler("gmcp.MG.char.wimpy", updateVorsicht, false)
   end
 
-  -- oldGauges()
-
 end
 
 function updateGauges()

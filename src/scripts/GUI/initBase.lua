@@ -6,7 +6,6 @@ function initBase()
   ME.stufe = gmcp.MG.char.info.level
 
   if not GUI.angezeigt then
-      initGUI()
       initCharGUI()
       GUI.angezeigt = true
   end
