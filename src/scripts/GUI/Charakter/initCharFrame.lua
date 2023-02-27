@@ -1,9 +1,10 @@
 function initCharFrame()
 
+  local frameHeight = 80
   GUI.Char.Frame = Adjustable.Container:new({
     name = "CharFrame",
-    x = 100, y = 100, 
-    padding = 2, width = 240, height = 80,
+    x = 0, y = -frameHeight, 
+    padding = 2, width = 240, height = frameHeight,
     adjLabelstyle = [[ 
       border-color: rgba(113, 75, 50, 100%);
       border-width: 1px; border-style: solid; border-radius: 10px; 
@@ -17,6 +18,7 @@ function initCharFrame()
     buttonsize = 16,
     titleText = " ",
     titleTxtColor = "SaddleBrown",
+    attached = "bottom",
   })
     
   function GUI.Char.Frame:toggleFixedSize()
