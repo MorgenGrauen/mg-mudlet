@@ -4,8 +4,8 @@ function initMapperbox()
     -- GUI.Karte or
     {}
 
-    GUI.Karte.AdjCon =
-    -- GUI.Karte.AdjCon or
+    GUI.Karte.Frame =
+    -- GUI.Karte.Frame or
     Adjustable.Container:new(
         {
         name = "MapFrame",
@@ -28,8 +28,8 @@ function initMapperbox()
         }
     )
 
-    GUI.Karte.mapper =
-    --  GUI.Karte.mapper or
+    GUI.Karte.Mapper =
+    --  GUI.Karte.Mapper or
     Geyser.Mapper:new(
         {
         name = "Mapper",
@@ -37,14 +37,14 @@ function initMapperbox()
         width = "100%",
         height = "100%-17px",
         },
-        GUI.Karte.AdjCon
+        GUI.Karte.Frame
     )
 
     setMapZoom(5)
 
     tempTimer(0, function()
-        GUI.Karte.AdjCon:connectToBorder("top")
-        GUI.Karte.AdjCon:connectToBorder("bottom")
+        GUI.Karte.Frame:connectToBorder("top")
+        GUI.Karte.Frame:connectToBorder("bottom")
     end)
 
 end
