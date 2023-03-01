@@ -1,13 +1,12 @@
 function initCharFrame()
-
   local frameHeight = 80
   GUI.Char.Frame = Adjustable.Container:new({
     name = "CharFrame",
-    x = 0, y = -frameHeight, 
+    x = 0, y = -frameHeight,
     padding = 2, width = 240, height = frameHeight,
-    adjLabelstyle = [[ 
+    adjLabelstyle = [[
       border-color: rgba(113, 75, 50, 100%);
-      border-width: 1px; border-style: solid; border-radius: 10px; 
+      border-width: 1px; border-style: solid; border-radius: 10px;
       background-color:rgba(200, 200, 160, 10%);
     ]],
     buttonstyle=[[
@@ -20,20 +19,21 @@ function initCharFrame()
     titleTxtColor = "SaddleBrown",
     attached = "bottom",
   })
-    
-  function GUI.Char.Frame:toggleFixedSize()
-    if not self.FixedSize then
-      self.connectedToBorder = {}
-      self.connectedToBorder.bottom = true
-      self.connectedToBorder.left = true
-      self.connectedToBorder.top = true
-      self.connectedToBorder.right = true
-      self:setAbsolute(true)
-      self.FixedSize = true
-    else
-      self.connectedToBorder = {}
-      self.FixedSize = false
-    end
+  GUI.Char.Frame:toggleFixedSize()
+  GUI.Char.Frame:lockContainer("light")
+end
+
+function GUI.Char.Frame:toggleFixedSize()
+  if not self.FixedSize then
+    self.connectedToBorder = {}
+    self.connectedToBorder.bottom = true
+    self.connectedToBorder.left = true
+    self.connectedToBorder.top = true
+    self.connectedToBorder.right = true
+    self:setAbsolute(true)
+    self.FixedSize = true
+  else
+    self.connectedToBorder = {}
+    self.FixedSize = false
   end
-  GUI.Char.Frame:toggleFixedSize() 
 end
