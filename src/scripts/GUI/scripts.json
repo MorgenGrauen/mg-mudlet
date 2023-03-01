@@ -4,15 +4,9 @@
   },
   {
     "name": "initBase",
-    "eventHandlerList": [ 
+    "eventHandlerList": [
       "gmcp.MG.char.base",
       "gmcp.MG.char.info"
-    ]
-  },
-  {
-    "name": "zeigeEbenen",
-    "eventHandlerList": [ 
-      "gmcp.comm.channel"
     ]
   }
 ]
