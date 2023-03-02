@@ -10,9 +10,9 @@ function initName()
     font: italic;
   ]])
   GUI.Char.NameLabel:enableClickthrough()
-  registerAnonymousEventHandler("gmcp.MG.char.vitals.poison", updateName, false)
+  registerAnonymousEventHandler("gmcp.MG.char.vitals", updateName, false)
 end
- 
+
 function updateName()
   -- Name um ggf. Giftsymbole erweitern
   ME.gift = gmcp.MG.char.vitals.poison

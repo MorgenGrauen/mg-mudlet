@@ -18,12 +18,12 @@ local AvatarPaths = {
 
 function initAvatar()
   GUI.Char.AvatarFrame = Geyser.Container:new({
-    name = "AvatarFrame", 
-    x = 0, y = 0, padding = 0,width = 74, height = 74, 
+    name = "AvatarFrame",
+    x = 0, y = 0, padding = 0,width = 74, height = 74,
   }, GUI.Char.Frame)
   GUI.Char.AvatarLabel = Geyser.Label:new({
     name = "AvatarLabel",
-    x = 0, y = 0, width = "100%", height = "100%", 
+    x = 0, y = 0, width = "100%", height = "100%",
   }, GUI.Char.AvatarFrame)
   GUI.Char.AvatarLabel:setStyleSheet(f[[
     xborder-color: rgba(113, 75, 50, 100%);
@@ -32,12 +32,12 @@ function initAvatar()
     qproperty-alignment: AlignCenter;
   ]])
   GUI.Char.AvatarLabel:enableClickthrough()
-  registerAnonymousEventHandler("gmcp.MG.char.base.guild", updateAvatar, false)  
+  registerAnonymousEventHandler("gmcp.MG.char.base", updateAvatar, false)
 end
 
 function updateAvatar()
   -- Gilde gewechselt? Sollten wir anzeigen!
-  -- Am besten nur neuen AvatarPath einfügen, Rest beibehalten 
+  -- Am besten nur neuen AvatarPath einfügen, Rest beibehalten
   -- braucht Vadis CSSMan? https://forums.mudlet.org/viewtopic.php?t=3502
   ME.gilde = gmcp.MG.char.base.guild or nil
   local AvatarPath = imgPath .. AvatarPaths[ME.gilde] or AvatarPaths["glitzer"]

@@ -10,7 +10,5 @@ ME.fluchtrichtung = ME.fluchtrichtung or ""
 ME.lp_alt = ME.lp_alt or 100
 
 GUI = GUI or {}
-GUI.angezeigt = GUI.angezeigt or false
-GUI.lp_anzeige_blinkt = GUI.lp_anzeige_blinkt or false
 
 wege = wege or {}

@@ -14,19 +14,19 @@ function initStufe()
   ]]))
   GUI.Char.StufeLabel:enableClickthrough()
   GUI.Char.StufeLabel:hide()
-  registerAnonymousEventHandler("gmcp.MG.char.info.level", showStufe, false)
+  registerAnonymousEventHandler("gmcp.MG.char.info", showStufe, false)
 end
 
-function showStufe()  
-  if ME.stufe < 10 then 
+function showStufe()
+  if ME.stufe < 10 then
     GUI.Char.stufeSize = 10
   elseif ME.stufe < 100 then
     GUI.Char.stufeSize = 8
   else
     GUI.Char.stufeSize = 6 -- Länge 3 braucht Size 6, 2 kann 8, 1 kann 10
   end
-  
+
   GUI.Char.StufeLabel:echo(f"<center>{ME.stufe}</center>")
-  GUI.Char.StufeLabel:setFontSize(GUI.Char.stufeSize) 
+  GUI.Char.StufeLabel:setFontSize(GUI.Char.stufeSize)
   GUI.Char.StufeLabel:show()
 end
