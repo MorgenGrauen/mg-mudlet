@@ -1,8 +1,6 @@
 [
   {
-    "name": "initCharGUI",
-    "eventHandlerList": [ 
-    ]
+    "name": "initCharGUI"
   },
   {
     "name": "initCharFrame"

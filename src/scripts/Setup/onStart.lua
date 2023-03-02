@@ -3,5 +3,6 @@ function onStart(_, packageName)
 
     initMapperbox()
     initChatbox()
-    
+    initCharGUI()
+
 end

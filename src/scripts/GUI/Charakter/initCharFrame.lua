@@ -13,27 +13,28 @@ function initCharFrame()
       QLabel{ border-radius: 7px; background-color: rgba(140, 140, 140, 20%);}
       QLabel::hover{ background-color: rgba(160, 160, 160, 50%);}
     ]],
+    lockStyle = "border",
     buttonFontSize = 8,
     buttonsize = 16,
     titleText = " ",
     titleTxtColor = "SaddleBrown",
     attached = "bottom",
   })
-  GUI.Char.Frame:toggleFixedSize()
-  GUI.Char.Frame:lockContainer("light")
-end
 
-function GUI.Char.Frame:toggleFixedSize()
-  if not self.FixedSize then
-    self.connectedToBorder = {}
-    self.connectedToBorder.bottom = true
-    self.connectedToBorder.left = true
-    self.connectedToBorder.top = true
-    self.connectedToBorder.right = true
-    self:setAbsolute(true)
-    self.FixedSize = true
-  else
-    self.connectedToBorder = {}
-    self.FixedSize = false
+  function GUI.Char.Frame:toggleFixedSize()
+    if not self.FixedSize then
+      self.connectedToBorder = {}
+      self.connectedToBorder.bottom = true
+      self.connectedToBorder.left = true
+      self.connectedToBorder.top = true
+      self.connectedToBorder.right = true
+      self:setAbsolute(true)
+      self.FixedSize = true
+    else
+      self.connectedToBorder = {}
+      self.FixedSize = false
+    end
   end
+  GUI.Char.Frame:changeMenuStyle("dark")
+  GUI.Char.Frame:toggleFixedSize()
 end
