@@ -21,7 +21,10 @@ function initCharFrame()
     attached = "bottom",
   })
 
-  function GUI.Char.Frame:toggleFixedSize()
+  function GUI.Char.Frame:toggleFixedSize(newStatus)
+    if newStatus ~= nil then
+      self.FixedSize = not newStatus
+    end
     if not self.FixedSize then
       self.connectedToBorder = {}
       self.connectedToBorder.bottom = true
@@ -38,3 +41,10 @@ function initCharFrame()
   GUI.Char.Frame:changeMenuStyle("dark")
   GUI.Char.Frame:toggleFixedSize()
 end
+
+function onExitCharGUI()
+  -- Workaround, da sonst beim nächsten Laden des Profils das Layout kaputt geht
+  --   vgl. https://github.com/Mudlet/Mudlet/issues/5321
+  GUI.Char.Clone:toggleFixedSize(false)
+end
+registerAnonymousEventHandler("sysExitEvent", "onExitCharGUI")
