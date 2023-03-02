@@ -1,9 +1,0 @@
-[
-  {
-    "name": "initBase",
-    "eventHandlerList": [
-      "gmcp.MG.char.base",
-      "gmcp.MG.char.info"
-    ]
-  }
-]
