@@ -11,6 +11,7 @@ function initName()
   ]])
   GUI.Char.NameLabel:enableClickthrough()
   registerAnonymousEventHandler("gmcp.MG.char.vitals", updateName, false)
+  registerAnonymousEventHandler("gmcp.MG.char.base", updateName, false)
 end
 
 function updateName()
