@@ -4,6 +4,14 @@ function initCharGUI()
 
   getGMCPdata()
   initCharFrame()
+  if not table.is_field(gmcp, "MG.char") then
+      -- anscheinend noch nicht eingeloggt, dann können wir noch nix anzeigen!
+      registerAnonymousEventHandler("gmcp.MG.char", function()
+          tempTimer(1, initCharGUI)
+      end)
+      return
+  end
+
   initName()
   initGauges()
   initFlucht()
