@@ -13,13 +13,16 @@ function initFlucht()
   ]])
   GUI.Char.FluchtLabel:enableClickthrough()
   registerAnonymousEventHandler("gmcp.MG.char.wimpy", updateFlucht, false)
+  if table.is_field(gmcp.MG.char, "wimpy") then
+      updateFlucht()
+  end
 end
 
 function updateFlucht()
   local FluchtString = ""
-  if gmcp and gmcp.MG and gmcp.MG.char and gmcp.MG.char.wimpy and 
+  if gmcp and gmcp.MG and gmcp.MG.char and gmcp.MG.char.wimpy and
      gmcp.MG.char.wimpy.wimpy and gmcp.MG.char.wimpy.wimpy_dir then
-    
+
     --[[
     The following seems obsolete after the introduction of the HP bar overlay for the same info.
 
@@ -32,8 +35,8 @@ function updateFlucht()
     ]]--
 
     ME.fluchtrichtung = gmcp.MG.char.wimpy.wimpy_dir
-    if ME.fluchtrichtung ~= 0 then 
-      FluchtString = FluchtString .. "FR: " .. ME.fluchtrichtung 
+    if ME.fluchtrichtung ~= 0 then
+      FluchtString = FluchtString .. "FR: " .. ME.fluchtrichtung
     end
 
   end

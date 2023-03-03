@@ -12,6 +12,10 @@ function initName()
   GUI.Char.NameLabel:enableClickthrough()
   registerAnonymousEventHandler("gmcp.MG.char.vitals", updateName, false)
   registerAnonymousEventHandler("gmcp.MG.char.base", updateName, false)
+  if table.is_field(gmcp.MG.char, "base")
+  or table.is_field(gmcp.MG.char, "vitals") then
+     updateName()
+  end
 end
 
 function updateName()

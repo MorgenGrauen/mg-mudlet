@@ -33,6 +33,9 @@ function initAvatar()
   ]])
   GUI.Char.AvatarLabel:enableClickthrough()
   registerAnonymousEventHandler("gmcp.MG.char.base", updateAvatar, false)
+  if table.is_field(gmcp, "MG.char.base") then
+    updateAvatar()
+  end
 end
 
 function updateAvatar()

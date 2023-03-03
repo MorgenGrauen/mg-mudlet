@@ -4,23 +4,13 @@ function initCharGUI()
 
   getGMCPdata()
   initCharFrame()
-
   initName()
-  updateName()
-
   initGauges()
-  updateGauges()
-
   initFlucht()
-  updateFlucht()
-
   initAvatar()
-  updateAvatar()
-  
   initStufe()
-  showStufe()
 
-  -- oldAttribs -- tbd "Attribute"
+  -- oldAttribs() -- tbd "Attribute"
 end
 
 function getGMCPdata()

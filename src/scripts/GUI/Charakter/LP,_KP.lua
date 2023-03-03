@@ -2,22 +2,33 @@ function initGauges()
   GUI.Char.GaugeLPHeight = ME.report_kp and 16 or 36
   GUI.Char.GaugeKPHeight = ME.report_kp and 16 or 0
   GUI.Char.GaugeYStart = 20
+  local gmcpVitals = false
 
   initLP()
-  initVorsicht()
   registerAnonymousEventHandler("gmcp.MG.char.vitals", updateLP, false)
   registerAnonymousEventHandler("gmcp.MG.char.maxvitals", updateLP, false)
+  if table.is_field(gmcp.MG.char, "vitals")
+  or table.is_field(gmcp.MG.char, "maxvitals") then
+    gmcpVitals = true
+    updateLP()
+  end
 
   if ME.report_kp then
     initKP()
     registerAnonymousEventHandler("gmcp.MG.char.vitals", updateKP, false)
     registerAnonymousEventHandler("gmcp.MG.char.maxvitals", updateKP, false)
+    if gmcpVitals then
+      updateKP()
+    end
   end
 
   if ME.report_vorsicht then
+    initVorsicht()
     registerAnonymousEventHandler("gmcp.MG.char.wimpy", updateVorsicht, false)
+    if table.is_field(gmcp.MG.char, "wimpy") then
+      updateVorsicht()
+    end
   end
-
 end
 
 function updateGauges()
@@ -80,12 +91,12 @@ end
 
 function initVorsicht()
   local imgPath = getMudletHomeDir() .. "/MorgenGrauen/CharGUI/"
-  local Vo1Path = imgPath .. "/Vo1.png" 
+  local Vo1Path = imgPath .. "/Vo1.png"
   local Vo2Path = imgPath .. "/Vo2.png"
 
   GUI.Char.GaugeLPVorsicht = Geyser.Container:new({
     name = "GaugeLPVorsicht",
-    x = 74 - 7, y = GUI.Char.GaugeYStart - 2, 
+    x = 74 - 7, y = GUI.Char.GaugeYStart - 2,
     width = 150, height = GUI.Char.GaugeLPHeight
   }, GUI.Char.Frame)
 
@@ -113,21 +124,21 @@ end
 function updateVorsicht()
   if gmcp and gmcp.MG and gmcp.MG.char and gmcp.MG.char.wimpy and gmcp.MG.char.wimpy.wimpy then
     ME.vorsicht = gmcp.MG.char.wimpy.wimpy
-  
+
     local VorsichtX = string.format("%.0f", 100 * (ME.vorsicht / ME.lp_max)) .. "%"
     local VorsichtY = GUI.Char.GaugeLPHeight - 3
-  
+
     GUI.Char.GaugeLPVorsichtOben:move(VorsichtX, 0)
     GUI.Char.GaugeLPVorsichtOben:show()
-  
+
     GUI.Char.GaugeLPVorsichtUnten:move(VorsichtX, VorsichtY)
     GUI.Char.GaugeLPVorsichtUnten:show()
-  
+
     GUI.Char.GaugeLP.text:raise()
-    
+
   elseif GUI and GUI.Char and GUI.Char.GaugeLPVorsichtOben and GUI.Char.GaugeLPVorsichtUnten then
     GUI.Char.GaugeLPVorsichtUnten:hide()
     GUI.Char.GaugeLPVorsichtOben:hide()
-  
+
   end
 end

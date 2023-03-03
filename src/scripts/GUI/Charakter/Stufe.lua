@@ -15,6 +15,9 @@ function initStufe()
   GUI.Char.StufeLabel:enableClickthrough()
   GUI.Char.StufeLabel:hide()
   registerAnonymousEventHandler("gmcp.MG.char.info", showStufe, false)
+  if table.is_field(gmcp.MG.char, "info") then
+      showStufe()
+  end
 end
 
 function showStufe()
