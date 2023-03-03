@@ -46,17 +46,18 @@ function initDrache()
     -- Fill the menu
     local MenuFontAlignment = GUI.Drache.Config.MenuFontAlignment
     local MenuFontSize = GUI.Drache.Config.MenuFontSize
+    local MenuWidth = PaddingWidth + ImageWidth + 5
     GUI.Drache.Frame:createRightClickMenu({
         MenuItems = GUI.Drache.Config.MenuNames,
         Style = "dark",
-        MenuWidth = -ImagePosX + 5,
+        MenuWidth =  MenuWidth,
         MenuFormat = MenuFontAlignment .. MenuFontSize,
         MenuHeight = GUI.Drache.Config.MenuHeight,
     })
 
     -- Connect the actions
-    GUI.Drache.Frame:setMenuAction("Hilfe", GUI.Drache.Actions.Hilfe)
-    GUI.Drache.Frame:setMenuAction("GUI.Reset", GUI.Drache.Actions.GUIReset)
+    GUI.Drache.Frame:setMenuAction("Hilfe", Hilfe)
+    GUI.Drache.Frame:setMenuAction("GUI.Reset", GUIReset)
 end
 
 

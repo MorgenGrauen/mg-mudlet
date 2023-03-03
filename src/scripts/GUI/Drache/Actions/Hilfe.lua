@@ -1,4 +1,4 @@
-function GUI.Drache.Actions.Hilfe()
+function Hilfe()
 
     -- TODO: Mit faerbeText() harmonisieren..!
     fg("yellow")
