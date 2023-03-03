@@ -77,6 +77,8 @@ function initChat()
             blink = false
     }, GUI.Chat.Frame)
 
-    GUI.Chat.Frame:connectToBorder("top")
-    GUI.Chat.Frame:connectToBorder("bottom")
+    tempTimer(0, function()
+        GUI.Chat.Frame:connectToBorder("top")
+        GUI.Chat.Frame:connectToBorder("bottom")
+    end)
 end
