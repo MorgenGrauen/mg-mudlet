@@ -62,7 +62,7 @@ end
 
 
 function GUI.Drache.dontMove(event, x, y)
-    if not isField(GUI, "Drache.Frame") then return end
+    if not table.is_field(GUI, "Drache.Frame") then return end
 
     local PaddingWidth = GUI.Drache.Config.PaddingWidth
     local PaddingHeight = GUI.Drache.Config.PaddingHeight
