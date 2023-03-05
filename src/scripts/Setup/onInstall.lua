@@ -6,7 +6,7 @@ function onInstall(_, packageName)
         initGMCP("", "GMCP")
 
         initMapperbox()
-        initChatbox()
+        initChat()
 
         cecho("<LimeGreen>[  OK  ]  -<gold> Dein Mudlet-Paket fürs MorgenGrauen wurde erfolgreich installiert.\n")
     end)
