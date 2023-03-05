@@ -3,5 +3,6 @@ function onStart(_, packageName)
 
     initMapperbox()
     initChatbox()
-    
+    initDrache()
+
 end
