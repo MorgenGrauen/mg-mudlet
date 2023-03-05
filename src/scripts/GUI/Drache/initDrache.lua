@@ -62,6 +62,8 @@ end
 
 
 function GUI.Drache.dontMove(event, x, y)
+    if not isField(GUI, "Drache.Frame") then return end
+
     local PaddingWidth = GUI.Drache.Config.PaddingWidth
     local PaddingHeight = GUI.Drache.Config.PaddingHeight
     local ImageWidth = GUI.Drache.Config.ImageWidth
