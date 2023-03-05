@@ -1,6 +1,12 @@
 [
   {
-    "name": "Hilfe"
+    "name": "HilfeSpiel"
+  },{
+    "name": "HilfePaket"
+  },{
+    "name": "HilfeKarte"
+  },{
+    "name": "HilfeMudlet"
   },{
     "name": "GUIReset"
   }

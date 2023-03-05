@@ -1,9 +1,6 @@
-function Hilfe()
+function HilfePaket()
 
-    -- TODO: Mit faerbeText() harmonisieren..!
-    fg("yellow")
-
-    echo([[
+  faerbeText("script", [[
     Folgende Sachen gibt es und funktionieren:
 
     * Umlaute werden erkannt und durch passende Umschreibungen ersetzt.
@@ -31,5 +28,6 @@ function Hilfe()
     #haus<name> : Wenn man vor einem Seherhaus steht, kann man es damit
       aufschließen, betreten und wieder verschließen. Achtung: Kein Leerzeichen
       zwischen "#haus" und dem Namen!
-    ]])
+  ]])
+
 end

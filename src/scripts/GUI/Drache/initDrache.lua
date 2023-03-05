@@ -12,6 +12,12 @@ GUI.Drache = GUI.Drache or {
         MenuNames =
           {
             "Hilfe",
+            {
+              "zum Spiel",
+              "zum Paket",
+              "zur Karte",
+              "zu Mudlet",
+            }
             "GUI",
             {
               "Reset"
@@ -56,7 +62,10 @@ function initDrache()
     })
 
     -- Connect the actions
-    GUI.Drache.Frame:setMenuAction("Hilfe", Hilfe)
+    GUI.Drache.Frame:setMenuAction("Hilfe.zum Spiel", HilfeSpiel)
+    GUI.Drache.Frame:setMenuAction("Hilfe.zum Paket", HilfePaket)
+    GUI.Drache.Frame:setMenuAction("Hilfe.zur Karte", HilfeKarte)
+    GUI.Drache.Frame:setMenuAction("Hilfe.zu Mudlet", HilfeMudlet)
     GUI.Drache.Frame:setMenuAction("GUI.Reset", GUIReset)
 end
 

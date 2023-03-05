@@ -1,1 +1,1 @@
-GUI.Drache.Actions.Hilfe()
+HilfePaket()
