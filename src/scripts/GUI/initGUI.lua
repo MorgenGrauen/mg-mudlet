@@ -1,5 +1,5 @@
 function initGUI()
     initMapperbox()
-    initChatbox()
+    initChat()
     initCharGUI()
 end
