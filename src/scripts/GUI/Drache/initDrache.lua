@@ -81,4 +81,5 @@ function GUI.Drache.dontMove(event, x, y)
 
     GUI.Drache.Frame:move(ImagePosX, ImagePosY)
 end
-registerAnonymousEventHandler("sysWindowResizeEvent", GUI.Drache.dontMove, false)
+GUI.Drache.dontMoveHandler = GUI.Drache.dontMoveHandler or
+    registerAnonymousEventHandler("sysWindowResizeEvent", GUI.Drache.dontMove, false)

@@ -14,14 +14,16 @@ function GMCP_Char_deaktivieren(_)
     -- Passt aber nicht zu MG.char also werden wir den Inhalt wieder löschen.
     -- Damit wir nicht dreimal löschen, hier ein Timer mit Wartezeit von null Sekunden.
 
-    if not GMCP_Char_Timer then 
+    if not GMCP_Char_Timer then
       GMCP_Char_Timer = tempTimer(0, function()
         GMCP_Char_Timer = nil
         gmcp.Char = nil
         -- debugText("GMCP Char deaktiviert!")
       end)
-    end 
+    end
   end
 
-registerAnonymousEventHandler("sysProtocolEnabled", "initGMCP")
-registerAnonymousEventHandler("gmcp.Char", "GMCP_Char_deaktivieren")
+initGMCPHandler = initGMCPHandler or
+  registerAnonymousEventHandler("sysProtocolEnabled", "initGMCP", true)
+GMCPCharHandler = GMCPCharHandler or
+  registerAnonymousEventHandler("gmcp.Char", "GMCP_Char_deaktivieren", true)
