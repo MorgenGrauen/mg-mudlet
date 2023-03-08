@@ -1,6 +1,9 @@
 function HilfePaket()
 
   faerbeText("script", [[
+    MORGENGRAUEN PAKET FÜR MUDLET
+    -----------------------------
+
     Folgende Sachen gibt es und funktionieren:
 
     * Umlaute werden erkannt und durch passende Umschreibungen ersetzt.
@@ -11,8 +14,7 @@ function HilfePaket()
 
     ME: ME ist ein Table, in dem ich alle möglichen Informationen zum User speichere;
       hier landen bspw. der Name, aber auch in welcher Para-Welt man sich befindet etc.
-      Soweit möglich werden die entsprechenden Werte bspw. aus GMCP-Nachrichten
-      gezogen.
+      Soweit möglich werden die entsprechenden Werte bspw. aus GMCP-Nachrichten gezogen.
     farben: In diesem Table verwalte ich die für die Trigger und Skripte zu verwendenden
       Farben.
 
