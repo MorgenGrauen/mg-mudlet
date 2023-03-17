@@ -1,9 +1,16 @@
 function initGMCP(_, protocol)
-    if protocol == "GMCP" then
-        local debugLevel = 0 -- 0 zeigt nichts, 100 zeigt alles, 20 etwas, usw.
-        sendGMCP( f"Core.Debug {debugLevel} ")
-        sendGMCP( [[Core.Supports.Set [ "MG.char 1", "MG.room 1", "comm.channel 1" ] ]])
-    end
+  if not protocol == "GMCP" then return end
+  local _host, _port, connected = getConnectionInfo()
+  if not connected then
+    -- wenn wir (noch) nicht mit dem Spiel verbunden sind, müssen wir später GMCP verhandeln
+    connectionHandler = connectionHandler or
+      registerAnonymousEventHandler("sysConnectionEvent", "initGMCP", true)
+    return
+  end
+
+  local debugLevel = 0 -- 0 zeigt nichts, 100 zeigt alles, 20 etwas, usw.
+  sendGMCP( f"Core.Debug {debugLevel} ")
+  sendGMCP( [[Core.Supports.Set [ "MG.char 1", "MG.room 1", "comm.channel 1" ] ]])
 end
 
 function GMCP_Char_deaktivieren(_)
