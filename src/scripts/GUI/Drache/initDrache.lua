@@ -17,7 +17,7 @@ GUI.Drache = GUI.Drache or {
               "zum Paket",
               "zur Karte",
               "zu Mudlet",
-            }
+            },
             "GUI",
             {
               "Reset"
