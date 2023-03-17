@@ -30,6 +30,7 @@ und den Aliasen zu finden.
 #haus<name> : Wenn man vor einem Seherhaus steht, kann man es damit
   aufschließen, betreten und wieder verschließen. Achtung: Kein Leerzeichen
   zwischen "#haus" und dem Namen!
+
 ]])
 
 end

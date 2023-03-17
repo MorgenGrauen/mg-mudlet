@@ -42,7 +42,8 @@ Dann lauf schnell zurück in Deine Gilde und tippe "erhoehe" und "lerne", usw.
 
 Hab ich schon Morgengrauen auf Youtube empfohlen und unseren Discord Server?
 
-Soviel erstmal für den Anfang. Es gibt viel zu entdecken. Frag die Anderen!
+Soviel erstmal für den Anfang. Es gibt viel zu entdecken. Frag die Anderen! ;)
+
 ]])
 
 end

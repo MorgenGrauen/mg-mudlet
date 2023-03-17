@@ -92,6 +92,7 @@ MORGENGRAUEN MAPPER SCHNELLEINSTIEG
    gesetzt. D.h. beim Automappen muss man nur darauf achten, 'marea <name>' auszufuehren,
    wenn man eine neue Area anfangen will. Macht man das nicht, so wird immer die aktuelle
    Area mit neuen Raeumen erweitert.
+
 ]])
 
 end

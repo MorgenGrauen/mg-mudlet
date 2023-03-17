@@ -40,7 +40,8 @@ Es gibt zudem ein Discord vom MorgenGrauen (auf Deutsch) und von Mudlet (auf Eng
 Hier kann man viele Spieler erreichen, Screenshots zeigen, ausführlich besprechen, usw.
 Oder besuch mal das Morgengrauen auf Youtube und sieh Dir das ganze in Aktion an.
 
-Egal, was Du in welcher Reihenfolge tust, wir wünschen Dir viel Spaß beim Erkunden!
+Egal, was Du in welcher Reihenfolge tust, wir wünschen Dir viel Spaß beim Erkunden! ;)
+
 ]])
 
 end
