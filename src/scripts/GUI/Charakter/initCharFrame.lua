@@ -47,5 +47,5 @@ function onExitCharGUI()
   --   vgl. https://github.com/Mudlet/Mudlet/issues/5321
   GUI.Char.Clone:toggleFixedSize(false)
 end
-GUI.Char.exitCharHandler = GUI.Char.exitCharHandler or
+exitCharHandler = exitCharHandler or
   registerAnonymousEventHandler("sysExitEvent", "onExitCharGUI")
