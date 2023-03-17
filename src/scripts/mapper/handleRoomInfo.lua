@@ -55,7 +55,7 @@ function handleRoomInfo()
             if not needsUpdate then
                 -- bei Raumupdates brauchen wir keine neuen Koordinaten setzen
                 local x,y,z = getRoomCoordinates(mapper.currentRoom)
-                local dx,dy,dz = getExitCoordinates(exitname)
+                local dx,dy,dz = unpack(getExitCoordinates(exitname))
                 setRoomCoordinates(newRoom, x+dx, y+dy, z+dz)
 
                 -- auch brauchen wir keinen Ausgang, haben ja den Raum auf der Karte nicht gewechselt
@@ -73,12 +73,12 @@ function handleRoomInfo()
             mapper.currentRoom = knownRoom
             mapper.currentArea = getRoomAreaName(getRoomArea(mapper.currentRoom))
         end
-        
+
         -- im neuen Raum alle sichtbaren Ausgänge prüfen und ggf. Stubs erzeugen
         for _, exitname in pairs(roomData.exits) do
             addStubExit(mapper.currentRoom, exitname)
         end
-        
+
     elseif mapper.mode == "fix" then
         -- fix-Modus. Nur den aktuellen Raum setzen.
         if knownRoom > -1 then
@@ -88,5 +88,4 @@ function handleRoomInfo()
     end
     centerview(mapper.currentRoom)
 end
-                    
-            
+
