@@ -7,6 +7,7 @@ function onInstall(_, packageName)
 
         initMapperbox()
         initChat()
+        initDrache()
 
         cecho("<LimeGreen>[  OK  ]  -<gold> Dein Mudlet-Paket fürs MorgenGrauen wurde erfolgreich installiert.\n")
     end)
