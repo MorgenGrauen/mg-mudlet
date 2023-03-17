@@ -6,7 +6,7 @@ function GUIReset()
     -- TODO: Bald wird initGUI() stattdessen die komplette GUI bauen.
     -- Dann sind die folgenden Zeilen vmtl. obsolet und Teil von dort:
     initMapperbox()
-    initChatbox()
+    initChat()
     initDrache()
 
     initGMCP("", "GMCP")

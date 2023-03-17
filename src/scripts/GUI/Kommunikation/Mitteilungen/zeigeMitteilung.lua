@@ -1,13 +1,13 @@
 function zeigeMitteilung()
 
-    if GUI.Chatbox.Config.Mitteilungen.ShowInWindow then
+    if GUI.Chat.Config.Mitteilungen.ShowInWindow then
       selectCurrentLine()
-      GUI.Chatbox.EMCO:append("Mitteilungen")
+      GUI.Chat.EMCO:append("Mitteilungen")
       deselect()
       resetFormat()
     end
 
-    if not GUI.Chatbox.Config.Mitteilungen.ShowInMain then
+    if not GUI.Chat.Config.Mitteilungen.ShowInMain then
       deleteLine()
     end
 
