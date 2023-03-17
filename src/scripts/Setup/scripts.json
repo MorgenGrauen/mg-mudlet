@@ -1,26 +1,27 @@
 [
     {
+        "name": "initGMCP"
+    },{
         "name": "helpers"
     },{
         "name": "onInstall",
-        "eventHandlerList": [ 
+        "eventHandlerList": [
             "sysInstall"
           ]
     },{
         "name": "onUninstall",
-        "eventHandlerList": [ 
+        "eventHandlerList": [
             "sysUninstall"
           ]
     },{
         "name": "onStart",
-        "eventHandlerList": [ 
+        "eventHandlerList": [
             "sysLoadEvent"
           ]
     },{
         "name": "onExit",
-        "eventHandlerList": [ 
+        "eventHandlerList": [
             "sysExitEvent"
           ]
     }
 ]
-
