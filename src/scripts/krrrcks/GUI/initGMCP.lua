@@ -23,6 +23,9 @@ function GMCP_Char_deaktivieren(_)
 
     if not GMCP_Char_Timer then
       GMCP_Char_Timer = tempTimer(0, function()
+        if not table.is_field(gmcp, "MG") then
+          initGMCP("", "GMCP")
+        end
         GMCP_Char_Timer = nil
         gmcp.Char = nil
         -- debugText("GMCP Char deaktiviert!")
