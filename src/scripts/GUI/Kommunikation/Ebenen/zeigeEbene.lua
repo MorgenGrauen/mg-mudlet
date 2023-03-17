@@ -7,11 +7,11 @@ function zeigeEbene()
     local msg = commData.msg
     local bunterText = liefereFarbigeEbene(msg, player, chan)
 
-    if GUI.Chatbox.Config.Ebenen.ShowInWindow then
-        GUI.Chatbox.EMCO:hecho("Ebenen", bunterText)
+    if GUI.Chat.Config.Ebenen.ShowInWindow then
+        GUI.Chat.EMCO:hecho("Ebenen", bunterText)
     end
 
-    if GUI.Chatbox.Config.Ebenen.ShowInMain then
+    if GUI.Chat.Config.Ebenen.ShowInMain then
         hecho("main", bunterText)
     end
 end
