@@ -93,8 +93,8 @@ end
 
 function initVorsicht()
   local imgPath = getMudletHomeDir() .. "/MorgenGrauen/CharGUI/"
-  local Vo1Path = imgPath .. "/Vo1.png"
-  local Vo2Path = imgPath .. "/Vo2.png"
+  local Bild_fuer_Vorsicht_oben = imgPath .. "/Vorsicht oben.png"
+  local Bild_fuer_Vorsicht_unten = imgPath .. "/Vorsicht unten.png"
 
   GUI.Char.GaugeLPVorsicht = Geyser.Container:new({
     name = "GaugeLPVorsicht",
@@ -108,7 +108,7 @@ function initVorsicht()
     width = 15, height = 7
   }, GUI.Char.GaugeLPVorsicht)
   GUI.Char.GaugeLPVorsichtOben:setStyleSheet([[background-color: rgba(0, 0, 0, 0%);]])
-  GUI.Char.GaugeLPVorsichtOben:setBackgroundImage(Vo1Path)
+  GUI.Char.GaugeLPVorsichtOben:setBackgroundImage(Bild_fuer_Vorsicht_oben)
   GUI.Char.GaugeLPVorsichtOben:enableClickthrough()
   GUI.Char.GaugeLPVorsichtOben:hide()
 
@@ -118,7 +118,7 @@ function initVorsicht()
     width = 15, height = 7
   }, GUI.Char.GaugeLPVorsicht)
   GUI.Char.GaugeLPVorsichtUnten:setStyleSheet([[background-color: rgba(0, 0, 0, 0%);]])
-  GUI.Char.GaugeLPVorsichtUnten:setBackgroundImage(Vo2Path)
+  GUI.Char.GaugeLPVorsichtUnten:setBackgroundImage(Bild_fuer_Vorsicht_unten)
   GUI.Char.GaugeLPVorsichtUnten:enableClickthrough()
   GUI.Char.GaugeLPVorsichtUnten:hide()
 end
