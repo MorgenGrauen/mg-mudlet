@@ -1,7 +1,7 @@
 function initCharFrame()
   local frameHeight = 80
   GUI.Char.Frame = Adjustable.Container:new({
-    name = "CharFrame",
+    name = "GUI.Char.Frame",
     x = 0, y = -frameHeight,
     padding = 2, width = 240, height = frameHeight,
     adjLabelstyle = [[
@@ -47,4 +47,5 @@ function onExitCharGUI()
   --   vgl. https://github.com/Mudlet/Mudlet/issues/5321
   GUI.Char.Clone:toggleFixedSize(false)
 end
-registerAnonymousEventHandler("sysExitEvent", "onExitCharGUI")
+GUI.Char.exitCharHandler = GUI.Char.exitCharHandler or
+  registerAnonymousEventHandler("sysExitEvent", "onExitCharGUI")
