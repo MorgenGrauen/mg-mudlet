@@ -45,7 +45,8 @@ function initLP()
   GUI.Char.GaugeLP = Geyser.Gauge:new({
     name = "GaugeLP",
     x = 74, y = GUI.Char.GaugeYStart,
-    width = 150, height = GUI.Char.GaugeLPHeight
+    width = 150, height = GUI.Char.GaugeLPHeight,
+    strict = true
   }, GUI.Char.Frame)
   GUI.GaugeLP:enableClickthrough()
 end
@@ -74,7 +75,8 @@ function initKP()
   GUI.Char.GaugeKP = Geyser.Gauge:new({
     name = "GaugeKP",
     x = 74, y = GUI.Char.GaugeYStart + 4 + GUI.Char.GaugeLPHeight,
-    width = 150, height = GUI.Char.GaugeKPHeight
+    width = 150, height = GUI.Char.GaugeKPHeight,
+    strict = true
   }, GUI.Char.Frame)
   GUI.Char.GaugeKP:setColor(0, 50, 250)
   GUI.Char.GaugeKP:enableClickthrough()
