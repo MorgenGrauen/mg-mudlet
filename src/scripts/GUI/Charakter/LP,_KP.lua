@@ -48,7 +48,7 @@ function initLP()
     width = 150, height = GUI.Char.GaugeLPHeight,
     strict = true
   }, GUI.Char.Frame)
-  GUI.GaugeLP:enableClickthrough()
+  GUI.Char.GaugeLP:enableClickthrough()
 end
 
 function updateLP()
