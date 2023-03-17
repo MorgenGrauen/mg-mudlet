@@ -7,5 +7,3 @@ elseif (matches[3] == "roetlich") then
     faerbeZeile("alarm")
     ME.para = 1
 end
-
-zeigeRaum()

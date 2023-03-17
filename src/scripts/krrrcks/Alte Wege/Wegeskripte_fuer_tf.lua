@@ -16,8 +16,8 @@ function alt_ws(kommandos, lang)
     end
     for k,v in ipairs(kommandos) do
         -- Wenn "#dopath" oder "#go", dann das Ali ausführen
-        if (type(v) == "string" and string.sub(v,1,7) == "#dopath")
-            or (type(v) == "string" and string.sub(v,1,3) == "#go") 
+        if (type(v) == "string" and string.sub(v, 1, 7) == "#dopath")
+            or (type(v) == "string" and string.sub(v, 1, 3) == "#go") 
        then 
             expandAlias(v)
         else    

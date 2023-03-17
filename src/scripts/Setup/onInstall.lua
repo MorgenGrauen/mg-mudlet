@@ -5,9 +5,7 @@ function onInstall(_, packageName)
     tempTimer(0, function()
         initGMCP("", "GMCP")
 
-        initMapperbox()
-        initChat()
-        initDrache()
+        initGUI()
 
         ladeStartgebiet()
 

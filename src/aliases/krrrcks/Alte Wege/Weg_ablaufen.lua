@@ -1,12 +1,13 @@
--- Die alten tf-Wegeskripte. 
+-- Die alten tf-Wegeskripte.
 
---[[ Gestartet werden diese mit "#go <ziel>", dann wird 
+--[[ Gestartet werden diese mit "#go <ziel>", dann wird
     Ziel ausgewählt und die Sachen zum Mud geschossen. Dabei
     ist zu beachten, dass die meisten Skripte bei einem Portal
     bzw. beim Sandtiger starten. ]]--
 
 -- Als Beispiel zwei Wege: Sandtiger-Hochebene und zurueck.
 
+wege = wege or {}
 wege.he = { "#dopath w n n w w w n nw nw nw w nw nw nw w w no no o no o o", "folge hund" }
 wege.he_st = { "folge hund", "#dopath w w sw w sw sw o o so so so o so so so s o o o s s o" }
 
