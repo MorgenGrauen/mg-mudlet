@@ -1,6 +1,4 @@
-function echoM(str)
-    -- TODO: Mit faerbeText() harmonisieren..!
-    fg(mapperconf.color)
-    echo("[MAPPER]  - " .. str .. "\n")
-    resetFormat()
+function echoM(text)
+    local bunterText = liefereFarbigenText("mapper", "[MAPPER]  - " .. text .. "\n")
+    GUI.Chat.EMCO:cecho("Debug", bunterText)
 end

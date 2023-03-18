@@ -5,14 +5,13 @@ farben = farben or
     info = "green",
     alarm = "white",
     script = "dark_green",
-    gag = "dark_slate_gray"
+    gag = "dark_slate_gray",
+    mapper = "royal_blue"
   },
   hg =
-  { komm = "black",
-    info = "black",
-    alarm = "red",
-    script = "black",
-    gag = "black" }
+  {
+    alarm = "red"
+  }
 }
 -- komm: Kommunikation wie teile-mit
 -- ebenen: Einfaerben der "normalen" Ebenen
@@ -20,13 +19,14 @@ farben = farben or
 -- alarm: Alarm-Nachrichten
 -- script: Nachrichten, die nicht vom Mud, sondern von einem Script stammen.
 -- gag: fast (!) unsichtbar auf schwarzem Hintergrund für unwichtigere Spieltexte.
+-- mapper: Mitteilungen des Mappers
 
 -- Einstellungen fuer Farben Kampfscroll
 
 --- Setzt Vordergrund- und Hintergrundfarbe je nach Typ der Kommunikation, und schreibt dann den Text in bunt
 function faerbeText(type, text)
   local vg = farben.vg[type]
-  local hg = farben.hg[type]
+  local hg = farben.hg[type] or "black"
   if vg and hg then
     cecho("<"..vg..":"..hg..">"..text)
   else
@@ -58,7 +58,7 @@ function faerbeAuswahl(type)
   end
 end
 
---- Setzt Vordergrund- und Hintergrundfarbe je nach Typ der Kommunikation, und schreibt dann den Text in bunt
+--- Setzt Vordergrund- und Hintergrundfarbe je nach Typ der Kommunikation, und gibt dann den Text in bunt zurück für cecho()
 function liefereFarbigenText(type, text)
   local vg = farben.vg[type]
   local hg = farben.hg[type]
