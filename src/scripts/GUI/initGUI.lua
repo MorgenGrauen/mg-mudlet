@@ -1,6 +1,6 @@
 function initGUI()
-  initMapperbox()
   initChat()
+  initMapperbox()
   fixRightBorder()
   initDrache()
   initCharGUI()
