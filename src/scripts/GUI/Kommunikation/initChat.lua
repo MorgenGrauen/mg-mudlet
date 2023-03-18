@@ -76,9 +76,4 @@ function initChat()
             preserveBackground = true,
             blink = false
     }, GUI.Chat.Frame)
-
-    tempTimer(0, function()
-        GUI.Chat.Frame:connectToBorder("top")
-        GUI.Chat.Frame:connectToBorder("bottom")
-    end)
 end

@@ -44,10 +44,4 @@ function initMapperbox()
     )
 
     setMapZoom(5)
-
-    tempTimer(0, function()
-        GUI.Karte.Frame:connectToBorder("top")
-        GUI.Karte.Frame:connectToBorder("bottom")
-    end)
-
 end

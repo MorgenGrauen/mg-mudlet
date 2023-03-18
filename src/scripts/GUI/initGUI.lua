@@ -1,6 +1,15 @@
 function initGUI()
-    initMapperbox()
-    initChat()
-    initDrache()
-    initCharGUI()
+  initMapperbox()
+  initChat()
+  fixRightBorder()
+  initDrache()
+  initCharGUI()
+end
+
+function fixRightBorder()
+  GUI.Karte.Frame:connectToBorder("top")
+  GUI.Karte.Frame:connectToBorder("bottom")
+
+  GUI.Chat.Frame:connectToBorder("top")
+  GUI.Chat.Frame:connectToBorder("bottom")
 end
