@@ -1,8 +1,6 @@
 function GUIReset()
 
-    resetProfile()
-
-    initGUI()
+    resetProfile() -- dadurch erfolgt auch onStart()
 
     initGMCP("", "GMCP")
 
