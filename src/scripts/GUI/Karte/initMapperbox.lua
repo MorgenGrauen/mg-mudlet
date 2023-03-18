@@ -17,7 +17,7 @@ function initMapperbox()
     -- GUI.Karte.Frame or
     Adjustable.Container:new(
         {
-        name = "MapFrame",
+        name = "GUI.Karte.Frame",
         x = -360, y = 0,
         padding = 2, width = 360, height = 240,
         adjLabelstyle = title_style,
@@ -36,7 +36,7 @@ function initMapperbox()
     --  GUI.Karte.Mapper or
     Geyser.Mapper:new(
         {
-        name = "Mapper",
+        name = "GUI.Karte.Mapper",
         x = "0", y = "12",
         width = "100%", height = "100%-17px",
         },
