@@ -14,9 +14,9 @@ function handleRoomInfo()
     end
 
     mapper.currentHash = hash
-    ME.raum_kurz = roomInfo.short
-    ME.raum_region = roomInfo.domain
-    ME.raum_id = string.sub(roomInfo.id, 1, 5)
+    ME.raum_kurz = roomData.short
+    ME.raum_region = roomData.domain
+    ME.raum_id = string.sub(roomData.id, 1, 5)
     -- Para?
     if ME.para > 0 then
         ME.raum_region = "Para-" .. ME.raum_region
