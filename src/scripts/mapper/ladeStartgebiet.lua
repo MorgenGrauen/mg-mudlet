@@ -3,6 +3,11 @@ function ladeStartgebiet()
 
     if GUI and GUI.StartgebietGeladen then return end
 
+    mapper = mapper or {}
+    mapper.mode = mapper.mode or "auto"
+    mapper.currentHash = mapper.currentHash or nil
+    mapper.currentArea = mapper.currentArea or "world"
+
     -- Rasse bekannt?
     if not table.is_field(gmcp, "MG.char.base") then
         -- Rasse unbekannt. Warte auf passendes GMCP Event, dann starte diese Funktion nochmal einmalig von vorne. Jetzt aber Abbruch!

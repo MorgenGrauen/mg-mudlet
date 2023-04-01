@@ -1,4 +1,6 @@
 [ {
     "name": "initMapperbox"
+  },{
+    "name": "initMapOverlay"
   }
 ]
