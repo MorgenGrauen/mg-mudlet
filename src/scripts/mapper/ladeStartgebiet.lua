@@ -3,11 +3,6 @@ function ladeStartgebiet()
 
     if GUI and GUI.StartgebietGeladen then return end
 
-    mapper = mapper or {}
-    mapper.mode = mapper.mode or "auto"
-    mapper.currentHash = mapper.currentHash or nil
-    mapper.currentArea = mapper.currentArea or "world"
-
     -- Rasse bekannt?
     if not table.is_field(gmcp, "MG.char.base") then
         -- Rasse unbekannt. Warte auf passendes GMCP Event, dann starte diese Funktion nochmal einmalig von vorne. Jetzt aber Abbruch!
@@ -68,6 +63,11 @@ function ladeStartgebiet()
         mapper.currentRoom = currentRoom
         mapper.currentArea = getRoomArea(currentRoom)
         centerview(currentRoom)
+        -- Wegen (found = true) können wir sicher sein, dass gmcp.MG.room.info existiert!
+        local roomData = gmcp.MG.room.info
+        ME.raum_kurz = roomData.short
+        ME.raum_region = roomData.domain
+        ME.raum_id = string.sub(roomData.id, 1, 5)
 
     else
         -- Sonst irgendwo anders einen neuen Raum anlegen, von dem aus kartographiert werden kann.
