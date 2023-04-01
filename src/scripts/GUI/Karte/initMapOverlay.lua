@@ -1,5 +1,11 @@
 function initMapOverlay()
     local paraFarbe = color_table.SaddleBrown
+    if table.is_field(gmcp, "MG.room.info") then
+        local roomData = gmcp.MG.room.info
+        ME.raum_kurz = roomData.short
+        ME.raum_region = roomData.domain
+        ME.raum_id = string.sub(roomData.id, 1, 5)
+    end
 
     -- Die aktuellen Rauminfos in der Karte anzeigen
     registerMapInfo("Raum", function()

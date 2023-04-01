@@ -13,8 +13,6 @@ function onInstall(_, packageName)
 
         initGUI()
 
-        ladeStartgebiet()
-
         cecho("<LimeGreen>[  OK  ]  - <gold>Dein Mudlet-Paket fürs MorgenGrauen wurde erfolgreich installiert.\n")
     end)
 end

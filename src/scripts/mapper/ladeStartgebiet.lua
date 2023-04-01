@@ -63,11 +63,6 @@ function ladeStartgebiet()
         mapper.currentRoom = currentRoom
         mapper.currentArea = getRoomArea(currentRoom)
         centerview(currentRoom)
-        -- Wegen (found = true) können wir sicher sein, dass gmcp.MG.room.info existiert!
-        local roomData = gmcp.MG.room.info
-        ME.raum_kurz = roomData.short
-        ME.raum_region = roomData.domain
-        ME.raum_id = string.sub(roomData.id, 1, 5)
 
     else
         -- Sonst irgendwo anders einen neuen Raum anlegen, von dem aus kartographiert werden kann.
