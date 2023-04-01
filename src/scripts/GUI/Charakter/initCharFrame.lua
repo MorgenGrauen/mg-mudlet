@@ -45,7 +45,7 @@ end
 function onExitCharGUI()
   -- Workaround, da sonst beim nächsten Laden des Profils das Layout kaputt geht
   --   vgl. https://github.com/Mudlet/Mudlet/issues/5321
-  GUI.Char.Clone:toggleFixedSize(false)
+  GUI.Char.Frame:toggleFixedSize(false)
 end
 exitCharHandler = exitCharHandler or
   registerAnonymousEventHandler("sysExitEvent", "onExitCharGUI")
