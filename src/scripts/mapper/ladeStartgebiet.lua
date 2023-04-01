@@ -19,8 +19,8 @@ function ladeStartgebiet()
         if not success then
             echoM("Backup fehlgeschlagen! Breche ab. :(")
             return
-        echoM("Backup erfolgreich!")
         end
+        echoM("Backup erfolgreich!")
     end
 
     -- Lade Karte passend zur Rasse
