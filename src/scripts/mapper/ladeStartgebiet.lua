@@ -84,6 +84,8 @@ function ladeStartgebiet()
         tempTimer(1, f"setMapperMode('{mode}')")
     end
 
+    setMapZoom(5)
+
     GUI = GUI or {}
     GUI.StartgebietGeladen = true
 end
