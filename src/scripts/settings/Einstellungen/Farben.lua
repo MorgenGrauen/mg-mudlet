@@ -1,5 +1,14 @@
+-- Einstellungen fuer Farben im Scroll
 
-farben = farben or
+-- komm: Kommunikation wie teile-mit
+-- ebenen: Einfaerben der "normalen" Ebenen
+-- info: Einfaerben von Informationen des Muds (Status Gegner)
+-- alarm: Alarm-Nachrichten
+-- script: Nachrichten, die nicht vom Mud, sondern von einem Script stammen.
+-- gag: fast (!) unsichtbar auf schwarzem Hintergrund für unwichtigere Spieltexte.
+-- mapper: Mitteilungen des Mappers
+
+local farben = farben or
 { vg =
   { komm = "cyan",
     info = "green",
@@ -13,20 +22,16 @@ farben = farben or
     alarm = "red"
   }
 }
--- komm: Kommunikation wie teile-mit
--- ebenen: Einfaerben der "normalen" Ebenen
--- info: Einfaerben von Informationen des Muds (Status Gegner)
--- alarm: Alarm-Nachrichten
--- script: Nachrichten, die nicht vom Mud, sondern von einem Script stammen.
--- gag: fast (!) unsichtbar auf schwarzem Hintergrund für unwichtigere Spieltexte.
--- mapper: Mitteilungen des Mappers
 
--- Einstellungen fuer Farben Kampfscroll
+local function bestimmeFarben(type)
+  local vg = farben.vg[type]
+  local hg = farben.hg[type] or "black"
+  return vg, hg
+end
 
 --- Setzt Vordergrund- und Hintergrundfarbe je nach Typ der Kommunikation, und schreibt dann den Text in bunt
 function faerbeText(type, text)
-  local vg = farben.vg[type]
-  local hg = farben.hg[type] or "black"
+  local vg, hg = bestimmeFarben(type)
   if vg and hg then
     cecho("<"..vg..":"..hg..">"..text)
   else
@@ -37,8 +42,7 @@ end
 --- Ändert Vordergrund- und Hintergrundfarbe der aktuellen (ganzen) Zeile je nach Typ der Kommunikation
 -- Keine Ahnung, ob das besser geht, aber ich will die ganze Zeile einfärben und nicht nur den "Match".
 function faerbeZeile(type)
-  local vg = farben.vg[type]
-  local hg = farben.hg[type]
+  local vg, hg = bestimmeFarben(type)
   if vg and hg then
     selectCurrentLine()
     fg(vg)
@@ -49,8 +53,7 @@ end
 
 --- Ändert Vordergrund- und Hintergrundfarbe der (bereits vorher erfolgten) Auswahl je nach Typ der Kommunikation
 function faerbeAuswahl(type)
-  local vg = farben.vg[type]
-  local hg = farben.hg[type]
+  local vg, hg = bestimmeFarben(type)
   if vg and hg then
     fg(vg)
     bg(hg)
@@ -60,8 +63,7 @@ end
 
 --- Setzt Vordergrund- und Hintergrundfarbe je nach Typ der Kommunikation, und gibt dann den Text in bunt zurück für cecho()
 function liefereFarbigenText(type, text)
-  local vg = farben.vg[type]
-  local hg = farben.hg[type]
+  local vg, hg = bestimmeFarben(type)
   if vg and hg then
     return("<"..vg..":"..hg..">"..text)
   end
