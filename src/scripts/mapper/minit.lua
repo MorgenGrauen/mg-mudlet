@@ -17,6 +17,8 @@ function minit()
         centerview(1)
     end
 
+    tempTimer(0, "setMapZoom(5)")
+
     echoM("Neue Karte initialisiert.")
     setMapperMode("auto")
 

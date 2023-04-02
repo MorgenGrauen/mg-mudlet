@@ -43,6 +43,6 @@ function initMapperbox()
         GUI.Karte.Frame
     )
 
-    setMapZoom(5)
+    tempTimer(0, "setMapZoom(5)")
     setConfig("mapperPanelVisible", false)
 end
