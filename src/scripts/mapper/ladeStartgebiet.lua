@@ -41,22 +41,18 @@ function ladeStartgebiet()
 
     -- Wo befinden wir uns gerade auf der geladenen Karte?
     local aktuellePositionIstImStartgebiet = false
-    local currentRoom
-    local currentHash
     if table.is_field(gmcp, "MG.room.info") then
         local hash = gmcp.MG.room.info.id
         -- Ganze Karte prüfen, ob wir unseren Hash wiederfinden
         for roomID, _ in pairs(getRooms()) do
             if hash == getRoomHashByID(roomID) then
-                currentRoom = roomID
-                currentHash = getRoomHashByID(roomID)
                 aktuellePositionIstImStartgebiet = true
+                mapper.currentRoom = roomID
+                mapper.currentHash = hash
+                mapper.currentArea = getRoomArea(roomID)
                 echoM("Aktuelle Position auf Karte gefunden. Blende Gebiet ein...")
-                mapper.currentHash = currentHash
-                mapper.currentRoom = currentRoom
-                mapper.currentArea = getRoomArea(currentRoom)
-                centerview(currentRoom)
-                break -- TODO: Könnte hier ggf. die zwei "current" Variablen einsparen?
+                centerview(roomID)
+                break
             end
         end
     end
