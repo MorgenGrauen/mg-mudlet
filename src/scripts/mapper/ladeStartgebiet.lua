@@ -51,19 +51,17 @@ function ladeStartgebiet()
                 currentRoom = roomID
                 currentHash = getRoomHashByID(roomID)
                 aktuellePositionIstImStartgebiet = true
+                echoM("Aktuelle Position auf Karte gefunden. Blende Gebiet ein...")
+                mapper.currentHash = currentHash
+                mapper.currentRoom = currentRoom
+                mapper.currentArea = getRoomArea(currentRoom)
+                centerview(currentRoom)
                 break -- TODO: Könnte hier ggf. die zwei "current" Variablen einsparen?
             end
         end
     end
 
-    if aktuellePositionIstImStartgebiet then
-        echoM("Aktuelle Position auf Karte gefunden. Blende Gebiet ein...")
-        mapper.currentHash = currentHash
-        mapper.currentRoom = currentRoom
-        mapper.currentArea = getRoomArea(currentRoom)
-        centerview(currentRoom)
-
-    else
+    if not aktuellePositionIstImStartgebiet then
         -- Sonst irgendwo anders einen neuen Raum anlegen, von dem aus kartographiert werden kann.
         echoM("Aktuelle Position nicht auf Karte gefunden. Beginne eine neue Gebietskarte...")
         -- TODO: Ist vmtl. so nicht nötig, da Map für diesen Zweck bereits einen Raum "1" enthält!
