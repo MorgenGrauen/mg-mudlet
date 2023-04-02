@@ -26,17 +26,19 @@ function ladeStartgebiet()
     -- Lade Karte passend zur Rasse
     local race = string.lower(gmcp.MG.char.base.race)
     local bekannteKarten = { "dunkelelf", "elf", "feline", "goblin", "hobbit", "mensch", "ork", "zwerg" }
+    local success = false
     if table.contains(bekannteKarten, race) then
         echoM(f"Lade Karte des ({race}-bekannten) Startgebietes...")
-        local success = loadJsonMap(f"{getMudletHomeDir()}/MorgenGrauen/map/{race}.json")
-        if success then
-            echoM("Laden erfolgreich.")
-        else
-            echoM("Laden fehlgeschlagen! :(")
-        end
     else
         echoM(f"Unbekannte Rasse: {race}. Lade leere Karte ohne Startgebiet...")
-        loadMap("_")
+        race = "leer"
+    end
+    success = loadJsonMap(f"{getMudletHomeDir()}/MorgenGrauen/map/{race}.json")
+    if success then
+        echoM("Laden erfolgreich.")
+    else
+        echoM("Laden fehlgeschlagen! :(")
+        return
     end
 
     -- Wo befinden wir uns gerade auf der geladenen Karte?
