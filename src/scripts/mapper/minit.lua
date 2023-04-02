@@ -1,43 +1,25 @@
 -- Setzt die Karte auf Werkszustand zurueck.
 function minit()
-    -- vorhandene Räume löschen
-    for id, _ in pairs(getRooms()) do
-        deleteRoom(id)
+    -- TODO: Sollte zukünftig zuerst noch Rasse prüfen und passende Karte laden, usw. wie ladeStartgebiet()
+    local success = loadJsonMap(f"{getMudletHomeDir()}/MorgenGrauen/map/leer.json")
+    if not success then
+        echoM("Leere Karte laden fehlgeschlagen! :(")
+        return
     end
 
-    -- vorhandene Gebiete löschen, ausser "Default Area"
-    for _, id in pairs(getAreaTable()) do
-        if id > -1 then
-            deleteArea(id)
-        end
-    end
-
-    -- currentArea zurücksetzen damit wir wirklich von vorne anfangen
-    mapper.currentArea = "world"
-    mapper.currentHash = nil
-
-    -- MapUserData löschen
-    clearMapUserData()
-
-    erstelleErstenRaum()
-
-    echoM("Neue Karte initialisiert.")
-    setMapperMode("auto")
-
-end
-
-function erstelleErstenRaum()
     if table.is_field(gmcp, "MG.room.info") then
         erstelleErstenRaumAusGmcpDaten()
     else
         -- keine Raumdaten vorhanden
-        local newRoom = createRoom(mapper.currentArea, mapper.currentHash)
-
-        setRoomName(newRoom, "Irgendwo im Nirgendwo")
-
-        mapper.currentRoom = newRoom
-        centerview(newRoom)
+        mapper.currentRoom = 1
+        mapper.currentHash = "?"
+        mapper.currentArea = "Welt"
+        centerview(1)
     end
+
+    echoM("Neue Karte initialisiert.")
+    setMapperMode("auto")
+
 end
 
 function erstelleErstenRaumAusGmcpDaten()
