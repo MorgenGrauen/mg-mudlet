@@ -2,9 +2,6 @@ function onInstall(_, packageName)
     -- alles was NUR direkt nach der Installation des MG Pakets ausgeführt werden soll
     if packageName ~= "@PKGNAME@" then return end
 
-    -- Entfernt Mudlets "generic mapper" Paket, das uns stört
-    uninstallPackage("generic_mapper")
-
     mudlet = mudlet or {}
     mudlet.mapper_script = true
 
