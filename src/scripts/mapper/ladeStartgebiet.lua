@@ -46,10 +46,10 @@ function ladeStartgebiet()
     if table.is_field(gmcp, "MG.room.info") then
         local hash = gmcp.MG.room.info.id
         -- Ganze Karte prüfen, ob wir unseren Hash wiederfinden
-        for id, _ in pairs(getRooms()) do
-            if hash == getRoomHashByID(id) then
-                currentRoom = id
-                currentHash = getRoomHashByID(id)
+        for roomID, _ in pairs(getRooms()) do
+            if hash == getRoomHashByID(roomID) then
+                currentRoom = roomID
+                currentHash = getRoomHashByID(roomID)
                 aktuellePositionIstImStartgebiet = true
                 break -- TODO: Könnte hier ggf. die zwei "current" Variablen einsparen?
             end
