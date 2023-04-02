@@ -44,4 +44,5 @@ function initMapperbox()
     )
 
     setMapZoom(5)
+    setConfig("mapperPanelVisible", false)
 end
