@@ -35,8 +35,8 @@
             "rooms": [
                 {
                     "coordinates": [
-                        -22,
-                        36,
+                        0,
+                        0,
                         0
                     ],
                     "environment": 258,
