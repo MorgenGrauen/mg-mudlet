@@ -58,14 +58,15 @@ function ladeStartgebiet()
     end
 
     if not aktuellePositionIstImStartgebiet then
-        -- Sonst irgendwo anders einen neuen Raum anlegen, von dem aus kartographiert werden kann.
-        echoM("Aktuelle Position nicht auf Karte gefunden. Beginne eine neue Gebietskarte...")
-        -- TODO: Ist vmtl. so nicht nötig, da Map für diesen Zweck bereits einen Raum "1" enthält!
-        mapper.currentArea = "world"
-        erstelleErstenRaum()
+        -- Jedes geladene Startgebiet hat einen Raum mit Nummer 1, von dem aus dann gestartet werden kann.
+        echoM("Aktuelle Position nicht auf Karte gefunden. Starte auf leerer Karte...")
+        mapper.currentRoom = 1
+        mapper.currentHash = "?"
+        mapper.currentArea = "Welt"
+        centerview(1)
     end
 
-    -- wegen initGMCP kommt gleich noch GMCP.MG.room zurück und wir wollen keinen weiteren Raum erstellen!
+    -- FIXME: wegen initGMCP kommt gleich noch GMCP.MG.room zurück und wir wollen keinen weiteren Raum erstellen!
     local mode = mapper.mode
     if not (mode == "fix") then
         setMapperMode("fix")
