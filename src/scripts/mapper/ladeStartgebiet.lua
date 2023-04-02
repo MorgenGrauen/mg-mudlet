@@ -68,7 +68,7 @@ function ladeStartgebiet()
 
     -- FIXME: wegen initGMCP kommt gleich noch GMCP.MG.room zurück und wir wollen keinen weiteren Raum erstellen!
     local mode = mapper.mode
-    if not (mode == "fix") then
+    if mode ~= "fix" then
         setMapperMode("fix")
         tempTimer(1, f"setMapperMode('{mode}')")
     end
