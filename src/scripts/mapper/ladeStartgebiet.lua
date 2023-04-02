@@ -12,7 +12,7 @@ function ladeStartgebiet()
     end
 
     -- Ggf. Backup vorab?
-    if istBereitsKarteVorhanden() then
+    if not istKarteLeer() then
         echoM("Es war bereits eine Karte vorhanden. Speichere Backup, bevor sie überschrieben wird...")
         local datetimestamp = getTime(true, "yyyy-MM-dd_hh-mm-ss")
         local success = saveMap(f"{getMudletHomeDir()}/map/Backup_{datetimestamp}.dat")
@@ -28,7 +28,7 @@ function ladeStartgebiet()
     local bekannteKarten = { "dunkelelf", "elf", "feline", "goblin", "hobbit", "mensch", "ork", "zwerg" }
     if table.contains(bekannteKarten, race) then
         echoM(f"Lade Karte des ({race}-bekannten) Startgebietes...")
-        local success = loadJsonMap(f"{getMudletHomeDir()}/@PKGNAME@/map/{race}.json")
+        local success = loadJsonMap(f"{getMudletHomeDir()}/MorgenGrauen/map/{race}.json")
         if success then
             echoM("Laden erfolgreich.")
         else
@@ -79,7 +79,8 @@ function ladeStartgebiet()
     GUI.StartgebietGeladen = true
 end
 
-function istBereitsKarteVorhanden()
-    -- Prüft, ob Spieler bereits aktiv war, und Räume/Areas angelegt hatte, dann true, sonst false
-    return not (table.is_empty(getRooms()) and table.is_empty(getAreaTableSwap()))
+function istKarteLeer()
+    -- Prüft, ob Spieler bereits aktiv war, und mehr als einen Raum angelegt hatte, dann true, sonst false
+    -- Normalerweise startet ein Spieler mit einem Raum und einer Area (default) oder zwei Areas (per minit)
+    return not (#table.keys(getRooms()) > 1 and #table.keys(getAreaTableSwap()) > 2)
 end
