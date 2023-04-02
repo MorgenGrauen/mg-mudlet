@@ -1,5 +1,5 @@
 function initGMCP(_, protocol)
-  if not protocol == "GMCP" then return end
+  if protocol ~= "GMCP" then return end
   local debugLevel = 0 -- 0 zeigt nichts, 100 zeigt alles, 20 etwas, usw.
   sendGMCP( f"Core.Debug {debugLevel} ")
   sendGMCP( [[Core.Supports.Set [ "MG.char 1", "MG.room 1", "comm.channel 1" ] ]])

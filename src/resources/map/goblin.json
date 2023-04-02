@@ -1,0 +1,741 @@
+{
+    "anonymousAreaName": "Unnamed Area",
+    "areaCount": 4,
+    "areas": [
+        {
+            "id": -1,
+            "name": "Default Area",
+            "roomCount": 0,
+            "rooms": [
+            ]
+        },
+        {
+            "id": 1,
+            "name": "Welt",
+            "roomCount": 1,
+            "rooms": [
+                {
+                    "coordinates": [
+                        0,
+                        0,
+                        0
+                    ],
+                    "environment": -1,
+                    "exits": [
+                    ],
+                    "id": 1,
+                    "name": "Irgendwo im Nirgendwo"
+                }
+            ]
+        },
+        {
+            "id": 2,
+            "name": "Wald - Wonnewichte",
+            "roomCount": 1,
+            "rooms": [
+                {
+                    "coordinates": [
+                        0,
+                        0,
+                        0
+                    ],
+                    "environment": 258,
+                    "exits": [
+                    ],
+                    "hash": "592a9556a025775702a80903664ab955",
+                    "id": 2,
+                    "name": "Auf einem dunklen Platz im schattigen Wald."
+                }
+            ]
+        },
+        {
+            "id": 11,
+            "name": "Startgebiet",
+            "roomCount": 23,
+            "rooms": [
+                {
+                    "coordinates": [
+                        -48,
+                        30,
+                        0
+                    ],
+                    "environment": -1,
+                    "exits": [
+                        {
+                            "exitId": 4,
+                            "name": "out"
+                        }
+                    ],
+                    "hash": "5804106b5105b2f9ec6cedcb8ff84d98",
+                    "id": 3,
+                    "name": "In einer kleinen Holzhuette."
+                },
+                {
+                    "coordinates": [
+                        -52,
+                        30,
+                        0
+                    ],
+                    "environment": 258,
+                    "exits": [
+                        {
+                            "exitId": 7,
+                            "name": "northwest"
+                        },
+                        {
+                            "exitId": 5,
+                            "name": "east"
+                        }
+                    ],
+                    "hash": "b91bea7773b69fb5c832ab364dd2244a",
+                    "id": 6,
+                    "name": "Bei einem Menhir auf der Weisstannenlichtung."
+                },
+                {
+                    "coordinates": [
+                        -60,
+                        24,
+                        0
+                    ],
+                    "environment": 292,
+                    "exits": [
+                        {
+                            "exitId": 10,
+                            "name": "northeast"
+                        },
+                        {
+                            "exitId": 23,
+                            "name": "northwest"
+                        }
+                    ],
+                    "hash": "682e6efe14ad42c61de2a054cdf22114",
+                    "id": 22,
+                    "name": "In einem Kaff."
+                },
+                {
+                    "coordinates": [
+                        -62,
+                        26,
+                        0
+                    ],
+                    "environment": 292,
+                    "exits": [
+                        {
+                            "exitId": 22,
+                            "name": "southeast"
+                        },
+                        {
+                            "exitId": 24,
+                            "name": "southwest"
+                        }
+                    ],
+                    "hash": "a387c0464ffee8b3c1c01a57efbb2005",
+                    "id": 23,
+                    "name": "In einem Kaff."
+                },
+                {
+                    "coordinates": [
+                        -64,
+                        24,
+                        0
+                    ],
+                    "environment": 292,
+                    "exits": [
+                        {
+                            "exitId": 23,
+                            "name": "northeast"
+                        },
+                        {
+                            "exitId": 25,
+                            "name": "east"
+                        }
+                    ],
+                    "hash": "35b141f0e93258adce3f3949cd675a53",
+                    "id": 24,
+                    "name": "In einem Kaff."
+                },
+                {
+                    "coordinates": [
+                        -62,
+                        24,
+                        0
+                    ],
+                    "environment": 257,
+                    "exits": [
+                        {
+                            "exitId": 24,
+                            "name": "west"
+                        }
+                    ],
+                    "hash": "8e8b6cd5d284f16f9777ca4e6abecaa7",
+                    "id": 25,
+                    "name": "In einer ehemaligen Kirche.",
+                    "symbol": {
+                        "text": "🛐"
+                    }
+                },
+                {
+                    "coordinates": [
+                        -54,
+                        32,
+                        0
+                    ],
+                    "environment": 258,
+                    "exits": [
+                        {
+                            "exitId": 6,
+                            "name": "southeast"
+                        },
+                        {
+                            "exitId": 8,
+                            "name": "southwest"
+                        }
+                    ],
+                    "hash": "134a9de6bd0d0c8f9b9a2ab53cfac322",
+                    "id": 7,
+                    "name": "Bei einem Menhir auf der Weisstannenlichtung."
+                },
+                {
+                    "coordinates": [
+                        -56,
+                        30,
+                        0
+                    ],
+                    "environment": 258,
+                    "exits": [
+                        {
+                            "exitId": 7,
+                            "name": "northeast"
+                        },
+                        {
+                            "exitId": 9,
+                            "name": "southwest"
+                        }
+                    ],
+                    "hash": "19bfd94ea086e3446090fb76607e10a5",
+                    "id": 8,
+                    "name": "Auf einem Waldweg."
+                },
+                {
+                    "coordinates": [
+                        -48,
+                        30,
+                        0
+                    ],
+                    "environment": 258,
+                    "exits": [
+                        {
+                            "exitId": 5,
+                            "name": "west"
+                        },
+                        {
+                            "exitId": 3,
+                            "name": "klopfe an"
+                        },
+                        {
+                            "exitId": 2,
+                            "name": "steige auf biene"
+                        }
+                    ],
+                    "hash": "3f5ec7d2de2bcc5ea29968c2c451c62b",
+                    "id": 4,
+                    "name": "Bei einer Huette an der Suedostecke der Waldlichtung."
+                },
+                {
+                    "coordinates": [
+                        -50,
+                        30,
+                        0
+                    ],
+                    "environment": 258,
+                    "exits": [
+                        {
+                            "exitId": 4,
+                            "name": "east"
+                        },
+                        {
+                            "exitId": 6,
+                            "name": "west"
+                        }
+                    ],
+                    "hash": "c4ac6cd89dab85f83b03d92d1ee5447d",
+                    "id": 5,
+                    "name": "Vor einem Loch auf der Weisstannenlichtung."
+                },
+                {
+                    "coordinates": [
+                        -58,
+                        28,
+                        0
+                    ],
+                    "environment": 258,
+                    "exits": [
+                        {
+                            "exitId": 8,
+                            "name": "northeast"
+                        },
+                        {
+                            "exitId": 10,
+                            "name": "south"
+                        }
+                    ],
+                    "hash": "9409bee44a5646968f65a584709b2cc1",
+                    "id": 9,
+                    "name": "Vor dem Dorfeingang."
+                },
+                {
+                    "coordinates": [
+                        -58,
+                        26,
+                        0
+                    ],
+                    "environment": 292,
+                    "exits": [
+                        {
+                            "exitId": 9,
+                            "name": "north"
+                        },
+                        {
+                            "exitId": 11,
+                            "name": "southeast"
+                        },
+                        {
+                            "exitId": 22,
+                            "name": "southwest"
+                        }
+                    ],
+                    "hash": "40cf51f460ce1c8f519433afd70a4bac",
+                    "id": 10,
+                    "name": "In einem Kaff."
+                },
+                {
+                    "coordinates": [
+                        -56,
+                        24,
+                        0
+                    ],
+                    "environment": 292,
+                    "exits": [
+                        {
+                            "exitId": 10,
+                            "name": "northwest"
+                        },
+                        {
+                            "exitId": 21,
+                            "name": "west"
+                        },
+                        {
+                            "exitId": 12,
+                            "name": "southwest"
+                        }
+                    ],
+                    "hash": "876465d3cf15c7dad979dd211584f0f2",
+                    "id": 11,
+                    "name": "In einem Kaff."
+                },
+                {
+                    "coordinates": [
+                        -58,
+                        22,
+                        0
+                    ],
+                    "environment": 292,
+                    "exits": [
+                        {
+                            "exitId": 11,
+                            "name": "northeast"
+                        },
+                        {
+                            "exitId": 13,
+                            "name": "southeast"
+                        }
+                    ],
+                    "hash": "d3fd2bf6cbbe47859b92bdcbdbc3d08e",
+                    "id": 12,
+                    "name": "In einem Kaff."
+                },
+                {
+                    "coordinates": [
+                        -56,
+                        20,
+                        0
+                    ],
+                    "environment": 292,
+                    "exits": [
+                        {
+                            "exitId": 12,
+                            "name": "northwest"
+                        },
+                        {
+                            "exitId": 14,
+                            "name": "southwest"
+                        }
+                    ],
+                    "hash": "a4437626b3c170786e35146d30dabebd",
+                    "id": 13,
+                    "name": "In einem Kaff."
+                },
+                {
+                    "coordinates": [
+                        -58,
+                        18,
+                        0
+                    ],
+                    "environment": 292,
+                    "exits": [
+                        {
+                            "exitId": 13,
+                            "name": "northeast"
+                        },
+                        {
+                            "exitId": 15,
+                            "name": "northwest"
+                        }
+                    ],
+                    "hash": "01f8d6d6be652297603eb7230c474f74",
+                    "id": 14,
+                    "name": "In einem Kaff."
+                },
+                {
+                    "coordinates": [
+                        -60,
+                        20,
+                        0
+                    ],
+                    "environment": 292,
+                    "exits": [
+                        {
+                            "exitId": 16,
+                            "name": "south"
+                        },
+                        {
+                            "exitId": 14,
+                            "name": "southeast"
+                        },
+                        {
+                            "exitId": 17,
+                            "name": "southwest"
+                        }
+                    ],
+                    "hash": "d14012b355e45d198879fee4035a63af",
+                    "id": 15,
+                    "name": "In einem Kaff."
+                },
+                {
+                    "coordinates": [
+                        -62,
+                        18,
+                        0
+                    ],
+                    "environment": 292,
+                    "exits": [
+                        {
+                            "exitId": 15,
+                            "name": "northeast"
+                        },
+                        {
+                            "exitId": 18,
+                            "name": "northwest"
+                        }
+                    ],
+                    "hash": "13abeda2a032366531b1c060b8f36482",
+                    "id": 17,
+                    "name": "In einem Kaff."
+                },
+                {
+                    "coordinates": [
+                        -64,
+                        20,
+                        0
+                    ],
+                    "environment": 292,
+                    "exits": [
+                        {
+                            "exitId": 19,
+                            "name": "northeast"
+                        },
+                        {
+                            "exitId": 17,
+                            "name": "southeast"
+                        }
+                    ],
+                    "hash": "cf955ece790975b8e2a47706f7d0202c",
+                    "id": 18,
+                    "name": "In einem Kaff."
+                },
+                {
+                    "coordinates": [
+                        -62,
+                        22,
+                        0
+                    ],
+                    "environment": 292,
+                    "exits": [
+                        {
+                            "exitId": 20,
+                            "name": "west"
+                        },
+                        {
+                            "exitId": 18,
+                            "name": "southwest"
+                        }
+                    ],
+                    "hash": "e5194916282247872f6e147a72684a53",
+                    "id": 19,
+                    "name": "In einem Kaff."
+                },
+                {
+                    "coordinates": [
+                        -64,
+                        22,
+                        0
+                    ],
+                    "environment": 257,
+                    "exits": [
+                        {
+                            "exitId": 19,
+                            "name": "east"
+                        }
+                    ],
+                    "hash": "7c943e6dd8c79a4daba62611b39434ae",
+                    "id": 20,
+                    "name": "In einem Subbamargt.",
+                    "symbol": {
+                        "text": "💰"
+                    }
+                },
+                {
+                    "coordinates": [
+                        -60,
+                        18,
+                        0
+                    ],
+                    "environment": 257,
+                    "exits": [
+                        {
+                            "exitId": 15,
+                            "name": "north"
+                        }
+                    ],
+                    "hash": "1b0ed2d008d48fb029336a1c6c5e4d18",
+                    "id": 16,
+                    "name": "In einer Huette.",
+                    "symbol": {
+                        "text": "📜"
+                    }
+                },
+                {
+                    "coordinates": [
+                        -58,
+                        24,
+                        0
+                    ],
+                    "environment": 257,
+                    "exits": [
+                        {
+                            "exitId": 11,
+                            "name": "east"
+                        }
+                    ],
+                    "hash": "4f870ee120be744d68e69a5140762762",
+                    "id": 21,
+                    "name": "In einer Kneipe.",
+                    "symbol": {
+                        "text": "🍖"
+                    }
+                }
+            ]
+        }
+    ],
+    "customEnvColors": [
+        {
+            "color24RGB": [
+                128,
+                0,
+                0
+            ],
+            "id": 257
+        },
+        {
+            "color24RGB": [
+                0,
+                128,
+                0
+            ],
+            "id": 258
+        },
+        {
+            "color24RGB": [
+                128,
+                128,
+                0
+            ],
+            "id": 259
+        },
+        {
+            "color24RGB": [
+                0,
+                0,
+                128
+            ],
+            "id": 260
+        },
+        {
+            "color24RGB": [
+                128,
+                0,
+                128
+            ],
+            "id": 261
+        },
+        {
+            "color24RGB": [
+                0,
+                128,
+                128
+            ],
+            "id": 262
+        },
+        {
+            "color24RGB": [
+                192,
+                192,
+                192
+            ],
+            "id": 263
+        },
+        {
+            "color24RGB": [
+                0,
+                0,
+                0
+            ],
+            "id": 264
+        },
+        {
+            "color24RGB": [
+                255,
+                0,
+                0
+            ],
+            "id": 265
+        },
+        {
+            "color24RGB": [
+                0,
+                255,
+                0
+            ],
+            "id": 266
+        },
+        {
+            "color24RGB": [
+                255,
+                255,
+                0
+            ],
+            "id": 267
+        },
+        {
+            "color24RGB": [
+                0,
+                0,
+                255
+            ],
+            "id": 268
+        },
+        {
+            "color24RGB": [
+                255,
+                0,
+                255
+            ],
+            "id": 269
+        },
+        {
+            "color24RGB": [
+                0,
+                255,
+                255
+            ],
+            "id": 270
+        },
+        {
+            "color24RGB": [
+                255,
+                255,
+                255
+            ],
+            "id": 271
+        },
+        {
+            "color24RGB": [
+                128,
+                128,
+                128
+            ],
+            "id": 272
+        },
+        {
+            "color24RGB": [
+                132,
+                132,
+                255
+            ],
+            "id": 289
+        },
+        {
+            "color24RGB": [
+                132,
+                66,
+                0
+            ],
+            "id": 290
+        },
+        {
+            "color24RGB": [
+                255,
+                132,
+                66
+            ],
+            "id": 291
+        },
+        {
+            "color24RGB": [
+                64,
+                64,
+                64
+            ],
+            "id": 292
+        }
+    ],
+    "defaultAreaName": "Default Area",
+    "formatVersion": 1,
+    "labelCount": 0,
+    "mapSymbolFontDetails": "Bitstream Vera Sans Mono,12,-1,5,50,0,0,0,0,0",
+    "mapSymbolFontFudgeFactor": 1,
+    "onlyMapSymbolFontToBeUsed": false,
+    "playerRoomColors": [
+        {
+            "color24RGB": [
+                113,
+                75,
+                50
+            ]
+        },
+        {
+            "color24RGB": [
+                170,
+                170,
+                127
+            ]
+        }
+    ],
+    "playerRoomInnerDiameterPercentage": 70,
+    "playerRoomOuterDiameterPercentage": 120,
+    "playerRoomStyle": 3,
+    "playersRoomId": {
+        "MorgenGrauen": 1
+    },
+    "roomCount": 25
+}

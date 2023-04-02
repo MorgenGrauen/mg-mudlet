@@ -1,0 +1,792 @@
+{
+    "anonymousAreaName": "Unnamed Area",
+    "areaCount": 4,
+    "areas": [
+        {
+            "id": -1,
+            "name": "Default Area",
+            "roomCount": 0,
+            "rooms": [
+            ]
+        },
+        {
+            "id": 1,
+            "name": "Welt",
+            "roomCount": 1,
+            "rooms": [
+                {
+                    "coordinates": [
+                        0,
+                        0,
+                        0
+                    ],
+                    "environment": -1,
+                    "exits": [
+                    ],
+                    "id": 1,
+                    "name": "Irgendwo im Nirgendwo"
+                }
+            ]
+        },
+        {
+            "id": 2,
+            "name": "Wald - Wonnewichte",
+            "roomCount": 1,
+            "rooms": [
+                {
+                    "coordinates": [
+                        0,
+                        0,
+                        0
+                    ],
+                    "environment": 258,
+                    "exits": [
+                    ],
+                    "hash": "592a9556a025775702a80903664ab955",
+                    "id": 2,
+                    "name": "Auf einem dunklen Platz im schattigen Wald."
+                }
+            ]
+        },
+        {
+            "id": 80,
+            "name": "Startgebiet",
+            "roomCount": 23,
+            "rooms": [
+                {
+                    "coordinates": [
+                        -20,
+                        12,
+                        -3
+                    ],
+                    "environment": 292,
+                    "exits": [
+                        {
+                            "exitId": 4122,
+                            "name": "northeast"
+                        },
+                        {
+                            "exitId": 4132,
+                            "name": "northwest"
+                        }
+                    ],
+                    "hash": "d3f38cb62e3883139b537c7f36de096a",
+                    "id": 4121,
+                    "name": "Am Fusse einer Felsspalte."
+                },
+                {
+                    "coordinates": [
+                        -18,
+                        14,
+                        -3
+                    ],
+                    "environment": 292,
+                    "exits": [
+                        {
+                            "exitId": 4123,
+                            "name": "northeast"
+                        },
+                        {
+                            "exitId": 4121,
+                            "name": "southwest"
+                        }
+                    ],
+                    "hash": "38e1e1b7880eab48a21cb6be23aa33ee",
+                    "id": 4122,
+                    "name": "Auf der Zzerenzza Strasse."
+                },
+                {
+                    "coordinates": [
+                        -16,
+                        16,
+                        -3
+                    ],
+                    "environment": 292,
+                    "exits": [
+                        {
+                            "exitId": 4124,
+                            "name": "east"
+                        },
+                        {
+                            "exitId": 4122,
+                            "name": "southwest"
+                        }
+                    ],
+                    "hash": "e794d10ddebc67870d2cb97a5d3d887b",
+                    "id": 4123,
+                    "name": "Auf der Zzerenzza Strasse."
+                },
+                {
+                    "coordinates": [
+                        -14,
+                        16,
+                        -3
+                    ],
+                    "environment": 292,
+                    "exits": [
+                        {
+                            "exitId": 4125,
+                            "name": "northeast"
+                        },
+                        {
+                            "exitId": 4123,
+                            "name": "west"
+                        }
+                    ],
+                    "hash": "8d44f42ff708421f39cd72f2010c17e9",
+                    "id": 4124,
+                    "name": "Auf der Zzerenzza Strasse."
+                },
+                {
+                    "coordinates": [
+                        -12,
+                        18,
+                        -3
+                    ],
+                    "environment": 292,
+                    "exits": [
+                        {
+                            "exitId": 4126,
+                            "name": "northwest"
+                        },
+                        {
+                            "exitId": 4124,
+                            "name": "southwest"
+                        }
+                    ],
+                    "hash": "e87f58b73191baa24cc061bbf1624707",
+                    "id": 4125,
+                    "name": "Auf der Zzerenzza Strasse."
+                },
+                {
+                    "coordinates": [
+                        -14,
+                        20,
+                        -3
+                    ],
+                    "environment": 292,
+                    "exits": [
+                        {
+                            "exitId": 4125,
+                            "name": "southeast"
+                        },
+                        {
+                            "exitId": 4127,
+                            "name": "southwest"
+                        }
+                    ],
+                    "hash": "1375ef84ae2908ef8c5dbec6ccd75ce0",
+                    "id": 4126,
+                    "name": "Auf der Zzerenzza Strasse."
+                },
+                {
+                    "coordinates": [
+                        -16,
+                        18,
+                        -3
+                    ],
+                    "environment": 292,
+                    "exits": [
+                        {
+                            "exitId": 4126,
+                            "name": "northeast"
+                        },
+                        {
+                            "exitId": 4129,
+                            "name": "northwest"
+                        },
+                        {
+                            "exitId": 4128,
+                            "name": "east"
+                        }
+                    ],
+                    "hash": "d9e08151eb98d1b1e1e57b9159a852b8",
+                    "id": 4127,
+                    "name": "Auf der Zzerenzza Strasse."
+                },
+                {
+                    "coordinates": [
+                        -14,
+                        18,
+                        -3
+                    ],
+                    "environment": 257,
+                    "exits": [
+                        {
+                            "exitId": 4127,
+                            "name": "west"
+                        }
+                    ],
+                    "hash": "aa3c3f7e3e56c8399a4e61c1e8f84bda",
+                    "id": 4128,
+                    "name": "Gemischtwarenladen.",
+                    "symbol": {
+                        "text": "💰"
+                    }
+                },
+                {
+                    "coordinates": [
+                        -18,
+                        20,
+                        -3
+                    ],
+                    "environment": 292,
+                    "exits": [
+                        {
+                            "exitId": 4131,
+                            "name": "north"
+                        },
+                        {
+                            "exitId": 4127,
+                            "name": "southeast"
+                        }
+                    ],
+                    "hash": "53f71fe2437d62fd657abe8ff8dd17e6",
+                    "id": 4129,
+                    "name": "Auf der Zzerenzza Strasse."
+                },
+                {
+                    "coordinates": [
+                        -18,
+                        22,
+                        -3
+                    ],
+                    "environment": 257,
+                    "exits": [
+                        {
+                            "exitId": 4129,
+                            "name": "south"
+                        }
+                    ],
+                    "hash": "a731dddbbf63999971a29939b712a0c3",
+                    "id": 4131,
+                    "name": "Post in Zzerenzzen.",
+                    "symbol": {
+                        "text": "📯"
+                    }
+                },
+                {
+                    "coordinates": [
+                        -22,
+                        14,
+                        -3
+                    ],
+                    "environment": 292,
+                    "exits": [
+                        {
+                            "exitId": 4148,
+                            "name": "northeast"
+                        },
+                        {
+                            "exitId": 4121,
+                            "name": "southeast"
+                        },
+                        {
+                            "exitId": 4133,
+                            "name": "southwest"
+                        }
+                    ],
+                    "hash": "615a1dd4770229152febbce95eee40ab",
+                    "id": 4132,
+                    "name": "Auf der Hauptstrasse von Zzerenzzen."
+                },
+                {
+                    "coordinates": [
+                        -24,
+                        12,
+                        -3
+                    ],
+                    "environment": 292,
+                    "exits": [
+                        {
+                            "exitId": 4132,
+                            "name": "northeast"
+                        },
+                        {
+                            "exitId": 4134,
+                            "name": "northwest"
+                        }
+                    ],
+                    "hash": "f95f648cde7fa98e6ff58ea503e979e1",
+                    "id": 4133,
+                    "name": "Auf der Hauptstrasse von Zzerenzzen."
+                },
+                {
+                    "coordinates": [
+                        -26,
+                        14,
+                        -3
+                    ],
+                    "environment": 292,
+                    "exits": [
+                        {
+                            "exitId": 4135,
+                            "name": "north"
+                        },
+                        {
+                            "exitId": 4133,
+                            "name": "southeast"
+                        }
+                    ],
+                    "hash": "e66689111d821a607ac702544d7fcddc",
+                    "id": 4134,
+                    "name": "Auf der Hauptstrasse von Zzerenzzen."
+                },
+                {
+                    "coordinates": [
+                        -26,
+                        16,
+                        -3
+                    ],
+                    "environment": 292,
+                    "exits": [
+                        {
+                            "exitId": 4137,
+                            "name": "northeast"
+                        },
+                        {
+                            "exitId": 4134,
+                            "name": "south"
+                        },
+                        {
+                            "exitId": 4150,
+                            "name": "southeast"
+                        }
+                    ],
+                    "hash": "104ef18aa18aa0e7f92d086124f32889",
+                    "id": 4135,
+                    "name": "Auf der Hauptstrasse von Zzerenzzen."
+                },
+                {
+                    "coordinates": [
+                        -24,
+                        18,
+                        -3
+                    ],
+                    "environment": 292,
+                    "exits": [
+                        {
+                            "exitId": 4139,
+                            "name": "northeast"
+                        },
+                        {
+                            "exitId": 4138,
+                            "name": "southeast"
+                        },
+                        {
+                            "exitId": 4135,
+                            "name": "southwest"
+                        }
+                    ],
+                    "hash": "84aa541288f0ce277b1091166f74900f",
+                    "id": 4137,
+                    "name": "Auf der Hauptstrasse von Zzerenzzen."
+                },
+                {
+                    "coordinates": [
+                        -22,
+                        16,
+                        -3
+                    ],
+                    "environment": 257,
+                    "exits": [
+                        {
+                            "exitId": 4137,
+                            "name": "northwest"
+                        }
+                    ],
+                    "hash": "c52bb7e14ddde508dd401255087c1ef4",
+                    "id": 4138,
+                    "name": "In einer Waffenschmiede.",
+                    "symbol": {
+                        "text": "💰"
+                    }
+                },
+                {
+                    "coordinates": [
+                        -22,
+                        20,
+                        -3
+                    ],
+                    "environment": 292,
+                    "exits": [
+                        {
+                            "exitId": 4140,
+                            "name": "southeast"
+                        },
+                        {
+                            "exitId": 4137,
+                            "name": "southwest"
+                        }
+                    ],
+                    "hash": "57e8933d466737e4f900fb35f10204e0",
+                    "id": 4139,
+                    "name": "Auf der Hauptstrasse von Zzerenzzen."
+                },
+                {
+                    "coordinates": [
+                        -20,
+                        18,
+                        -3
+                    ],
+                    "environment": 292,
+                    "exits": [
+                        {
+                            "exitId": 4139,
+                            "name": "northwest"
+                        },
+                        {
+                            "exitId": 4141,
+                            "name": "west"
+                        },
+                        {
+                            "exitId": 4142,
+                            "name": "southeast"
+                        }
+                    ],
+                    "hash": "5295177b11e0dc0be4e3dfcf2f2a8215",
+                    "id": 4140,
+                    "name": "Auf der Hauptstrasse von Zzerenzzen."
+                },
+                {
+                    "coordinates": [
+                        -22,
+                        18,
+                        -3
+                    ],
+                    "environment": 257,
+                    "exits": [
+                        {
+                            "exitId": 4140,
+                            "name": "east"
+                        }
+                    ],
+                    "hash": "a8bb04bb38b88002e02b2443464a392d",
+                    "id": 4141,
+                    "name": "Die Ruestungsmacherei von Zzerenzzen."
+                },
+                {
+                    "coordinates": [
+                        -20,
+                        16,
+                        -3
+                    ],
+                    "environment": 292,
+                    "exits": [
+                        {
+                            "exitId": 4149,
+                            "name": "south"
+                        },
+                        {
+                            "exitId": 4132,
+                            "name": "southwest"
+                        }
+                    ],
+                    "hash": "294b893ac1822042a474fdf719b91d4c",
+                    "id": 4148,
+                    "name": "In einer Sackgasse."
+                },
+                {
+                    "coordinates": [
+                        -20,
+                        14,
+                        -3
+                    ],
+                    "environment": 257,
+                    "exits": [
+                        {
+                            "exitId": 4148,
+                            "name": "north"
+                        }
+                    ],
+                    "hash": "5871c668a9ece2f85bbadb83f7108293",
+                    "id": 4149,
+                    "name": "Zur grossen Spinne.",
+                    "symbol": {
+                        "text": "🍖"
+                    }
+                },
+                {
+                    "coordinates": [
+                        -25,
+                        15,
+                        -3
+                    ],
+                    "environment": 292,
+                    "exits": [
+                        {
+                            "exitId": 4135,
+                            "name": "northwest"
+                        },
+                        {
+                            "exitId": 4151,
+                            "name": "east"
+                        }
+                    ],
+                    "hash": "aeec99b4068d5471e4c7448048666583",
+                    "id": 4150,
+                    "name": "Der Eingang zum Tempel der Dunkelelfen."
+                },
+                {
+                    "coordinates": [
+                        -24,
+                        15,
+                        -3
+                    ],
+                    "environment": 257,
+                    "exits": [
+                        {
+                            "exitId": 4150,
+                            "name": "west"
+                        }
+                    ],
+                    "hash": "b9f8823d30c001f5529b995d736b2b87",
+                    "id": 4151,
+                    "name": "In der Haupthalle im Tempel von Zzerenzzen.",
+                    "symbol": {
+                        "text": "🛐"
+                    }
+                }
+            ]
+        },
+        {
+            "id": 128,
+            "name": "Dunkelelfengilde",
+            "roomCount": 2,
+            "rooms": [
+                {
+                    "coordinates": [
+                        -18,
+                        16,
+                        -3
+                    ],
+                    "environment": 257,
+                    "exits": [
+                        {
+                            "exitId": 4140,
+                            "name": "northwest"
+                        },
+                        {
+                            "exitId": 4143,
+                            "name": "west"
+                        }
+                    ],
+                    "hash": "85063881e64ee4abb2701dc2002a5f31",
+                    "id": 4142,
+                    "name": "Eingangshalle der Dunkelelfengilde."
+                },
+                {
+                    "coordinates": [
+                        -20,
+                        16,
+                        -3
+                    ],
+                    "environment": 257,
+                    "exits": [
+                        {
+                            "exitId": 4142,
+                            "name": "east"
+                        }
+                    ],
+                    "hash": "4723095675f3b82795c3267a65c980e0",
+                    "id": 4143,
+                    "name": "Im Raum von Nenais'u.",
+                    "symbol": {
+                        "text": "📜"
+                    }
+                }
+            ]
+        }
+    ],
+    "customEnvColors": [
+        {
+            "color24RGB": [
+                128,
+                0,
+                0
+            ],
+            "id": 257
+        },
+        {
+            "color24RGB": [
+                0,
+                128,
+                0
+            ],
+            "id": 258
+        },
+        {
+            "color24RGB": [
+                128,
+                128,
+                0
+            ],
+            "id": 259
+        },
+        {
+            "color24RGB": [
+                0,
+                0,
+                128
+            ],
+            "id": 260
+        },
+        {
+            "color24RGB": [
+                128,
+                0,
+                128
+            ],
+            "id": 261
+        },
+        {
+            "color24RGB": [
+                0,
+                128,
+                128
+            ],
+            "id": 262
+        },
+        {
+            "color24RGB": [
+                192,
+                192,
+                192
+            ],
+            "id": 263
+        },
+        {
+            "color24RGB": [
+                0,
+                0,
+                0
+            ],
+            "id": 264
+        },
+        {
+            "color24RGB": [
+                255,
+                0,
+                0
+            ],
+            "id": 265
+        },
+        {
+            "color24RGB": [
+                0,
+                255,
+                0
+            ],
+            "id": 266
+        },
+        {
+            "color24RGB": [
+                255,
+                255,
+                0
+            ],
+            "id": 267
+        },
+        {
+            "color24RGB": [
+                0,
+                0,
+                255
+            ],
+            "id": 268
+        },
+        {
+            "color24RGB": [
+                255,
+                0,
+                255
+            ],
+            "id": 269
+        },
+        {
+            "color24RGB": [
+                0,
+                255,
+                255
+            ],
+            "id": 270
+        },
+        {
+            "color24RGB": [
+                255,
+                255,
+                255
+            ],
+            "id": 271
+        },
+        {
+            "color24RGB": [
+                128,
+                128,
+                128
+            ],
+            "id": 272
+        },
+        {
+            "color24RGB": [
+                132,
+                132,
+                255
+            ],
+            "id": 289
+        },
+        {
+            "color24RGB": [
+                132,
+                66,
+                0
+            ],
+            "id": 290
+        },
+        {
+            "color24RGB": [
+                255,
+                132,
+                66
+            ],
+            "id": 291
+        },
+        {
+            "color24RGB": [
+                64,
+                64,
+                64
+            ],
+            "id": 292
+        }
+    ],
+    "defaultAreaName": "Default Area",
+    "formatVersion": 1,
+    "labelCount": 0,
+    "mapSymbolFontDetails": "Bitstream Vera Sans Mono,12,-1,5,50,0,0,0,0,0",
+    "mapSymbolFontFudgeFactor": 1,
+    "onlyMapSymbolFontToBeUsed": false,
+    "playerRoomColors": [
+        {
+            "color24RGB": [
+                113,
+                75,
+                50
+            ]
+        },
+        {
+            "color24RGB": [
+                170,
+                170,
+                127
+            ]
+        }
+    ],
+    "playerRoomInnerDiameterPercentage": 70,
+    "playerRoomOuterDiameterPercentage": 120,
+    "playerRoomStyle": 3,
+    "playersRoomId": {
+        "MorgenGrauen": 1
+    },
+    "roomCount": 25
+}

@@ -1,0 +1,698 @@
+{
+    "anonymousAreaName": "Unnamed Area",
+    "areaCount": 4,
+    "areas": [
+        {
+            "id": -1,
+            "name": "Default Area",
+            "roomCount": 0,
+            "rooms": [
+            ]
+        },
+        {
+            "id": 1,
+            "name": "Welt",
+            "roomCount": 1,
+            "rooms": [
+                {
+                    "coordinates": [
+                        0,
+                        0,
+                        0
+                    ],
+                    "environment": -1,
+                    "exits": [
+                    ],
+                    "id": 1,
+                    "name": "Irgendwo im Nirgendwo"
+                }
+            ]
+        },
+        {
+            "id": 2,
+            "name": "Wald - Wonnewichte",
+            "roomCount": 1,
+            "rooms": [
+                {
+                    "coordinates": [
+                        0,
+                        0,
+                        0
+                    ],
+                    "environment": 258,
+                    "exits": [
+                    ],
+                    "hash": "592a9556a025775702a80903664ab955",
+                    "id": 2,
+                    "name": "Auf einem dunklen Platz im schattigen Wald."
+                }
+            ]
+        },
+        {
+            "id": 80,
+            "name": "Startgebiet",
+            "roomCount": 21,
+            "rooms": [
+                {
+                    "coordinates": [
+                        -13,
+                        18,
+                        0
+                    ],
+                    "environment": 292,
+                    "exits": [
+                        {
+                            "exitId": 2460,
+                            "name": "north"
+                        },
+                        {
+                            "exitId": 2465,
+                            "name": "east"
+                        }
+                    ],
+                    "hash": "0c19851906fb33f0eb2715d8d0f4cd60",
+                    "id": 2459,
+                    "name": "Orkhausener Stadttor."
+                },
+                {
+                    "coordinates": [
+                        -13,
+                        20,
+                        0
+                    ],
+                    "environment": 292,
+                    "exits": [
+                        {
+                            "exitId": 2461,
+                            "name": "north"
+                        },
+                        {
+                            "exitId": 2459,
+                            "name": "south"
+                        }
+                    ],
+                    "hash": "84f8b66f3be1a925ac0570fb1b4d9661",
+                    "id": 2460,
+                    "name": "Orkhausener Hauptstrasse."
+                },
+                {
+                    "coordinates": [
+                        -13,
+                        22,
+                        0
+                    ],
+                    "environment": 292,
+                    "exits": [
+                        {
+                            "exitId": 2462,
+                            "name": "north"
+                        },
+                        {
+                            "exitId": 2460,
+                            "name": "south"
+                        }
+                    ],
+                    "hash": "ab160ba858803ebc6e50ce15d78620ba",
+                    "id": 2461,
+                    "name": "Orkhausener Hauptstrasse."
+                },
+                {
+                    "coordinates": [
+                        -13,
+                        24,
+                        0
+                    ],
+                    "environment": 292,
+                    "exits": [
+                        {
+                            "exitId": 2463,
+                            "name": "north"
+                        },
+                        {
+                            "exitId": 2461,
+                            "name": "south"
+                        }
+                    ],
+                    "hash": "58c7d3e5797ab10810cfb2bcffc6e343",
+                    "id": 2462,
+                    "name": "Vor einem grossen Haus."
+                },
+                {
+                    "coordinates": [
+                        -13,
+                        26,
+                        0
+                    ],
+                    "environment": 257,
+                    "exits": [
+                        {
+                            "exitId": 2464,
+                            "name": "north"
+                        },
+                        {
+                            "exitId": 2462,
+                            "name": "south"
+                        }
+                    ],
+                    "hash": "a054efe21738ea6ba27bd3689f013490",
+                    "id": 2463,
+                    "name": "In der Ratshalle der Orks.",
+                    "symbol": {
+                        "text": "📜"
+                    }
+                },
+                {
+                    "coordinates": [
+                        -13,
+                        28,
+                        0
+                    ],
+                    "environment": 257,
+                    "exits": [
+                        {
+                            "exitId": 2463,
+                            "name": "south"
+                        }
+                    ],
+                    "hash": "fd403cbb702de21f9c3c11e625ba3fbf",
+                    "id": 2464,
+                    "name": "Zimmer der Ratshalle.",
+                    "symbol": {
+                        "text": "📜"
+                    }
+                },
+                {
+                    "coordinates": [
+                        -11,
+                        18,
+                        0
+                    ],
+                    "environment": 292,
+                    "exits": [
+                        {
+                            "exitId": 2466,
+                            "name": "east"
+                        },
+                        {
+                            "exitId": 2459,
+                            "name": "west"
+                        }
+                    ],
+                    "hash": "69a0fdce199fcf07df2433fbbbc84f9c",
+                    "id": 2465,
+                    "name": "Orkhausener Hauptstrasse."
+                },
+                {
+                    "coordinates": [
+                        -9,
+                        18,
+                        0
+                    ],
+                    "environment": 292,
+                    "exits": [
+                        {
+                            "exitId": 2512,
+                            "name": "north"
+                        },
+                        {
+                            "exitId": 2467,
+                            "name": "east"
+                        },
+                        {
+                            "exitId": 2465,
+                            "name": "west"
+                        }
+                    ],
+                    "hash": "7eb1169db3c5060d77f1da874069a5e2",
+                    "id": 2466,
+                    "name": "Orkhausener Hauptstrasse."
+                },
+                {
+                    "coordinates": [
+                        -5,
+                        18,
+                        0
+                    ],
+                    "environment": 292,
+                    "exits": [
+                        {
+                            "exitId": 2493,
+                            "name": "north"
+                        },
+                        {
+                            "exitId": 2466,
+                            "name": "west"
+                        }
+                    ],
+                    "hash": "a688dd9d249ec6a957873d0c3fb81c07",
+                    "id": 2467,
+                    "name": "Orkhausener Hauptstrasse."
+                },
+                {
+                    "coordinates": [
+                        -5,
+                        20,
+                        0
+                    ],
+                    "environment": 292,
+                    "exits": [
+                        {
+                            "exitId": 2494,
+                            "name": "north"
+                        },
+                        {
+                            "exitId": 2467,
+                            "name": "south"
+                        }
+                    ],
+                    "hash": "7a5a8ff9268773c94220811ef6df5c8c",
+                    "id": 2493,
+                    "name": "Orkallee."
+                },
+                {
+                    "coordinates": [
+                        -5,
+                        22,
+                        0
+                    ],
+                    "environment": 292,
+                    "exits": [
+                        {
+                            "exitId": 2495,
+                            "name": "north"
+                        },
+                        {
+                            "exitId": 2493,
+                            "name": "south"
+                        }
+                    ],
+                    "hash": "ddd1c73ca0e3b87492e0a4dc00d2fe45",
+                    "id": 2494,
+                    "name": "Orkallee."
+                },
+                {
+                    "coordinates": [
+                        -5,
+                        24,
+                        0
+                    ],
+                    "environment": 292,
+                    "exits": [
+                        {
+                            "exitId": 2496,
+                            "name": "north"
+                        },
+                        {
+                            "exitId": 2494,
+                            "name": "south"
+                        }
+                    ],
+                    "hash": "d91238a87a3eb39eca9382b3493bce99",
+                    "id": 2495,
+                    "name": "Orkallee."
+                },
+                {
+                    "coordinates": [
+                        -5,
+                        26,
+                        0
+                    ],
+                    "environment": 292,
+                    "exits": [
+                        {
+                            "exitId": 2497,
+                            "name": "north"
+                        },
+                        {
+                            "exitId": 2495,
+                            "name": "south"
+                        }
+                    ],
+                    "hash": "1b278ab9896dca846dce89c021686f03",
+                    "id": 2496,
+                    "name": "Orkhausener Marktplatz."
+                },
+                {
+                    "coordinates": [
+                        -5,
+                        28,
+                        0
+                    ],
+                    "environment": 292,
+                    "exits": [
+                        {
+                            "exitId": 2498,
+                            "name": "north"
+                        },
+                        {
+                            "exitId": 2496,
+                            "name": "south"
+                        }
+                    ],
+                    "hash": "bdfa1a1356ff638bba10277164f5e03c",
+                    "id": 2497,
+                    "name": "Orkhausener Marktplatz."
+                },
+                {
+                    "coordinates": [
+                        -5,
+                        30,
+                        0
+                    ],
+                    "environment": 292,
+                    "exits": [
+                        {
+                            "exitId": 2499,
+                            "name": "north"
+                        },
+                        {
+                            "exitId": 2497,
+                            "name": "south"
+                        }
+                    ],
+                    "hash": "74edb5cb8002c8e1a508b0ae975d3b1a",
+                    "id": 2498,
+                    "name": "Orkhausener Marktplatz."
+                },
+                {
+                    "coordinates": [
+                        -5,
+                        32,
+                        0
+                    ],
+                    "environment": 257,
+                    "exits": [
+                        {
+                            "exitId": 2498,
+                            "name": "south"
+                        }
+                    ],
+                    "hash": "b432d1ac3f4411b64a89c5e23c045c9f",
+                    "id": 2499,
+                    "name": "In der Orkpost.",
+                    "symbol": {
+                        "text": "📯"
+                    }
+                },
+                {
+                    "coordinates": [
+                        -9,
+                        20,
+                        0
+                    ],
+                    "environment": 292,
+                    "exits": [
+                        {
+                            "exitId": 2513,
+                            "name": "north"
+                        },
+                        {
+                            "exitId": 2466,
+                            "name": "south"
+                        }
+                    ],
+                    "hash": "3716efc23e33da291b0374d3b9a4a096",
+                    "id": 2512,
+                    "name": "Im Trollweg."
+                },
+                {
+                    "coordinates": [
+                        -9,
+                        22,
+                        0
+                    ],
+                    "environment": 292,
+                    "exits": [
+                        {
+                            "exitId": 2517,
+                            "name": "northeast"
+                        },
+                        {
+                            "exitId": 2514,
+                            "name": "west"
+                        },
+                        {
+                            "exitId": 2512,
+                            "name": "south"
+                        }
+                    ],
+                    "hash": "a7e3e834defe79c97798810d9c8c3468",
+                    "id": 2513,
+                    "name": "Auf dem Trollweg."
+                },
+                {
+                    "coordinates": [
+                        -11,
+                        22,
+                        0
+                    ],
+                    "environment": 292,
+                    "exits": [
+                        {
+                            "exitId": 2513,
+                            "name": "east"
+                        },
+                        {
+                            "exitId": 2515,
+                            "name": "south"
+                        }
+                    ],
+                    "hash": "f0afe9eb289e8cead43f0869162f6665",
+                    "id": 2514,
+                    "name": "Eine kleine Seitengasse."
+                },
+                {
+                    "coordinates": [
+                        -11,
+                        20,
+                        0
+                    ],
+                    "environment": 257,
+                    "exits": [
+                        {
+                            "exitId": 2514,
+                            "name": "north"
+                        }
+                    ],
+                    "hash": "8b8bce6ab84a0fd8d57f8840e5f61889",
+                    "id": 2515,
+                    "name": "Ork-Supplies.",
+                    "symbol": {
+                        "text": "💰"
+                    }
+                },
+                {
+                    "coordinates": [
+                        -7,
+                        24,
+                        0
+                    ],
+                    "environment": 257,
+                    "exits": [
+                        {
+                            "exitId": 2513,
+                            "name": "southwest"
+                        }
+                    ],
+                    "hash": "3d3dcd7af2aa663617e02e356d049ab7",
+                    "id": 2517,
+                    "name": "Der Trollhumpen.",
+                    "symbol": {
+                        "text": "🍖"
+                    }
+                }
+            ]
+        }
+    ],
+    "customEnvColors": [
+        {
+            "color24RGB": [
+                128,
+                0,
+                0
+            ],
+            "id": 257
+        },
+        {
+            "color24RGB": [
+                0,
+                128,
+                0
+            ],
+            "id": 258
+        },
+        {
+            "color24RGB": [
+                128,
+                128,
+                0
+            ],
+            "id": 259
+        },
+        {
+            "color24RGB": [
+                0,
+                0,
+                128
+            ],
+            "id": 260
+        },
+        {
+            "color24RGB": [
+                128,
+                0,
+                128
+            ],
+            "id": 261
+        },
+        {
+            "color24RGB": [
+                0,
+                128,
+                128
+            ],
+            "id": 262
+        },
+        {
+            "color24RGB": [
+                192,
+                192,
+                192
+            ],
+            "id": 263
+        },
+        {
+            "color24RGB": [
+                0,
+                0,
+                0
+            ],
+            "id": 264
+        },
+        {
+            "color24RGB": [
+                255,
+                0,
+                0
+            ],
+            "id": 265
+        },
+        {
+            "color24RGB": [
+                0,
+                255,
+                0
+            ],
+            "id": 266
+        },
+        {
+            "color24RGB": [
+                255,
+                255,
+                0
+            ],
+            "id": 267
+        },
+        {
+            "color24RGB": [
+                0,
+                0,
+                255
+            ],
+            "id": 268
+        },
+        {
+            "color24RGB": [
+                255,
+                0,
+                255
+            ],
+            "id": 269
+        },
+        {
+            "color24RGB": [
+                0,
+                255,
+                255
+            ],
+            "id": 270
+        },
+        {
+            "color24RGB": [
+                255,
+                255,
+                255
+            ],
+            "id": 271
+        },
+        {
+            "color24RGB": [
+                128,
+                128,
+                128
+            ],
+            "id": 272
+        },
+        {
+            "color24RGB": [
+                132,
+                132,
+                255
+            ],
+            "id": 289
+        },
+        {
+            "color24RGB": [
+                132,
+                66,
+                0
+            ],
+            "id": 290
+        },
+        {
+            "color24RGB": [
+                255,
+                132,
+                66
+            ],
+            "id": 291
+        },
+        {
+            "color24RGB": [
+                64,
+                64,
+                64
+            ],
+            "id": 292
+        }
+    ],
+    "defaultAreaName": "Default Area",
+    "formatVersion": 1,
+    "labelCount": 0,
+    "mapSymbolFontDetails": "Bitstream Vera Sans Mono,12,-1,5,50,0,0,0,0,0",
+    "mapSymbolFontFudgeFactor": 1,
+    "onlyMapSymbolFontToBeUsed": false,
+    "playerRoomColors": [
+        {
+            "color24RGB": [
+                113,
+                75,
+                50
+            ]
+        },
+        {
+            "color24RGB": [
+                170,
+                170,
+                127
+            ]
+        }
+    ],
+    "playerRoomInnerDiameterPercentage": 70,
+    "playerRoomOuterDiameterPercentage": 120,
+    "playerRoomStyle": 3,
+    "playersRoomId": {
+        "MorgenGrauen": 1
+    },
+    "roomCount": 23
+}

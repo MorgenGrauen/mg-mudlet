@@ -1,0 +1,623 @@
+{
+    "anonymousAreaName": "Unnamed Area",
+    "areaCount": 4,
+    "areas": [
+        {
+            "id": -1,
+            "name": "Default Area",
+            "roomCount": 0,
+            "rooms": [
+            ]
+        },
+        {
+            "id": 1,
+            "name": "Welt",
+            "roomCount": 1,
+            "rooms": [
+                {
+                    "coordinates": [
+                        0,
+                        0,
+                        0
+                    ],
+                    "environment": -1,
+                    "exits": [
+                    ],
+                    "id": 1,
+                    "name": "Irgendwo im Nirgendwo"
+                }
+            ]
+        },
+        {
+            "id": 2,
+            "name": "Wald - Wonnewichte",
+            "roomCount": 1,
+            "rooms": [
+                {
+                    "coordinates": [
+                        0,
+                        0,
+                        0
+                    ],
+                    "environment": 258,
+                    "exits": [
+                    ],
+                    "hash": "592a9556a025775702a80903664ab955",
+                    "id": 2,
+                    "name": "Auf einem dunklen Platz im schattigen Wald."
+                }
+            ]
+        },
+        {
+            "id": 30,
+            "name": "Startgebiet",
+            "roomCount": 17,
+            "rooms": [
+                {
+                    "coordinates": [
+                        33,
+                        0,
+                        0
+                    ],
+                    "environment": -1,
+                    "exits": [
+                        {
+                            "exitId": 349,
+                            "name": "west"
+                        }
+                    ],
+                    "hash": "7ce662479c03f11429396d9d5eafe184",
+                    "id": 10,
+                    "name": "Haus des Buergermeisters."
+                },
+                {
+                    "coordinates": [
+                        35,
+                        2,
+                        0
+                    ],
+                    "environment": 292,
+                    "exits": [
+                        {
+                            "exitId": 348,
+                            "name": "west"
+                        }
+                    ],
+                    "hash": "124c4d3ffbb5ebbafc741605dcf907cd",
+                    "id": 347,
+                    "name": "Pfad im Dorf."
+                },
+                {
+                    "coordinates": [
+                        33,
+                        2,
+                        0
+                    ],
+                    "environment": 292,
+                    "exits": [
+                        {
+                            "exitId": 1449,
+                            "name": "northeast"
+                        },
+                        {
+                            "exitId": 347,
+                            "name": "east"
+                        },
+                        {
+                            "exitId": 349,
+                            "name": "southwest"
+                        }
+                    ],
+                    "hash": "84ecd686809932910acc8cb5b8f03f64",
+                    "id": 348,
+                    "name": "Im Dorf."
+                },
+                {
+                    "coordinates": [
+                        31,
+                        0,
+                        0
+                    ],
+                    "environment": 292,
+                    "exits": [
+                        {
+                            "exitId": 348,
+                            "name": "northeast"
+                        },
+                        {
+                            "exitId": 10,
+                            "name": "east"
+                        },
+                        {
+                            "exitId": 355,
+                            "name": "west"
+                        },
+                        {
+                            "exitId": 351,
+                            "name": "south"
+                        }
+                    ],
+                    "hash": "53ddb36cc865ba1fbf7374b2a223b890",
+                    "id": 349,
+                    "name": "Auf dem Marktplatz."
+                },
+                {
+                    "coordinates": [
+                        31,
+                        -2,
+                        0
+                    ],
+                    "environment": 292,
+                    "exits": [
+                        {
+                            "exitId": 349,
+                            "name": "north"
+                        },
+                        {
+                            "exitId": 353,
+                            "name": "southwest"
+                        }
+                    ],
+                    "hash": "3ac952f5f4d5f44e746612c1b28683c6",
+                    "id": 351,
+                    "name": "Im Dorf."
+                },
+                {
+                    "coordinates": [
+                        29,
+                        -4,
+                        0
+                    ],
+                    "environment": 257,
+                    "exits": [
+                        {
+                            "exitId": 351,
+                            "name": "northeast"
+                        }
+                    ],
+                    "hash": "9c0b3fef6b0c8588d694b1c1fca4b09c",
+                    "id": 353,
+                    "name": "Postamt.",
+                    "symbol": {
+                        "text": "📯"
+                    }
+                },
+                {
+                    "coordinates": [
+                        29,
+                        0,
+                        0
+                    ],
+                    "environment": 292,
+                    "exits": [
+                        {
+                            "exitId": 356,
+                            "name": "northeast"
+                        },
+                        {
+                            "exitId": 349,
+                            "name": "east"
+                        }
+                    ],
+                    "hash": "6123e681530e444d99f6c73658b08c1d",
+                    "id": 355,
+                    "name": "Auf dem Marktplatz."
+                },
+                {
+                    "coordinates": [
+                        31,
+                        2,
+                        0
+                    ],
+                    "environment": 257,
+                    "exits": [
+                        {
+                            "exitId": 355,
+                            "name": "southwest"
+                        }
+                    ],
+                    "hash": "4148669c4950bcc5d55ec5acdd2318e0",
+                    "id": 356,
+                    "name": "Laden.",
+                    "symbol": {
+                        "text": "💰"
+                    }
+                },
+                {
+                    "coordinates": [
+                        35,
+                        4,
+                        0
+                    ],
+                    "environment": 292,
+                    "exits": [
+                        {
+                            "exitId": 3130,
+                            "name": "northwest"
+                        },
+                        {
+                            "exitId": 1450,
+                            "name": "west"
+                        },
+                        {
+                            "exitId": 348,
+                            "name": "southwest"
+                        }
+                    ],
+                    "hash": "04608fdbb3fab0523e0794449a4b0dcd",
+                    "id": 1449,
+                    "name": "Pfad im Dorf."
+                },
+                {
+                    "coordinates": [
+                        33,
+                        4,
+                        0
+                    ],
+                    "environment": 257,
+                    "exits": [
+                        {
+                            "exitId": 1449,
+                            "name": "east"
+                        }
+                    ],
+                    "hash": "fff7cc64861f244b7c942be760ac4db2",
+                    "id": 1450,
+                    "name": "Zum pfeifenden Eber.",
+                    "symbol": {
+                        "text": "🍖"
+                    }
+                },
+                {
+                    "coordinates": [
+                        33,
+                        6,
+                        0
+                    ],
+                    "environment": 292,
+                    "exits": [
+                        {
+                            "exitId": 3131,
+                            "name": "north"
+                        },
+                        {
+                            "exitId": 1449,
+                            "name": "southeast"
+                        }
+                    ],
+                    "hash": "f8b84ffa7861c32d5b58d87e462a30b4",
+                    "id": 3130,
+                    "name": "Auf einem Pfad."
+                },
+                {
+                    "coordinates": [
+                        33,
+                        8,
+                        0
+                    ],
+                    "environment": 258,
+                    "exits": [
+                        {
+                            "exitId": 3132,
+                            "name": "north"
+                        },
+                        {
+                            "exitId": 3130,
+                            "name": "south"
+                        }
+                    ],
+                    "hash": "606cec84eb0a3cfc3b122a66c93d01bd",
+                    "id": 3131,
+                    "name": "Vor dem Dorf."
+                },
+                {
+                    "coordinates": [
+                        33,
+                        10,
+                        0
+                    ],
+                    "environment": 258,
+                    "exits": [
+                        {
+                            "exitId": 3135,
+                            "name": "northeast"
+                        },
+                        {
+                            "exitId": 3133,
+                            "name": "northwest"
+                        },
+                        {
+                            "exitId": 3131,
+                            "name": "south"
+                        }
+                    ],
+                    "hash": "551b0197a476aac15ebfea93bc900ae8",
+                    "id": 3132,
+                    "name": "Auf einem Waldpfad."
+                },
+                {
+                    "coordinates": [
+                        31,
+                        12,
+                        0
+                    ],
+                    "environment": 258,
+                    "exits": [
+                        {
+                            "exitId": 3134,
+                            "name": "northeast"
+                        },
+                        {
+                            "exitId": 3132,
+                            "name": "southeast"
+                        }
+                    ],
+                    "hash": "6700d277a6a8abe972e4641c0180325e",
+                    "id": 3133,
+                    "name": "Auf einem Waldpfad."
+                },
+                {
+                    "coordinates": [
+                        33,
+                        14,
+                        0
+                    ],
+                    "environment": 258,
+                    "exits": [
+                        {
+                            "exitId": 3136,
+                            "name": "north"
+                        },
+                        {
+                            "exitId": 3135,
+                            "name": "southeast"
+                        },
+                        {
+                            "exitId": 3133,
+                            "name": "southwest"
+                        }
+                    ],
+                    "hash": "0bd99aea970967d8eb7439e2d5908adf",
+                    "id": 3134,
+                    "name": "Eine Kreuzung im Wald."
+                },
+                {
+                    "coordinates": [
+                        35,
+                        12,
+                        0
+                    ],
+                    "environment": 258,
+                    "exits": [
+                        {
+                            "exitId": 3134,
+                            "name": "northwest"
+                        },
+                        {
+                            "exitId": 3132,
+                            "name": "southwest"
+                        }
+                    ],
+                    "hash": "6465ad0c6becba401865ab9539c7fb9f",
+                    "id": 3135,
+                    "name": "Auf einem Waldpfad."
+                },
+                {
+                    "coordinates": [
+                        33,
+                        16,
+                        0
+                    ],
+                    "environment": 257,
+                    "exits": [
+                        {
+                            "exitId": 3134,
+                            "name": "south"
+                        },
+                        {
+                            "exitId": 2,
+                            "name": "steige auf biene"
+                        }
+                    ],
+                    "hash": "267212cce772b99a1c875b48afedc5f4",
+                    "id": 3136,
+                    "name": "Auf einer Lichtung.",
+                    "symbol": {
+                        "text": "🛐"
+                    }
+                }
+            ]
+        }
+    ],
+    "customEnvColors": [
+        {
+            "color24RGB": [
+                128,
+                0,
+                0
+            ],
+            "id": 257
+        },
+        {
+            "color24RGB": [
+                0,
+                128,
+                0
+            ],
+            "id": 258
+        },
+        {
+            "color24RGB": [
+                128,
+                128,
+                0
+            ],
+            "id": 259
+        },
+        {
+            "color24RGB": [
+                0,
+                0,
+                128
+            ],
+            "id": 260
+        },
+        {
+            "color24RGB": [
+                128,
+                0,
+                128
+            ],
+            "id": 261
+        },
+        {
+            "color24RGB": [
+                0,
+                128,
+                128
+            ],
+            "id": 262
+        },
+        {
+            "color24RGB": [
+                192,
+                192,
+                192
+            ],
+            "id": 263
+        },
+        {
+            "color24RGB": [
+                0,
+                0,
+                0
+            ],
+            "id": 264
+        },
+        {
+            "color24RGB": [
+                255,
+                0,
+                0
+            ],
+            "id": 265
+        },
+        {
+            "color24RGB": [
+                0,
+                255,
+                0
+            ],
+            "id": 266
+        },
+        {
+            "color24RGB": [
+                255,
+                255,
+                0
+            ],
+            "id": 267
+        },
+        {
+            "color24RGB": [
+                0,
+                0,
+                255
+            ],
+            "id": 268
+        },
+        {
+            "color24RGB": [
+                255,
+                0,
+                255
+            ],
+            "id": 269
+        },
+        {
+            "color24RGB": [
+                0,
+                255,
+                255
+            ],
+            "id": 270
+        },
+        {
+            "color24RGB": [
+                255,
+                255,
+                255
+            ],
+            "id": 271
+        },
+        {
+            "color24RGB": [
+                128,
+                128,
+                128
+            ],
+            "id": 272
+        },
+        {
+            "color24RGB": [
+                132,
+                132,
+                255
+            ],
+            "id": 289
+        },
+        {
+            "color24RGB": [
+                132,
+                66,
+                0
+            ],
+            "id": 290
+        },
+        {
+            "color24RGB": [
+                255,
+                132,
+                66
+            ],
+            "id": 291
+        },
+        {
+            "color24RGB": [
+                64,
+                64,
+                64
+            ],
+            "id": 292
+        }
+    ],
+    "defaultAreaName": "Default Area",
+    "formatVersion": 1,
+    "labelCount": 0,
+    "mapSymbolFontDetails": "Bitstream Vera Sans Mono,12,-1,5,50,0,0,0,0,0",
+    "mapSymbolFontFudgeFactor": 1,
+    "onlyMapSymbolFontToBeUsed": false,
+    "playerRoomColors": [
+        {
+            "color24RGB": [
+                113,
+                75,
+                50
+            ]
+        },
+        {
+            "color24RGB": [
+                170,
+                170,
+                127
+            ]
+        }
+    ],
+    "playerRoomInnerDiameterPercentage": 70,
+    "playerRoomOuterDiameterPercentage": 120,
+    "playerRoomStyle": 3,
+    "playersRoomId": {
+        "MorgenGrauen": 1
+    },
+    "roomCount": 25
+}

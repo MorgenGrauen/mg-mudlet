@@ -1,0 +1,779 @@
+{
+    "anonymousAreaName": "Unnamed Area",
+    "areaCount": 4,
+    "areas": [
+        {
+            "id": -1,
+            "name": "Default Area",
+            "roomCount": 0,
+            "rooms": [
+            ]
+        },
+        {
+            "id": 1,
+            "name": "Welt",
+            "roomCount": 1,
+            "rooms": [
+                {
+                    "coordinates": [
+                        0,
+                        0,
+                        0
+                    ],
+                    "environment": -1,
+                    "exits": [
+                    ],
+                    "id": 1,
+                    "name": "Irgendwo im Nirgendwo"
+                }
+            ]
+        },
+        {
+            "id": 2,
+            "name": "Wald - Wonnewichte",
+            "roomCount": 1,
+            "rooms": [
+                {
+                    "coordinates": [
+                        0,
+                        0,
+                        0
+                    ],
+                    "environment": 258,
+                    "exits": [
+                    ],
+                    "hash": "592a9556a025775702a80903664ab955",
+                    "id": 2,
+                    "name": "Auf einem dunklen Platz im schattigen Wald."
+                }
+            ]
+        },
+        {
+            "id": 3,
+            "name": "Startgebiet",
+            "roomCount": 24,
+            "rooms": [
+                {
+                    "coordinates": [
+                        -4,
+                        8,
+                        0
+                    ],
+                    "environment": 292,
+                    "exits": [
+                        {
+                            "exitId": 4,
+                            "name": "east"
+                        },
+                        {
+                            "exitId": 181,
+                            "name": "west"
+                        }
+                    ],
+                    "hash": "a5b143c13856abea6d9d19ef4fbe8db2",
+                    "id": 3,
+                    "name": "Kriegerweg."
+                },
+                {
+                    "coordinates": [
+                        -2,
+                        8,
+                        0
+                    ],
+                    "environment": 292,
+                    "exits": [
+                        {
+                            "exitId": 5,
+                            "name": "east"
+                        },
+                        {
+                            "exitId": 3,
+                            "name": "west"
+                        }
+                    ],
+                    "hash": "26d419cd35ee6968e4128c7463f19b79",
+                    "id": 4,
+                    "name": "Kriegerweg."
+                },
+                {
+                    "coordinates": [
+                        0,
+                        8,
+                        0
+                    ],
+                    "environment": 292,
+                    "exits": [
+                        {
+                            "exitId": 4,
+                            "name": "west"
+                        },
+                        {
+                            "exitId": 6,
+                            "name": "south"
+                        }
+                    ],
+                    "hash": "ca8deab3d313d021a14704aa5a552110",
+                    "id": 5,
+                    "name": "Brunnenstrasse."
+                },
+                {
+                    "coordinates": [
+                        0,
+                        6,
+                        0
+                    ],
+                    "environment": 292,
+                    "exits": [
+                        {
+                            "exitId": 5,
+                            "name": "north"
+                        },
+                        {
+                            "exitId": 7,
+                            "name": "south"
+                        }
+                    ],
+                    "hash": "a792a2f0e23227895c31dd05af7d3260",
+                    "id": 6,
+                    "name": "Brunnenstrasse."
+                },
+                {
+                    "coordinates": [
+                        0,
+                        4,
+                        0
+                    ],
+                    "environment": 292,
+                    "exits": [
+                        {
+                            "exitId": 6,
+                            "name": "north"
+                        },
+                        {
+                            "exitId": 159,
+                            "name": "south"
+                        }
+                    ],
+                    "hash": "b08ee2f5dbfb7a4da86ce08297679ea9",
+                    "id": 7,
+                    "name": "Brunnenstrasse."
+                },
+                {
+                    "coordinates": [
+                        6,
+                        2,
+                        0
+                    ],
+                    "environment": 268,
+                    "exits": [
+                        {
+                            "exitId": 157,
+                            "name": "west"
+                        }
+                    ],
+                    "hash": "b4c58165fc7bb38865c0f3f96db82514",
+                    "id": 156,
+                    "name": "Hafen von Port Vain.",
+                    "symbol": {
+                        "text": "⚓"
+                    }
+                },
+                {
+                    "coordinates": [
+                        4,
+                        2,
+                        0
+                    ],
+                    "environment": 292,
+                    "exits": [
+                        {
+                            "exitId": 156,
+                            "name": "east"
+                        },
+                        {
+                            "exitId": 158,
+                            "name": "west"
+                        }
+                    ],
+                    "hash": "6ed9e2c84f42bb5dd09cb4179e1400df",
+                    "id": 157,
+                    "name": "Hafenstrasse."
+                },
+                {
+                    "coordinates": [
+                        2,
+                        2,
+                        0
+                    ],
+                    "environment": 292,
+                    "exits": [
+                        {
+                            "exitId": 157,
+                            "name": "east"
+                        },
+                        {
+                            "exitId": 159,
+                            "name": "west"
+                        }
+                    ],
+                    "hash": "d12a856dc832b39f97ece5e44bc9e8fd",
+                    "id": 158,
+                    "name": "Hafenstrasse."
+                },
+                {
+                    "coordinates": [
+                        0,
+                        2,
+                        0
+                    ],
+                    "environment": 292,
+                    "exits": [
+                        {
+                            "exitId": 7,
+                            "name": "north"
+                        },
+                        {
+                            "exitId": 158,
+                            "name": "east"
+                        },
+                        {
+                            "exitId": 160,
+                            "name": "west"
+                        },
+                        {
+                            "exitId": 192,
+                            "name": "south"
+                        }
+                    ],
+                    "hash": "84785a5a891638d302972fa590e9edcb",
+                    "id": 159,
+                    "name": "Hafenstrasse."
+                },
+                {
+                    "coordinates": [
+                        -2,
+                        2,
+                        0
+                    ],
+                    "environment": 292,
+                    "exits": [
+                        {
+                            "exitId": 159,
+                            "name": "east"
+                        },
+                        {
+                            "exitId": 161,
+                            "name": "west"
+                        },
+                        {
+                            "exitId": 191,
+                            "name": "south"
+                        }
+                    ],
+                    "hash": "8f2cbcbda3c24a7a6208c3856e9260a6",
+                    "id": 160,
+                    "name": "Hafenstrasse."
+                },
+                {
+                    "coordinates": [
+                        -4,
+                        2,
+                        0
+                    ],
+                    "environment": 292,
+                    "exits": [
+                        {
+                            "exitId": 189,
+                            "name": "north"
+                        },
+                        {
+                            "exitId": 160,
+                            "name": "east"
+                        },
+                        {
+                            "exitId": 162,
+                            "name": "west"
+                        }
+                    ],
+                    "hash": "929fe1a14b5a7486a2e00b02ad3fcac0",
+                    "id": 161,
+                    "name": "Hafenstrasse."
+                },
+                {
+                    "coordinates": [
+                        -6,
+                        2,
+                        0
+                    ],
+                    "environment": 292,
+                    "exits": [
+                        {
+                            "exitId": 188,
+                            "name": "north"
+                        },
+                        {
+                            "exitId": 161,
+                            "name": "east"
+                        },
+                        {
+                            "exitId": 163,
+                            "name": "west"
+                        }
+                    ],
+                    "hash": "3618cc3c350e7d89e4cf181ad0f0f604",
+                    "id": 162,
+                    "name": "Port Vainer Marktplatz."
+                },
+                {
+                    "coordinates": [
+                        -8,
+                        2,
+                        0
+                    ],
+                    "environment": 292,
+                    "exits": [
+                        {
+                            "exitId": 187,
+                            "name": "north"
+                        },
+                        {
+                            "exitId": 162,
+                            "name": "east"
+                        },
+                        {
+                            "exitId": 164,
+                            "name": "west"
+                        }
+                    ],
+                    "hash": "eea9ccb6c8663bf330f8c644580e5eff",
+                    "id": 163,
+                    "name": "Port Vainer Landstrasse."
+                },
+                {
+                    "coordinates": [
+                        -10,
+                        2,
+                        0
+                    ],
+                    "environment": 292,
+                    "exits": [
+                        {
+                            "exitId": 163,
+                            "name": "east"
+                        }
+                    ],
+                    "hash": "7ccced1f8b62fabb7b1494a6d9fd164d",
+                    "id": 164,
+                    "name": "Am Port Vainer Stadttor."
+                },
+                {
+                    "coordinates": [
+                        -6,
+                        8,
+                        0
+                    ],
+                    "environment": 292,
+                    "exits": [
+                        {
+                            "exitId": 182,
+                            "name": "north"
+                        },
+                        {
+                            "exitId": 3,
+                            "name": "east"
+                        },
+                        {
+                            "exitId": 184,
+                            "name": "west"
+                        },
+                        {
+                            "exitId": 183,
+                            "name": "south"
+                        }
+                    ],
+                    "hash": "a4104eb9439016a542da564f786ad00b",
+                    "id": 181,
+                    "name": "Kriegerweg."
+                },
+                {
+                    "coordinates": [
+                        -6,
+                        10,
+                        0
+                    ],
+                    "environment": 257,
+                    "exits": [
+                        {
+                            "exitId": 181,
+                            "name": "south"
+                        }
+                    ],
+                    "hash": "e36ec3a2010c59fd80d2c69987c4928a",
+                    "id": 182,
+                    "name": "Laden.",
+                    "symbol": {
+                        "text": "💰"
+                    }
+                },
+                {
+                    "coordinates": [
+                        -6,
+                        6,
+                        0
+                    ],
+                    "environment": 257,
+                    "exits": [
+                        {
+                            "exitId": 181,
+                            "name": "north"
+                        }
+                    ],
+                    "hash": "92c4cf25a147d1e2fc2c3b55eb669a97",
+                    "id": 183,
+                    "name": "Laden.",
+                    "symbol": {
+                        "text": "💰"
+                    }
+                },
+                {
+                    "coordinates": [
+                        -8,
+                        8,
+                        0
+                    ],
+                    "environment": 292,
+                    "exits": [
+                        {
+                            "exitId": 181,
+                            "name": "east"
+                        },
+                        {
+                            "exitId": 186,
+                            "name": "south"
+                        }
+                    ],
+                    "hash": "4b2f3238e2eb1699411cdcaa2c30744a",
+                    "id": 184,
+                    "name": "Bergstrasse."
+                },
+                {
+                    "coordinates": [
+                        -8,
+                        6,
+                        0
+                    ],
+                    "environment": 292,
+                    "exits": [
+                        {
+                            "exitId": 184,
+                            "name": "north"
+                        },
+                        {
+                            "exitId": 187,
+                            "name": "south"
+                        }
+                    ],
+                    "hash": "0d78e24cd9b276a9d9f36d70a8606ed6",
+                    "id": 186,
+                    "name": "Bergstrasse."
+                },
+                {
+                    "coordinates": [
+                        -8,
+                        4,
+                        0
+                    ],
+                    "environment": 292,
+                    "exits": [
+                        {
+                            "exitId": 186,
+                            "name": "north"
+                        },
+                        {
+                            "exitId": 163,
+                            "name": "south"
+                        }
+                    ],
+                    "hash": "b60f6b796a8b3e108894bf18738cb6ba",
+                    "id": 187,
+                    "name": "Bergstrasse."
+                },
+                {
+                    "coordinates": [
+                        -6,
+                        4,
+                        0
+                    ],
+                    "environment": 257,
+                    "exits": [
+                        {
+                            "exitId": 162,
+                            "name": "south"
+                        }
+                    ],
+                    "hash": "17c293ab6875fcb64c96d1ec6c3aa4b3",
+                    "id": 188,
+                    "name": "Hauptpostamt.",
+                    "symbol": {
+                        "text": "📯"
+                    }
+                },
+                {
+                    "coordinates": [
+                        -4,
+                        4,
+                        0
+                    ],
+                    "environment": 257,
+                    "exits": [
+                        {
+                            "exitId": 161,
+                            "name": "south"
+                        }
+                    ],
+                    "hash": "dfcbd7a56468a3d8a19b5fc2d334cf45",
+                    "id": 189,
+                    "name": "Kapelle.",
+                    "symbol": {
+                        "text": "🛐"
+                    }
+                },
+                {
+                    "coordinates": [
+                        -2,
+                        0,
+                        0
+                    ],
+                    "environment": 257,
+                    "exits": [
+                        {
+                            "exitId": 160,
+                            "name": "north"
+                        },
+                        {
+                            "exitId": 2,
+                            "name": "steige auf biene"
+                        }
+                    ],
+                    "hash": "d6f8ff49f5b328498ca1083ce8e001cb",
+                    "id": 191,
+                    "name": "Die beruehmte Abenteurergilde.",
+                    "symbol": {
+                        "text": "📜"
+                    }
+                },
+                {
+                    "coordinates": [
+                        0,
+                        0,
+                        0
+                    ],
+                    "environment": 257,
+                    "exits": [
+                        {
+                            "exitId": 159,
+                            "name": "north"
+                        }
+                    ],
+                    "hash": "7accbd2278d6dac90bbc0323f7089a22",
+                    "id": 192,
+                    "name": "Franks Abenteurer-Kneipe.",
+                    "symbol": {
+                        "text": "🍖"
+                    }
+                }
+            ]
+        }
+    ],
+    "customEnvColors": [
+        {
+            "color24RGB": [
+                128,
+                0,
+                0
+            ],
+            "id": 257
+        },
+        {
+            "color24RGB": [
+                0,
+                128,
+                0
+            ],
+            "id": 258
+        },
+        {
+            "color24RGB": [
+                128,
+                128,
+                0
+            ],
+            "id": 259
+        },
+        {
+            "color24RGB": [
+                0,
+                0,
+                128
+            ],
+            "id": 260
+        },
+        {
+            "color24RGB": [
+                128,
+                0,
+                128
+            ],
+            "id": 261
+        },
+        {
+            "color24RGB": [
+                0,
+                128,
+                128
+            ],
+            "id": 262
+        },
+        {
+            "color24RGB": [
+                192,
+                192,
+                192
+            ],
+            "id": 263
+        },
+        {
+            "color24RGB": [
+                0,
+                0,
+                0
+            ],
+            "id": 264
+        },
+        {
+            "color24RGB": [
+                255,
+                0,
+                0
+            ],
+            "id": 265
+        },
+        {
+            "color24RGB": [
+                0,
+                255,
+                0
+            ],
+            "id": 266
+        },
+        {
+            "color24RGB": [
+                255,
+                255,
+                0
+            ],
+            "id": 267
+        },
+        {
+            "color24RGB": [
+                0,
+                0,
+                255
+            ],
+            "id": 268
+        },
+        {
+            "color24RGB": [
+                255,
+                0,
+                255
+            ],
+            "id": 269
+        },
+        {
+            "color24RGB": [
+                0,
+                255,
+                255
+            ],
+            "id": 270
+        },
+        {
+            "color24RGB": [
+                255,
+                255,
+                255
+            ],
+            "id": 271
+        },
+        {
+            "color24RGB": [
+                128,
+                128,
+                128
+            ],
+            "id": 272
+        },
+        {
+            "color24RGB": [
+                132,
+                132,
+                255
+            ],
+            "id": 289
+        },
+        {
+            "color24RGB": [
+                132,
+                66,
+                0
+            ],
+            "id": 290
+        },
+        {
+            "color24RGB": [
+                255,
+                132,
+                66
+            ],
+            "id": 291
+        },
+        {
+            "color24RGB": [
+                64,
+                64,
+                64
+            ],
+            "id": 292
+        }
+    ],
+    "defaultAreaName": "Default Area",
+    "formatVersion": 1,
+    "labelCount": 0,
+    "mapSymbolFontDetails": "Bitstream Vera Sans Mono,12,-1,5,50,0,0,0,0,0",
+    "mapSymbolFontFudgeFactor": 1,
+    "onlyMapSymbolFontToBeUsed": false,
+    "playerRoomColors": [
+        {
+            "color24RGB": [
+                113,
+                75,
+                50
+            ]
+        },
+        {
+            "color24RGB": [
+                170,
+                170,
+                127
+            ]
+        }
+    ],
+    "playerRoomInnerDiameterPercentage": 70,
+    "playerRoomOuterDiameterPercentage": 120,
+    "playerRoomStyle": 3,
+    "playersRoomId": {
+        "MorgenGrauen": 1
+    },
+    "roomCount": 25
+}
