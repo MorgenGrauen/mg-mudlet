@@ -78,7 +78,7 @@ end
 -- @param ebene Auf welcher Ebene wird geschrieben? Bspw. Tod
 -- @return farbigerText Derselbe Text, nur in Farbe!
 function liefereFarbigeEbene(text, spieler, ebene)
-  local pattern = f"%[{ebene}:{spieler}"
+  local pattern = f"%[{ebene:patternEscape()}:{spieler:patternEscape()}"
   local colored_text = f"[{color_text_for_hecho(ebene)}:{color_text_for_hecho(spieler)}"
   return text:gsub(pattern, colored_text)
 end
