@@ -8,7 +8,7 @@ function initCharGUI()
       -- anscheinend noch nicht eingeloggt, dann können wir noch nix anzeigen!
       registerAnonymousEventHandler("gmcp.MG.char", function()
           tempTimer(1, initCharGUI)
-      end)
+      end, true)
       return
   end
 
