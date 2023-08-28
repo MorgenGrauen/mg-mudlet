@@ -11,6 +11,13 @@ function ladeStartgebiet()
         return
     end
 
+    -- FIXME: wegen initGMCP kommt gleich noch GMCP.MG.room zurück und wir wollen keinen weiteren Raum erstellen!
+    local mode = mapper.mode
+    if mode ~= "fix" then
+        setMapperMode("fix")
+        tempTimer(1, f"setMapperMode('{mode}')")
+    end
+
     -- Bereits Karte vorhanden?
     if not istKarteLeer() then
         echoM("Es war schon eine Karte vorhanden. OK.")
@@ -76,13 +83,6 @@ function ladeStartgebiet()
         mapper.currentHash = "?"
         mapper.currentArea = "Welt"
         centerview(1)
-    end
-
-    -- FIXME: wegen initGMCP kommt gleich noch GMCP.MG.room zurück und wir wollen keinen weiteren Raum erstellen!
-    local mode = mapper.mode
-    if mode ~= "fix" then
-        setMapperMode("fix")
-        tempTimer(1, f"setMapperMode('{mode}')")
     end
 
     tempTimer(0, "setMapZoom(5)")
