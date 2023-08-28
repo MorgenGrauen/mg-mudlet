@@ -11,13 +11,23 @@ function ladeStartgebiet()
         return
     end
 
-    -- Ggf. Backup vorab?
+    -- Bereits Karte vorhanden?
     if not istKarteLeer() then
-        echoM("Es war bereits eine Karte vorhanden. Speichere Backup, bevor sie überschrieben wird...")
+        echoM("Es war schon eine Karte vorhanden. OK.")
+        local roomID = getPlayerRoom()
+        mapper.currentRoom = roomID
+        mapper.currentHash = getRoomHashByID(roomID)
+        mapper.currentArea = getRoomArea(roomID)
+        return
+    end
+
+    -- Derzeit kein Backup gewünscht
+    if false then
+        echoM("Speichere Backup, bevor die Karte überschrieben wird...")
         local datetimestamp = getTime(true, "yyyy-MM-dd_hh-mm-ss")
         local success = saveMap(f"{getMudletHomeDir()}/map/Backup_{datetimestamp}.dat")
         if not success then
-            echoM("Backup fehlgeschlagen! Breche ab. :(")
+            echoM("Backup fehlgeschlagen! Breche ab. :(")
             return
         end
         echoM("Backup erfolgreich!")
