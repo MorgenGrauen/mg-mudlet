@@ -36,6 +36,7 @@ function initChat()
             buttonFontSize = 8,
             buttonsize = 16,
             titleText = "Kommunikation",
+            titleFormat = "c",
             titleTxtColor = "SaddleBrown",
             attached = "right",
     })  -- Position unterhalb Mapperbox!

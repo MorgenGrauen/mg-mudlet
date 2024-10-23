@@ -26,6 +26,7 @@ function initMapperbox()
         buttonFontSize = 8,
         buttonsize = 16,
         titleText = "Karte",
+        titleFormat = "c",
         titleTxtColor = "SaddleBrown",
         attached = "right",
         }
