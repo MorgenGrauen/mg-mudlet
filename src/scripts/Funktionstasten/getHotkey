@@ -1,0 +1,8 @@
+function getHotkey(name)
+  Hotkeys = Hotkeys or {}
+  if Hotkeys[name] then
+    echo(f"Funktionstaste '{name}' ist derzeit belegt mit: {Hotkeys[name]}.\n")
+  else
+    echo(f"Funktionstaste '{name}' ist noch nicht belegt. Nutze dazu ALT+{name}.\n")  
+  end
+end
