@@ -1,62 +1,14 @@
 [
-  {
-    "name": "F1", 
-    "script": "runHotkey('F1')", 
-    "keys": "F1"
-  },
-  {
-    "name": "F2", 
-    "script": "runHotkey('F2')", 
-    "keys": "F2"
-  },
-  {
-    "name": "F3", 
-    "script": "runHotkey('F3')", 
-    "keys": "F3"
-  },
-  {
-    "name": "F4", 
-    "script": "runHotkey('F4')", 
-    "keys": "F4"
-  },
-  {
-    "name": "F5", 
-    "script": "runHotkey('F5')", 
-    "keys": "F5"
-  },
-  {
-    "name": "F6", 
-    "script": "runHotkey('F6')", 
-    "keys": "F6"
-  },
-  {
-    "name": "F7", 
-    "script": "runHotkey('F7')", 
-    "keys": "F7"
-  },
-  {
-    "name": "F8", 
-    "script": "runHotkey('F8')", 
-    "keys": "F8"
-  },
-  {
-    "name": "F9", 
-    "script": "runHotkey('F9')", 
-    "keys": "F9"
-  },
-  {
-    "name": "F10", 
-    "script": "runHotkey('F10')", 
-    "keys": "F10"
-  },
-  {
-    "name": "F11", 
-    "script": "runHotkey('F11')", 
-    "keys": "F11"
-  },
-  {
-    "name": "F12", 
-    "script": "runHotkey('F12')", 
-    "keys": "F12"
-  }
+  { "name": "F1", "keys": "F1", "script": "runHotkey('F1')" },
+  { "name": "F2", "keys": "F2", "script": "runHotkey('F2')" },
+  { "name": "F3", "keys": "F3", "script": "runHotkey('F3')" },
+  { "name": "F4", "keys": "F4", "script": "runHotkey('F4')" },
+  { "name": "F5", "keys": "F5", "script": "runHotkey('F5')" },
+  { "name": "F6", "keys": "F6", "script": "runHotkey('F6')" },
+  { "name": "F7", "keys": "F7", "script": "runHotkey('F7')" },
+  { "name": "F8", "keys": "F8", "script": "runHotkey('F8')" },
+  { "name": "F9", "keys": "F9", "script": "runHotkey('F9')" },
+  { "name": "F10", "keys": "F10", "script": "runHotkey('F10')" },
+  { "name": "F11", "keys": "F11", "script": "runHotkey('F11')" },
+  { "name": "F12", "keys": "F12", "script": "runHotkey('F12')" },
 ]
