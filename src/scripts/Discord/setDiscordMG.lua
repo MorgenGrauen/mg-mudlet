@@ -7,7 +7,7 @@ function setDiscordMG()
   setDiscordDetail("www.MorgenGrauen.info")
   setDiscordState("via Mudlet")
   setDiscordLargeIcon("drache")
-  setDiscordLargeIconText("telnet mg.mud.de:4711")
+  setDiscordLargeIconText("telnet mg.morgengrauen.info:4711")
   setDiscordLink()
   -- TODO: Eigentlich muss nur folgendes regelmäßig aktualisiert werden und nur bei wenigen Events!
   if table.is_field(gmcp, "MG.char.info.level") then
