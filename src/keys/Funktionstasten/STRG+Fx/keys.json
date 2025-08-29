@@ -10,5 +10,5 @@
   { "name": "ctrl+F9", "keys": "ctrl+F9", "script": "runHotkey('ctrl+F9')" },
   { "name": "ctrl+F10", "keys": "ctrl+F10", "script": "runHotkey('ctrl+F10')" },
   { "name": "ctrl+F11", "keys": "ctrl+F11", "script": "runHotkey('ctrl+F11')" },
-  { "name": "ctrl+F12", "keys": "ctrl+F12", "script": "runHotkey('ctrl+F12')" },
+  { "name": "ctrl+F12", "keys": "ctrl+F12", "script": "runHotkey('ctrl+F12')" }
 ]
