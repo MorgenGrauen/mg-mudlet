@@ -23,7 +23,7 @@ jobs:
     # The steps to follow for the 'build' job
     steps:
       # this step checks out the project repository to work on
-      - uses: actions/checkout@v3.3.0
+      - uses: actions/checkout@v4
 
       # this step is by demonnic, which builds your project with Muddler
       # it will show up as 'Muddle' in the GitHub web interface later
@@ -34,7 +34,7 @@ jobs:
       
       # This step uploads the artifact for you and others to download
       - name: Upload Artifact
-        uses: actions/upload-artifact@v3.1.2
+        uses: actions/upload-artifact@v4
         with:
           # build/tmp/ is the directory muddler makes the mpackage out of
           # GitHub only allows you to upload zip files, so we let them
