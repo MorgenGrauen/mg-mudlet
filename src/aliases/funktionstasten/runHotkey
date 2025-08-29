@@ -1,0 +1,8 @@
+function runHotkey(name)
+  Hotkeys = Hotkeys or {}
+  if not Hotkeys[name] then
+    echo(f"Funktionstaste '{name}' ist noch nicht belegt. Nutze dazu ALT+{name}.\n")
+    return
+  end
+  send(Hotkeys[name], true) -- später false oder konfigurierbar machen?
+end
