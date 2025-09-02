@@ -1,0 +1,16 @@
+function setHotkey(name)
+  Hotkeys = Hotkeys or {}
+  if Hotkeys[name] then
+    echo(f"Funktionstaste '{name}' ist derzeit belegt mit: {Hotkeys[name]}.\n")
+  end
+  
+  echo("Gib den neuen Befehl ein (oder nichts zum Abbrechen).\n")
+
+  inputAlias = tempAlias("^(.*)$", function()
+    Hotkeys[name] = matches[2]
+    local name = name; local Hotkeys = Hotkeys
+    local text = f("Funktionstaste '{name}' ist nun belegt mit: {Hotkeys[name]}.\n")
+    echo(text) -- kann f-String nicht hier direkt definieren, sonst gibt es nil.
+    killAlias(inputAlias)
+  end)
+end

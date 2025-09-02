@@ -1,0 +1,14 @@
+[
+  { "name": "ctrl+F1", "keys": "ctrl+F1", "script": "runHotkey('ctrl+F1')" },
+  { "name": "ctrl+F2", "keys": "ctrl+F2", "script": "runHotkey('ctrl+F2')" },
+  { "name": "ctrl+F3", "keys": "ctrl+F3", "script": "runHotkey('ctrl+F3')" },
+  { "name": "ctrl+F4", "keys": "ctrl+F4", "script": "runHotkey('ctrl+F4')" },
+  { "name": "ctrl+F5", "keys": "ctrl+F5", "script": "runHotkey('ctrl+F5')" },
+  { "name": "ctrl+F6", "keys": "ctrl+F6", "script": "runHotkey('ctrl+F6')" },
+  { "name": "ctrl+F7", "keys": "ctrl+F7", "script": "runHotkey('ctrl+F7')" },
+  { "name": "ctrl+F8", "keys": "ctrl+F8", "script": "runHotkey('ctrl+F8')" },
+  { "name": "ctrl+F9", "keys": "ctrl+F9", "script": "runHotkey('ctrl+F9')" },
+  { "name": "ctrl+F10", "keys": "ctrl+F10", "script": "runHotkey('ctrl+F10')" },
+  { "name": "ctrl+F11", "keys": "ctrl+F11", "script": "runHotkey('ctrl+F11')" },
+  { "name": "ctrl+F12", "keys": "ctrl+F12", "script": "runHotkey('ctrl+F12')" }
+]
