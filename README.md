@@ -1,7 +1,7 @@
 MorgenGrauen in Mudlet
 ======================
 
-Hier finden sich [Mudlet](https://github.com/Mudlet/Mudlet)-Skripte für das MUD [MorgenGrauen](http://mg.mud.de). 
+Hier finden sich [Mudlet](https://github.com/Mudlet/Mudlet)-Skripte für das MUD [MorgenGrauen](https://morgengrauen.info). 
 
 Das hier enthaltene Bündel an Skripten wird seit 2013 immer weiter entwickelt.
 
@@ -49,7 +49,7 @@ Was noch nicht enthalten ist
 Kurzanleitung
 -------------
 
-0. Ggf. natürlich erstmal [Mudlet installieren](http://www.mudlet.org/download)
+0. Ggf. natürlich erstmal [Mudlet installieren](https://www.mudlet.org/download)
    * Neues Mudlet Profil erstellen 
    * Verbinden zu _mg.mud.de_ Port _23_ 
    * (Weitere Charaktere benötigen eigene Profile)
