@@ -1,7 +1,7 @@
 MorgenGrauen in Mudlet
 ======================
 
-Hier finden sich [Mudlet](https://github.com/Mudlet/Mudlet)-Skripte für das MUD [MorgenGrauen](https://morgengrauen.info). 
+Hier finden sich [Mudlet](https://github.com/Mudlet/Mudlet)-Skripte für das MUD [MorgenGrauen](https://www.morgengrauen.info). 
 
 Das hier enthaltene Bündel an Skripten wird seit 2013 immer weiter entwickelt.
 
