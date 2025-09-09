@@ -23,5 +23,10 @@
         "eventHandlerList": [
             "sysExitEvent"
           ]
+    },{
+        "name": "onConnect",
+        "eventHandlerList": [
+            "sysConnectionEvent"
+          ]
     }
 ]
