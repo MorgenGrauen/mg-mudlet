@@ -104,7 +104,7 @@ function string_to_color(string_input, saturation, lightness)
   local saturation = saturation or 100
   local lightness = lightness or 75
   for i = 1, #string_input do
-    hash = string.byte(string_input, i) + ((hash * 32) - hash)
+    hash = string.byte(string_input, i) + ((hash * 32) - hash) % 360
   end
   local hue = hash % 360
   local red, green, blue = HSL_to_RGB(hue, saturation, lightness)
