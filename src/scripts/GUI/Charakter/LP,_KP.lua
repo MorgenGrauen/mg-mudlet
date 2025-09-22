@@ -31,6 +31,7 @@ function initGauges()
   end
 end
 
+
 function updateGauges()
   updateLP()
   updateVorsicht()
@@ -41,6 +42,7 @@ function updateGauges()
   end
 end
 
+
 function initLP()
   GUI.Char.GaugeLP = Geyser.Gauge:new({
     name = "GaugeLP",
@@ -50,6 +52,7 @@ function initLP()
   }, GUI.Char.Frame)
   GUI.Char.GaugeLP:enableClickthrough()
 end
+
 
 function updateLP()
   ME.lp = gmcp.MG.char.vitals.hp
@@ -68,8 +71,41 @@ function updateLP()
   ]]
 --  GaugeLP.front:setStyleSheet(GaugeStyleSheet)
 --  GaugeLP.back:setStyleSheet(GaugeStyleSheet)
-  GUI.Char.GaugeLP:setColor(255 * (1 - myLPQuota), 255 * myLPQuota, 50)
+
+  -- Treffer? Dann LP Balken blinken lassen
+  local differenz = ME.lp < ME.lp_alt
+  if differenz > 0 then
+    blinkLP(0.2)
+    -- echo(f"Au! Das waren {differenz} LP.\n")
+  else
+    if not GUI.Char.GaugeLP_blinking then
+      colorLP(myLPQuota)
+    end
+  end
+  ME.lp_alt = ME.lp
 end
+
+
+function colorLP()
+  local myLPQuota = ME.lp / ME.lp_max
+  GUI.Char.GaugeLP:setColor(
+    255 * (1 - myLPQuota), 
+    255 * myLPQuota, 
+    50
+  )
+end 
+
+
+function blinkLP(duration)
+  GUI.Char.GaugeLP_blinking = true
+  GUI.Char.GaugeLP:setColor(255, 0, 50) -- rot
+  tempTimer(duration, function() 
+    GUI.Char.GaugeLP_blinking = false
+    colorLP()
+  end)
+end 
+
+
 
 function initKP()
   GUI.Char.GaugeKP = Geyser.Gauge:new({
@@ -82,6 +118,7 @@ function initKP()
   GUI.Char.GaugeKP:enableClickthrough()
 end
 
+
 function updateKP()
   ME.kp = gmcp.MG.char.vitals.sp
   ME.kp_max = gmcp.MG.char.maxvitals.max_sp
@@ -90,6 +127,7 @@ function updateKP()
   myKPText = "<b><center>" .. myKPText .. "</center></b>"
   GUI.Char.GaugeKP:setValue(ME.kp, ME.kp_max, myKPText)
 end
+
 
 function initVorsicht()
   local imgPath = getMudletHomeDir() .. "/MorgenGrauen/CharGUI/"
@@ -122,6 +160,7 @@ function initVorsicht()
   GUI.Char.GaugeLPVorsichtUnten:enableClickthrough()
   GUI.Char.GaugeLPVorsichtUnten:hide()
 end
+
 
 function updateVorsicht()
   if gmcp and gmcp.MG and gmcp.MG.char and gmcp.MG.char.wimpy and gmcp.MG.char.wimpy.wimpy then
