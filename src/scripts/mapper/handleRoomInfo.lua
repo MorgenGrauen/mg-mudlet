@@ -54,7 +54,8 @@ function handleRoomInfo()
                 echoM("Aktualisiere Raum.\n  Area: " .. mapper.currentArea .. "\n  Hash: " .. hash)
             else
                 newRoom = createRoom(mapper.currentArea, hash)
-                setRoomEnv(newRoom, mapperconf.region_env[ME.raum_region] or mapperconf.region_env["unbekannt"])
+                setRoomEnv(newRoom, mapperconf.region_env[ME.raum_region] 
+                                 or mapperconf.region_env["unbekannt"])
             end
 
             local roomName = roomData.short
