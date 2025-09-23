@@ -73,7 +73,7 @@ function updateLP()
 --  GaugeLP.back:setStyleSheet(GaugeStyleSheet)
 
   -- Treffer? Dann LP Balken blinken lassen
-  local differenz = ME.lp < ME.lp_alt
+  local differenz = ME.lp_alt - ME.lp
   if differenz > 0 then
     blinkLP(0.2)
     -- echo(f"Au! Das waren {differenz} LP.\n")
