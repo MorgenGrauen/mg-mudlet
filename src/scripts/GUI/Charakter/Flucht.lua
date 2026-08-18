@@ -1,7 +1,7 @@
 function initFlucht()
   GUI.Char.FluchtLabel = Geyser.Label:new({
     name = "FluchtLabel", fgColor = "white",
-    x = 64, y = 56, padding = 0,width = 170, height = 17
+    x = 74, y = 56, padding = 0,width = 160, height = 17
   }, GUI.Char.Frame)
   GUI.Char.FluchtLabel:setStyleSheet([[
     border-color: rgba(0, 0, 0, 0%);
