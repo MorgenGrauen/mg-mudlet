@@ -23,7 +23,7 @@ jobs:
     # The steps to follow for the 'build' job
     steps:
       # this step checks out the project repository to work on
-      - uses: actions/checkout@v4
+      - uses: actions/checkout@v6
 
       # this step is by demonnic, which builds your project with Muddler
       # it will show up as 'Muddle' in the GitHub web interface later
