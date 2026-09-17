@@ -57,10 +57,10 @@ end
 function updateLP()
   ME.lp = gmcp.MG.char.vitals.hp
   ME.lp_max = gmcp.MG.char.maxvitals.max_hp
-  local myLPQuota = ME.lp / ME.lp_max
-  local myLPText = ME.lp .. "/" .. ME.lp_max .. " (" .. string.format("%.0f", 100 * myLPQuota) .. "%)"
-  myLPText = "<b><center>" .. myLPText .. "</center></b> "
-  GUI.Char.GaugeLP:setValue(ME.lp, ME.lp_max, myLPText)
+  local LP_Quota = ME.lp / ME.lp_max
+  local LP_Text = ME.lp .. "/" .. ME.lp_max .. " (" .. string.format("%.0f", 100 * LP_Quota) .. "%)"
+  LP_Text = "<b><center>" .. LP_Text .. "</center></b> "
+  GUI.Char.GaugeLP:setValue(ME.lp, ME.lp_max, LP_Text)
 
   local GaugeStyleSheet = [[
     --border-top: 1px black solid;
@@ -79,19 +79,31 @@ function updateLP()
     -- echo(f"Au! Das waren {differenz} LP.\n")
   else
     if not GUI.Char.GaugeLP_blinking then
-      colorLP(myLPQuota)
+      colorLP()
     end
   end
   ME.lp_alt = ME.lp
 end
 
 
+local function ivalue(a, b, c, t)
+  local split = 0.4
+  if t < split then
+    return a + (b - a) * t / split
+  else
+    return b + (c - b) * (t - split) / (1 - split)
+  end
+end
+
+
 function colorLP()
-  local myLPQuota = ME.lp / ME.lp_max
+  -- Farben je nach LP-Verlust: Grün -> Gelb-Grün -> Orange -> Rot
+  -- Gleichzeitig nicht zu hell, damit der weiße Text lesbar bleibt
+  local LP_Quota = ME.lp / ME.lp_max
   GUI.Char.GaugeLP:setColor(
-    255 * (1 - myLPQuota), 
-    255 * myLPQuota, 
-    50
+    ivalue(205, 185, 40,  LP_Quota), -- rot
+    ivalue(35,  115, 180, LP_Quota), -- gruen
+    ivalue(45,   35, 45,  LP_Quota)  -- blau
   )
 end 
 
